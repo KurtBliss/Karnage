@@ -14,6 +14,9 @@ var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var lstick_controls = ["move_left", "move_right", "move_forward", "move_backward"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var lstick = Stick.new(lstick_controls, 1, self, "move_player")
+onready var raycast = $Head/Camera/RayLong
+onready var raycast_hit = $Head/Camera/RayShort
+
 
 func _ready():
 	Master.Player = self
@@ -23,14 +26,7 @@ func _ready():
 	add_child(lstick)
 	$Anime.play("walk", -1, 2)
 
-func _process(_delta):
-	if Input.is_action_just_pressed("fire"):
-		$Head/Camera/Pistol/Anime.seek(0)
-		$Head/Camera/Pistol/Anime.play("Fire", -1, 2)
-	if Input.is_action_just_pressed("hit"):
-		$Head/Camera/Pistol/Anime.seek(0)
-		$Head/Camera/Pistol/Anime.play("Hit", -1, 2)
-			
+
 
 func _physics_process(delta):
 	if $Anime.is_playing() and ($Anime.current_animation == "roll" or $Anime.current_animation == "rollside"):
@@ -38,6 +34,7 @@ func _physics_process(delta):
 	else:
 		head_basis = head.get_global_transform().basis
 		is_dashing = false
+		$Anime.play("walk")
 	
 	var move_z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
 	var move_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -45,21 +42,39 @@ func _physics_process(delta):
 	direction += head_basis.z * move_z
 	direction += head_basis.x * move_x
 	
+	if Input.is_action_just_pressed("debugEnemy"):
+		print("z ", head_basis.z, " x ", head_basis.x)
+	
+	if Input.is_action_just_pressed("fire"):
+		fire()
+
+	if Input.is_action_just_pressed("hit"):
+		hit()
+	
 	if Input.is_action_just_pressed("roll"):
 		if $Anime.roll_animation($Head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
-	$Head/Camera/Pistol/Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
+	
+	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
 	
 	var dash_boast = 2.4 if is_dashing else 1
 	
 	velocity = velocity.linear_interpolate(direction * speed * dash_boast, acceleration * delta )
 	
-	velocity.y -= gravity * delta * 100
+	if is_on_floor():
+		velocity.y = 0
+		if Input.is_action_just_pressed("jump"):
+			velocity.y += jump_power
+	else:
+		velocity.y -= gravity
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y += jump_power
+
+	var b4 = velocity.y
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+	print(b4, " ", velocity.y, " ", is_on_floor())
+
 
 func move_camera(look, delta):
 	look *= delta * 15
@@ -68,3 +83,23 @@ func move_camera(look, delta):
 	if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
 		camera.rotate_x(deg2rad(-x_delta))
 		camera_x_rotation += x_delta
+
+
+
+func fire():
+	$Head/Camera/Pistol/Anime.seek(0)
+	$Head/Camera/Pistol/Anime.play("Fire", -1, 2)
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider.is_in_group("Enemy"):
+			collider.health -= 25
+
+
+
+func hit():
+	$Head/Camera/Pistol/Anime.seek(0)
+	$Head/Camera/Pistol/Anime.play("Hit", -1, 2)
+	if raycast_hit.is_colliding():
+		var collider = raycast_hit.get_collider()
+		if collider.is_in_group("Enemy"):
+			collider.health -= 10

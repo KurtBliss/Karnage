@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/player.gd"
 }, {
+"base": "MeshInstance",
+"class": "RepeatMesh",
+"language": "GDScript",
+"path": "res://scripts/common/repeat_mesh.gd"
+}, {
 "base": "Node",
 "class": "Stick",
 "language": "GDScript",
@@ -44,6 +49,7 @@ _global_script_class_icons={
 "Bot": "",
 "Mouse": "",
 "Player": "",
+"RepeatMesh": "",
 "Stick": "",
 "Zombie": ""
 }
@@ -51,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Karnage"
-run/main_scene="res://maps/alpha.tscn"
+run/main_scene="res://maps/Nav.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -147,4 +153,5 @@ debugEnemy={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

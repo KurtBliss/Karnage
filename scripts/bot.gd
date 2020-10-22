@@ -16,21 +16,15 @@ func do_walk(spd = 2):
 	var direction = -transform.basis.z.normalized() * spd
 	var _vector3 = move_and_slide(direction, Vector3.UP)
 
-func do_chase_player(spd = 2):
+func do_chase_player(spd = speed):
 	do_face_player()
 	do_walk(spd)
 
 func process_path():
-	if path_hit_point == true:
-		print("path_hit_point ", path_hit_point)
-		set_path_to(Master.Player.global_transform.origin)
-		path_hit_point = false
-	elif path_ind < path.size():
+	if path_ind < path.size():
 		var move_vec = (path[path_ind] - global_transform.origin)
 		if move_vec.length() < 0.1:
 			path_ind += 1
-			if path_ind > 2:
-				path_hit_point = true
 		else:
 			move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
 	else:
@@ -38,6 +32,10 @@ func process_path():
 
 func set_path_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
+	path_ind = 0
+
+func set_path_to_player():
+	path = nav.get_simple_path(global_transform.origin, Master.Player.global_transform.origin)
 	path_ind = 0
 
 func get_player_direction():
