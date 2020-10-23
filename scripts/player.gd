@@ -88,6 +88,9 @@ func fire():
 		var collider = raycast.get_collider()
 		if collider.is_in_group("Enemy"):
 			collider.health -= 25
+		elif collider.is_in_group("DeathSpawn"):
+			print("DeathSpawn")
+			collider.hit()
 
 
 
@@ -97,15 +100,10 @@ func hit():
 	if raycast_hit.is_colliding():
 		var collider = raycast_hit.get_collider()
 		if collider.is_in_group("Enemy"):
-			collider.health -= 10
+			collider.health -= 5
+		
 
 
 func _on_Player_injured():
 	print("_on_Player_injured")
-	$Hud/Injured.visible = true
-	$Injured.start()
-
-
-func _on_Injured_timeout():
-	print("_on_Injured_timeout")
-	$Hud/Injured.visible = false
+	$Hud/Injured/Sprite.modulate.a = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Models/weaponPack/weaponPack_assets/Models/pistol.obj" type="ArrayMesh" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scripts/ui.gd" type="Script" id=5]
 [ext_resource path="res://entities/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://entities/fade.gd" type="Script" id=8]
+[ext_resource path="res://entities/PlayerTimer.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -196,12 +198,16 @@ __meta__ = {
 }
 
 [node name="Time" type="Label" parent="Hud"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -124.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -62.0
+margin_right = 62.0
 margin_bottom = 72.0
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Cursor" type="Control" parent="Hud"]
 anchor_left = 0.5
@@ -218,7 +224,6 @@ vframes = 8
 hframes = 8
 
 [node name="Injured" type="Control" parent="Hud"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -231,6 +236,7 @@ __meta__ = {
 self_modulate = Color( 0.968627, 0, 0, 0.466667 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Area" type="Area" parent="." groups=[
 "player",
@@ -248,6 +254,14 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 
 [node name="Injured" type="Timer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = true
+script = ExtResource( 9 )
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="set_health" from="." to="Hud" method="_on_Player_set_health"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
+[connection signal="time_left" from="Timer" to="Hud" method="_on_Timer_time_left"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
