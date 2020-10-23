@@ -16,6 +16,8 @@ var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var lstick = Stick.new(lstick_controls, 1, self, "move_player")
 onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
+var score = 0 setget score_set
+signal score_update(new_score)
 
 
 func _ready():
@@ -107,3 +109,17 @@ func hit():
 func _on_Player_injured():
 	print("_on_Player_injured")
 	$Hud/Injured/Sprite.modulate.a = 1
+
+
+func score_set(val):
+	score = val
+	emit_signal("score_update", val)
+
+
+func enemy_injured():
+	score_set(score + 1)
+
+
+func enemy_death():
+	score_set(score + 50)
+	

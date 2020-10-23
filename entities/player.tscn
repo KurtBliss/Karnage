@@ -189,8 +189,7 @@ __meta__ = {
 margin_right = 124.0
 margin_bottom = 72.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "100
-"
+text = "100"
 align = 1
 valign = 1
 __meta__ = {
@@ -203,6 +202,20 @@ anchor_right = 0.5
 margin_left = -62.0
 margin_right = 62.0
 margin_bottom = 72.0
+text = "2:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Hud"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -124.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0.92549, 0.945098, 0.117647, 1 )
+text = "0"
 align = 1
 valign = 1
 __meta__ = {
@@ -261,6 +274,7 @@ one_shot = true
 autostart = true
 script = ExtResource( 9 )
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
+[connection signal="score_update" from="." to="Hud" method="_on_Player_score_update"]
 [connection signal="set_health" from="." to="Hud" method="_on_Player_set_health"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
 [connection signal="time_left" from="Timer" to="Hud" method="_on_Timer_time_left"]

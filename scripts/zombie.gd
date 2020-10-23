@@ -6,6 +6,9 @@ func _ready():
 	add_to_group("Zombie")
 	add_to_group("Enemy")
 	state_reset("state_normal", "")
+	connect("injured", Master.Player, "enemy_injured")
+	connect("death", Master.Player, "enemy_death")
+	
 
 func _death():
 	queue_free()
@@ -29,3 +32,14 @@ func state_chase(delta):
 		do_chase_player()
 	else:
 		state_reset("", "state_normal")
+
+
+func _on_Zombie_injured():
+	$MeshInjured.visible = true
+	$Timer.start()
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	$MeshInjured.visible = false
+	pass # Replace with function body.

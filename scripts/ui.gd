@@ -6,4 +6,8 @@ func _on_Player_set_health(health):
 
 func _on_Timer_time_left(time_left):
 	$Time.set_text(str(time_left))
-	pass # Replace with function body.
+
+
+func _on_Player_score_update(new_score):
+	print("new score", new_score)
+	$Score.set_text(str(new_score))
