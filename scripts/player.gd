@@ -3,6 +3,7 @@ class_name Player
 
 onready var head = $Head
 onready var camera = $Head/Camera
+var Player:Player
 var velocity = Vector3()
 var camera_x_rotation = 0
 var roll_basis 

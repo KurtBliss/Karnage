@@ -57,8 +57,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Karnage"
-run/main_scene="res://maps/Nav.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://menus/TitledScreen.tscn"
+config/icon="res://assets/logo.png"
 
 [autoload]
 
