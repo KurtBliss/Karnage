@@ -17,7 +17,7 @@ material = SubResource( 2 )
 script = ExtResource( 2 )
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0.3 )
 visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

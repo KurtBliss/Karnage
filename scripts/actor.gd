@@ -9,21 +9,27 @@ export (int) var acceleration = 5
 export (int) var speed = 10
 export (float) var gravity = 0.98
 export (int) var jump_power = 30
+export (int) var injured_delay = 30
+var injured = 0
 
 
 """ Health (SetGet) """
 var health = 100 setget set_health
 var previous_health = 0
 signal set_health(value)
+signal death()
+signal injured()
 
 func set_health(value): 
 	emit_signal("set_health", value)
 	previous_health = health
 	health = value
 	if (health < 0):
+		emit_signal("death")
 		if has_method("_death"):
 			call("_death")
 	elif (health < previous_health):
+		emit_signal("injured")
 		if has_method("_injured"):
 			call("_injured")
 			

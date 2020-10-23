@@ -68,12 +68,7 @@ func _physics_process(delta):
 	else:
 		velocity.y -= gravity
 	
-
-	var b4 = velocity.y
-	
 	velocity = move_and_slide(velocity, Vector3.UP)
-	
-	print(b4, " ", velocity.y, " ", is_on_floor())
 
 
 func move_camera(look, delta):
@@ -103,3 +98,14 @@ func hit():
 		var collider = raycast_hit.get_collider()
 		if collider.is_in_group("Enemy"):
 			collider.health -= 10
+
+
+func _on_Player_injured():
+	print("_on_Player_injured")
+	$Hud/Injured.visible = true
+	$Injured.start()
+
+
+func _on_Injured_timeout():
+	print("_on_Injured_timeout")
+	$Hud/Injured.visible = false
