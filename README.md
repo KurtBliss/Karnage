@@ -1,2 +1,2 @@
-# Karnage
- 
+# KARNAGE
+Professional carnage shooter
