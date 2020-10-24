@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://assets/Models/weaponPack/weaponPack_assets/Models/pistol.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/crosshairs64.png" type="Texture" id=3]
-[ext_resource path="res://entities/player_roll_animation.gd" type="Script" id=4]
-[ext_resource path="res://scripts/ui.gd" type="Script" id=5]
+[ext_resource path="res://assets/models/weapons/Models/pistol.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/textures/crosshairs64.png" type="Texture" id=3]
+[ext_resource path="res://scripts/player_roll_animation.gd" type="Script" id=4]
+[ext_resource path="res://scripts/hud.gd" type="Script" id=5]
 [ext_resource path="res://entities/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
-[ext_resource path="res://entities/fade.gd" type="Script" id=8]
-[ext_resource path="res://entities/PlayerTimer.gd" type="Script" id=9]
+[ext_resource path="res://scripts/fade.gd" type="Script" id=8]
+[ext_resource path="res://scripts/player_timer.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -133,6 +133,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+current = true
 far = 400.0
 
 [node name="Pistol" type="MeshInstance" parent="Head/Camera"]
@@ -269,13 +270,13 @@ transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0
 [node name="Injured" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 180.0
 one_shot = true
 autostart = true
 script = ExtResource( 9 )
+[connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
-[connection signal="score_update" from="." to="Hud" method="_on_Player_score_update"]
-[connection signal="set_health" from="." to="Hud" method="_on_Player_set_health"]
+[connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
 [connection signal="time_left" from="Timer" to="Hud" method="_on_Timer_time_left"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

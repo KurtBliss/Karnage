@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://menus/titledscreen_dynamicfont_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://menus/dynamicfont_48.tres" type="DynamicFont" id=1]
 [ext_resource path="res://menus/buttons/button.gd" type="Script" id=2]
+
 
 [node name="Button" type="Button"]
 margin_left = 16.0

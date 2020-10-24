@@ -1,4 +1,5 @@
 extends Position3D
+# bullet.gd
 
 func _on_Area_body_entered(body: Bot):
 	if body==null or body.name==null: 
