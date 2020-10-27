@@ -12,37 +12,37 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://scripts/actor.gd"
+"path": "res://actor.gd"
 }, {
 "base": "Actor",
 "class": "Bot",
 "language": "GDScript",
-"path": "res://scripts/bot.gd"
+"path": "res://bots/bot.gd"
 }, {
 "base": "Node",
 "class": "Mouse",
 "language": "GDScript",
-"path": "res://scripts/common/mouse.gd"
+"path": "res://common_scripts/mouse.gd"
 }, {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
-"path": "res://scripts/player.gd"
+"path": "res://player/player.gd"
 }, {
 "base": "MeshInstance",
 "class": "RepeatMesh",
 "language": "GDScript",
-"path": "res://scripts/common/repeat_mesh.gd"
+"path": "res://common_scripts/repeat_mesh.gd"
 }, {
 "base": "Node",
 "class": "Stick",
 "language": "GDScript",
-"path": "res://scripts/common/stick.gd"
+"path": "res://common_scripts/stick.gd"
 }, {
 "base": "Bot",
 "class": "Zombie",
 "language": "GDScript",
-"path": "res://scripts/zombie.gd"
+"path": "res://bots/zombie.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -57,12 +57,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Karnage"
-run/main_scene="res://menus/titled_screen.tscn"
+run/main_scene="res://tiledscreen/titled_screen.tscn"
 config/icon="res://assets/textures/logo.png"
 
 [autoload]
 
-Master="*res://scripts/master.gd"
+Master="*res://master.gd"
 
 [input]
 

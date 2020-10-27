@@ -1,7 +1,7 @@
 extends Spatial
 # death_spawn.gd
 
-onready var zombie = preload("res://entities/zombie.tscn")
+onready var zombie = preload("res://bots/zombie.tscn")
 
 func _on_Mesh_Spawn():
 	print("DEATH")
