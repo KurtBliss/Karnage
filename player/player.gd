@@ -20,6 +20,7 @@ var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var lstick_controls = ["move_left", "move_right", "move_forward", "move_backward"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var lstick = Stick.new(lstick_controls, 1, self, "move_player")
+var can_double = true
 # Nodes
 onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
@@ -78,12 +79,17 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(vector, rate)
 	
 	# Jump
-	if is_on_floor():
+	if $JumpCast.is_colliding():
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump"):
+			can_double = true
 			velocity.y += jump_power
 	else:
-		velocity.y -= gravity
+		if Input.is_action_just_pressed("jump") and can_double:
+			can_double = false
+			velocity.y += jump_power
+		else:
+			velocity.y -= gravity
 	
 	# Collision
 	velocity = move_and_slide(velocity, Vector3.UP)

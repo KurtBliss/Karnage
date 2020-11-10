@@ -126,8 +126,10 @@ tracks/0/keys = {
 [sub_resource type="CapsuleMesh" id=6]
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0 )
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 1 )
+gravity = 1.2
+jump_power = 41
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
@@ -275,6 +277,10 @@ wait_time = 180.0
 one_shot = true
 autostart = true
 script = ExtResource( 9 )
+
+[node name="JumpCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, -0.4, 0 )
 [connection signal="died" from="." to="." method="_on_Player_died"]
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]

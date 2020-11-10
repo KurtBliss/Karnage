@@ -60,6 +60,10 @@ config/name="Karnage"
 run/main_scene="res://tiledscreen/titled_screen.tscn"
 config/icon="res://assets/textures/logo.png"
 
+[audio]
+
+default_bus_layout=""
+
 [autoload]
 
 Master="*res://master.gd"
