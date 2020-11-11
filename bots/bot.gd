@@ -43,8 +43,9 @@ func do_walk(spd = 2):
 	var _vector3 = move_and_slide(direction, Vector3.UP)
 
 func do_chase_player(spd = speed):
-	do_face_player()
-	do_walk(spd)
+	if get_player_distance() > 5:
+		do_face_player()
+		do_walk(spd)
 
 func process_path():
 	if path_ind < path.size():
@@ -53,7 +54,10 @@ func process_path():
 			path_ind += 1
 		else:
 			move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
-	else:
+		print("processed path")
 		return true
+	else:
+		print("completed path")
+		return false
 
 

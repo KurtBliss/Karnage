@@ -7,6 +7,11 @@ Bookmarks:
 	Player
 	Zombie
 
+Need to fix:
+	Start over enemy 
+	Player Roll
+	Player Spawn
+
 Ideas:
 	double jump
 	grappling hook

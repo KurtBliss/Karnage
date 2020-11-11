@@ -22,6 +22,7 @@ func state_normal(delta):
 
 func state_chase_path(delta):
 	if get_player():
+#		print("got player")
 		if get_player_visibility():
 			state_reset("", "state_chase")
 		if process_path():
