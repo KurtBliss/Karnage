@@ -35,7 +35,7 @@ func _ready():
 	add_child(mouse)
 	add_child(rstick)
 	add_child(lstick)
-	$Anime.play("walk", -1, 2)
+#	$Anime.play("walk", -1, 2)
 
 
 func _physics_process(delta):
@@ -51,7 +51,7 @@ func _physics_process(delta):
 	else:
 		is_dashing = false
 		head_basis = head.get_global_transform().basis
-		$Anime.play("walk")
+#		$Anime.play("walk")
 	
 	"""
 		Handle motion input
@@ -66,7 +66,7 @@ func _physics_process(delta):
 			roll_basis = head_basis
 	
 	# Update walking speed
-	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
+#	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
 	
 	"""
 		Handle gravity and movement

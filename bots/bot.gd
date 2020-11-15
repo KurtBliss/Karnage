@@ -27,11 +27,27 @@ func get_player_distance():
 	if Master.Player == null: return null	
 	return (Master.Player.get_translation()  - get_translation()).length()
 
-func get_player_visibility():
+func get_player_visibility(gridmap = false):
+	# doesn't work with gridmaps
 	var space_state = get_world().get_direct_space_state()
-	var hit = space_state.intersect_ray(global_transform.origin, Master.Player.global_transform.origin)
+	
+	var hit = space_state.intersect_ray(global_transform.origin, Master.Player.global_transform.origin, [self])
+		
 	if hit and hit.collider == Master.Player: 
-			return true
+		return true
+	else:
+		return false
+		
+#
+#	if Input.is_action_just_pressed("debugEnemy"):
+#		print("E.global_transform.origin", global_transform.origin)
+#		print("P.global_transform.origin", Master.Player.global_transform.origin)
+#		print("hit", hit)
+#		if hit:
+#			print("hit.collider", hit.collider)
+#		print("dist", get_player_distance())
+#		print("debug")
+#		print("...")
 
 func do_face_player():
 	var a: Vector3 = Master.Player.get_transform().origin
