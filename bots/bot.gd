@@ -7,6 +7,8 @@ var path_ind = 0
 var path_hit_point = false
 onready var nav = get_parent() if get_parent() != null else null
 
+var direction_offset = 180
+
 func set_path_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_ind = 0
@@ -21,7 +23,8 @@ func get_player():
 
 func get_player_direction():
 	if Master.Player == null: return null
-	return (Master.Player.get_translation()  - get_translation()).normalized()
+	var vect = (Master.Player.get_translation()  - get_translation())
+	vect.angle_diff()
 
 func get_player_distance():
 	if Master.Player == null: return null	
@@ -37,17 +40,36 @@ func get_player_visibility(gridmap = false):
 		return true
 	else:
 		return false
-		
-#
-#	if Input.is_action_just_pressed("debugEnemy"):
-#		print("E.global_transform.origin", global_transform.origin)
-#		print("P.global_transform.origin", Master.Player.global_transform.origin)
-#		print("hit", hit)
-#		if hit:
-#			print("hit.collider", hit.collider)
-#		print("dist", get_player_distance())
-#		print("debug")
-#		print("...")
+	
+func get_direction():
+	return wrap(rotation_degrees.y + direction_offset, 0, 359)
+
+func get_direction_to(body: Actor):
+	var vec_self = global_transform.origin
+	var vec_other = body.global_transform.origin
+	
+	var dir = (vec_self - vec_other).normalized()
+	var dir_2d = Vector2(dir.x, dir.z).angle()
+
+	return wrap(rad2deg(dir_2d), 0, 359)
+
+func detect_facing_self(body: Actor, fov):
+	
+	#fov seems to widee...
+	
+	var dir_to = get_direction_to(body)
+	var dir_dif = angle_difference(dir_to, get_direction())
+	var result = dir_dif < (fov / 2)
+	
+	
+	print(result, dir_to, dir_dif)
+	
+	
+	if result:
+		return true
+	else:
+		return false
+
 
 func do_face_player():
 	var a: Vector3 = Master.Player.get_transform().origin
@@ -76,4 +98,15 @@ func process_path():
 		print("completed path")
 		return false
 
+func angle_difference(ang0, ang1):
+	return ((((ang0 - ang1) % 360) + 540) % 360) - 180;
 
+func wrap(value, _min, _max):
+	_min = int(floor(_min))
+	_max = int(floor(_max))
+	value = int(floor(value))
+	var _mod = ( value - _min ) % ( _max - _min )
+	if ( _mod < 0 ): 
+		return _mod + _max 
+	else: 
+		return _mod + _min
