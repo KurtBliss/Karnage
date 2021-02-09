@@ -13,7 +13,7 @@ func _ready():
  
 func state_normal(delta):
 	if get_player():
-		if get_player_distance() < 400:
+		if get_player_distance() < 800:
 			if get_player_visibility():
 				state_reset("", "state_chase")
 			else:

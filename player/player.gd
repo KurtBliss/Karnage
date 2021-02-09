@@ -3,6 +3,7 @@ extends Actor
 # player.gd, all of player controls and movement
 
 signal score_changed(score)
+signal fired()
 
 ###################-VARIABLES-####################
 
@@ -79,7 +80,7 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(vector, rate)
 	
 	# Jump
-	if $JumpCast.is_colliding():
+	if $JumpCast.is_colliding() or is_on_floor():
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump"):
 			can_double = true
@@ -101,12 +102,14 @@ func _physics_process(delta):
 		$Head/Camera/Pistol/Anime.seek(0)
 		$Head/Camera/Pistol/Anime.play("Fire", -1, 2)
 		$Head/Camera/Pistol/Flash.visible = true
+		emit_signal("fired")
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):
-				collider.health -= 25
+				collider.do_damage(15, self)
 			elif collider.is_in_group("DeathSpawn"):
 				collider.hit()
+
 
 	if Input.is_action_just_pressed("hit"):
 		$Head/Camera/Pistol/Anime.seek(0)
@@ -114,7 +117,7 @@ func _physics_process(delta):
 		if raycast_hit.is_colliding():
 			var collider = raycast_hit.get_collider()
 			if collider.is_in_group("Enemy"):
-				collider.health -= 5
+				collider.do_damage(5, self)
 
 
 func move_camera(look, delta):
