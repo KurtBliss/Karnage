@@ -136,6 +136,16 @@ func do_chase_player(spd = speed, offset: Vector3 = Vector3.ZERO):
 			do_face_player(offset)
 			do_walk(spd)
 
+func delay_state_change(delay:float, state = get_state(), phys_state = get_physics_state(), blank_state = true, callback = null):
+	if blank_state:
+		set_state("")
+		set_physics_state("")
+	yield(get_tree().create_timer(delay), "timeout")
+	set_state(state)
+	set_physics_state(phys_state)
+	if callback and has_meta(callback):
+		call(callback)
+
 func process_path():
 	if path_ind < path.size():
 		var move_vec = (path[path_ind] - global_transform.origin + Vector3(0, y_offset, 0))
