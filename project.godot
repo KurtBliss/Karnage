@@ -12,22 +12,17 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://actor.gd"
+"path": "res://scripts/actor.gd"
 }, {
 "base": "Actor",
 "class": "Bot",
 "language": "GDScript",
-"path": "res://bots/bot.gd"
-}, {
-"base": "Bot",
-"class": "BotState",
-"language": "GDScript",
-"path": "res://enemy2.gd"
+"path": "res://entities/bots/bot.gd"
 }, {
 "base": "Bot",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://bots/enemy.gd"
+"path": "res://entities/bots/enemy.gd"
 }, {
 "base": "Node",
 "class": "Mouse",
@@ -52,12 +47,11 @@ _global_script_classes=[ {
 "base": "Bot",
 "class": "Zombie",
 "language": "GDScript",
-"path": "res://bots/zombie.gd"
+"path": "res://entities/bots/zombie.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "Bot": "",
-"BotState": "",
 "Enemy": "",
 "Mouse": "",
 "Player": "",
@@ -69,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Karnage"
-run/main_scene="res://tiledscreen/titled_screen.tscn"
+run/main_scene="res://maps/nav.tscn"
 config/icon="res://assets/textures/logo.png"
 
 [audio]
@@ -78,7 +72,7 @@ default_bus_layout=""
 
 [autoload]
 
-Master="*res://master.gd"
+Master="*res://scripts/master.gd"
 
 [input]
 

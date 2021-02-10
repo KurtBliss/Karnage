@@ -7,6 +7,8 @@ var zigzag_dist_stop = 6
 var zigzag_dist_start = 16
 var offdirzig
 var offdirzag
+var enemy_atk_delay_set = 30
+var enemy_atk_delay = 0
 
 
 var wait_for_player = false
@@ -25,13 +27,20 @@ func _ready():
 		wait_for_player = true
 	
 func _process(_delta):
+	var p = get_player()
+	
 	if wait_for_player:
-		var p = get_player()
 		if p:
 			p.connect("fired", self, "_on_fired")
 			print("connecting to player's fire signal... ")
 			wait_for_player = false
 			print("Got player")
+	elif p:
+		enemy_atk_delay -= 1
+		if get_player_distance() < 7 and enemy_atk_delay<=0:
+			p.do_damage(7,self)
+			enemy_atk_delay = enemy_atk_delay_set
+		
 		
 
 func state_idle(_delta):

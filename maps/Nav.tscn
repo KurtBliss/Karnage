@@ -1,13 +1,17 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/death_spawn.tscn" type="PackedScene" id=1]
-[ext_resource path="res://manager/manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/manager/manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://maps/blcok.gd" type="Script" id=3]
 [ext_resource path="res://entities/NavMesh.tscn" type="PackedScene" id=4]
-[ext_resource path="res://new_navigationmesh.tres" type="NavigationMesh" id=5]
-[ext_resource path="res://Blocks.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Planes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/new_navigationmesh.tres" type="NavigationMesh" id=5]
+[ext_resource path="res://entities/Blocks.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/Planes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/enemy.tscn" type="PackedScene" id=8]
+
+
+
+
 
 [sub_resource type="CubeMesh" id=1]
 

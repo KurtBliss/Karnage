@@ -13,7 +13,7 @@ var camera_x_rotation = 0
 var roll_basis 
 var head_basis
 var is_dashing = false
-var bulletLoad = preload("res://projectiles/bullet.tscn")
+var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
 var score = 0 setget score_set
 # Controls
 var mouse = Mouse.new(3, self, "move_camera")

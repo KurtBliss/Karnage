@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://meshes/blocks.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://entities/meshes/blocks.tres" type="MeshLibrary" id=1]
 
 [node name="Blocks" type="GridMap"]
 mesh_library = ExtResource( 1 )

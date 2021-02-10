@@ -4,11 +4,11 @@ extends Area
 var targets = []
 
 func _on_Death_body_entered(body):
-	print_stack()
-	print(body)
+#	print_stack()
+#	print(body)
 	if body.is_in_group("Player"):
-		print_stack()
-		print(body)
+#		print_stack()
+#		print(body)
 		targets.append(body)
 
 func _on_Death_body_exited(body):

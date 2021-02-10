@@ -59,9 +59,9 @@ alignment = 1
 
 [node name="New" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_left = 0.0
-margin_top = 82.0
+margin_top = 122.0
 margin_right = 784.0
-margin_bottom = 142.0
+margin_bottom = 182.0
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 visible = false
@@ -71,6 +71,7 @@ margin_right = 784.0
 margin_bottom = 182.0
 
 [node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+visible = false
 margin_left = 0.0
 margin_top = 162.0
 margin_right = 784.0
