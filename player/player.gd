@@ -95,30 +95,6 @@ func _physics_process(delta):
 	# Collision
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
-	"""
-		Handle combat
-	"""
-	if Input.is_action_just_pressed("fire"):
-		$Head/Camera/Pistol/Anime.seek(0)
-		$Head/Camera/Pistol/Anime.play("Fire", -1, 2)
-		$Head/Camera/Pistol/Flash.visible = true
-		emit_signal("fired")
-		if raycast.is_colliding():
-			var collider = raycast.get_collider()
-			if collider.is_in_group("Enemy"):
-				collider.do_damage(15, self)
-			elif collider.is_in_group("DeathSpawn"):
-				collider.hit()
-
-
-	if Input.is_action_just_pressed("hit"):
-		$Head/Camera/Pistol/Anime.seek(0)
-		$Head/Camera/Pistol/Anime.play("Hit", -1, 2)
-		if raycast_hit.is_colliding():
-			var collider = raycast_hit.get_collider()
-			if collider.is_in_group("Enemy"):
-				collider.do_damage(5, self)
-
 
 func move_camera(look, delta):
 	look *= delta * 15

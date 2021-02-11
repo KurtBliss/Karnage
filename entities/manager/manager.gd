@@ -20,7 +20,9 @@ func change_mode(set_mode):
 			$PostGame.visible = false
 			if Master.Player == null:
 				var ld = load("res://player/player.tscn")
-				var inst = ld.instance()
+				var inst : KinematicBody = ld.instance()
+				
+				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
 				get_parent().add_child(inst)
 		MODE.PRE_GAME:
 			current_mode = MODE.PRE_GAME	

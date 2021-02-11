@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/weapons/Models/pistol.obj" type="ArrayMesh" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://tiledscreen/fade.gd" type="Script" id=8]
 [ext_resource path="res://player/player_timer.gd" type="Script" id=9]
 [ext_resource path="res://assets/models/Char.tscn" type="PackedScene" id=10]
+[ext_resource path="res://player/weapons.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -139,8 +140,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
 current = true
 far = 400.0
 
-[node name="Pistol" type="MeshInstance" parent="Head/Camera"]
-transform = Transform( -15, -2.02477e-07, 1.31064e-06, -1.59577e-07, 14.992, 0.48974, -1.31655e-06, 0.48974, -14.992, 0.605, -0.527, -0.949 )
+[node name="Weapons" type="Spatial" parent="Head/Camera"]
+transform = Transform( -15, -2.02477e-07, 1.31064e-06, -1.59577e-07, 14.992, 0.48974, -1.31655e-06, 0.48974, -14.992, 0, 0, 0 )
+script = ExtResource( 11 )
+
+[node name="RayLong" type="RayCast" parent="Head/Camera/Weapons"]
+transform = Transform( -0.0666667, -7.09234e-10, -5.85134e-09, -8.99895e-10, 0.0666311, 0.00217662, 5.82506e-09, 0.00217662, -0.0666311, 0.0403333, 0.0371802, -0.0620859 )
+enabled = true
+cast_to = Vector3( 0, 0, -1000 )
+
+[node name="RayShort" type="RayCast" parent="Head/Camera/Weapons"]
+transform = Transform( -0.0666667, -7.09234e-10, -5.85134e-09, -8.99895e-10, 0.0666311, 0.00217662, 5.82506e-09, 0.00217662, -0.0666311, 0.0403333, 0.0371802, -0.0620859 )
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+
+[node name="Pistol" type="MeshInstance" parent="Head/Camera/Weapons"]
+transform = Transform( -1, -1.34985e-08, 8.73762e-08, -1.06385e-08, 0.999467, 0.0326493, -8.77703e-08, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -157,24 +172,16 @@ material/11 = null
 material/12 = null
 material/13 = null
 
-[node name="Anime" type="AnimationPlayer" parent="Head/Camera/Pistol"]
+[node name="Anime" type="AnimationPlayer" parent="Head/Camera/Weapons/Pistol"]
 anims/Fire = SubResource( 1 )
 anims/Hit = SubResource( 2 )
 
-[node name="Flash" type="OmniLight" parent="Head/Camera/Pistol"]
+[node name="Flash" type="OmniLight" parent="Head/Camera/Weapons/Pistol"]
 transform = Transform( 0.0666667, 1.38778e-15, 1.95399e-14, -1.47105e-15, 0.0666667, 1.86265e-09, -1.86517e-14, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
 visible = false
 light_color = Color( 0.882353, 0.886275, 0.298039, 1 )
 light_energy = 16.0
 omni_range = 2.2
-
-[node name="RayLong" type="RayCast" parent="Head/Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -1000 )
-
-[node name="RayShort" type="RayCast" parent="Head/Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -5 )
 
 [node name="Char" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )

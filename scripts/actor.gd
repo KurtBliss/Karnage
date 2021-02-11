@@ -66,7 +66,7 @@ func do_damage(dmg : float, from : Actor):
 	print("doing damage ", dmg)
 	if has_method(method):
 		call(method, dmg)
-	elif has_meta("_on_attacked"):
+	elif has_method("_on_attacked"):
 		call("_on_attacked", dmg)
 
 func state_reset(state, physics_state):
