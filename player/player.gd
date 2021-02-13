@@ -27,6 +27,8 @@ onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
 onready var head = $Head
 onready var camera = $Head/Camera
+#export(NodePath) 
+onready var Weapons = $"Head/Camera/Weapons"
 
 ###################-BUILT IN-####################
 

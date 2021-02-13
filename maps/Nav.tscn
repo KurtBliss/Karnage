@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/death_spawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/manager/manager.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://entities/Blocks.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/Planes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/PistolPickup.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -24,6 +25,8 @@ light_color = Color( 0.529412, 0.843137, 0.627451, 1 )
 [node name="MeshInstance" type="MeshInstance" parent="PlayerSpawn"]
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="PistolPickup" parent="." instance=ExtResource( 9 )]
 
 [node name="Blocks" parent="." instance=ExtResource( 6 )]
 data = {
@@ -63,5 +66,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9908, 0, 1.30802 )
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.672, 3.82494, 0 )
+[connection signal="body_entered" from="PistolPickup" to="PistolPickup" method="_on_PistolPickup_body_entered"]
 
 [editable path="NavMesh"]

@@ -61,12 +61,18 @@ func get_physics_state():
 
 func do_damage(dmg : float, from : Actor):
 #	health -= dmg
+
+	print(name, " actor recived dmg: ", dmg)
+
 	set_health(get_health() - dmg)
-	var method = "_on_attacked_from_" + from.name
-	print("doing damage ", dmg)
-	if has_method(method):
-		call(method, dmg)
-	elif has_method("_on_attacked"):
+	
+	if from:
+		var method = "_on_attacked_from_" + from.name
+		print("doing damage ", dmg)
+		if has_method(method):
+			call(method, dmg)
+		
+	if has_method("_on_attacked"):
 		call("_on_attacked", dmg)
 
 func state_reset(state, physics_state):
