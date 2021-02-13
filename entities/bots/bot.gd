@@ -175,9 +175,4 @@ func wrap(value, _min, _max):
 	else: 
 		return _mod + _min
 
-func lengthdir_x(dist, angle):
-	return dist * cos( angle )
-
-func lengthdir_y(dist, angle):
-	return dist * -sin( angle )
 

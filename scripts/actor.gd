@@ -81,3 +81,10 @@ func state_reset(state, physics_state):
 
 func state_return():
 	state_reset(previous_state, previous_physics_state)
+
+
+func lengthdir_x(dist, angle):
+	return dist * cos( angle )
+
+func lengthdir_y(dist, angle):
+	return dist * -sin( angle )

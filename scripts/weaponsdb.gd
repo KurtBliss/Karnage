@@ -15,7 +15,7 @@ func has_weapon_db(_weapon_name): #works?
 			return true
 	return false
 
-func new_weapon(_name, _pickup : = null, _clip_size = null, _clip_cur = null, _has = true):
+func new_weapon(_name, _pickup = null, _clip_size = null, _clip_cur = null, _has = true):
 	return {
 		weapon = _name,
 		pickup = _pickup,

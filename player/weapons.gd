@@ -15,10 +15,19 @@ func _process(_delta):
 	if weapons[current]["weapon"] == "Pistol" and weapons[current]["has"]:
 		handle_pistol()
 	if Input.is_action_just_pressed("test"):
+		#spawn
+		var cur = get_current_weapon()
+		print(cur)
+		var ld = load(cur["pickup"])
+		var inst: PickupBody = ld.instance()
+		inst.transform.origin = Master.Player.transform.origin + Vector3(4, -1, 0) * Master.Player.direction
+		inst.velocity = Vector3(5, 0, 0)
+		Master.GameWorld.add_child(inst)
+		
+		#remove
 		weapons.remove(current)
 		current = -1
 		hide_all()
-		#spawn weapons pickup
 		
 
 func add_weapon(_weapon_name):
@@ -28,6 +37,11 @@ func has_weapon(_weapon_name):
 	for weapon in weapons:
 		if weapon["name"] == _weapon_name:
 			return true
+	return false
+
+func get_current_weapon():
+	if weapons[current]:
+		return weapons[current]
 	return false
 
 func handle_pistol():

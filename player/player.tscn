@@ -79,7 +79,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0.00766826, -0.00122142, 0.0373903 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
@@ -118,8 +118,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "roll"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -133,8 +132,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( -180, 0, 0 ), Vector3( -360, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "rollside"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -148,8 +146,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -180 ), Vector3( 0, 0, -360 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "walk"
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:translation")
@@ -164,7 +161,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
 }
 
-[sub_resource type="CapsuleMesh" id=6]
+[sub_resource type="CapsuleMesh" id=7]
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1, 0 )
@@ -205,7 +202,7 @@ material/13 = null
 [node name="Anime" type="AnimationPlayer" parent="Head/Camera/Weapons/Pistol"]
 anims/Fire = SubResource( 1 )
 anims/Hit = SubResource( 2 )
-anims/Idle = SubResource( 7 )
+anims/Idle = SubResource( 3 )
 
 [node name="Flash" type="OmniLight" parent="Head/Camera/Weapons/Pistol"]
 transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
@@ -227,9 +224,9 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0
 visible = false
 
 [node name="Anime" type="AnimationPlayer" parent="."]
-anims/roll = SubResource( 3 )
-anims/rollside = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/roll = SubResource( 4 )
+anims/rollside = SubResource( 5 )
+anims/walk = SubResource( 6 )
 script = ExtResource( 4 )
 
 [node name="Hud" type="Control" parent="."]
@@ -316,7 +313,7 @@ transform = Transform( 1, 0, 0, 0, 1, 6.51683e-07, 0, -6.51683e-07, 1, 0, 0, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 visible = false
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" parent="." instance=ExtResource( 6 )]

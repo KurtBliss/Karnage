@@ -45,7 +45,7 @@ func state_idle(_delta):
 		return
 	if get_player_spotted():
 		print("delay state change!")
-		delay_state_change(4.0, "", "state_chase")
+		delay_state_change(2.0, "", "state_chase")
 #		yield(get_tree().create_timer(1.0), "timeout")
 #		set_physics_state("state_chase")
 
@@ -64,8 +64,10 @@ func state_chase(_delta):
 		set_physics_state("state_chase_path")
 
 func switch_zig_zag():
-	offdirzig  = wrap(get_player_direction()-60, 0, 359)
-	offdirzag = wrap(get_player_direction()+60, 0, 359)
+	if !get_player():
+		return
+	offdirzig  = wrap(get_player_direction()-100, 0, 359)
+	offdirzag = wrap(get_player_direction()+100, 0, 359)
 	timer_zig_zag()
 
 func state_chase_zig_zag(_delta):
@@ -76,7 +78,7 @@ func state_chase_zig_zag(_delta):
 	if get_player_distance() < zigzag_dist_stop:
 		set_physics_state("state_chase")
 		return
-	var offset_len = min(9, get_player_distance(zigzag_offset))
+	var offset_len = min(17, get_player_distance(zigzag_offset))
 	if zigzag == ZAG:
 		zigzag_offset = Vector3(lengthdir_x(offset_len, offdirzig), 0, lengthdir_y(offset_len, offdirzig))
 	elif zigzag == ZIG:

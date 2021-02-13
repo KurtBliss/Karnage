@@ -3,6 +3,7 @@ extends Node
 
 var Player # Init on player _ready()
 var Manager # Init on manager _ready()
+var GameWorld # Init on Nav _ready()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("game_end"):
@@ -12,3 +13,4 @@ func _process(_delta):
 
 func debug_enemy():
 	return Input.is_action_just_pressed("debugEnemy")
+
