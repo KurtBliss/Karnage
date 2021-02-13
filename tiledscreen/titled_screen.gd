@@ -18,5 +18,5 @@ func _on_Button_pressed(path):
 	$FadeIn.fade_in()
 
 func _on_FadeIn_fade_finished():
-	get_tree().change_scene(scene_path_to_load)
+	var _status = get_tree().change_scene(scene_path_to_load)
 	pass # Replace with function body.
