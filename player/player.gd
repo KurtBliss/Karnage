@@ -118,11 +118,15 @@ func move_camera(look, delta):
 ###################-VIRTUAL FUNCS-####################
 
 func _on_Player_died():
+	
+	$Head/Camera/Weapons.throw_weapon()
+	
 	if Master.Manager != null:
-		queue_free()
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Master.Manager.go_to_post(health, score)
+		queue_free()
+		
+		Master.Manager.respawn(health, score, get_translation())
 
 func _on_Timer_timeout():
 	if Master.Manager != null:

@@ -18,13 +18,27 @@ script = ExtResource( 10 )
 
 [node name="Manager" parent="." instance=ExtResource( 2 )]
 
-[node name="PlayerSpawn" type="Position3D" parent="."]
+[node name="PlayerSpawn" type="Position3D" parent="." groups=[
+"spawn_point",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2934, 8.69459, 4.55831 )
 
 [node name="OmniLight" type="OmniLight" parent="PlayerSpawn"]
 light_color = Color( 0.529412, 0.843137, 0.627451, 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="PlayerSpawn"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="PlayerSpawn2" type="Position3D" parent="." groups=[
+"spawn_point",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.0397, 8.69459, -12.0189 )
+
+[node name="OmniLight" type="OmniLight" parent="PlayerSpawn2"]
+light_color = Color( 0.529412, 0.843137, 0.627451, 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="PlayerSpawn2"]
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -71,7 +85,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0281, -6.11222, 0 )
 [node name="Marksmen" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9908, 0, 1.30802 )
 
-[node name="Enemy" parent="." instance=ExtResource( 8 )]
+[node name="Enemy" parent="." groups=[
+"enemy",
+] instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.672, 3.82494, 0 )
 
 [editable path="NavMesh"]

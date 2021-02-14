@@ -21,8 +21,10 @@ func _on_PistolPickup_body_entered(body):
 	if body == Master.Player:
 		curbody = body
 		set_process(true)
+	elif body.is_in_group("enemy"):
+		if get_parent().velocity.length() > 0:
+			body.do_damage(3, null)
 
 func _on_Area_body_exited(body):
 	if body == curbody:
 		set_process(false)
-	pass # Replace with function body.

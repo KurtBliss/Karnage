@@ -15,13 +15,12 @@ func _process(_delta):
 		return
 	if weapons[current]["weapon"] == "Pistol" and weapons[current]["has"]:
 		handle_pistol()
-	if Input.is_action_just_pressed("test"):
-		throw_weapon()
-		
 
 func throw_weapon():
 	#spawn
 	var cur = get_current_weapon()
+	if cur == null:
+		return
 	print(cur)
 	var ld = load(cur["pickup"])
 	var inst: PickupBody = ld.instance()
@@ -39,22 +38,28 @@ func add_weapon(_weapon_name):
 	weapons.append(WeaponsDB.get_weapon_db("Pistol"))
 
 func has_weapon(_weapon_name):
+	if weapons.size() < 1:
+		return false
 	for weapon in weapons:
 		if weapon["name"] == _weapon_name:
 			return true
 	return false
 
+
+
 func get_current_weapon():
+	if current==-1:
+		return null
 	if weapons[current]:
 		return weapons[current]
-	return false
+	return null
 
 func handle_pistol():
 	if Input.is_action_just_pressed("fire"):
 		$Pistol/Anime.seek(0)
 		$Pistol/Anime.play("Fire", -1, 2)
 		$Pistol/Flash.visible = true
-		get_parent().emit_signal("fired")
+		Master.Player.emit_signal("fired")
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):
