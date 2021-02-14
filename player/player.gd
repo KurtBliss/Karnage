@@ -22,6 +22,7 @@ var lstick_controls = ["move_left", "move_right", "move_forward", "move_backward
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var lstick = Stick.new(lstick_controls, 1, self, "move_player")
 var can_double = true
+var dir
 # Nodes
 onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
@@ -64,9 +65,17 @@ func _physics_process(delta):
 	var direction = Vector3()
 	direction += head_basis.z * move_z
 	direction += head_basis.x * move_x
+	
 	if Input.is_action_just_pressed("roll"):
 		if $Anime.roll_animation($Head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
+	
+	
+	dir = Vector3()
+	dir += head_basis.z * -10
+	dir += head_basis.x
+	
+	dir.normalized()
 	
 	# Update walking speed
 #	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0

@@ -4,7 +4,7 @@ extends Actor
 
 export var detect_range = 50 #rename to detect_dist
 export var detect_fov = 90
-export var direction_offset = 90
+
 export var y_offset = 1.5
 export var zig_dist = 10
 
@@ -96,9 +96,6 @@ func get_player_direction():
 	if get_player():
 		return get_direction_to(get_player())
 
-func get_direction():
-	return wrap(rotation_degrees.y + direction_offset, 0, 359)
-
 func get_direction_to(body: Actor):
 	var vec_self = global_transform.origin
 	var vec_other = body.global_transform.origin
@@ -161,18 +158,4 @@ func check_projection(start:Vector3, projected:Vector3, point:Vector3):
 		if raycast([projected, point]):
 			return true
 	return false
-
-func angle_difference(ang0, ang1):
-	return ((((ang0 - ang1) % 360) + 540) % 360) - 180;
-
-func wrap(value, _min, _max):
-	_min = int(floor(_min))
-	_max = int(floor(_max))
-	value = int(floor(value))
-	var _mod = ( value - _min ) % ( _max - _min )
-	if ( _mod < 0 ): 
-		return _mod + _max 
-	else: 
-		return _mod + _min
-
 

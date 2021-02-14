@@ -20,6 +20,7 @@ var previous_physics_state = ""
 var previous_state = ""
 var previous_health = 0
 var injured = 0 # Not in use?
+export var direction_offset = 90
 
 func _process(delta):
 	if state != "" and has_method(state):
@@ -88,3 +89,24 @@ func lengthdir_x(dist, angle):
 
 func lengthdir_y(dist, angle):
 	return dist * -sin( angle )
+
+func get_direction():
+	return wrap(rotation_degrees.y + direction_offset, 0, 359)
+
+func get_facing_vector():
+	return Vector3(lengthdir_x(1, get_direction()), 0, lengthdir_y(1, get_direction()) ).normalized()
+
+
+func angle_difference(ang0, ang1):
+	return ((((ang0 - ang1) % 360) + 540) % 360) - 180;
+
+func wrap(value, _min, _max):
+	_min = int(floor(_min))
+	_max = int(floor(_max))
+	value = int(floor(value))
+	var _mod = ( value - _min ) % ( _max - _min )
+	if ( _mod < 0 ): 
+		return _mod + _max 
+	else: 
+		return _mod + _min
+

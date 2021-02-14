@@ -3,6 +3,7 @@ extends Spatial
 
 var current = -1
 var weapons = []
+var throw_timer = 60*2
 onready var raycast = $"../RayLong"
 onready var raycast_hit = $"../RayShort"
 
@@ -15,20 +16,24 @@ func _process(_delta):
 	if weapons[current]["weapon"] == "Pistol" and weapons[current]["has"]:
 		handle_pistol()
 	if Input.is_action_just_pressed("test"):
-		#spawn
-		var cur = get_current_weapon()
-		print(cur)
-		var ld = load(cur["pickup"])
-		var inst: PickupBody = ld.instance()
-		inst.transform.origin = Master.Player.transform.origin + Vector3(4, -1, 0) * Master.Player.direction
-		inst.velocity = Vector3(5, 0, 0)
-		Master.GameWorld.add_child(inst)
+		throw_weapon()
 		
-		#remove
-		weapons.remove(current)
-		current = -1
-		hide_all()
-		
+
+func throw_weapon():
+	#spawn
+	var cur = get_current_weapon()
+	print(cur)
+	var ld = load(cur["pickup"])
+	var inst: PickupBody = ld.instance()
+	inst.transform.origin = Master.Player.transform.origin 
+	
+	inst.velocity =  (Master.Player.dir) * 10
+	Master.GameWorld.add_child(inst)
+	
+	#remove
+	weapons.remove(current)
+	current = -1
+	hide_all()
 
 func add_weapon(_weapon_name):
 	weapons.append(WeaponsDB.get_weapon_db("Pistol"))
@@ -49,7 +54,7 @@ func handle_pistol():
 		$Pistol/Anime.seek(0)
 		$Pistol/Anime.play("Fire", -1, 2)
 		$Pistol/Flash.visible = true
-		emit_signal("fired")
+		get_parent().emit_signal("fired")
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):
@@ -64,6 +69,16 @@ func handle_pistol():
 			var collider = raycast_hit.get_collider()
 			if collider.is_in_group("Enemy"):
 				collider.do_damage(5, self)
+	
+	if Input.is_action_pressed("hit"):
+		throw_timer -= 1
+#		print(throw_timer)
+		if throw_timer < 1:
+			throw_weapon()
+	else:
+		throw_timer = 15
+	
+	
 
 func hide_all():
 	$Pistol.visible = false
