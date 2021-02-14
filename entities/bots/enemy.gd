@@ -9,8 +9,10 @@ var offdirzig
 var offdirzag
 var enemy_atk_delay_set = 30
 var enemy_atk_delay = 0
-
 var wait_for_player = false
+
+onready var starting_origin = transform.origin
+
 enum {ZIG, ZAG}
 
 func _ready():
@@ -129,6 +131,11 @@ func on_alterted():
 
 func _on_Enemy_died():
 	get_player().score += 10
+	var ld = load("res://entities/bots/EnemySpawn.tscn")
+	var inst = ld.instance()
+	inst.transform.origin = starting_origin
+	inst.spawn_scene_location = filename
+	Master.GameWorld.add_child(inst)
 	queue_free()
 
 func _on_attacked_from_Player(dmg : float = 5):
