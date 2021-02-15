@@ -9,7 +9,7 @@ var offdirzig
 var offdirzag
 var enemy_atk_delay_set = 30
 var enemy_atk_delay = 0
-var wait_for_player = false
+var wait_for_player = true
 
 onready var starting_origin = transform.origin
 
@@ -18,17 +18,13 @@ enum {ZIG, ZAG}
 func _ready():
 	set_physics_state("state_idle")
 	add_to_group("Enemy")
-	var p = get_player()
-	if p:
-		p.connect("fired", self, "fired")
-	else:
-		wait_for_player = true
 	
 func _process(_delta):
 	var p = get_player()
 	if wait_for_player:
 		if p:
 			p.connect("fired", self, "_on_fired")
+			p.connect("died", self, "_on_player_died")
 			print("connecting to player's fire signal... ")
 			wait_for_player = false
 			print("Got player")
@@ -141,3 +137,5 @@ func _on_Enemy_died():
 func _on_attacked_from_Player(dmg : float = 5):
 	on_alterted()
 	
+func _on_player_died():
+	wait_for_player = true
