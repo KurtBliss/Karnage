@@ -8,12 +8,12 @@ func _process(_delta):
 	if par.get_player():
 		append(["ps: ", par.physics_state])
 		append(["Dist: ", floor(par.get_player_distance())])
-		append(["Start: ", par.zigzag_dist_start])
-		append(["Stop: ", par.zigzag_dist_stop])
-		append(["zigzag: ", par.zigzag])
+#		append(["Start: ", par.zigzag_dist_start])
+#		append(["Stop: ", par.zigzag_dist_stop])
+#		append(["zigzag: ", par.zigzag])
 		append(["eps: ", par.get_position()])
 		append(["pps: ", par.get_player_position()])
-		append(["off: ", par.zigzag_offset])
+#		append(["off: ", par.zigzag_offset])
 		
 		
 		

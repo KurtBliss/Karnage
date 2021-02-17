@@ -166,8 +166,9 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 1 )
+speed = 13
 gravity = 1.2
-jump_power = 41
+jump_power = 36
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )

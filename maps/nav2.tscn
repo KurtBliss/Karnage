@@ -6,7 +6,8 @@
 [ext_resource path="res://entities/new_navigationmesh.tres" type="NavigationMesh" id=5]
 [ext_resource path="res://entities/Blocks.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/Planes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://entities/enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/bots/enemy.tscn" type="PackedScene" id=8]
+
 
 
 

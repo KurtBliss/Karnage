@@ -16,6 +16,8 @@ var path_hit_point = false
 onready var nav = get_parent() if get_parent() != null else null
 var bot_cast
 
+var delay_in_progress = false
+
 func _ready():
 	speed = 7
 
@@ -134,6 +136,9 @@ func do_chase_player(spd = speed, offset: Vector3 = Vector3.ZERO):
 			do_walk(spd)
 
 func delay_state_change(delay:float, state = get_state(), phys_state = get_physics_state(), blank_state = true, callback = null):
+	if delay_in_progress:
+		return
+	delay_in_progress = true
 	if blank_state:
 		set_state("")
 		set_physics_state("")
@@ -142,6 +147,7 @@ func delay_state_change(delay:float, state = get_state(), phys_state = get_physi
 	set_physics_state(phys_state)
 	if callback and has_meta(callback):
 		call(callback)
+	delay_in_progress = false
 
 func process_path():
 	if path_ind < path.size():
