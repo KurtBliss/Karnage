@@ -3,7 +3,7 @@ extends RigidBody
 var shoot = false
 
 const DAMAGE = 50
-const SPEED = 10
+const SPEED = 1
 
 func _ready():
 	set_as_toplevel(true)

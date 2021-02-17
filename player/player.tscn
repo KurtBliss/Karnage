@@ -324,7 +324,7 @@ visible = false
 [node name="Injured" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 script = ExtResource( 9 )
@@ -338,5 +338,5 @@ cast_to = Vector3( 0, -0.4, 0 )
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
 [connection signal="time_left" from="Timer" to="Hud" method="_on_Timer_time_left"]
-[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

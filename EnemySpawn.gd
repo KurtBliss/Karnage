@@ -8,7 +8,7 @@ func _on_Spawn_timeout():
 	if Master.Player:
 		var dist = (Master.Player.transform.origin - transform.origin).length()
 		print("dist to enemy spawn ", dist)
-		if dist < 70:
+		if dist < 19:
 			print("Player to close to spawn")
 			$Spawn.start()
 			return
