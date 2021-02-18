@@ -1,6 +1,8 @@
 extends Control
 # hud.gd
 
+
+
 func _on_Player_health_changed(health):
 	$Health.set_text(str(floor(health)))
 

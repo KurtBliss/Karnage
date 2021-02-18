@@ -39,6 +39,8 @@ func _ready():
 	add_child(mouse)
 	add_child(rstick)
 	add_child(lstick)
+	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
+	Master.GameTimer.connect("time_left", $Hud, "_on_Timer_time_left")
 #	$Anime.play("walk", -1, 2)
 
 

@@ -2,6 +2,9 @@ extends Timer
 
 signal time_left(time_left)
 
+func _ready():
+	Master.GameTimer = self
+
 func _process(delta):
 	var secs_left = floor(get_time_left())
 	var mins_left = 0

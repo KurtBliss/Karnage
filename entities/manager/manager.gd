@@ -28,10 +28,21 @@ func change_mode(set_mode):
 			current_mode = MODE.PRE_GAME	
 			$PreGame.visible = true
 			$PostGame.visible = false
+			$PreGame/Start.has_focus()
 		MODE.POST_GAME:
 			current_mode = MODE.POST_GAME
 			$PreGame.visible = false
 			$PostGame.visible = true
+			$PostGame/Restart.has_focus()
+
+func _process(delta):
+	match current_mode:
+		MODE.POST_GAME:
+			if Input.is_action_just_pressed("ui_accept"):
+				_on_Restart_pressed()
+		MODE.PRE_GAME:
+			if Input.is_action_just_pressed("ui_accept"):
+				_on_Start_pressed()
 
 func _on_Start_pressed():
 	if current_mode == MODE.PRE_GAME:

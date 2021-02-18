@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/weapons/Models/pistol.obj" type="ArrayMesh" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://player/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://tiledscreen/fade.gd" type="Script" id=8]
-[ext_resource path="res://player/player_timer.gd" type="Script" id=9]
 [ext_resource path="res://assets/models/Char.tscn" type="PackedScene" id=10]
 [ext_resource path="res://player/weapons.gd" type="Script" id=11]
 
@@ -323,12 +322,6 @@ visible = false
 
 [node name="Injured" type="Timer" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
-one_shot = true
-autostart = true
-script = ExtResource( 9 )
-
 [node name="JumpCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, -0.4, 0 )
@@ -337,6 +330,3 @@ cast_to = Vector3( 0, -0.4, 0 )
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
-[connection signal="time_left" from="Timer" to="Hud" method="_on_Timer_time_left"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

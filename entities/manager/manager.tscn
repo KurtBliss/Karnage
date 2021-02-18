@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/manager/manager.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/turret_road/TurretRoad-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://entities/manager/managerFont48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://entities/manager/challenges.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -12,6 +13,7 @@ font_data = ExtResource( 2 )
 
 [node name="Manager" type="Camera"]
 transform = Transform( 0.995704, -0.0695951, 0.0610813, 0.0316946, 0.875943, 0.481373, -0.087005, -0.477369, 0.874385, -5.56125, 36.9145, 86.8942 )
+visible = false
 current = true
 fov = 45.0
 far = 1000.0
@@ -60,37 +62,40 @@ margin_top = -117.0
 margin_right = 178.5
 margin_bottom = 117.0
 alignment = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PreGame/VBoxContainer"]
+[node name="HS1000" type="Label" parent="PreGame/VBoxContainer"]
+margin_top = 68.0
 margin_right = 357.0
-margin_bottom = 30.0
+margin_bottom = 98.0
 custom_fonts/font = SubResource( 1 )
 text = "Score 1000 points"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="PreGame/VBoxContainer"]
-margin_top = 34.0
+[node name="HS750" type="Label" parent="PreGame/VBoxContainer"]
+margin_top = 102.0
 margin_right = 357.0
-margin_bottom = 64.0
+margin_bottom = 132.0
 custom_fonts/font = SubResource( 1 )
 text = "Score 750 points"
 align = 1
 valign = 1
 
-[node name="Label3" type="Label" parent="PreGame/VBoxContainer"]
-margin_top = 68.0
+[node name="HS500" type="Label" parent="PreGame/VBoxContainer"]
+margin_top = 136.0
 margin_right = 357.0
-margin_bottom = 98.0
+margin_bottom = 166.0
 custom_fonts/font = SubResource( 1 )
 text = "Score 500 points"
 align = 1
 valign = 1
 
 [node name="Label4" type="Label" parent="PreGame/VBoxContainer"]
+visible = false
 margin_top = 102.0
 margin_right = 357.0
 margin_bottom = 132.0
@@ -100,27 +105,30 @@ align = 1
 valign = 1
 
 [node name="Label5" type="Label" parent="PreGame/VBoxContainer"]
-margin_top = 136.0
+visible = false
+margin_top = 119.0
 margin_right = 357.0
-margin_bottom = 166.0
+margin_bottom = 149.0
 custom_fonts/font = SubResource( 1 )
 text = "Kill a zombie in mid roll"
 align = 1
 valign = 1
 
 [node name="Label6" type="Label" parent="PreGame/VBoxContainer"]
-margin_top = 170.0
+visible = false
+margin_top = 136.0
 margin_right = 357.0
-margin_bottom = 200.0
+margin_bottom = 166.0
 custom_fonts/font = SubResource( 1 )
 text = "Defeat the boss"
 align = 1
 valign = 1
 
 [node name="Label7" type="Label" parent="PreGame/VBoxContainer"]
-margin_top = 204.0
+visible = false
+margin_top = 153.0
 margin_right = 357.0
-margin_bottom = 234.0
+margin_bottom = 183.0
 custom_fonts/font = SubResource( 1 )
 text = "Defeat the boss with a melee"
 align = 1

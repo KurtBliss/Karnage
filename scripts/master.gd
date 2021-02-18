@@ -4,6 +4,7 @@ extends Node
 var Player # Init on player _ready()
 var Manager # Init on manager _ready()
 var GameWorld # Init on Nav _ready()
+var GameTimer # Init on GameTimer _ready()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("game_end"):
