@@ -155,7 +155,7 @@ func process_path():
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
-			move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
+			var _tmp = move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
 		return true
 	return false
 

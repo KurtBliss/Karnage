@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entities/manager/challenges.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/turret_road/TurretRoad-Medium.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.5
+margin_top = -117.0
+margin_right = 178.5
+margin_bottom = 117.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HS1000" type="Label" parent="."]
+margin_top = 68.0
+margin_right = 357.0
+margin_bottom = 98.0
+custom_fonts/font = SubResource( 1 )
+text = "Score 1000 points"
+align = 1
+valign = 1
+
+[node name="Crossout" type="Line2D" parent="HS1000"]
+visible = false
+position = Vector2( 19.2522, 12.8348 )
+points = PoolVector2Array( 0.363007, 2.02841, 241.408, 1.4023, 309.2, 1.22623 )
+default_color = Color( 0.0470588, 0.0431373, 0.0431373, 1 )
+
+[node name="HS750" type="Label" parent="."]
+margin_top = 102.0
+margin_right = 357.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 1 )
+text = "Score 750 points"
+align = 1
+valign = 1
+
+[node name="Crossout" type="Line2D" parent="HS750"]
+visible = false
+position = Vector2( 19.2522, 13.3282 )
+points = PoolVector2Array( 0.363007, 2.02841, 241.408, 1.4023, 309.2, 1.22623 )
+default_color = Color( 0.0470588, 0.0431373, 0.0431373, 1 )
+
+[node name="HS500" type="Label" parent="."]
+margin_top = 136.0
+margin_right = 357.0
+margin_bottom = 166.0
+custom_fonts/font = SubResource( 1 )
+text = "Score 500 points"
+align = 1
+valign = 1
+
+[node name="Crossout" type="Line2D" parent="HS500"]
+visible = false
+position = Vector2( 19.6533, 13.8217 )
+points = PoolVector2Array( 0.363007, 2.02841, 241.408, 1.4023, 309.2, 1.22623 )
+default_color = Color( 0.0470588, 0.0431373, 0.0431373, 1 )
+
+[node name="KillThrow" type="Label" parent="."]
+visible = false
+margin_top = 153.0
+margin_right = 363.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 1 )
+text = "Kill an enemy by throwing gun"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+margin_top = 153.0
+margin_right = 357.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 1 )
+text = "Find the secret weapon"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+margin_top = 153.0
+margin_right = 357.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 1 )
+text = "Kill a zombie in mid roll"
+align = 1
+valign = 1
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+margin_top = 170.0
+margin_right = 357.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+text = "Defeat the boss"
+align = 1
+valign = 1
+
+[node name="Label7" type="Label" parent="."]
+visible = false
+margin_top = 187.0
+margin_right = 357.0
+margin_bottom = 217.0
+custom_fonts/font = SubResource( 1 )
+text = "Defeat the boss with a melee"
+align = 1
+valign = 1

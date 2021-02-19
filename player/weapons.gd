@@ -63,8 +63,8 @@ func handle_pistol():
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):
-				print("ENEMY HIT 66")
 				collider.do_damage(15, self)
+#				Master.Player.score += 100
 			elif collider.is_in_group("DeathSpawn"):
 				collider.hit()
 

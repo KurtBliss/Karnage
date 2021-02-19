@@ -76,9 +76,9 @@ func do_damage(dmg : float, from : Actor):
 	if has_method("_on_attacked"):
 		call("_on_attacked", dmg)
 
-func state_reset(state, physics_state):
-	set_state(state)
-	set_physics_state(physics_state)
+func state_reset(set_state, set_physics_state):
+	set_state(set_state)
+	set_physics_state(set_physics_state)
 
 func state_return():
 	state_reset(previous_state, previous_physics_state)

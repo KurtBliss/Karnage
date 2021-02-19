@@ -6,7 +6,6 @@ var scene_path_to_load
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	$Menu/CenterRow/Buttons/New.grab_focus()
 	for button in $Menu/CenterRow/Buttons.get_children():
 		button.connect("pressed", self, "_on_Button_pressed", [button.scene])
@@ -19,4 +18,4 @@ func _on_Button_pressed(path):
 
 func _on_FadeIn_fade_finished():
 	var _status = get_tree().change_scene(scene_path_to_load)
-	pass # Replace with function body.
+	

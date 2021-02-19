@@ -86,19 +86,16 @@ func _timeout_zig_zag():
 		zigzag = ZAG
 		switch_zig_zag()
 		timer_zig_zag()
-		print("zag")
 	else:
 		zigzag = ZIG
 		switch_zig_zag()
 		timer_zig_zag()
-		print("zig")
 
 func _on_fired():
 	if get_physics_state() == "state_idle":
 		set_physics_state("state_chase")
 
 func on_alterted():
-	print("on_alterted")
 	if get_physics_state() == "state_idle":
 		set_physics_state("state_alert")
 
@@ -111,7 +108,7 @@ func _on_Enemy_died():
 	Master.GameWorld.add_child(inst)
 	queue_free()
 
-func _on_attacked_from_Player(dmg : float = 5):
+func _on_attacked_from_Player(_dmg : float = 5):
 	on_alterted()
 	
 func _on_player_died():

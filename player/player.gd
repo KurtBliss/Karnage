@@ -13,7 +13,7 @@ var camera_x_rotation = 0
 var roll_basis 
 var head_basis
 var is_dashing = false
-var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
+# var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
 var score = 0 setget score_set
 # Controls
 var mouse = Mouse.new(3, self, "move_camera")
@@ -43,6 +43,12 @@ func _ready():
 	Master.GameTimer.connect("time_left", $Hud, "_on_Timer_time_left")
 #	$Anime.play("walk", -1, 2)
 
+func _process(_delta):
+	if Input.is_action_just_pressed("show_challenges"):
+		var ld = load("res://entities/manager/VBoxContainer.tscn")
+		var inst = ld.instance()
+		inst.destroy_on_release = true
+		add_child(inst)
 
 func _physics_process(delta):
 	"""
@@ -116,6 +122,10 @@ func move_camera(look, delta):
 	if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
 		camera.rotate_x(deg2rad(-x_delta))
 		camera_x_rotation += x_delta
+
+func do_emit_fire():
+	#to get rid of cautoin in log
+	emit_signal("fired")
 
 ###################-VIRTUAL FUNCS-####################
 

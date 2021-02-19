@@ -35,7 +35,7 @@ func change_mode(set_mode):
 			$PostGame.visible = true
 			$PostGame/Restart.has_focus()
 
-func _process(delta):
+func _process(_delta):
 	match current_mode:
 		MODE.POST_GAME:
 			if Input.is_action_just_pressed("ui_accept"):
@@ -43,6 +43,8 @@ func _process(delta):
 		MODE.PRE_GAME:
 			if Input.is_action_just_pressed("ui_accept"):
 				_on_Start_pressed()
+
+	
 
 func _on_Start_pressed():
 	if current_mode == MODE.PRE_GAME:
@@ -80,4 +82,5 @@ func go_to_post(_health, _score):
 
 func _on_Restart_pressed():
 	if current_mode == MODE.POST_GAME:
-		change_mode(MODE.IN_GAME)
+#		change_mode(MODE.IN_GAME)
+		change_mode(MODE.PRE_GAME)

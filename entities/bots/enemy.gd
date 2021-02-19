@@ -15,9 +15,7 @@ func _process(_delta):
 		if p:
 			p.connect("fired", self, "_on_fired")
 			p.connect("died", self, "_on_player_died")
-			print("connecting to player's fire signal... ")
 			wait_for_player = false
-			print("Got player")
 	elif p:
 		enemy_atk_delay -= 1
 		if get_player_distance() < 7 and enemy_atk_delay<=0:
@@ -28,7 +26,6 @@ func _on_fired():
 	set_physics_state("state_chase")
 
 func on_alterted():
-	print("on_alterted")
 	if get_physics_state() == "state_idle":
 		set_physics_state("state_alert")
 
@@ -41,7 +38,7 @@ func _on_Enemy_died():
 	Master.GameWorld.add_child(inst)
 	queue_free()
 
-func _on_attacked_from_Player(dmg : float = 5):
+func _on_attacked_from_Player(_dmg : float = 5):
 	on_alterted()
 	
 func _on_player_died():
