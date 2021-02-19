@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://458380__mozfoo__laser-pistol-3.wav" type="AudioStream" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.1
@@ -36,4 +37,10 @@ collision_layer = 0
 
 [node name="CollisionShapeArea" type="CollisionShape" parent="Area"]
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -33.578
+pitch_scale = 0.7
+autoplay = true
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

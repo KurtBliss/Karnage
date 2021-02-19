@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/manager/GameTimer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/manager/manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/bots/marksmen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/NavMesh.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/new_navigationmesh.tres" type="NavigationMesh" id=5]
+[ext_resource path="res://388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=6]
 [ext_resource path="res://entities/bots/enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/pickups/PistolPickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://maps/nav.gd" type="Script" id=10]
@@ -71,6 +72,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5486, 0, -5.31704 )
 
 [node name="PistolPickup3" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.9861, 0, -5.31704 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 5.596
+autoplay = true
 
 [editable path="NavMesh"]
 
