@@ -60,6 +60,7 @@ func handle_pistol():
 		$Pistol/Anime.play("Fire", -1, 2)
 		$Pistol/Flash.visible = true
 		Master.Player.emit_signal("fired")
+#		$Pistol/GunShot.play()
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):

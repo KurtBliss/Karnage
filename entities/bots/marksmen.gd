@@ -51,3 +51,10 @@ func _on_Marksmen_died():
 	inst.spawn_scene_location = filename
 	Master.GameWorld.add_child(inst)
 	queue_free()
+
+
+func _on_Marksmen_injured():
+	pass # Replace with function body.
+
+func _on_InjuredDelayr_timeout():
+	$Injured.play()

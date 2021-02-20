@@ -7,6 +7,7 @@ const SPEED = 1
 
 func _ready():
 	set_as_toplevel(true)
+	$GunShotSound.set_as_toplevel(true)
 
 func _physics_process(_delta):
 #	if shoot:

@@ -77,6 +77,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("roll"):
 		if $Anime.roll_animation($Head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
+#			$Roll.play()
 	
 	
 	dir = Vector3()
