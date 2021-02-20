@@ -16,14 +16,15 @@ func state_chase(_delta):
 	if not get_player():
 		return
 	if get_player_visibility():
+		if $Fire.is_stopped():
+			$Fire.start()
 		var gpd = get_player_distance()
 		if gpd > 15:
 			do_chase_player()
 		else:
 			do_face_player()
-			if $Fire.is_stopped():
-				$Fire.start()
 	else:
+		$Fire.stop()
 		set_path_to_player()
 		set_physics_state("state_chase_path")
 
@@ -54,7 +55,10 @@ func _on_Marksmen_died():
 
 
 func _on_Marksmen_injured():
-	pass # Replace with function body.
+	print("_on_Marksmen_injured")
+	$InjuredDelay.start()
+
 
 func _on_InjuredDelayr_timeout():
+	print("_on_InjuredDelayr_timeout")
 	$Injured.play()

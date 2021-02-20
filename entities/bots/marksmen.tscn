@@ -88,10 +88,12 @@ wait_time = 0.9
 
 [node name="Injured" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
-unit_db = 33.414
+unit_db = 13.699
+pitch_scale = 3.4
 
 [node name="InjuredDelay" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.05
+one_shot = true
 [connection signal="died" from="." to="." method="_on_Marksmen_died"]
 [connection signal="injured" from="." to="." method="_on_Marksmen_injured"]
 [connection signal="timeout" from="Fire" to="." method="_on_Fire_timeout"]
