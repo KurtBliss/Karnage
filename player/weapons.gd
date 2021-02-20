@@ -58,14 +58,13 @@ func handle_pistol():
 	if Input.is_action_just_pressed("fire"):
 		$Pistol/Anime.seek(0)
 		$Pistol/Anime.play("Fire", -1, 2)
-		$Pistol/Flash.visible = true
+#		$Pistol/Flash.visible = true
 		Master.Player.emit_signal("fired")
 #		$Pistol/GunShot.play()
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider.is_in_group("Enemy"):
 				collider.do_damage(15, self)
-#				Master.Player.score += 100
 			elif collider.is_in_group("DeathSpawn"):
 				collider.hit()
 
@@ -107,3 +106,8 @@ func switch_weapon_by_id(wpn : int = 0):
 			if weapons[wpn]["has"]:
 				$Pistol.visible = true
 				current = wpn
+
+
+func _on_Pistol_visibility_changed():
+	if $Pistol.visible:
+		$Cock.play()

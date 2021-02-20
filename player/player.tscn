@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/weapons/Models/pistol.obj" type="ArrayMesh" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
 [ext_resource path="res://player/Roll.gd" type="Script" id=13]
 [ext_resource path="res://528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=14]
+[ext_resource path="res://467354__nicklas3799__gun-cock.wav" type="AudioStream" id=15]
+[ext_resource path="res://394413__inspectorj__bamboo-swing-a11.wav" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -94,6 +96,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0.00766826, -0.00122142, 0.0373903 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("GunShot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -227,7 +243,7 @@ transform = Transform( -15, -2.02477e-07, 1.31064e-06, -1.59577e-07, 14.992, 0.4
 script = ExtResource( 11 )
 
 [node name="Pistol" type="MeshInstance" parent="Head/Camera/Weapons"]
-transform = Transform( 0.998676, -1.58325e-08, -0.0514472, -0.00167971, 0.999467, -0.0326062, 0.0514198, 0.0326495, 0.998143, 0, 0, -7.45058e-09 )
+transform = Transform( 0.998676, -1.58325e-08, -0.0514472, -0.00167971, 0.999467, -0.0326062, 0.0514198, 0.0326495, 0.998143, 0, 0, 0 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -257,7 +273,10 @@ light_energy = 1.87
 omni_range = 2.2
 
 [node name="GunShot" type="AudioStreamPlayer" parent="Head/Camera/Weapons/Pistol"]
-stream = ExtResource( 9 )
+stream = ExtResource( 16 )
+
+[node name="Cock" type="AudioStreamPlayer" parent="Head/Camera/Weapons"]
+stream = ExtResource( 15 )
 
 [node name="RayLong" type="RayCast" parent="Head/Camera"]
 enabled = true
@@ -384,4 +403,5 @@ script = ExtResource( 13 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="visibility_changed" from="Head/Camera/Weapons/Pistol" to="Head/Camera/Weapons" method="_on_Pistol_visibility_changed"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
