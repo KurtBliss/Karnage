@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/63833__syna-max__medikit.wav-56bba905f92603de2e60ce39e81943b7.sample"
+
+[deps]
+
+source_file="res://player/63833__syna-max__medikit.wav"
+dest_files=[ "res://.import/63833__syna-max__medikit.wav-56bba905f92603de2e60ce39e81943b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,6 +1,9 @@
 extends AnimationPlayer
 
-func roll_animation(rot: Vector3, z_dir, x_dir):	
+func roll_animation(rot: Vector3, z_dir, x_dir):
+	if is_playing():
+		return
+		
 	playback_speed = 1.45
 
 	var side = true if abs(z_dir) < abs(x_dir) else false
