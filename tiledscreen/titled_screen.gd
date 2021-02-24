@@ -1,7 +1,5 @@
 extends Control
 
-#todo: ahh
-
 var scene_path_to_load
 
 # Called when the node enters the scene tree for the first time.

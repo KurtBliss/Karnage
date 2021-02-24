@@ -3,6 +3,8 @@
 [ext_resource path="res://entities/pickups/Health.gd" type="Script" id=1]
 [ext_resource path="res://63833__syna-max__medikit.wav" type="AudioStream" id=2]
 
+
+
 [sub_resource type="SpatialMaterial" id=1]
 uv1_scale = Vector3( 2, 2, 2 )
 uv1_offset = Vector3( 88.846, -0.774, -0.502 )

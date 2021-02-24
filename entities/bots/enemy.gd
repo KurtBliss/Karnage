@@ -1,6 +1,7 @@
 class_name Enemy
 extends Bot
 
+var drain_player_on_proximity = true
 var enemy_atk_delay_set = 30
 var enemy_atk_delay = 0
 var wait_for_player = true
@@ -17,10 +18,18 @@ func _process(_delta):
 			p.connect("died", self, "_on_player_died")
 			wait_for_player = false
 	elif p:
-		enemy_atk_delay -= 1
-		if get_player_distance() < 7 and enemy_atk_delay<=0:
-			p.do_damage(7,self)
-			enemy_atk_delay = enemy_atk_delay_set
+		if drain_player_on_proximity:
+			drain_player_health(p)
+
+func set_drain_on_proximity(bol):
+	drain_player_on_proximity = bol
+
+func drain_player_health(p):
+	enemy_atk_delay -= 1
+	if get_player_distance() < 7 and enemy_atk_delay<=0:
+		p.do_damage(7,self)
+		enemy_atk_delay = enemy_atk_delay_set
+
 
 func _on_fired():
 	set_physics_state("state_chase")

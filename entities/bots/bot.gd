@@ -1,21 +1,15 @@
 class_name Bot
 extends Actor
-# bot.gd
-
 export var detect_range = 50 #rename to detect_dist
 export var detect_fov = 90
-
 export var y_offset = 1.5
 export var zig_dist = 10
-
+onready var nav = get_parent() if get_parent() != null else null
 var zig_len = 0
-
 var path = []
 var path_ind = 0
 var path_hit_point = false
-onready var nav = get_parent() if get_parent() != null else null
 var bot_cast
-
 var delay_in_progress = false
 
 func _ready():
@@ -134,6 +128,8 @@ func do_chase_player(spd = speed, offset: Vector3 = Vector3.ZERO):
 		if get_player_distance() > 3:
 			do_face_player(offset)
 			do_walk(spd)
+
+
 
 func delay_state_change(delay:float, state = get_state(), phys_state = get_physics_state(), blank_state = true, callback = null):
 	if delay_in_progress:
