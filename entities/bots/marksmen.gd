@@ -46,12 +46,7 @@ func _on_Fire_timeout():
 
 func _on_Marksmen_died():
 	get_player().score += 10
-	var ld = load("res://entities/bots/EnemySpawn.tscn")
-	var inst = ld.instance()
-	inst.transform.origin = starting_origin
-	inst.spawn_scene_location = filename
-	Master.GameWorld.add_child(inst)
-	queue_free()
+	create_respawn()
 
 
 func _on_Marksmen_injured():

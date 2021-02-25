@@ -119,4 +119,5 @@ material/0 = SubResource( 5 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09824, 0 )
 shape = SubResource( 11 )
+[connection signal="died" from="." to="." method="_on_MeleeEnemy_died"]
 [connection signal="body_entered" from="RightHand/Stick/Area" to="." method="_on_Area_body_entered"]

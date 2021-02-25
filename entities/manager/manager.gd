@@ -16,6 +16,7 @@ func change_mode(set_mode):
 	match set_mode:
 		MODE.IN_GAME:
 			current_mode = MODE.IN_GAME
+			Master.GameTimer.start()
 			$PreGame.visible = false
 			$PostGame.visible = false
 			if Master.Player == null:

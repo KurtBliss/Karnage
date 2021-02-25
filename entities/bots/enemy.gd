@@ -52,3 +52,11 @@ func _on_attacked_from_Player(_dmg : float = 5):
 	
 func _on_player_died():
 	wait_for_player = true
+	
+func create_respawn():
+	var ld = load("res://entities/bots/EnemySpawn.tscn")
+	var inst = ld.instance()
+	inst.transform.origin = starting_origin
+	inst.spawn_scene_location = filename
+	Master.GameWorld.add_child(inst)
+	queue_free()
