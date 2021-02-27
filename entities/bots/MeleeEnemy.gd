@@ -62,7 +62,7 @@ func _on_Anime_animation_finished(anim_name):
 		$Anime.play("idle")
 
 
-func _on_Area_body_exited(body):
+func _on_Area_body_exited(_body):
 	if swing_damage > 0:
 		print("Player HIT")
 		Master.Player.do_damage(swing_damage, self)

@@ -1,11 +1,8 @@
-[gd_resource type="MeshLibrary" load_steps=15 format=2]
+[gd_resource type="MeshLibrary" load_steps=14 format=2]
 
-[ext_resource path="res://assets/textures/HandPaintedGrassTexture.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/wallpaper.jpg" type="Texture" id=2]
 
-
 [sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 2, 2, 2 )
 
 [sub_resource type="CubeMesh" id=2]

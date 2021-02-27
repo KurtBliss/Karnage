@@ -41,7 +41,7 @@ func has_weapon(_weapon_name):
 	if weapons.size() < 1:
 		return false
 	for weapon in weapons:
-		if weapon["name"] == _weapon_name:
+		if weapon["weapon"] == _weapon_name:
 			return true
 	return false
 
