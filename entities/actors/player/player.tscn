@@ -243,7 +243,7 @@ transform = Transform( -15, -2.02477e-07, 1.31064e-06, -1.59577e-07, 14.992, 0.4
 script = ExtResource( 11 )
 
 [node name="Pistol" type="MeshInstance" parent="Head/Camera/Weapons"]
-transform = Transform( 0.998676, -1.58325e-08, -0.0514472, -0.00167971, 0.999467, -0.0326062, 0.0514198, 0.0326495, 0.998143, 0, 0, 0 )
+transform = Transform( 0.998676, -6.42613e-08, -0.0514471, 0.0128518, 0.968296, 0.249474, 0.049816, -0.249805, 0.967014, 0, 0.00767732, 0.000250787 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -267,9 +267,8 @@ anims/Idle = SubResource( 3 )
 
 [node name="Flash" type="OmniLight" parent="Head/Camera/Weapons/Pistol"]
 transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
-visible = false
 light_color = Color( 0.882353, 0.886275, 0.298039, 1 )
-light_energy = 1.87
+light_energy = 16.0
 omni_range = 2.2
 
 [node name="GunShot" type="AudioStreamPlayer" parent="Head/Camera/Weapons/Pistol"]
@@ -399,5 +398,6 @@ stream = ExtResource( 12 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]
 [connection signal="visibility_changed" from="Head/Camera/Weapons/Pistol" to="Head/Camera/Weapons" method="_on_Pistol_visibility_changed"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]

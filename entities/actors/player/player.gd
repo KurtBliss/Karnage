@@ -15,14 +15,10 @@ var head_basis
 var is_dashing = false
 # var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
 var score = 0 setget score_set
-# Controls
-var mouse = Mouse.new(3, self, "move_camera")
-var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
-var lstick_controls = ["move_left", "move_right", "move_forward", "move_backward"]
-var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
-var lstick = Stick.new(lstick_controls, 1, self, "move_player")
 var can_double = true
 var dir
+var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
+var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 # Nodes
 onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
@@ -35,13 +31,11 @@ onready var Weapons = $"Head/Camera/Weapons"
 
 func _ready():
 	Master.Player = self
-	add_to_group("Player")
-	add_child(mouse)
+	Mouse.set_capture(true)
 	add_child(rstick)
-	add_child(lstick)
+	add_to_group("Player")
 	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
 	Master.GameTimer.connect("time_left", $Hud, "_on_Timer_time_left")
-#	$Anime.play("walk", -1, 2)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("show_challenges"):
@@ -64,6 +58,22 @@ func _physics_process(delta):
 		is_dashing = false
 		head_basis = head.get_global_transform().basis
 #		$Anime.play("walk")
+
+	"""
+		Handle camera input
+	"""
+	
+	var mot = Mouse.get_motion()
+	if mot.x<0 or mot.y<0 or mot.x>0 or mot.y>0:
+		move_camera(mot * 3, delta)
+#	else:
+#		mot = Vector2.ZERO
+#		mot.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left") 
+#		mot.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up") 
+#		mot.normalized()
+#		mot *= 10
+#		move_camera(mot, delta)
+
 	
 	"""
 		Handle motion input
@@ -157,11 +167,9 @@ func enemy_injured():
 func enemy_death():
 	score_set(score + 50)
 
-
 func score_set(value):
 	score = value
 	emit_signal("score_changed", value)
 
-
-func _on_Player_fired():
-	pass # Replace with function body.
+func _on_Player_tree_exited():
+	Mouse.set_capture(false)

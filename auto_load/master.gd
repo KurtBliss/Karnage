@@ -5,21 +5,18 @@ var Player # Init on player _ready()
 var Manager # Init on manager _ready()
 var GameWorld # Init on Nav _ready()
 var GameTimer # Init on GameTimer _ready()
+var mute = false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("game_end"):
-		get_tree().quit()
-		return
+		if Mouse.toggle and Mouse.capture:
+			Mouse.set_toggle(false)
+		else:
+			get_tree().quit()
+	
 	OS.set_window_title("Karnage " + str(Engine.get_frames_per_second()))
 	
 	if Input.is_action_just_pressed("mute"):
-		print("mute")
-#		AudioServer.set_stream_global_volume_scale(0)
-
-#		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), true)
-#		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0)
-
-
-func debug_enemy():
-	return Input.is_action_just_pressed("debugEnemy")
-
+		mute = !mute
+		var bus_index = AudioServer.get_bus_index("Master")
+		AudioServer.set_bus_mute(bus_index, mute)
