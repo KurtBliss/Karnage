@@ -25,7 +25,7 @@ onready var raycast_hit = $Head/Camera/RayShort
 onready var head = $Head
 onready var camera = $Head/Camera
 #export(NodePath) 
-onready var Weapons = $"Head/Camera/Weapons"
+onready var Weapons = $"Head/Camera/Weapon"
 
 ###################-BUILT IN-####################
 
@@ -142,7 +142,7 @@ func do_emit_fire():
 
 func _on_Player_died():
 	
-	$Head/Camera/Weapons.throw_weapon()
+	$Head/Camera/Weapon.throw_weapon()
 	
 	if Master.Manager != null:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

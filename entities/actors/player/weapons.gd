@@ -107,4 +107,4 @@ func switch_weapon_by_id(wpn : int = 0):
 
 func _on_Pistol_visibility_changed():
 	if $Pistol.visible:
-		$Cock.play()
+		$Pistol/Cock.play()

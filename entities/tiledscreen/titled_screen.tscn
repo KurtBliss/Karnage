@@ -9,7 +9,6 @@
 [ext_resource path="res://graphics/fonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://entities/tiledscreen/fade_in.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 7 )
