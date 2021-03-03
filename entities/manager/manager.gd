@@ -20,7 +20,7 @@ func change_mode(set_mode):
 			$PreGame.visible = false
 			$PostGame.visible = false
 			if Master.Player == null:
-				var ld = load("res://player/player.tscn")
+				var ld = load("res://entities/actors/player/player.tscn")
 				var inst : KinematicBody = ld.instance()
 				
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
@@ -53,7 +53,7 @@ func _on_Start_pressed():
 
 func respawn(_health, _score, _pos):
 	
-	var ld = load("res://player/player.tscn")
+	var ld = load("res://entities/actors/player/player.tscn")
 	var player : KinematicBody = ld.instance()
 	player.health = 100
 	player.score = _score

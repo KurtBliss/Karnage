@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/actors/enemies/EnemySpawn.gd" type="Script" id=1]
+
+
+
+[node name="EnemySpawn" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Spawn" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 0.0823529, 0.443137, 0.952941, 1 )
+light_energy = 5.02
+[connection signal="timeout" from="Spawn" to="." method="_on_Spawn_timeout"]

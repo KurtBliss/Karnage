@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/pickups/Health.gd" type="Script" id=1]
-[ext_resource path="res://63833__syna-max__medikit.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/63833__syna-max__medikit.wav" type="AudioStream" id=2]
+
 
 
 

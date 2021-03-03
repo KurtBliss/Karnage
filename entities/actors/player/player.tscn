@@ -1,0 +1,403 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
+[ext_resource path="res://models/weapons/pistol.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://graphics/textures/crosshairs64.png" type="Texture" id=3]
+[ext_resource path="res://entities/actors/player/player_roll_animation.gd" type="Script" id=4]
+[ext_resource path="res://entities/actors/player/hud.gd" type="Script" id=5]
+[ext_resource path="res://entities/actors/player/player_collision.tscn" type="PackedScene" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://entities/tiledscreen/fade.gd" type="Script" id=8]
+[ext_resource path="res://audio/275151__bird-man__gun-shot.wav" type="AudioStream" id=9]
+[ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
+[ext_resource path="res://audio/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
+[ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=14]
+[ext_resource path="res://audio/467354__nicklas3799__gun-cock.wav" type="AudioStream" id=15]
+[ext_resource path="res://audio/394413__inspectorj__bamboo-swing-a11.wav" type="AudioStream" id=16]
+
+[sub_resource type="Animation" id=1]
+length = 0.5
+step = 0.082
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.00767732, 0.000250787 ), Vector3( 0, 0, -7.45058e-09 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -14.4464, -3.04538, 0.760419 ), Vector3( 1.86853, -2.95058, -0.0962914 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flash:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.41 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 16.0, 1.87 ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("GunShot")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.00766826, -0.00122142, 0.0373903 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("GunShot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -7.45058e-09 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.86853, -2.95058, -0.0962914 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -180, 0, 0 ), Vector3( -360, 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Roll")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 1.22,
+"start_offset": 0.4,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -180 ), Vector3( 0, 0, -360 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Roll")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 1.22,
+"start_offset": 0.4,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
+}
+
+[sub_resource type="CapsuleMesh" id=7]
+
+[node name="Player" type="KinematicBody" groups=[
+"player",
+]]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1, 0 )
+script = ExtResource( 1 )
+speed = 13
+gravity = 1.2
+jump_power = 36
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+current = true
+far = 400.0
+
+[node name="Weapons" type="Position3D" parent="Head/Camera"]
+transform = Transform( -15, -2.02477e-07, 1.31064e-06, -1.59577e-07, 14.992, 0.48974, -1.31655e-06, 0.48974, -14.992, 0.605, -0.527, -0.949 )
+script = ExtResource( 11 )
+
+[node name="Pistol" type="MeshInstance" parent="Head/Camera/Weapons"]
+transform = Transform( 0.998676, -1.58325e-08, -0.0514472, -0.00167971, 0.999467, -0.0326062, 0.0514198, 0.0326495, 0.998143, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+
+[node name="Anime" type="AnimationPlayer" parent="Head/Camera/Weapons/Pistol"]
+anims/Fire = SubResource( 1 )
+anims/Hit = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+
+[node name="Flash" type="OmniLight" parent="Head/Camera/Weapons/Pistol"]
+transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
+visible = false
+light_color = Color( 0.882353, 0.886275, 0.298039, 1 )
+light_energy = 1.87
+omni_range = 2.2
+
+[node name="GunShot" type="AudioStreamPlayer" parent="Head/Camera/Weapons/Pistol"]
+stream = ExtResource( 16 )
+
+[node name="Cock" type="AudioStreamPlayer" parent="Head/Camera/Weapons"]
+stream = ExtResource( 15 )
+
+[node name="RayLong" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -1000 )
+
+[node name="RayShort" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+anims/roll = SubResource( 4 )
+anims/rollside = SubResource( 5 )
+anims/walk = SubResource( 6 )
+script = ExtResource( 4 )
+
+[node name="Hud" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="Hud"]
+margin_right = 124.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Hud"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -62.0
+margin_right = 62.0
+margin_bottom = 72.0
+text = "2:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Hud"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -124.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0.92549, 0.945098, 0.117647, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="Control" parent="Hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Hud/Cursor"]
+texture = ExtResource( 3 )
+vframes = 8
+hframes = 8
+
+[node name="Injured" type="Control" parent="Hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Hud/Injured"]
+self_modulate = Color( 0.968627, 0, 0, 0.466667 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="InjuredSound" type="AudioStreamPlayer" parent="Hud/Injured/Sprite"]
+stream = ExtResource( 14 )
+
+[node name="Area" type="Area" parent="." groups=[
+"player",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 6.51683e-07, 0, -6.51683e-07, 1, 0, 0, 0 )
+visible = false
+
+[node name="CollisionShape" parent="Area" instance=ExtResource( 6 )]
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
+visible = false
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="CollisionShape" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
+
+[node name="Injured" type="Timer" parent="."]
+
+[node name="JumpCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, -0.4, 0 )
+
+[node name="Roll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+[connection signal="died" from="." to="." method="_on_Player_died"]
+[connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
+[connection signal="injured" from="." to="." method="_on_Player_injured"]
+[connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="visibility_changed" from="Head/Camera/Weapons/Pistol" to="Head/Camera/Weapons" method="_on_Pistol_visibility_changed"]
+[connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
