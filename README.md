@@ -1,6 +1,13 @@
 # KARNAGE
 First person shooter currently in devlopment where you have 2 minutes to rack up as much points as possible.
 
+- 2 minute play session for each level
+- complete level specific challenges that carry over to future play session
+- unlock new levels by completing a certain amount of challenges
+- only goals for levels is to complete the challenges and get high scores
+- all weapons are usable by player and enemies
+- any character in game can throw their weapon, have there weapons dropped when receiving heavy damage
+
 # KONTROLS
 
 WASD - Move
