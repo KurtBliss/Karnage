@@ -9,6 +9,8 @@ var offdirzig
 var offdirzag
 enum {ZIG, ZAG}
 
+onready var AnimeHands = $Arms/AnimeHands
+
 func _ready():
 	speed *= 1.3
 	set_physics_state("state_idle")
@@ -27,7 +29,7 @@ func state_alert(_delta):
 	pass
 
 func state_chase(_delta):
-	$Arms/AnimeHands.play("Walk")
+	AnimeHands.play("Walk")
 	if get_player_visibility():
 		do_chase_player()
 		if get_player_distance() > zigzag_dist_start:
