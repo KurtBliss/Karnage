@@ -109,6 +109,8 @@ func detect_facing_self(body: Actor, fov = detect_fov ):
 
 
 func do_face_player(offset: Vector3 = Vector3.ZERO):
+	if not get_player():
+		return
 	var a: Vector3 = Master.Player.get_transform().origin + offset
 	a.y = get_transform().origin.y
 	look_at(a, Vector3(0,1,0))
