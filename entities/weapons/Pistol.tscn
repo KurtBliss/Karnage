@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://audio/467354__nicklas3799__gun-cock.wav" type="AudioStream" id=1]
 [ext_resource path="res://audio/394413__inspectorj__bamboo-swing-a11.wav" type="AudioStream" id=2]
 [ext_resource path="res://models/weapons/pistol.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://audio/275151__bird-man__gun-shot.wav" type="AudioStream" id=4]
+[ext_resource path="res://entities/weapons/Pistol.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -83,7 +84,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0.00766826, -0.00122142, 0.0373903 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0.008, -0.001, 2.22 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("GunShot")
@@ -140,7 +141,7 @@ tracks/2/keys = {
 }
 
 [node name="Pistol" type="MeshInstance"]
-transform = Transform( 0.998676, -1.58325e-08, -0.0514472, -0.00167971, 0.999467, -0.0326062, 0.0514198, 0.0326495, 0.998143, 0, 0, -7.45058e-09 )
+transform = Transform( 14.9801, -2.37487e-07, -0.771708, -0.0251956, 14.992, -0.489093, 0.771297, 0.489742, 14.9722, 0.008, -0.001, 0.555 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -156,6 +157,8 @@ material/10 = null
 material/11 = null
 material/12 = null
 material/13 = null
+script = ExtResource( 5 )
+damage = 20
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 anims/Fire = SubResource( 1 )
