@@ -6,6 +6,9 @@ var weapons = []
 var throw_timer = 60*2
 onready var raycast = $"../RayLong"
 onready var raycast_hit = $"../RayShort"
+onready var Pistol = $Pistol
+onready var PistolAnime = $Pistol/Anime
+onready var PistolCock = $Pistol/Cock
 
 func _ready():
 	hide_all()
@@ -56,7 +59,7 @@ func get_current_weapon():
 
 func handle_pistol():
 	if Input.is_action_just_pressed("fire"):
-		$Pistol/Anime.play("Fire", -1, 2)
+		PistolAnime.play("Fire", -1, 2)
 		Master.Player.emit_signal("fired")
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
@@ -66,8 +69,8 @@ func handle_pistol():
 				collider.hit()
 
 	if Input.is_action_just_pressed("hit"):
-		$Pistol/Anime.seek(0)
-		$Pistol/Anime.play("Hit", -1, 2)
+		PistolAnime.seek(0)
+		PistolAnime.play("Hit", -1, 2)
 		if raycast_hit.is_colliding():
 			var collider = raycast_hit.get_collider()
 			if collider.is_in_group("Enemy"):
@@ -84,7 +87,7 @@ func handle_pistol():
 	
 
 func hide_all():
-	$Pistol.visible = false
+	Pistol.visible = false
 
 func switch_weapon_by_name(_weapon_name : String):
 	var id = -1
@@ -101,10 +104,10 @@ func switch_weapon_by_id(wpn : int = 0):
 	match weapons[wpn]["weapon"]:
 		"Pistol": 
 			if weapons[wpn]["has"]:
-				$Pistol.visible = true
+				Pistol.visible = true
 				current = wpn
 
 
 func _on_Pistol_visibility_changed():
-	if $Pistol.visible:
-		$Pistol/Cock.play()
+	if Pistol.visible:
+		PistolCock.play()

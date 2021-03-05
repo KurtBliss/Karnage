@@ -1,6 +1,7 @@
 extends Enemy
 
 export var swing_damage = 0
+onready var Anime = $Anime
 
 func _ready(): 
 	speed *= 1.5
@@ -28,7 +29,7 @@ func state_idle(_delta):
 func state_chase(_delta):
 	if get_player_visibility():
 		if get_player_distance() < 6:
-			if not $Anime.current_animation == "attack":
+			if not Anime.current_animation == "attack":
 #				$Anime.play("attack")
 #				set_physics_state("state_attacking")
 				set_physics_state("state_attack")
@@ -38,7 +39,7 @@ func state_chase(_delta):
 		set_physics_state("state_chase_path")
 
 func state_attack(_delta):
-	$Anime.play("attack")
+	Anime.play("attack")
 	set_physics_state("state_attacking")
 
 func state_attacking(_delta):
@@ -59,7 +60,7 @@ func _on_MeleeEnemy_died():
 func _on_Anime_animation_finished(anim_name):
 	if anim_name == "attack":
 		set_physics_state("state_chase")
-		$Anime.play("idle")
+		Anime.play("idle")
 
 
 func _on_Area_body_exited(_body):

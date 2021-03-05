@@ -1,5 +1,6 @@
 extends Sprite
 # fade.gd
+onready var InjuredSound = $InjuredSound
 
 var can_play = true
 
@@ -8,7 +9,7 @@ func _process(_delta):
 		modulate.a -= 0.1
 		if can_play:
 			can_play = false
-			$InjuredSound.play()
+			InjuredSound.play()
 	else:
 		can_play = true
 

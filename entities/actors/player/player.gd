@@ -26,6 +26,11 @@ onready var head = $Head
 onready var camera = $Head/Camera
 #export(NodePath) 
 onready var Weapons = $"Head/Camera/Weapon"
+onready var Anime = $Anime
+onready var Hud = $Hud
+onready var JumpCast = $JumpCast
+onready var Weapon = $Head/Camera/Weapon
+onready var InjuredSprite = $Hud/Injured/Sprite
 
 ###################-BUILT IN-####################
 
@@ -35,7 +40,7 @@ func _ready():
 	add_child(rstick)
 	add_to_group("Player")
 	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
-	Master.GameTimer.connect("time_left", $Hud, "_on_Timer_time_left")
+	Master.GameTimer.connect("time_left", Hud, "_on_Timer_time_left")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("show_challenges"):
@@ -48,9 +53,9 @@ func _physics_process(delta):
 	"""
 		Check if dashing
 	"""
-	var is_playing = $Anime.is_playing()
-	var is_roll_normal = $Anime.current_animation == "roll"
-	var is_roll_side = $Anime.current_animation == "rollside"
+	var is_playing = Anime.is_playing()
+	var is_roll_normal = Anime.current_animation == "roll"
+	var is_roll_side = Anime.current_animation == "rollside"
 	var is_roll = is_roll_normal or is_roll_side
 	if (is_playing && is_roll):
 		is_dashing = true
@@ -85,7 +90,7 @@ func _physics_process(delta):
 	direction += head_basis.x * move_x
 	
 	if Input.is_action_just_pressed("roll"):
-		if $Anime.roll_animation($Head.rotation_degrees, move_z, move_x) != 0:
+		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
 #			$Roll.play()
 	
@@ -110,7 +115,7 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(vector, rate)
 	
 	# Jump
-	if $JumpCast.is_colliding() or is_on_floor():
+	if JumpCast.is_colliding() or is_on_floor():
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump"):
 			can_double = true
@@ -142,7 +147,7 @@ func do_emit_fire():
 
 func _on_Player_died():
 	
-	$Head/Camera/Weapon.throw_weapon()
+	Weapon.throw_weapon()
 	
 	if Master.Manager != null:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -159,7 +164,7 @@ func _on_Timer_timeout():
 		Master.Manager.go_to_post(health, score)
 
 func _on_Player_injured():#should change to red flash
-	$Hud/Injured/Sprite.modulate.a = 1
+	InjuredSprite.modulate.a = 1
 
 func enemy_injured():
 	score_set(score + 1)

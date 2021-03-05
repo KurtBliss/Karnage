@@ -2,6 +2,8 @@ class_name Zombie
 extends Bot
 
 var attack
+onready var MeshInjured = $MeshInjured
+onready var timer = $Timer
 
 func _ready():
 	add_to_group("Zombie")
@@ -39,10 +41,10 @@ func _on_Zombie_died():
 	queue_free()	
 
 func _on_Zombie_injured():
-	$MeshInjured.visible = true
-	$Timer.start()
+	MeshInjured.visible = true
+	timer.start()
 	pass # Replace with function body.
 
 func _on_Timer_timeout():
-	$MeshInjured.visible = false
+	MeshInjured.visible = false
 

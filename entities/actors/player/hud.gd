@@ -1,13 +1,16 @@
 extends Control
-# hud.gd
+
+onready var Health = $Health
+onready var Time = $Time
+onready var Score = $Score
 
 
 
 func _on_Player_health_changed(health):
-	$Health.set_text(str(floor(health)))
+	Health.set_text(str(floor(health)))
 
 func _on_Timer_time_left(time):
-	$Time.set_text(str(time))
+	Time.set_text(str(time))
 
 func _on_Player_score_changed(score):
-	$Score.set_text(str(score))
+	Score.set_text(str(score))

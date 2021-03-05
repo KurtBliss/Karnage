@@ -2,6 +2,7 @@ extends Spatial
 
 var spawn_scene_location	
 
+onready var Spawn = $Spawn
 
 func _on_Spawn_timeout():
 	
@@ -10,7 +11,7 @@ func _on_Spawn_timeout():
 		print("dist to enemy spawn ", dist)
 		if dist < 19:
 			print("Player to close to spawn")
-			$Spawn.start()
+			Spawn.start()
 			return
 #	get_transform().origin
 	
