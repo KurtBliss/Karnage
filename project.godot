@@ -54,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/actors/player/stick.gd"
 }, {
-"base": "Reference",
+"base": "Bot",
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://entities/actors/enemies/zombie.gd"

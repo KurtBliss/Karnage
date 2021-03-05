@@ -1,6 +1,9 @@
 class_name PickupBody
 extends KinematicBody
 
+export(NodePath) onready var weapon_path
+onready var weapon = get_node(weapon_path)
+
 var velocity = Vector3.ZERO
 var moving = false
 

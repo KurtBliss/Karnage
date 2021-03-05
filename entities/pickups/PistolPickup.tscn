@@ -1,11 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://models/weapons/pistol.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/pickups/pickup.gd" type="Script" id=2]
 [ext_resource path="res://entities/pickups/pickupbody.gd" type="Script" id=3]
-
-
-
 
 [sub_resource type="BoxShape" id=1]
 
@@ -22,23 +19,8 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13702, 0 )
 script = ExtResource( 2 )
 
-[node name="pistol" type="MeshInstance" parent="Area"]
-transform = Transform( 40, -8.27181e-24, -2.98023e-07, 0, 40, -1.11022e-15, 2.98023e-07, 1.11022e-15, 40, 0, 0, 0 )
-mesh = ExtResource( 1 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
-material/5 = null
-material/6 = null
-material/7 = null
-material/8 = null
-material/9 = null
-material/10 = null
-material/11 = null
-material/12 = null
-material/13 = null
+[node name="Pistol" parent="Area" instance=ExtResource( 1 )]
+equiped = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )

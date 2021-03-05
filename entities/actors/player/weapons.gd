@@ -59,14 +59,17 @@ func get_current_weapon():
 
 func handle_pistol():
 	if Input.is_action_just_pressed("fire"):
-		PistolAnime.play("Fire", -1, 2)
-		Master.Player.emit_signal("fired")
-		if raycast.is_colliding():
-			var collider = raycast.get_collider()
-			if collider.is_in_group("Enemy"):
-				collider.do_damage($Pistol.damage, self)
-			elif collider.is_in_group("DeathSpawn"):
-				collider.hit()
+		Pistol.do_fire()
+#
+#	if Input.is_action_just_pressed("fire"):
+#		PistolAnime.play("Fire", -1, 2)
+#		Master.Player.emit_signal("fired")
+#		if raycast.is_colliding():
+#			var collider = raycast.get_collider()
+#			if collider.is_in_group("Enemy"):
+#				collider.do_damage($Pistol.damage, self)
+#			elif collider.is_in_group("DeathSpawn"):
+#				collider.hit()
 
 	if Input.is_action_just_pressed("hit"):
 		PistolAnime.seek(0)
