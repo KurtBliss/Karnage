@@ -1,7 +1,5 @@
 extends Area
 
-export(String) var weapon_pickup_name = "Pistol"
-
 var curbody = null
 
 func _ready():

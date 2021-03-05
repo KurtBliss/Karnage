@@ -162,6 +162,7 @@ damage = 15
 ray_cast_range = 500
 fire_anime_speed = 2.29
 target_group = "None"
+pickup_file = "res://entities/pickups/PistolPickup.tscn"
 
 [node name="Anime" type="AnimationPlayer" parent="."]
 anims/Fire = SubResource( 1 )

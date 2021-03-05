@@ -15,6 +15,7 @@ export var fire_anime_speed : float = 1
 export(String, "None", "Enemy", "Player") var target_group
 export(NodePath) onready var raycast_path
 export(NodePath) onready var holder_path
+export(String, FILE, "*.tscn") onready var pickup_file
 onready var raycast : RayCast = get_node(raycast_path)
 onready var holder : Actor = get_node(holder_path)
 onready var anime : AnimationPlayer = $Anime
