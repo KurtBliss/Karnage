@@ -108,6 +108,10 @@ script = ExtResource( 11 )
 
 [node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 2 )]
 transform = Transform( 14.9801, -1.64146e-07, -0.771708, -0.0251956, 14.992, -0.489092, 0.771297, 0.489741, 14.9722, 0, 0, 0 )
+rate = 0.382
+target_group = "Enemy"
+raycast_path = NodePath("../../RayLong")
+holder_path = NodePath("../../../..")
 
 [node name="RayLong" type="RayCast" parent="Head/Camera"]
 enabled = true
