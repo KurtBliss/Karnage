@@ -150,8 +150,9 @@ func _on_Player_died():
 	Weapon.throw_weapon()
 	
 	if Master.Manager != null:
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Mouse.set_capture(false)
 		queue_free()
 		
 		Master.Manager.respawn(health, score, get_translation())
@@ -159,8 +160,9 @@ func _on_Player_died():
 func _on_Timer_timeout():
 	if Master.Manager != null:
 		queue_free()
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Mouse.set_capture(false)
 		Master.Manager.go_to_post(health, score)
 
 func _on_Player_injured():#should change to red flash
@@ -177,4 +179,5 @@ func score_set(value):
 	emit_signal("score_changed", value)
 
 func _on_Player_tree_exited():
-	Mouse.set_capture(false)
+	pass
+#	Mouse.set_capture(false)
