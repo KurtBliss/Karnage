@@ -16,8 +16,8 @@ export(String, "None", "Enemy", "Player") var target_group
 export(NodePath) onready var raycast_path
 export(NodePath) onready var holder_path
 export(String, FILE, "*.tscn") onready var pickup_file
-onready var raycast : RayCast = get_node(raycast_path)
-onready var holder : Actor = get_node(holder_path)
+onready var raycast #: RayCast 
+onready var holder #: Actor 
 onready var anime : AnimationPlayer = $Anime
 onready var timer : Timer = $Rate 
 
@@ -28,6 +28,7 @@ func _ready():
 		raycast.cast_to.z = -ray_cast_range
 
 func do_fire():
+	print("DOFIRE")
 	if can_fire:
 		can_fire = false 
 		timer.start(rate)
@@ -46,3 +47,13 @@ func _on_Anime_animation_finished(anim_name):
 	if anim_name == "Fire":
 		if can_shoot_mode == CAN_SHOOT.ANIME_END:
 			can_fire = true
+
+func _on_Pistol_tree_entered():
+	print("on tree enetered")
+	var par = get_parent()
+	if par:
+		if par.is_in_group("hand"):
+			par.current_weapon = self
+#			raycast = get_node(raycast_path)
+#			holder = get_node(holder_path)
+	pass # Replace with function body.

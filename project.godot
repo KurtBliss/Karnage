@@ -44,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/actors/player/player.gd"
 }, {
-"base": "Spatial",
-"class": "PlayerWeapons",
-"language": "GDScript",
-"path": "res://entities/actors/player/weapons.gd"
-}, {
 "base": "Node",
 "class": "Stick",
 "language": "GDScript",
@@ -67,7 +62,6 @@ _global_script_class_icons={
 "Marksmen": "",
 "PickupBody": "",
 "Player": "",
-"PlayerWeapons": "",
 "Stick": "",
 "Zombie": ""
 }

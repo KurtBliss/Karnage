@@ -10,6 +10,7 @@
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 3 )
+weapon_path = NodePath("Area/Pistol")
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13702, 0 )
@@ -18,6 +19,7 @@ shape = SubResource( 1 )
 [node name="Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13702, 0 )
 script = ExtResource( 2 )
+parrent_path = NodePath("..")
 
 [node name="Pistol" parent="Area" instance=ExtResource( 1 )]
 equiped = false
