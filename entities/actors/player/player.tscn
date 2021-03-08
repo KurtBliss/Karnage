@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
-[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/textures/crosshairs64.png" type="Texture" id=3]
 [ext_resource path="res://entities/actors/player/player_roll_animation.gd" type="Script" id=4]
 [ext_resource path="res://entities/actors/player/hud.gd" type="Script" id=5]
@@ -105,13 +104,7 @@ far = 400.0
 [node name="Weapon" type="Position3D" parent="Head/Camera"]
 transform = Transform( -1, -1.55741e-08, 1.50915e-07, -1.06385e-08, 0.999467, 0.0326493, -1.51343e-07, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )
 script = ExtResource( 11 )
-
-[node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 2 )]
-transform = Transform( 14.9801, -1.64146e-07, -0.771708, -0.0251956, 14.992, -0.489092, 0.771297, 0.489741, 14.9722, 0, 0, 0 )
-rate = 0.382
-target_group = "Enemy"
-raycast_path = NodePath("../../RayLong")
-holder_path = NodePath("../../../..")
+holder_path = NodePath("../../..")
 
 [node name="RayLong" type="RayCast" parent="Head/Camera"]
 enabled = true
