@@ -20,3 +20,9 @@ func _process(_delta):
 		mute = !mute
 		var bus_index = AudioServer.get_bus_index("Master")
 		AudioServer.set_bus_mute(bus_index, mute)
+
+func reparent(child: Node, new_parent: Node):
+	#https://godotengine.org/qa/9806/reparent-node-at-runtime
+	var old_parent = child.get_parent()
+	old_parent.remove_child(child)
+	new_parent.add_child(child)
