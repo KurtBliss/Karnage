@@ -89,4 +89,5 @@ func go_to_post(_health, _score):
 func _on_Restart_pressed():
 	if current_mode == MODE.POST_GAME:
 #		change_mode(MODE.IN_GAME)
-		change_mode(MODE.PRE_GAME)
+		get_tree().reload_current_scene()
+#		change_mode(MODE.PRE_GAME)
