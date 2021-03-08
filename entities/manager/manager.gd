@@ -8,6 +8,11 @@ var current_mode
 var health
 var score
 
+onready var PreGame = $PreGame
+onready var PostGame = $PostGame
+onready var PreGameStart = $PreGame/Start
+onready var PostGameRestart = $PostGame/Restart
+
 func _ready():
 	Master.Manager = self
 	change_mode(MODE.PRE_GAME)
@@ -17,24 +22,24 @@ func change_mode(set_mode):
 		MODE.IN_GAME:
 			current_mode = MODE.IN_GAME
 			Master.GameTimer.start()
-			$PreGame.visible = false
-			$PostGame.visible = false
+			PreGame.visible = false
+			PostGame.visible = false
 			if Master.Player == null:
-				var ld = load("res://player/player.tscn")
+				var ld = load("res://entities/actors/player/player.tscn")
 				var inst : KinematicBody = ld.instance()
 				
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
 				get_parent().add_child(inst)
 		MODE.PRE_GAME:
 			current_mode = MODE.PRE_GAME	
-			$PreGame.visible = true
-			$PostGame.visible = false
-			$PreGame/Start.has_focus()
+			PreGame.visible = true
+			PostGame.visible = false
+			PreGameStart.has_focus()
 		MODE.POST_GAME:
 			current_mode = MODE.POST_GAME
-			$PreGame.visible = false
-			$PostGame.visible = true
-			$PostGame/Restart.has_focus()
+			PreGame.visible = false
+			PostGame.visible = true
+			PostGameRestart.has_focus()
 
 func _process(_delta):
 	match current_mode:
@@ -53,7 +58,7 @@ func _on_Start_pressed():
 
 func respawn(_health, _score, _pos):
 	
-	var ld = load("res://player/player.tscn")
+	var ld = load("res://entities/actors/player/player.tscn")
 	var player : KinematicBody = ld.instance()
 	player.health = 100
 	player.score = _score
@@ -84,4 +89,5 @@ func go_to_post(_health, _score):
 func _on_Restart_pressed():
 	if current_mode == MODE.POST_GAME:
 #		change_mode(MODE.IN_GAME)
-		change_mode(MODE.PRE_GAME)
+		get_tree().reload_current_scene()
+#		change_mode(MODE.PRE_GAME)

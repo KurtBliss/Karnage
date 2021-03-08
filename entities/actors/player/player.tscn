@@ -1,0 +1,231 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
+[ext_resource path="res://graphics/textures/crosshairs64.png" type="Texture" id=3]
+[ext_resource path="res://entities/actors/player/player_roll_animation.gd" type="Script" id=4]
+[ext_resource path="res://entities/actors/player/hud.gd" type="Script" id=5]
+[ext_resource path="res://entities/actors/player/player_collision.tscn" type="PackedScene" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://entities/tiledscreen/fade.gd" type="Script" id=8]
+[ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
+[ext_resource path="res://audio/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
+[ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=14]
+
+[sub_resource type="Animation" id=1]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -180, 0, 0 ), Vector3( -360, 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Roll")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 1.22,
+"start_offset": 0.4,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -180 ), Vector3( 0, 0, -360 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Roll")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 1.22,
+"start_offset": 0.4,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
+}
+
+[sub_resource type="CapsuleMesh" id=4]
+
+[node name="Player" type="KinematicBody" groups=[
+"Player",
+"player",
+]]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1, 0 )
+script = ExtResource( 1 )
+speed = 13
+gravity = 1.2
+jump_power = 36
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+current = true
+far = 400.0
+
+[node name="Weapon" type="Position3D" parent="Head/Camera"]
+transform = Transform( -1, -1.55741e-08, 1.50915e-07, -1.06385e-08, 0.999467, 0.0326493, -1.51343e-07, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )
+script = ExtResource( 11 )
+holder_path = NodePath("../../..")
+
+[node name="RayLong" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -1000 )
+
+[node name="RayShort" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+anims/roll = SubResource( 1 )
+anims/rollside = SubResource( 2 )
+anims/walk = SubResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Hud" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="Hud"]
+margin_right = 124.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Hud"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -62.0
+margin_right = 62.0
+margin_bottom = 72.0
+text = "2:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Hud"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -124.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0.92549, 0.945098, 0.117647, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="Control" parent="Hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Hud/Cursor"]
+texture = ExtResource( 3 )
+vframes = 8
+hframes = 8
+
+[node name="Injured" type="Control" parent="Hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Hud/Injured"]
+self_modulate = Color( 0.968627, 0, 0, 0.466667 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="InjuredSound" type="AudioStreamPlayer" parent="Hud/Injured/Sprite"]
+stream = ExtResource( 14 )
+
+[node name="Area" type="Area" parent="." groups=[
+"player",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 6.51683e-07, 0, -6.51683e-07, 1, 0, 0, 0 )
+visible = false
+
+[node name="CollisionShape" parent="Area" instance=ExtResource( 6 )]
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
+
+[node name="Injured" type="Timer" parent="."]
+
+[node name="JumpCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, -0.4, 0 )
+
+[node name="Roll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+[connection signal="died" from="." to="." method="_on_Player_died"]
+[connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
+[connection signal="injured" from="." to="." method="_on_Player_injured"]
+[connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]
+[connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]

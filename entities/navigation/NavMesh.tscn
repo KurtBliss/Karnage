@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/navigation/NavMeshEditor.gd" type="Script" id=1]
+[ext_resource path="res://entities/navigation/planes.tres" type="MeshLibrary" id=2]
+[ext_resource path="res://entities/navigation/blocks.tres" type="MeshLibrary" id=3]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -87.1, 0.4, -87.1, -93.1, 0.4, -87.1, -93.1, 0.4, -81.1, -93.1, 0.4, 104.9, -93.1, 0.4, 111.2, -87.1, 0.4, 111.2, 105.2, 0.4, -81.1, 105.2, 0.4, -87.1, 98.9, 0.4, -87.1, 98.9, 0.4, 111.2, 105.2, 0.4, 111.2, 105.2, 0.4, 104.9, -80.8, 0.4, -87.1, -87.1, 0.4, -87.1, -93.1, 0.4, -81.1, -93.1, 0.4, -74.8, -93.1, 0.4, 104.9, -87.1, 0.4, 111.2, -80.8, 0.4, 111.2, -93.1, 0.4, 98.6, 105.2, 0.4, -74.8, 105.2, 0.4, -81.1, 98.9, 0.4, -87.1, 92.6, 0.4, -87.1, 92.6, 0.4, 111.2, 98.9, 0.4, 111.2, 105.2, 0.4, 104.9, -0.399994, 0.4, -87.1, -6.7, 0.4, -87.1, -93.1, 0.4, -0.699997, -93.1, 0.4, 5.60001, 49.1, 0.4, 111.2, 105.2, 0.4, 61.4, 105.2, 0.4, 55.1, 42.8, 0.4, 111.2, 105.2, 0.4, -7, 105.2, 0.4, -13, 30.5, 0.4, -87.1, 24.2, 0.4, -87.1, 92.6, 0.4, 111.2, 105.2, 0.4, 104.9, 105.2, 0.4, 98.6, 86.3, 0.4, 111.2, -74.8, 0.4, -87.1, -80.8, 0.4, -87.1, -93.1, 0.4, -74.8, -93.1, 0.4, -68.8, -93.1, 0.4, 98.6, -80.8, 0.4, 111.2, -74.8, 0.4, 111.2, -93.1, 0.4, 92.3, 105.2, 0.4, -68.8, 105.2, 0.4, -74.8, 92.6, 0.4, -87.1, 86.3, 0.4, -87.1, -31.3, 0.4, -87.1, -37.6, 0.4, -87.1, -93.1, 0.4, -31.6, -93.1, 0.4, -25.3, -93.1, 0.4, 55.1, -37.6, 0.4, 111.2, -31.3, 0.4, 111.2, -93.1, 0.4, 48.8, -93.1, 0.4, 24.2, -6.7, 0.4, 111.2, -0.399994, 0.4, 111.2, -93.1, 0.4, 17.9, 105.2, 0.4, -25.3, 105.2, 0.4, -31.6, 49.1, 0.4, -87.1, 42.8, 0.4, -87.1, 86.3, 0.4, 111.2, 105.2, 0.4, 98.6, 105.2, 0.4, 92.3, 80.3, 0.4, 111.2, -68.5, 0.4, -87.1, -74.8, 0.4, -87.1, -93.1, 0.4, -68.8, -93.1, 0.4, -62.5, -93.1, 0.4, 86.3, -93.1, 0.4, 92.3, -74.8, 0.4, 111.2, -68.5, 0.4, 111.2, 105.2, 0.4, -68.8, 86.3, 0.4, -87.1, 80.3, 0.4, -87.1, 105.2, 0.4, -62.5, 5.9, 0.4, -87.1, -0.399994, 0.4, -87.1, -93.1, 0.4, 5.60001, -93.1, 0.4, 11.9, 24.2, 0.4, 111.2, 105.2, 0.4, 36.5, 105.2, 0.4, 30.2, 18.2, 0.4, 111.2, 42.8, 0.4, 111.2, 105.2, 0.4, 55.1, 105.2, 0.4, 48.8, 36.5, 0.4, 111.2, 105.2, 0.4, 5.60001, 105.2, 0.4, -0.699997, 18.2, 0.4, -87.1, 11.9, 0.4, -87.1, 80.3, 0.4, 111.2, 105.2, 0.4, 92.3, 105.2, 0.4, 86.3, 74, 0.4, 111.2, -62.5, 0.4, -87.1, -68.5, 0.4, -87.1, -93.1, 0.4, -62.5, -93.1, 0.4, -56.5, -93.1, 0.4, 86.3, -68.5, 0.4, 111.2, -62.5, 0.4, 111.2, -93.1, 0.4, 80, 105.2, 0.4, -56.5, 105.2, 0.4, -62.5, 80.3, 0.4, -87.1, 74, 0.4, -87.1, -25.3, 0.4, -87.1, -31.3, 0.4, -87.1, -93.1, 0.4, -25.3, -93.1, 0.4, -19.3, -93.1, 0.4, 48.8, -31.3, 0.4, 111.2, -25.3, 0.4, 111.2, -93.1, 0.4, 42.5, -6.7, 0.4, -87.1, -13, 0.4, -87.1, -93.1, 0.4, -7, -93.1, 0.4, -0.699997, 105.2, 0.4, -19.3, 105.2, 0.4, -25.3, 42.8, 0.4, -87.1, 36.5, 0.4, -87.1, 74, 0.4, 111.2, 105.2, 0.4, 86.3, 105.2, 0.4, 80, 67.7, 0.4, 111.2, -56.2, 0.4, -87.1, -62.5, 0.4, -87.1, -93.1, 0.4, -56.5, -93.1, 0.4, -50.2, -93.1, 0.4, 80, -62.5, 0.4, 111.2, -56.2, 0.4, 111.2, -93.1, 0.4, 73.7, 105.2, 0.4, -50.2, 105.2, 0.4, -56.5, 74, 0.4, -87.1, 67.7, 0.4, -87.1, -93.1, 0.4, 24.2, -93.1, 0.4, 30.2, -13, 0.4, 111.2, -6.7, 0.4, 111.2, -93.1, 0.4, 11.9, -93.1, 0.4, 17.9, -0.399994, 0.4, 111.2, 36.5, 0.4, 111.2, 105.2, 0.4, 48.8, 105.2, 0.4, 42.5, 30.5, 0.4, 111.2, 105.2, 0.4, -7, 24.2, 0.4, -87.1, 18.2, 0.4, -87.1, 105.2, 0.4, -0.699997, 67.7, 0.4, 111.2, 105.2, 0.4, 80, 105.2, 0.4, 73.7, 61.4, 0.4, 111.2, -49.9, 0.4, -87.1, -56.2, 0.4, -87.1, -93.1, 0.4, -50.2, -93.1, 0.4, -43.9, -93.1, 0.4, 73.7, -56.2, 0.4, 111.2, -49.9, 0.4, 111.2, -93.1, 0.4, 67.4, 105.2, 0.4, -43.9, 105.2, 0.4, -50.2, 67.7, 0.4, -87.1, 61.4, 0.4, -87.1, -19, 0.4, -87.1, -25.3, 0.4, -87.1, -93.1, 0.4, -19.3, -93.1, 0.4, -13, -93.1, 0.4, 36.5, -93.1, 0.4, 42.5, -25.3, 0.4, 111.2, -19, 0.4, 111.2, -93.1, 0.4, 11.9, -0.399994, 0.4, 111.2, 5.9, 0.4, 111.2, 105.2, 0.4, 17.9, 105.2, 0.4, 11.9, 5.9, 0.4, -87.1, 105.2, 0.4, -19.3, 36.5, 0.4, -87.1, 30.5, 0.4, -87.1, 105.2, 0.4, -13, 61.4, 0.4, 111.2, 105.2, 0.4, 73.7, 105.2, 0.4, 67.4, 55.4, 0.4, 111.2, -43.6, 0.4, -87.1, -49.9, 0.4, -87.1, -93.1, 0.4, -43.9, -93.1, 0.4, -37.6, -93.1, 0.4, 61.4, -93.1, 0.4, 67.4, -49.9, 0.4, 111.2, -43.6, 0.4, 111.2, 105.2, 0.4, -43.9, 61.4, 0.4, -87.1, 55.4, 0.4, -87.1, 105.2, 0.4, -37.6, 11.9, 0.4, 111.2, 105.2, 0.4, 24.2, 105.2, 0.4, 17.9, 5.9, 0.4, 111.2, 18.2, 0.4, 111.2, 105.2, 0.4, 30.2, 105.2, 0.4, 24.2, 11.9, 0.4, 111.2, 30.5, 0.4, 111.2, 105.2, 0.4, 42.5, 105.2, 0.4, 36.5, 24.2, 0.4, 111.2, 105.2, 0.4, 5.60001, 11.9, 0.4, -87.1, 5.9, 0.4, -87.1, 105.2, 0.4, 11.9, 55.4, 0.4, 111.2, 105.2, 0.4, 67.4, 105.2, 0.4, 61.4, 49.1, 0.4, 111.2, -37.6, 0.4, -87.1, -43.6, 0.4, -87.1, -93.1, 0.4, -37.6, -93.1, 0.4, -31.6, -93.1, 0.4, 61.4, -43.6, 0.4, 111.2, -37.6, 0.4, 111.2, -93.1, 0.4, 55.1, 105.2, 0.4, -31.6, 105.2, 0.4, -37.6, 55.4, 0.4, -87.1, 49.1, 0.4, -87.1, -13, 0.4, -87.1, -19, 0.4, -87.1, -93.1, 0.4, -13, -93.1, 0.4, -7, -93.1, 0.4, 36.5, -19, 0.4, 111.2, -13, 0.4, 111.2, -93.1, 0.4, 30.2 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 17, 16, 18 ), PoolIntArray( 18, 16, 19 ), PoolIntArray( 21, 20, 22 ), PoolIntArray( 22, 20, 23 ), PoolIntArray( 26, 25, 24 ), PoolIntArray( 28, 27, 29 ), PoolIntArray( 29, 27, 30 ), PoolIntArray( 32, 31, 33 ), PoolIntArray( 33, 31, 34 ), PoolIntArray( 36, 35, 37 ), PoolIntArray( 37, 35, 38 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 44, 43, 45 ), PoolIntArray( 45, 43, 46 ), PoolIntArray( 48, 47, 49 ), PoolIntArray( 49, 47, 50 ), PoolIntArray( 52, 51, 53 ), PoolIntArray( 53, 51, 54 ), PoolIntArray( 56, 55, 57 ), PoolIntArray( 57, 55, 58 ), PoolIntArray( 60, 59, 61 ), PoolIntArray( 61, 59, 62 ), PoolIntArray( 64, 63, 65 ), PoolIntArray( 65, 63, 66 ), PoolIntArray( 68, 67, 69 ), PoolIntArray( 69, 67, 70 ), PoolIntArray( 72, 71, 73 ), PoolIntArray( 73, 71, 74 ), PoolIntArray( 76, 75, 77 ), PoolIntArray( 77, 75, 78 ), PoolIntArray( 80, 79, 81 ), PoolIntArray( 81, 79, 82 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 88, 87, 89 ), PoolIntArray( 89, 87, 90 ), PoolIntArray( 91, 94, 92 ), PoolIntArray( 92, 94, 93 ), PoolIntArray( 96, 95, 97 ), PoolIntArray( 97, 95, 98 ), PoolIntArray( 100, 99, 101 ), PoolIntArray( 101, 99, 102 ), PoolIntArray( 104, 103, 105 ), PoolIntArray( 105, 103, 106 ), PoolIntArray( 108, 107, 109 ), PoolIntArray( 109, 107, 110 ), PoolIntArray( 112, 111, 113 ), PoolIntArray( 113, 111, 114 ), PoolIntArray( 116, 115, 117 ), PoolIntArray( 117, 115, 118 ), PoolIntArray( 120, 119, 121 ), PoolIntArray( 121, 119, 122 ), PoolIntArray( 124, 123, 125 ), PoolIntArray( 125, 123, 126 ), PoolIntArray( 128, 127, 129 ), PoolIntArray( 129, 127, 130 ), PoolIntArray( 132, 131, 133 ), PoolIntArray( 133, 131, 134 ), PoolIntArray( 136, 135, 137 ), PoolIntArray( 137, 135, 138 ), PoolIntArray( 140, 139, 141 ), PoolIntArray( 141, 139, 142 ), PoolIntArray( 144, 143, 145 ), PoolIntArray( 145, 143, 146 ), PoolIntArray( 148, 147, 149 ), PoolIntArray( 149, 147, 150 ), PoolIntArray( 152, 151, 153 ), PoolIntArray( 153, 151, 154 ), PoolIntArray( 157, 156, 155 ), PoolIntArray( 158, 161, 159 ), PoolIntArray( 159, 161, 160 ), PoolIntArray( 163, 162, 164 ), PoolIntArray( 164, 162, 165 ), PoolIntArray( 167, 166, 168 ), PoolIntArray( 168, 166, 169 ), PoolIntArray( 171, 170, 172 ), PoolIntArray( 172, 170, 173 ), PoolIntArray( 175, 174, 176 ), PoolIntArray( 176, 174, 177 ), PoolIntArray( 179, 178, 180 ), PoolIntArray( 180, 178, 181 ), PoolIntArray( 183, 182, 184 ), PoolIntArray( 184, 182, 185 ), PoolIntArray( 187, 186, 188 ), PoolIntArray( 188, 186, 189 ), PoolIntArray( 191, 190, 192 ), PoolIntArray( 192, 190, 193 ), PoolIntArray( 193, 190, 194 ), PoolIntArray( 194, 190, 195 ), PoolIntArray( 197, 196, 198 ), PoolIntArray( 198, 196, 199 ), PoolIntArray( 201, 200, 202 ), PoolIntArray( 202, 200, 203 ), PoolIntArray( 205, 204, 206 ), PoolIntArray( 206, 204, 207 ), PoolIntArray( 209, 208, 210 ), PoolIntArray( 210, 208, 211 ), PoolIntArray( 213, 212, 214 ), PoolIntArray( 214, 212, 215 ), PoolIntArray( 216, 219, 217 ), PoolIntArray( 217, 219, 218 ), PoolIntArray( 221, 220, 222 ), PoolIntArray( 222, 220, 223 ), PoolIntArray( 225, 224, 226 ), PoolIntArray( 226, 224, 227 ), PoolIntArray( 229, 228, 230 ), PoolIntArray( 230, 228, 231 ), PoolIntArray( 233, 232, 234 ), PoolIntArray( 234, 232, 235 ), PoolIntArray( 237, 236, 238 ), PoolIntArray( 238, 236, 239 ), PoolIntArray( 241, 240, 242 ), PoolIntArray( 242, 240, 243 ), PoolIntArray( 245, 244, 246 ), PoolIntArray( 246, 244, 247 ), PoolIntArray( 249, 248, 250 ), PoolIntArray( 250, 248, 251 ), PoolIntArray( 253, 252, 254 ), PoolIntArray( 254, 252, 255 ) ]
+agent/max_climb = 1.95
+
+[sub_resource type="Animation" id=2]
+resource_name = "FlipCeiling"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Planes:mesh_library:item/1/mesh:flip_faces")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Planes:mesh_library:item/1/mesh:material:albedo_color")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.309804 ) ]
+}
+
+[node name="NavMesh" type="NavigationMeshInstance"]
+navmesh = SubResource( 1 )
+
+[node name="Blocks" type="GridMap" parent="."]
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 8, 8, 8 )
+collision_layer = 3
+collision_mask = 3
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Planes" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 8, 8, 8 )
+collision_layer = 3
+collision_mask = 3
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Editor" type="AnimationPlayer" parent="."]
+anims/FlipCeiling = SubResource( 2 )
+script = ExtResource( 1 )
