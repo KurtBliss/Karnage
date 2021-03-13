@@ -88,6 +88,10 @@ Master="*res://auto_load/master.gd"
 WeaponsDB="*res://auto_load/weaponsdb.gd"
 Mouse="*res://auto_load/mouse.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "Todo_Manager" )
+
 [input]
 
 move_left={

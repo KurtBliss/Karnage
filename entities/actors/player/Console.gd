@@ -8,6 +8,8 @@ var current_scroll_line = 0
 onready var CommandLine = $CommandLine
 onready var CommandText:RichTextLabel = $CommandText
 
+#TODO: pause the game/prevent movement when console is up
+
 func _ready():
 	Master.console = self
 

@@ -199,6 +199,7 @@ script = ExtResource( 8 )
 stream = ExtResource( 14 )
 
 [node name="Console" parent="Hud" instance=ExtResource( 2 )]
+visible = false
 
 [node name="Area" type="Area" parent="." groups=[
 "player",
