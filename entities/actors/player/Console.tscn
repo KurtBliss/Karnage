@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/actors/player/Console.gd" type="Script" id=1]
+
+[node name="Console" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.315
+margin_bottom = -1.52588e-05
+
+[node name="CommandText" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.275
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CommandLine" type="LineEdit" parent="."]
+anchor_top = 0.275
+anchor_right = 1.0
+anchor_bottom = 0.315
+margin_right = -6.10352e-05
+margin_bottom = -1.52588e-05
