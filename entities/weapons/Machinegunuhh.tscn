@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/actors/enemies/marksmen.gd" type="Script" id=1]
-[ext_resource path="res://models/weapons/machinegun.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=2]
+[ext_resource path="res://models/weapons/machinegun.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -23,7 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2944, 0.0861795, -2.93494 )
 
 [node name="machinegun" type="MeshInstance" parent="."]
 transform = Transform( -25, 0, -8.14603e-06, 0, 25, 0, 8.14603e-06, 0, -25, -0.0568913, 1.43414, -1.254 )
-mesh = ExtResource( 2 )
+mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -82,7 +82,7 @@ __meta__ = {
 wait_time = 0.9
 
 [node name="Injured" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 unit_db = 13.699
 pitch_scale = 3.4
 

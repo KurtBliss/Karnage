@@ -162,6 +162,8 @@ damage = 15
 ray_cast_range = 500
 fire_anime_speed = 2.29
 target_group = "None"
+animation_player = NodePath("Anime")
+cock_path = NodePath("Cock")
 pickup_file = "res://entities/pickups/PistolPickup.tscn"
 
 [node name="Anime" type="AnimationPlayer" parent="."]
@@ -176,10 +178,10 @@ light_color = Color( 0.882353, 0.886275, 0.298039, 1 )
 light_energy = 1.87
 omni_range = 2.2
 
-[node name="GunShot" type="AudioStreamPlayer" parent="."]
+[node name="GunShot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
 
-[node name="Cock" type="AudioStreamPlayer" parent="."]
+[node name="Cock" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )
 
 [node name="Rate" type="Timer" parent="."]

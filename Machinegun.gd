@@ -1,0 +1,4 @@
+"""Machinegun.gd"""
+extends Weapon
+
+

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://models/weapons/machinegun.obj" type="ArrayMesh" id=2]
+
+[node name="Pistol" instance=ExtResource( 1 )]
+transform = Transform( 14.9801, -2.37487e-07, -0.771711, -0.0251956, 14.992, -0.489095, 0.771295, 0.489742, 14.9722, 0, 0, -7.45058e-09 )
+mesh = ExtResource( 2 )
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+material/23 = null
+material/24 = null
+material/25 = null
+material/26 = null
+material/27 = null
+material/28 = null
+material/29 = null
+material/30 = null
+material/31 = null
+material/32 = null
+material/33 = null
+material/34 = null
+material/35 = null
+material/36 = null
+material/37 = null
+material/38 = null
+material/39 = null
+material/40 = null
+material/41 = null
+material/42 = null
+material/43 = null
