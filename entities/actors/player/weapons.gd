@@ -17,19 +17,21 @@ func _ready():
 func _process(_delta):
 #	if weapons.size() < 1:
 #		return
+	var can_input = Master.input_enabled()
+
 	if current_weapon:
-		if Input.is_action_just_pressed("fire"):
+		if Input.is_action_just_pressed("fire") and can_input:
 			current_weapon.do_fire()
 			holder.do_emit_fire()
 			
-		if Input.is_action_pressed("hit"):
+		if Input.is_action_pressed("hit") and can_input:
 			throw_timer -= 1 # * delta * 60
 			if throw_timer < 1:
 				throw_weapon()
 		else:
 			throw_timer = 15
 			
-		if Input.is_action_just_pressed("hit"):
+		if Input.is_action_just_pressed("hit") and can_input:
 			current_weapon.anime.seek(0)
 			current_weapon.anime.play("Hit", -1, 2)
 			if raycast_hit.is_colliding():

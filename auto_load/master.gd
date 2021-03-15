@@ -1,13 +1,12 @@
+"""master.gd"""
 extends Node
-# master.gd
-
 var Player # Init on player _ready()
 var Manager # Init on manager _ready()
 var GameWorld # Init on Nav _ready()
 var GameTimer # Init on GameTimer _ready()
 var console # Init on Console _ready()
 var mute = false
-onready var CmdManager = load("res://auto_load/CmdManager.gd")
+onready var CmdManager = load("res://auto_load/Console/CmdManager.gd")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("game_end"):
@@ -22,6 +21,14 @@ func _process(_delta):
 		mute = !mute
 		var bus_index = AudioServer.get_bus_index("Master")
 		AudioServer.set_bus_mute(bus_index, mute)
+
+func input_disabled():
+	if Console.visible:
+		return true
+	return false
+
+func input_enabled():
+	return !input_disabled()
 
 func reparent(child: Node, new_parent: Node):
 	#https://godotengine.org/qa/9806/reparent-node-at-runtime

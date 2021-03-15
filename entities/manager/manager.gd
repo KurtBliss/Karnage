@@ -42,6 +42,8 @@ func change_mode(set_mode):
 			PostGameRestart.has_focus()
 
 func _process(_delta):
+	if Master.input_disabled():
+		return
 	match current_mode:
 		MODE.POST_GAME:
 			if Input.is_action_just_pressed("ui_accept"):

@@ -5,6 +5,14 @@ static func execute_command(words:PoolStringArray):
 	var command:String = words[0]
 	match command.to_lower():
 		#Will execute the given method in the given node with some support for arguments
+		"help":
+			var msg = ""
+			msg += "exec [node path] [method name] [method arguments/nothing]"
+			msg += "children [node path]\n"
+			msg += "node paths are written:\nI:999\nF:999.0\nS:\"text text text\""
+			Master.println(msg)
+			return
+		
 		"exec":
 			if words.size()==3||words.size()==4:
 				var targetword : String = words[1]

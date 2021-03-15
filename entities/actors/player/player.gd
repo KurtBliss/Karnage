@@ -42,14 +42,8 @@ func _ready():
 	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
 	Master.GameTimer.connect("time_left", Hud, "_on_Timer_time_left")
 
-func _process(_delta):
-	if Input.is_action_just_pressed("show_challenges"):
-		var ld = load("res://entities/manager/VBoxContainer.tscn")
-		var inst = ld.instance()
-		inst.destroy_on_release = true
-		add_child(inst)
-
 func _physics_process(delta):
+	var can_input = Master.input_enabled()
 	"""
 		Check if dashing
 	"""
@@ -83,16 +77,21 @@ func _physics_process(delta):
 	"""
 		Handle motion input
 	"""
-	var move_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")	
-	var move_z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+	var move_x
+	var move_z
+	if can_input:
+		move_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")	
+		move_z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+	else:
+		move_x = 0
+		move_z = 0
 	var direction = Vector3()
 	direction += head_basis.z * move_z
 	direction += head_basis.x * move_x
 	
-	if Input.is_action_just_pressed("roll"):
+	if Input.is_action_just_pressed("roll") and can_input:
 		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
-#			$Roll.play()
 	
 	
 	dir = Vector3()
@@ -117,11 +116,11 @@ func _physics_process(delta):
 	# Jump
 	if JumpCast.is_colliding() or is_on_floor():
 		velocity.y = 0
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and can_input:
 			can_double = true
 			velocity.y += jump_power
 	else:
-		if Input.is_action_just_pressed("jump") and can_double:
+		if Input.is_action_just_pressed("jump") and can_input and can_double:
 			can_double = false
 			velocity.y += jump_power
 		else:

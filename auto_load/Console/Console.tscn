@@ -1,8 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://entities/actors/player/Console.gd" type="Script" id=1]
+[ext_resource path="res://auto_load/Console/Console.gd" type="Script" id=1]
 
 [node name="Console" type="Control"]
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -29,3 +31,5 @@ anchor_right = 1.0
 anchor_bottom = 0.315
 margin_right = -6.10352e-05
 margin_bottom = -1.52588e-05
+caret_blink = true
+[connection signal="text_changed" from="CommandLine" to="." method="_on_CommandLine_text_changed"]

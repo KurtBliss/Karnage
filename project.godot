@@ -91,8 +91,8 @@ default_bus_layout=""
 [autoload]
 
 Master="*res://auto_load/master.gd"
-WeaponsDB="*res://auto_load/weaponsdb.gd"
 Mouse="*res://auto_load/mouse.gd"
+Console="*res://auto_load/Console/Console.tscn"
 
 [editor_plugins]
 

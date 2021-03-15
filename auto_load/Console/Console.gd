@@ -4,6 +4,7 @@ var is_open = false
 var max_lines = 1000
 const line_width : int = 15
 var current_scroll_line = 0
+var txt = ""
 
 onready var CommandLine = $CommandLine
 onready var CommandText:RichTextLabel = $CommandText
@@ -11,6 +12,9 @@ onready var CommandText:RichTextLabel = $CommandText
 #TODO: pause the game/prevent movement when console is up
 
 func _ready():
+	var canvas_rid = get_canvas_item()
+	VisualServer.canvas_item_set_draw_index(canvas_rid,100)
+	VisualServer.canvas_item_set_z_index(canvas_rid,100)
 	Master.console = self
 
 func _process(delta):
@@ -21,6 +25,7 @@ func _process(delta):
 		if !visible:
 			open()
 		elif visible :
+			CommandLine.delete_char_at_cursor()
 			close()
 	if is_open:
 		if Input.is_action_just_pressed("enter_command")&&!CommandLine.text.empty():
@@ -40,10 +45,10 @@ func _process(delta):
 
 func open():
 	#Master.gui_entered()
-	if CommandLine.text.find("²")== 0:
-		CommandLine.text = ""
-	if CommandLine.text.find("`")== 0:
-		CommandLine.text = ""
+#	if CommandLine.text.find("²")== 0:
+#		CommandLine.text = ""
+#	if CommandLine.text.find("`")== 0:
+#		CommandLine.text = ""
 	is_open = true
 	CommandLine.grab_focus()
 	show()
@@ -73,3 +78,9 @@ func remove_excess_lines():
 	while count-i>max_lines:
 		CommandText.remove_line(0)
 		i+=1
+
+
+func _on_CommandLine_text_changed(new_text):
+#	print(new_text, " ", Input.is_action_just_pressed("open_debug_console"))
+#	if new_text == Input
+	pass
