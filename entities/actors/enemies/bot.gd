@@ -86,7 +86,15 @@ func raycast(to = get_player(), name = "", offset = Vector3(0,0.5,0), exclude = 
 		var space_state = get_world().get_direct_space_state()
 		var hit = space_state.intersect_ray(global_transform.origin, to.global_transform.origin + offset , exclude)
 		return hit && hit.collider == to
-	
+
+func raycast_fromto(from = self,to = get_player(), fromoffset = Vector3(0,0,0),tooffset = Vector3(0,0,0), exclude = [self]):
+	if tooffset == null:
+		tooffset = Vector3(0,0,0)
+	if fromoffset == null:
+		fromoffset = Vector3(0,0,0)
+	var space_state = get_world().get_direct_space_state()
+	var hit = space_state.intersect_ray(from.global_transform.origin+fromoffset, to.global_transform.origin + tooffset, exclude)
+	return hit && hit.collider == to
 
 func get_player_direction():
 	if get_player():

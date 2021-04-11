@@ -90,6 +90,30 @@ static func execute_command(words:PoolStringArray):
 				return
 			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
 			return
+		"god":
+			if words.size()==1:
+				Master.Player.undamageable = !Master.Player.undamageable
+				match Master.Player.undamageable:
+					true:
+						Master.println("Godmode ON",Color.green)
+					false:
+						Master.println("Godmode OFF",Color.green)
+				return
+			if words.size()==2:
+				var boolword : String = words[1]
+				var boolfromword = CmdHelp.word_to_bool(boolword)
+				if boolfromword == null:
+					Master.println("["+boolword+"] is not a valid value for command:["+command+"]",Color.red)
+					return
+				Master.Player.undamageable = boolfromword
+				match Master.Player.undamageable:
+					true:
+						Master.println("Godmode ON",Color.green)
+					false:
+						Master.println("Godmode OFF",Color.green)
+				return
+			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
+			return
 		
 		
 	Master.println("["+command+"] is not a valid command" ,Color.red)
