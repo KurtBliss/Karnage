@@ -22,6 +22,7 @@ func state_idle(_delta):
 		return
 	if get_player_spotted():
 		delay_state_change(2.0, "", "state_chase")
+	process_path()
 #		yield(get_tree().create_timer(1.0), "timeout")
 #		set_physics_state("state_chase")
 

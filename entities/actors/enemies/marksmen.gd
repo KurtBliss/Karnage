@@ -17,6 +17,7 @@ func state_idle(_delta):
 	if get_player_spotted():
 #		delay_state_change(3, "state_chase")
 		set_physics_state("state_chase")
+	process_path()
 
 func state_chase(_delta):
 	if not get_player():
