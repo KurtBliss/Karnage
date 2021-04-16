@@ -2,10 +2,13 @@ class_name Marksmen
 extends Enemy
 
 onready var bullet = preload("res://entities/actors/enemies/Bullet.tscn")
-onready var muzzel = $MeshInstance/Muzzel
+onready var machinegun = $MeshInstance/machinegun
+onready var muzzel = $MeshInstance/machinegun/Muzzel
 onready var Fire = $Fire
 onready var InjuredDelay = $InjuredDelay
 onready var Injured = $Injured
+onready var GunRayPos = $MeshInstance/machinegun/GunRayPos
+onready var BodyRayPos = $MeshInstance/BodyRayPos
 
 func _ready():
 	set_physics_state("state_idle")
@@ -14,6 +17,7 @@ func state_idle(_delta):
 	if get_player_spotted():
 #		delay_state_change(3, "state_chase")
 		set_physics_state("state_chase")
+	process_path()
 
 func state_chase(_delta):
 	if not get_player():
@@ -40,8 +44,29 @@ func state_chase_path(_delta):
 		set_path_to_player()
 
 func do_fire():
+	if !get_player():
+		return
+	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
+	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
 	var inst = bullet.instance()
 	muzzel.add_child(inst)
+
+func get_player_visibility():
+	var player = get_player()
+	if player:
+#		Debug Line Drawing
+#		var color = Color.red
+#		var color2 = Color.red
+#		if raycast_fromto(GunRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0)):
+#			color = Color.green
+#		if raycast_fromto(BodyRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0)):
+#			color2 = Color.green
+#		Master.Player.Hud.debug_lines.clear()
+#		Master.Player.Hud.add_debug_line(GunRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color)
+#		Master.Player.Hud.add_debug_line(BodyRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color2)
+#		Master.Player.Hud.update()
+		return raycast_fromto(GunRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0))&&raycast_fromto(BodyRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0))
+
 
 func _on_Fire_timeout():
 	do_fire()

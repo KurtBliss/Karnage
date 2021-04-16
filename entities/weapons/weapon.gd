@@ -73,5 +73,5 @@ func set_equiped(e):
 		cock.play()
 
 func set_projectile(p):
-	
-	var a = load(p)
+	if p != "":
+		var _a = load(p)

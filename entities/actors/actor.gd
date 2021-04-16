@@ -21,6 +21,7 @@ var previous_state = ""
 var previous_health = 0
 var injured = 0 # Not in use?
 export var direction_offset = 90
+var undamageable : bool = false
 
 func _process(delta):
 	if state != "" and has_method(state):
@@ -61,6 +62,8 @@ func get_physics_state():
 	return physics_state
 
 func do_damage(dmg : float, from : Actor):
+	if undamageable:
+		return
 #	health -= dmg
 
 	print(name, " actor recived dmg: ", dmg)
