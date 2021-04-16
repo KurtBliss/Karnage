@@ -1,4 +1,4 @@
-extends "res://entities/weapons/weapon.gd"
+extends Weapon
 
 
 # Declare member variables here. Examples:

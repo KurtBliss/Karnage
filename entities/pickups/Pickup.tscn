@@ -17,7 +17,6 @@ shape = SubResource( 1 )
 [node name="Area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13702, 0 )
 script = ExtResource( 2 )
-parrent_path = NodePath("..")
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )

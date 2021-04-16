@@ -66,14 +66,17 @@ func add_weapon(weapon : Node):
 		current_weapon.queue_free()
 	
 	current_weapon = weapon
-	weapons.append(weapon)
-	weapon.equiped = true
-	weapon.target_group = "Enemy"
-	weapon.raycast_path = String(raycast.get_path())+String(raycast.name)
-	weapon.holder_path = String(holder.get_path())+String(holder.name)
-	weapon.raycast = raycast
-	weapon.holder = holder
-	Master.reparent(weapon, self)
+	print("adding weapon, ", weapon)
+	
+	if not weapon == null:	
+		weapons.append(weapon)
+		weapon.equiped = true
+		weapon.target_group = "Enemy"
+		weapon.raycast_path = String(raycast.get_path())+String(raycast.name)
+		weapon.holder_path = String(holder.get_path())+String(holder.name)
+		weapon.raycast = raycast
+		weapon.holder = holder
+		Master.reparent(weapon, self)
 
 func has_weapon(_weapon_name):
 	return has_node(_weapon_name)

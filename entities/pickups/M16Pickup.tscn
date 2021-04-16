@@ -6,8 +6,4 @@
 [node name="M16Pickup" instance=ExtResource( 1 )]
 weapon_path = NodePath("Area/M16")
 
-[node name="Area" parent="." index="1"]
-parrent_path = NodePath("../../M16Pickup")
-
 [node name="M16" parent="Area" index="0" instance=ExtResource( 2 )]
-transform = Transform( 14.9801, -9.63916e-07, -0.771711, 0.192777, 14.5244, 3.74214, 0.747238, -3.74706, 14.5053, 0, 0.00767732, 0.000250787 )
