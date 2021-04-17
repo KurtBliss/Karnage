@@ -6,7 +6,7 @@ onready var holder = get_node(holder_path)
 
 var current = -1
 var weapons = []
-var current_weapon
+var current_weapon : Weapon
 var throw_timer = 60*2
 onready var raycast = $"../RayLong"
 onready var raycast_hit = $"../RayShort"
@@ -18,11 +18,15 @@ func _process(_delta):
 #	if weapons.size() < 1:
 #		return
 	var can_input = Master.input_enabled()
-
+	
 	if current_weapon:
-		if Input.is_action_just_pressed("fire") and can_input:
-			current_weapon.do_fire()
-			holder.do_emit_fire()
+		if current_weapon.automatic:
+			if Input.is_action_pressed("fire") and can_input:
+				current_weapon.do_fire()
+		else:
+			if Input.is_action_just_pressed("fire") and can_input:
+				current_weapon.do_fire()
+				holder.do_emit_fire()
 			
 		if Input.is_action_pressed("hit") and can_input:
 			throw_timer -= 1 # * delta * 60

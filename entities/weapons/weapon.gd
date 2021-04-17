@@ -9,6 +9,8 @@ export(CAN_SHOOT) var can_shoot_mode
 enum FIRE_TYPE {RAYCAST, PROJECTILE} 
 export(FIRE_TYPE) var fire_type
 
+export(bool) var automatic = false
+
 func _ready():
 	if equiped:
 		if raycast:
