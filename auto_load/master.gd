@@ -50,3 +50,9 @@ func printerror(text:String):
 func println(text:String,color:Color = Color.white):
 	console.print_output(text,color)
 	pass
+
+func _enter_tree() -> void:
+	GameData.load()
+
+func _exit_tree() -> void:
+	GameData.save()

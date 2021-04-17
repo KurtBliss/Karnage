@@ -6,10 +6,11 @@
 [ext_resource path="res://entities/actors/player/hud.gd" type="Script" id=5]
 [ext_resource path="res://entities/actors/player/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
-[ext_resource path="res://entities/tiledscreen/fade.gd" type="Script" id=8]
+[ext_resource path="res://entities/screens/tiledscreen/fade.gd" type="Script" id=8]
 [ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
 [ext_resource path="res://audio/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
 [ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=14]
+
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"

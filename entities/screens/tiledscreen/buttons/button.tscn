@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entities/screens/tiledscreen/dynamicfont_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://entities/screens/tiledscreen/buttons/button.gd" type="Script" id=2]
+[ext_resource path="res://entities/screens/tiledscreen/buttons/Label.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.513726 )
+expand_margin_left = 10.0
+
+[node name="Button" type="Button"]
+margin_left = 16.0
+margin_right = 484.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 360, 60 )
+custom_styles/focus = SubResource( 1 )
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.580392, 0.121569, 0.121569, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="Label"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -43.1667
+margin_top = -12.6667
+margin_right = -19.1667
+margin_bottom = 14.3333
+disabled = true
+button_mask = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
