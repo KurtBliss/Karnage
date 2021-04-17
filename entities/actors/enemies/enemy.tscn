@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
+[ext_resource path="res://assets/mixamo/mannequin/scene/Mannequin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/actors/enemies/enemymesh.tres" type="CapsuleMesh" id=3]
-
-
+[ext_resource path="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -90,6 +91,51 @@ albedo_color = Color( 0, 0, 0, 1 )
 [sub_resource type="SphereMesh" id=8]
 material = SubResource( 7 )
 
+[sub_resource type="GradientTexture" id=9]
+gradient = ExtResource( 5 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0.0108367, 0.0341597 ), 0.0, 0.0, 0, 0, Vector2( 0.188441, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998194, 0.349475 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+trail_divisor = 6
+emission_shape = 1
+emission_sphere_radius = 0.4
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 1.0
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.8
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 9 )
+anim_speed = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 6
+particles_anim_v_frames = 5
+particles_anim_loop = true
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=14]
+material = SubResource( 13 )
+
 [node name="Enemy" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 script = ExtResource( 1 )
@@ -106,11 +152,13 @@ shape = SubResource( 3 )
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1.08334, -7.05995e-07, -4.20945e-15, -5.75849e-15, -1.76727e-08, 1.482, -6.51683e-07, -1, -1.19249e-08, 0, 0.58, 0 )
+visible = false
 mesh = ExtResource( 3 )
 material/0 = null
 
 [node name="Arms" type="Spatial" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+visible = false
 
 [node name="AnimeHands" type="AnimationPlayer" parent="Arms"]
 anims/Hit = SubResource( 4 )
@@ -118,7 +166,7 @@ anims/Idle = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 
 [node name="Left" type="MeshInstance" parent="Arms"]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.36, -0.54, -1.82 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0899997, 0.73, -1.82 )
 mesh = SubResource( 8 )
 material/0 = null
 
@@ -126,4 +174,18 @@ material/0 = null
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.154938, -0.486937, 1.72 )
 mesh = SubResource( 8 )
 material/0 = null
+
+[node name="Mannequin" parent="." instance=ExtResource( 2 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -1.78381, 0 )
+
+[node name="Particles" type="Particles" parent="."]
+amount = 200
+lifetime = 0.5
+randomness = 1.0
+local_coords = false
+draw_order = 2
+process_material = SubResource( 12 )
+draw_pass_1 = SubResource( 14 )
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
+
+[editable path="Mannequin"]

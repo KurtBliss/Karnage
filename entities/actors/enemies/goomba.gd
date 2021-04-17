@@ -10,6 +10,7 @@ var offdirzag
 enum {ZIG, ZAG}
 
 onready var AnimeHands = $Arms/AnimeHands
+onready var mixamo = $Mannequin/Anime
 
 func _ready():
 	speed *= 1.3
@@ -18,6 +19,8 @@ func _ready():
 
 
 func state_idle(_delta):
+	mixamo.play("Idle")
+	
 	if not get_player():
 		return
 	if get_player_spotted():
@@ -31,6 +34,7 @@ func state_alert(_delta):
 
 func state_chase(_delta):
 	AnimeHands.play("Walk")
+	mixamo.play("Walk")
 	if get_player_visibility():
 		do_chase_player()
 		if get_player_distance() > zigzag_dist_start:
@@ -48,6 +52,8 @@ func switch_zig_zag():
 	timer_zig_zag()
 
 func state_chase_zig_zag(_delta):
+	mixamo.play("Walk")
+	
 	if not get_player_visibility():
 		set_path_to_player()
 		set_physics_state("state_chase_path")
@@ -63,6 +69,8 @@ func state_chase_zig_zag(_delta):
 	do_chase_player(null, zigzag_offset)
 
 func state_chase_path(_delta):
+	mixamo.play("Walk")
+	
 	if get_player_visibility():
 		set_physics_state("state_chase")
 		return

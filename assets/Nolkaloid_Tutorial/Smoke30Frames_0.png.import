@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Ch36_1001_Diffuse.png-e43b642ee682a9a2037b72ce51abe4ea.s3tc.stex"
-path.etc2="res://.import/Ch36_1001_Diffuse.png-e43b642ee682a9a2037b72ce51abe4ea.etc2.stex"
+path.s3tc="res://.import/Smoke30Frames_0.png-fcdd432e02dfa767cd85ab0202b808ee.s3tc.stex"
+path.etc2="res://.import/Smoke30Frames_0.png-fcdd432e02dfa767cd85ab0202b808ee.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/mixamo/mannequin/textures/Ch36_1001_Diffuse.png"
-dest_files=[ "res://.import/Ch36_1001_Diffuse.png-e43b642ee682a9a2037b72ce51abe4ea.s3tc.stex", "res://.import/Ch36_1001_Diffuse.png-e43b642ee682a9a2037b72ce51abe4ea.etc2.stex" ]
+source_file="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png"
+dest_files=[ "res://.import/Smoke30Frames_0.png-fcdd432e02dfa767cd85ab0202b808ee.s3tc.stex", "res://.import/Smoke30Frames_0.png-fcdd432e02dfa767cd85ab0202b808ee.etc2.stex" ]
 
 [params]
 
