@@ -15,6 +15,7 @@ func _ready():
 			raycast.cast_to.z = -ray_cast_range
 		else:
 			print(self, " missing raycast")
+	anime.play("Idle")
 
 func do_fire():
 	if can_fire:
