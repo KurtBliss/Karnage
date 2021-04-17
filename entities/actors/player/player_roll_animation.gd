@@ -27,7 +27,8 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 			play("rollside")
 			return 1
 		elif x_dir < 0:
-			play_backwards("rollside")
+#			play_backwards("rollside")
+			play("roll left")
 			return -1
 	else:
 		var vect = Vector3(0, yy, zz)
@@ -41,6 +42,7 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 			play("roll")
 			return -1
 		elif z_dir > 0:
-			play_backwards("roll")
+#			play_backwards("roll")
+			play("roll back")
 			return 1
 	return 0

@@ -49,7 +49,9 @@ func _physics_process(delta):
 	"""
 	var is_playing = Anime.is_playing()
 	var is_roll_normal = Anime.current_animation == "roll"
+	is_roll_normal = is_roll_normal || Anime.current_animation == "roll back"
 	var is_roll_side = Anime.current_animation == "rollside"
+	is_roll_side = is_roll_side || Anime.current_animation == "roll left"
 	var is_roll = is_roll_normal or is_roll_side
 	if (is_playing && is_roll):
 		is_dashing = true
