@@ -55,7 +55,9 @@ margin_left = 0.0
 margin_top = 42.0
 margin_right = 784.0
 margin_bottom = 102.0
+method = ""
 label_text = "Play"
+show_check = false
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 visible = false
@@ -63,6 +65,10 @@ margin_left = 0.0
 margin_top = 122.0
 margin_right = 784.0
 margin_bottom = 182.0
+scene = "res://menus/TitledScreen.tscn"
+method = ""
+label_text = ""
+show_check = false
 
 [node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_left = 0.0
@@ -70,15 +76,19 @@ margin_top = 122.0
 margin_right = 784.0
 margin_bottom = 182.0
 scene = "res://entities/screens/options/options_screen.tscn"
+method = ""
 label_text = "Options"
+show_check = false
 
 [node name="Button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
 margin_left = 0.0
 margin_top = 202.0
 margin_right = 784.0
 margin_bottom = 262.0
+scene = "res://menus/TitledScreen.tscn"
 method = "game_end"
 label_text = "Exit"
+show_check = false
 
 [node name="Footer" type="Label" parent="Menu"]
 margin_top = 383.0
