@@ -9,8 +9,6 @@ var txt = ""
 onready var CommandLine = $CommandLine
 onready var CommandText:RichTextLabel = $CommandText
 
-#TODO: pause the game/prevent movement when console is up
-
 func _ready():
 	var canvas_rid = get_canvas_item()
 	VisualServer.canvas_item_set_draw_index(canvas_rid,100)
