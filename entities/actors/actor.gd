@@ -23,6 +23,9 @@ var injured = 0 # Not in use?
 export var direction_offset = 90
 var undamageable : bool = false
 
+func _ready():
+	add_to_group("actor")
+
 func _process(delta):
 	if state != "" and has_method(state):
 		call(state, delta)
