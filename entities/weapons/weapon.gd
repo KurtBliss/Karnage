@@ -39,6 +39,10 @@ func _on_Anime_animation_finished(anim_name):
 	if anim_name == "Fire":
 		if can_shoot_mode == CAN_SHOOT.ANIME_END:
 			can_fire = true
+	elif anim_name == "Hit":
+		if can_shoot_mode == CAN_SHOOT.ANIME_END:
+			can_fire = true
+			anime.play("Idle")
 
 func _on_Pistol_tree_entered():
 	var par = get_parent()
