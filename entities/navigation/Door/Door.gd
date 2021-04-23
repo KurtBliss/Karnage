@@ -1,6 +1,5 @@
 class_name Door
 extends Position3D
-onready var anime = $Mesh/AnimationPlayer
 onready var mesh = $Mesh
 var bodies = []
 var pos = 0
