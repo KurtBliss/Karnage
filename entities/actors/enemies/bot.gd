@@ -72,6 +72,9 @@ func calc_offset(offset: Vector3 = Vector3.ZERO):
 	pass
 
 func raycast(to = get_player(), name = "", offset = Vector3(0,0.5,0), exclude = [self]):
+	if not to:
+		return
+	
 	if name == null:
 		name = ""
 	if offset == null:
