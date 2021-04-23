@@ -186,6 +186,7 @@ local_coords = false
 draw_order = 2
 process_material = SubResource( 12 )
 draw_pass_1 = SubResource( 14 )
+
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
 
 [editable path="Mannequin"]

@@ -2,28 +2,33 @@ class_name Marksmen
 extends Enemy
 
 onready var bullet = preload("res://entities/actors/enemies/Bullet.tscn")
-onready var machinegun = $MeshInstance/machinegun
-onready var muzzel = $MeshInstance/machinegun/Muzzel
+onready var machinegun = $Mannequin/Skeleton/BoneAttachment/MeshInstance/machinegun#$MeshInstance/machinegun
+onready var muzzel = $Mannequin/Skeleton/BoneAttachment/MeshInstance/machinegun/Muzzel #$MeshInstance/machinegun/Muzzel
 onready var Fire = $Fire
 onready var InjuredDelay = $InjuredDelay
 onready var Injured = $Injured
-onready var GunRayPos = $MeshInstance/machinegun/GunRayPos
-onready var BodyRayPos = $MeshInstance/BodyRayPos
+onready var GunRayPos = $Mannequin/Skeleton/BoneAttachment/MeshInstance/machinegun/GunRayPos #$MeshInstance/machinegun/GunRayPos
+onready var BodyRayPos = $Mannequin/Skeleton/BoneAttachment/MeshInstance/BodyRayPos #$MeshInstance/BodyRayPos
+onready var anime = $Mannequin/Anime
 
 func _ready():
 	set_physics_state("state_idle")
 
 func state_idle(_delta):
+	anime.play("Idle")
 	if get_player_spotted():
 #		delay_state_change(3, "state_chase")
 		set_physics_state("state_chase")
 	process_path()
 
 func state_chase(_delta):
+	if not anime.is_playing():
+		anime.play("Walk")
 	if not get_player():
 		return
 	if get_player_visibility():
 		if Fire.is_stopped():
+			anime.play("Aim")
 			Fire.start()
 		var gpd = get_player_distance()
 		if gpd > 15:
@@ -36,6 +41,7 @@ func state_chase(_delta):
 		set_physics_state("state_chase_path")
 
 func state_chase_path(_delta):
+	anime.play("Walk")
 	if get_player_visibility():
 		set_physics_state("state_chase")
 		return
@@ -47,7 +53,7 @@ func do_fire():
 	if !get_player():
 		return
 	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
-	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
+#	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
 	var inst = bullet.instance()
 	muzzel.add_child(inst)
 

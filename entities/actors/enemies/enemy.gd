@@ -31,6 +31,8 @@ func _process(_delta):
 	elif p:
 		if drain_player_on_proximity:
 			drain_player_health(p)
+#	if not is_on_floor():
+#		var _result = move_and_slide(Vector3(0, -1, 0))
 
 func set_drain_on_proximity(bol):
 	drain_player_on_proximity = bol

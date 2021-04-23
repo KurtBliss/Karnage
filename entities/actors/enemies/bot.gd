@@ -128,6 +128,7 @@ func do_walk(spd = speed):
 	if spd == null:
 		spd = speed
 	var direction = -transform.basis.z.normalized() * spd
+	direction.y = 0
 	var _vector3 = move_and_slide(direction, Vector3.UP)
 	
 
@@ -157,7 +158,10 @@ func delay_state_change(delay:float, state = get_state(), phys_state = get_physi
 
 func process_path():
 	if path_ind < path.size():
-		var move_vec = (path[path_ind] - global_transform.origin + Vector3(0, y_offset, 0))
+		var pospoint = global_transform.origin
+		var pathpoint = path[path_ind]
+		pathpoint.y = pospoint.y
+		var move_vec = (pathpoint - pospoint + Vector3(0, y_offset, 0))
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
