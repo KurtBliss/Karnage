@@ -16,6 +16,7 @@ onready var PostGameRestart = $PostGame/Restart
 func _ready():
 	Master.Manager = self
 	change_mode(MODE.PRE_GAME)
+	$AnimationPlayer.play("mapsSpin")
 
 func change_mode(set_mode):
 	match set_mode:
