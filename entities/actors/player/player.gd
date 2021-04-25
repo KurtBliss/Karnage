@@ -8,7 +8,6 @@ signal fired()
 ###################-VARIABLES-####################
 
 var Player:Player
-var velocity = Vector3()
 var camera_x_rotation = 0
 var roll_basis 
 var head_basis

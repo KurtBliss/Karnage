@@ -32,6 +32,10 @@ func _process(_delta):
 		if drain_player_on_proximity:
 			drain_player_health(p)
 
+func _physics_process(delta):
+	process_velocity(delta)
+	
+
 func set_drain_on_proximity(bol):
 	drain_player_on_proximity = bol
 
@@ -102,3 +106,5 @@ func wandering_timer_timeout():
 		yield(enemy_tween,"tween_completed")
 		wandering_timer.start()
 		set_path_to(wandering_position)
+
+

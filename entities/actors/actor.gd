@@ -22,6 +22,7 @@ var previous_health = 0
 var injured = 0 # Not in use?
 export var direction_offset = 90
 var undamageable : bool = false
+var velocity = Vector3.ZERO
 
 func _ready():
 	add_to_group("actor")
@@ -29,6 +30,7 @@ func _ready():
 func _process(delta):
 	if state != "" and has_method(state):
 		call(state, delta)
+	
 
 func _physics_process(delta):
 	if physics_state != "" and has_method(physics_state):
@@ -63,6 +65,14 @@ func set_physics_state(method):
 
 func get_physics_state(): 
 	return physics_state
+
+#TODO: process_velocity
+func process_velocity(_delta):
+	
+	velocity.y -= 1
+	velocity = move_and_slide(velocity, Vector3.UP)
+	pass
+
 
 func do_damage(dmg : float, from : Actor):
 	if undamageable:

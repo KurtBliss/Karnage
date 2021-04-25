@@ -11,9 +11,13 @@ var path_ind = 0
 var path_hit_point = false
 var bot_cast
 var delay_in_progress = false
+var on_floor = false
 
 func _ready():
 	speed = 7
+
+func _process(delta):
+	process_is_on_floor()
 
 func set_path_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
@@ -99,6 +103,11 @@ func raycast_fromto(from = self,to = get_player(), fromoffset = Vector3(0,0,0),t
 	var hit = space_state.intersect_ray(from.global_transform.origin+fromoffset, to.global_transform.origin + tooffset, exclude)
 	return hit && hit.collider == to
 
+func racycast_direct(from, to, exclude = [self]):
+	var space_state = get_world().get_direct_space_state()
+	var hit = space_state.intersect_ray(from, to, exclude)
+	return hit
+
 func get_player_direction():
 	if get_player():
 		return get_direction_to(get_player())
@@ -131,8 +140,10 @@ func do_walk(spd = speed):
 	if spd == null:
 		spd = speed
 	var direction = -transform.basis.z.normalized() * spd
-	var _vector3 = move_and_slide(direction, Vector3.UP)
-	
+	direction.y = 0 
+	velocity = direction
+#	var _vector3 = move_and_slide(direction, Vector3.UP)
+
 
 func do_chase_player(spd = speed, offset: Vector3 = Vector3.ZERO):
 	if spd == null:
@@ -164,13 +175,24 @@ func process_path():
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
-			var _tmp = move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
+			var dir = move_vec.normalized() * speed
+			dir.y = 0
+			velocity = dir
+#			var _tmp = move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
 		return true
 	return false
+	
+func process_is_on_floor():
+	var pfrom = get_position()
+	var pto = pfrom
+	pto.y -= 1.1
+	var cast = racycast_direct(pfrom, pto)
+	on_floor = cast and cast.collider
 
 func check_projection(start:Vector3, projected:Vector3, point:Vector3):
 	if raycast([start, projected]):
 		if raycast([projected, point]):
 			return true
 	return false
+
 
