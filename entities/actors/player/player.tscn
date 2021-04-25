@@ -288,5 +288,4 @@ stream = ExtResource( 12 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
-[connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]

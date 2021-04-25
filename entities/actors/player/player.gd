@@ -179,6 +179,8 @@ func score_set(value):
 	score = value
 	emit_signal("score_changed", value)
 
-func _on_Player_tree_exited():
-	pass
-#	Mouse.set_capture(false)
+func _enter_tree() -> void:
+	Master.Player = self
+
+func _exit_tree() -> void:
+	Master.Player = null
