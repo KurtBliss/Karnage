@@ -15,8 +15,6 @@ onready var mixamo = $Mannequin/Anime
 func _ready():
 	speed *= 1.3
 	set_physics_state("state_idle")
-	
-
 
 func state_idle(_delta):
 	mixamo.play("Idle")
@@ -73,7 +71,9 @@ func state_chase_path(_delta):
 	
 	if get_player_visibility():
 		set_physics_state("state_chase")
+		
 		return
+		
 	var process = process_path()
 	if not process:
 		set_path_to_player()

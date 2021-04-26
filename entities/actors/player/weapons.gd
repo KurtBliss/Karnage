@@ -26,7 +26,7 @@ func _process(_delta):
 		else:
 			if Input.is_action_just_pressed("fire") and can_input:
 				current_weapon.do_fire()
-				holder.do_emit_fire()
+
 			
 		if Input.is_action_pressed("hit") and can_input:
 			throw_timer -= 1 # * delta * 60

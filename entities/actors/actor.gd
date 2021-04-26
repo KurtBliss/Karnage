@@ -23,6 +23,7 @@ var injured = 0 # Not in use?
 export var direction_offset = 90
 var undamageable : bool = false
 var velocity = Vector3.ZERO
+var on_floor = false
 
 func _ready():
 	add_to_group("actor")
@@ -68,9 +69,10 @@ func get_physics_state():
 
 #TODO: process_velocity
 func process_velocity(_delta):
-	
-	velocity.y -= 1
+	if not on_floor:
+		velocity.y -= 1
 	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)
 	pass
 
 

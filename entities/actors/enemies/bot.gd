@@ -2,7 +2,7 @@ class_name Bot
 extends Actor
 export var detect_range = 50 #rename to detect_dist
 export var detect_fov = 90
-export var y_offset = 1.5
+export var y_offset = 0#1.5
 export var zig_dist = 10
 onready var nav = get_parent() if get_parent() != null else null
 var zig_len = 0
@@ -11,7 +11,6 @@ var path_ind = 0
 var path_hit_point = false
 var bot_cast
 var delay_in_progress = false
-var on_floor = false
 
 func _ready():
 	speed = 7
@@ -171,14 +170,17 @@ func delay_state_change(delay:float, state = get_state(), phys_state = get_physi
 
 func process_path():
 	if path_ind < path.size():
-		var move_vec = (path[path_ind] - global_transform.origin + Vector3(0, y_offset, 0))
+		var pathpoint : Vector3 = path[path_ind]
+		pathpoint.y = 0
+		var curpos = global_transform.origin
+		curpos.y = 0
+		var move_vec = (pathpoint - curpos + Vector3(0, y_offset, 0))
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
 			var dir = move_vec.normalized() * speed
 			dir.y = 0
 			velocity = dir
-#			var _tmp = move_and_slide(move_vec.normalized() * speed, Vector3(0, 1, 0))
 		return true
 	return false
 	

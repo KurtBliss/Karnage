@@ -45,13 +45,13 @@ func drain_player_health(p):
 		p.do_damage(7,self)
 		enemy_atk_delay = enemy_atk_delay_set
 
-
 func _on_fired():
 	set_physics_state("state_chase")
 
 func on_alterted():
 	if get_physics_state() == "state_idle":
-		set_physics_state("state_alert")
+		set_physics_state("state_chase")
+#		set_physics_state("state_alert")
 
 func _on_Enemy_died():
 	get_player().score += 10
