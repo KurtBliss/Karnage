@@ -11,6 +11,11 @@ export(FIRE_TYPE) var fire_type
 
 export(bool) var automatic = false
 
+export(Master.AMMO) var ammo_type
+
+export(int) var clip_size = 6
+export(int) var clip  = clip_size
+
 func _ready():
 	if equiped:
 		if raycast:
@@ -21,15 +26,37 @@ func _ready():
 
 func do_fire():
 	if can_fire:
-		can_fire = false 
-		timer.start(rate)
-		if fire_type == FIRE_TYPE.RAYCAST:
-			if raycast.is_colliding():
-				var collider = raycast.get_collider()
-				if collider.is_in_group(target_group):
-					collider.do_damage(damage, holder)
-		anime.play("Fire", -1, fire_anime_speed)
-		emit_signal("fired")
+		if clip > 0:
+			clip -= 1
+			can_fire = false 
+			timer.start(rate)
+			if fire_type == FIRE_TYPE.RAYCAST:
+				if raycast.is_colliding():
+					var collider = raycast.get_collider()
+					if collider.is_in_group(target_group):
+						collider.do_damage(damage, holder)
+			anime.play("Fire", -1, fire_anime_speed)
+			holder.do_emit_fire()
+			holder.do_emit_clip(clip)
+			holder.do_emit_ammo(holder.ammo[ammo_type])
+		
+
+func start_reload():
+	if can_fire:
+		can_fire = false
+		anime.play("Reload", -1, reload_anime_speed)
+
+func do_reload():
+	while clip < clip_size:
+		if holder.ammo[ammo_type] == null:
+			return
+		if holder.ammo[ammo_type] > 0:
+			holder.ammo[ammo_type] -= 1
+			clip += 1
+			holder.do_emit_clip(clip)
+			holder.do_emit_ammo(holder.ammo[ammo_type])
+		else:
+			return
 
 func _on_Rate_timeout():
 	if can_shoot_mode == CAN_SHOOT.FIRE_RATE:
@@ -43,12 +70,17 @@ func _on_Anime_animation_finished(anim_name):
 		if can_shoot_mode == CAN_SHOOT.ANIME_END:
 			can_fire = true
 			anime.play("Idle")
+	elif anim_name == "Reload":
+		can_fire = true
+		do_reload()
 
 func _on_Pistol_tree_entered():
 	var par = get_parent()
 	if par:
 		if par.is_in_group("hand"):
 			par.current_weapon = self
+			holder.do_emit_clip(clip)
+			holder.do_emit_ammo(holder.ammo[ammo_type])			
 
 
 # Stats
@@ -56,6 +88,7 @@ export var damage : int = 0
 export var ray_cast_range : int = 0 
 export var rate : float = 0 
 export var fire_anime_speed : float = 1
+export var reload_anime_speed : float = 0.7
 
 # Node References
 export(String, "None", "Enemy", "Player") var target_group

@@ -4,6 +4,8 @@ extends Actor
 
 signal score_changed(score)
 signal fired()
+signal clip_changed(clip)
+signal ammo_changed(ammo)
 
 ###################-VARIABLES-####################
 
@@ -18,6 +20,8 @@ var can_double = true
 var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
+var ammo = Master.ammo_container
+
 # Nodes
 onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
@@ -40,6 +44,9 @@ func _ready():
 	add_to_group("Player")
 	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
 	Master.GameTimer.connect("time_left", Hud, "_on_Timer_time_left")
+	ammo[Master.AMMO.PISTOL] += 10
+	ammo[Master.AMMO.M16] += 32
+	
 
 func _physics_process(delta):
 	var can_input = Master.input_enabled()
@@ -142,6 +149,21 @@ func move_camera(look, delta):
 func do_emit_fire():
 	#to get rid of cautoin in log
 	emit_signal("fired")
+	
+func do_emit_clip(clip):
+	#to get rid of cautoin in log
+	emit_signal("clip_changed", clip)
+
+func do_emit_ammo(ammo):
+	#to get rid of cautoin in log
+	#TODO: 
+	emit_signal("ammo_changed", ammo)
+
+func gain_ammo(type, amount):
+	if ammo[type] != null:
+		ammo[type] += amount
+	else:
+		ammo[type] = amount
 
 ###################-VIRTUAL FUNCS-####################
 

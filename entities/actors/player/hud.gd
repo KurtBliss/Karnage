@@ -3,6 +3,8 @@ extends Control
 onready var Health = $Health
 onready var Time = $Time
 onready var Score = $Score
+onready var Clip = $Clip
+onready var Ammo = $Ammo
 
 var debug_lines : Array = []
 
@@ -21,12 +23,25 @@ func _on_Player_score_changed(score):
 		Score.set_text(str(score))
 
 
+func _on_Player_clip_changed(clip):
+	if Clip:
+		Clip.set_text("clip: " + str(clip))
+
+
+func _on_Player_ammo_changed(ammo):
+	#TODO: 
+	if Ammo:
+		Ammo.set_text(" / " + str(ammo))
+	pass # Replace with function body.
+
+
 func _draw():
 	for line in debug_lines:
 		draw_line_3D(line)
 
 func add_debug_line(pos1:Vector3,pos2:Vector3,color:Color=Color.green,width:float = 1.0):
 	debug_lines.append([pos1,pos2,color,width])
+
 
 
 func draw_line_3D(line:Array):
@@ -56,3 +71,5 @@ func draw_line_3D(line:Array):
 	if is_end_behind:
 		end = end+((start - end)*2)
 	draw_line(start, end, color, width)
+
+

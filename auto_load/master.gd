@@ -8,6 +8,15 @@ var console # Init on Console _ready()
 var mute = false
 onready var CmdManager = load("res://auto_load/Console/CmdManager.gd")
 
+enum AMMO {PISTOL, M16, SHOTGUN, SNIPER}
+
+var ammo_container = {
+	AMMO.PISTOL: 0,
+	AMMO.M16: 0,
+	AMMO.SHOTGUN: 0,
+	AMMO.SNIPER: 0
+}
+
 func _process(_delta):
 	if Input.is_action_just_pressed("game_end"):
 		if Mouse.toggle and Mouse.capture:

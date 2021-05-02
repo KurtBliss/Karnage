@@ -26,6 +26,9 @@ func _process(_delta):
 		else:
 			if Input.is_action_just_pressed("fire") and can_input:
 				current_weapon.do_fire()
+		
+		if Input.is_action_just_pressed("reload") and can_input:
+			current_weapon.start_reload()
 
 			
 		if Input.is_action_pressed("hit") and can_input:
@@ -53,8 +56,9 @@ func throw_weapon():
 	print(cur)
 	var ld = load(cur.pickup_file)
 	var inst: PickupBody = ld.instance()
-	inst.transform.origin = Master.Player.transform.origin 
-	
+	inst.pass_clip = cur.clip
+	inst.transform.origin = Master.Player.transform.origin
+	holder.do_emit_clip(-1)
 	inst.velocity =  (Master.Player.dir) * 10
 	cur.queue_free()
 	Master.GameWorld.add_child(inst)
@@ -80,6 +84,7 @@ func add_weapon(weapon : Node):
 		weapon.holder_path = String(holder.get_path())+String(holder.name)
 		weapon.raycast = raycast
 		weapon.holder = holder
+		holder.do_emit_clip(weapon.clip)
 		Master.reparent(weapon, self)
 
 func has_weapon(_weapon_name):

@@ -67,7 +67,6 @@ func set_physics_state(method):
 func get_physics_state(): 
 	return physics_state
 
-#TODO: process_velocity
 func process_velocity(_delta):
 	if not on_floor:
 		velocity.y -= 1
