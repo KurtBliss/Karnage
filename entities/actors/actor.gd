@@ -23,10 +23,16 @@ var injured = 0 # Not in use?
 export var direction_offset = 90
 var undamageable : bool = false
 var velocity = Vector3.ZERO
-var on_floor = false
+var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
+onready var blood_effect = preload("res://effects/blood.tscn")
+var blood : Particles
+var blood_delay = 0
 
 func _ready():
 	add_to_group("actor")
+	var b = blood_effect.instance()
+	add_child(b)
+	blood = b
 
 func _process(delta):
 	if state != "" and has_method(state):
@@ -68,11 +74,13 @@ func get_physics_state():
 	return physics_state
 
 func process_velocity(_delta):
-	if not on_floor:
-		velocity.y -= 1
+	if blood_delay > 0:
+		blood_delay -= _delta * 60
+		if blood_delay <= 0:
+			blood.emitting = false
+	velocity.y -= 10
 	velocity = move_and_slide(velocity, Vector3.UP)
 	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)
-	pass
 
 
 func do_damage(dmg : float, from : Actor):
@@ -83,6 +91,14 @@ func do_damage(dmg : float, from : Actor):
 	print(name, " actor recived dmg: ", dmg)
 
 	set_health(get_health() - dmg)
+	
+	var b = blood_decal.instance()
+	if is_on_floor():
+		Master.GameWorld.add_child(b)
+		b.global_transform.origin = global_transform.origin 
+	
+	blood.emitting = true
+	blood_delay = 30
 	
 	if from:
 		var method = "_on_attacked_from_" + from.name

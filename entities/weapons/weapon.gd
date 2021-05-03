@@ -16,6 +16,8 @@ export(Master.AMMO) var ammo_type
 export(int) var clip_size = 6
 export(int) var clip  = clip_size
 
+var b_decal = preload("res://entities/decals/BulletDecal.tscn")
+
 func _ready():
 	if equiped:
 		if raycast:
@@ -35,6 +37,14 @@ func do_fire():
 					var collider = raycast.get_collider()
 					if collider.is_in_group(target_group):
 						collider.do_damage(damage, holder)
+					else:
+						var aa = collider is GridMap 
+						var bb = collider.is_in_group("door")
+						if aa or bb:
+							var b = b_decal.instance()
+							collider.add_child(b)
+							b.global_transform.origin = raycast.get_collision_point()
+							b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
 			anime.play("Fire", -1, fire_anime_speed)
 			holder.do_emit_fire()
 			holder.do_emit_clip(clip)

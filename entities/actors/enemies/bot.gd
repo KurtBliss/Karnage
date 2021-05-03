@@ -15,9 +15,6 @@ var delay_in_progress = false
 func _ready():
 	speed = 7
 
-func _process(delta):
-	process_is_on_floor()
-
 func set_path_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_ind = 0
@@ -184,12 +181,6 @@ func process_path():
 		return true
 	return false
 	
-func process_is_on_floor():
-	var pfrom = get_position()
-	var pto = pfrom
-	pto.y -= 1.1
-	var cast = racycast_direct(pfrom, pto)
-	on_floor = cast and cast.collider
 
 func check_projection(start:Vector3, projected:Vector3, point:Vector3):
 	if raycast([start, projected]):

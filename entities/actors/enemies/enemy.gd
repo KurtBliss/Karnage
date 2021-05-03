@@ -12,6 +12,7 @@ var enemyRNG = RandomNumberGenerator.new()
 var enemy_tween : Tween
 var spawn_position : Vector3
 
+
 func _ready():
 	add_to_group("Enemy")
 	spawn_position = transform.origin
@@ -20,6 +21,7 @@ func _ready():
 	wandering_timer.connect("timeout",self,"wandering_timer_timeout") 
 	enemy_tween = Tween.new()
 	add_child(enemy_tween)
+	
 	
 func _process(_delta):
 	var p = get_player()
@@ -106,5 +108,4 @@ func wandering_timer_timeout():
 		yield(enemy_tween,"tween_completed")
 		wandering_timer.start()
 		set_path_to(wandering_position)
-
 

@@ -5,7 +5,6 @@
 [ext_resource path="res://entities/weapons/M16.gd" type="Script" id=3]
 
 [node name="M16" instance=ExtResource( 1 )]
-transform = Transform( 14.9801, -2.37487e-07, -0.771713, -0.0251956, 14.992, -0.489096, 0.771295, 0.48974, 14.9722, 0, 0, -7.45058e-09 )
 mesh = ExtResource( 2 )
 material/14 = null
 material/15 = null
