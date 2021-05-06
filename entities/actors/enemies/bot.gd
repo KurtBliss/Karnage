@@ -21,20 +21,26 @@ func set_path_to(target_pos):
 	path_ind = 0
 
 func set_path_to_player():
-	if Master.Player == null: return null	
-	path =nav.get_simple_path(global_transform.origin, Master.Player.global_transform.origin)
-	path_ind = 0
+	if get_player():	
+		path =nav.get_simple_path(global_transform.origin, Master.Player.global_transform.origin)
+		path_ind = 0
 
 func get_player():
-	return Master.Player
+	var p = Master.Player
+	if is_instance_valid(p):
+		return p
+	else:
+		return null
 
 func get_player_vector():
-	if Master.Player == null: return null
+	if not is_instance_valid(Master.Player): 
+		return null
 	var vect = (Master.Player.get_translation()  - get_translation())
 	vect.angle_diff()
 
 func get_player_distance(offset = Vector3.ZERO):
-	if Master.Player == null: return null
+	if not is_instance_valid(Master.Player): 
+		return null
 	var _len
 	if typeof(offset)==TYPE_VECTOR3:
 		_len = (get_player_position() + offset - get_position()).length()
@@ -91,7 +97,7 @@ func raycast(to = get_player(), name = "", offset = Vector3(0,0.5,0), exclude = 
 		var hit = space_state.intersect_ray(global_transform.origin, to.global_transform.origin + offset , exclude)
 		return hit && hit.collider == to
 
-func raycast_fromto(from = self,to = get_player(), fromoffset = Vector3(0,0,0),tooffset = Vector3(0,0,0), exclude = [self]):
+func raycast_fromto(from = self,to = get_player(), fromoffset = Vector3(0,0,0),tooffset = Vector3(0,0,0), exclude = [self]):	
 	if tooffset == null:
 		tooffset = Vector3(0,0,0)
 	if fromoffset == null:

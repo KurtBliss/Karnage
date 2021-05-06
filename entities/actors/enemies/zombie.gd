@@ -9,7 +9,7 @@ func _ready():
 	add_to_group("Zombie")
 	add_to_group("Enemy")
 	state_reset("state_normal", "")
-	if Master.Player != null:
+	if is_instance_valid(Master.Player):
 		connect("injured", Master.Player, "enemy_injured")
 		connect("death", Master.Player, "enemy_death")
  

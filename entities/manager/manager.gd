@@ -25,7 +25,7 @@ func change_mode(set_mode):
 			Master.GameTimer.start()
 			PreGame.visible = false
 			PostGame.visible = false
-			if Master.Player == null:
+			if Master.Player == null or not is_instance_valid(Master.Player):
 				var ld = load("res://entities/actors/player/player.tscn")
 				var inst : KinematicBody = ld.instance()
 				

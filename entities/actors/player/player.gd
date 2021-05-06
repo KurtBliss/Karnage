@@ -38,7 +38,10 @@ onready var InjuredSprite = $Hud/Injured/Sprite
 ###################-BUILT IN-####################
 
 func _ready():
+	
 	Master.Player = self
+	prints("Master.Player", Master.Player)
+	
 	Mouse.set_capture(true)
 	add_child(rstick)
 	add_to_group("Player")
@@ -46,6 +49,8 @@ func _ready():
 	Master.GameTimer.connect("time_left", Hud, "_on_Timer_time_left")
 	ammo[Master.AMMO.PISTOL] += 10
 	ammo[Master.AMMO.M16] += 32
+	
+	
 	
 
 func _physics_process(delta):

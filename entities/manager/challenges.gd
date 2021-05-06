@@ -11,7 +11,6 @@ func _process(_delta):
 	if destroy_on_release:
 		if not Input.is_action_pressed("show_challenges"):
 			queue_free()
-	
 	for challenge in challenges:
 		if challenge == null:
 			pass
@@ -20,9 +19,6 @@ func _process(_delta):
 				var result = call(challenge["method"], challenge)
 				if result:
 					emit_signal("challenge_completed", challenge["label"].get_text())
-	
-	if Master.Player == null:
-		return
 
 func new_challenge(_label, _type, _condition):
 	return {
@@ -32,10 +28,9 @@ func new_challenge(_label, _type, _condition):
 	}
 
 func typeHS(challenge):
-	if not Master.Player:
-		return
-	if Master.Player.score >= challenge["condition"]:
-		do_mark(challenge["label"])
+	if is_instance_valid(Master.Player):
+		if Master.Player.score >= challenge["condition"]:
+			do_mark(challenge["label"])
 
 func do_mark(node:Label):
 	node.get_node("Crossout").visible = true
