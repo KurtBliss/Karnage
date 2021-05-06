@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://assets/mixamo/mannequin/scene/Mannequin.tscn" type="PackedScene" id=2]
@@ -16,8 +16,10 @@ material = SubResource( 1 )
 [sub_resource type="CapsuleShape" id=3]
 height = 2.25719
 
-[sub_resource type="Animation" id=4]
-resource_name = "Hit"
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.955069, 0.203253, 1.506 )
+
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left:translation")
 tracks/0/interp = 1
@@ -31,8 +33,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0.36, -0.54, -1.82 ), Vector3( -0.0899997, 0.73, -1.82 ), Vector3( 2.88, -0.08, -0.0899994 ), Vector3( 0.36, -0.54, -1.82 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Idle"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left:translation")
 tracks/0/interp = 1
@@ -58,8 +59,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0.36, -0.54, 1.82 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Walk"
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left:translation")
@@ -86,22 +86,22 @@ tracks/1/keys = {
 "values": [ Vector3( -0.41, -0.28, 1.72 ), Vector3( 0.12, -0.71, 1.72 ), Vector3( 0.718571, -0.327143, 1.72 ), Vector3( -0.0228571, -0.578286, 1.72 ), Vector3( -0.590952, -0.279429, 1.72 ) ]
 }
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SphereMesh" id=8]
-material = SubResource( 7 )
+[sub_resource type="SphereMesh" id=9]
+material = SubResource( 8 )
 
-[sub_resource type="GradientTexture" id=9]
+[sub_resource type="GradientTexture" id=10]
 gradient = ExtResource( 5 )
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=11]
 _data = [ Vector2( 0.0108367, 0.0341597 ), 0.0, 0.0, 0, 0, Vector2( 0.188441, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998194, 0.349475 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
-curve = SubResource( 10 )
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=13]
 trail_divisor = 6
 emission_shape = 1
 emission_sphere_radius = 0.4
@@ -117,13 +117,13 @@ linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
 scale_random = 0.8
-scale_curve = SubResource( 11 )
-color_ramp = SubResource( 9 )
+scale_curve = SubResource( 12 )
+color_ramp = SubResource( 10 )
 anim_speed = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=14]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -134,12 +134,14 @@ particles_anim_v_frames = 5
 particles_anim_loop = true
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="QuadMesh" id=14]
-material = SubResource( 13 )
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 14 )
 
 [node name="Enemy" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 script = ExtResource( 1 )
+speed = 15
+health = 60
 
 [node name="Sunglasses" type="MeshInstance" parent="."]
 transform = Transform( -0.820092, 0, -5.26939e-08, 0, 0.251679, 0, 2.6722e-07, 0, -0.161716, 0.0199668, 0.399263, -0.968341 )
@@ -150,6 +152,11 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -1.05879e-22, 0.525525, 0 )
 shape = SubResource( 3 )
+
+[node name="CollisionShapeDeath" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 5.30863e-14, 2.10321e-16, 0.999992, -0.0039617, -5.30859e-14, 0.0039617, 0.999992, -1.05879e-22, -1.38442, -4.00815 )
+shape = SubResource( 4 )
+disabled = true
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1.08334, -7.05995e-07, -4.20945e-15, -5.75849e-15, -1.76727e-08, 1.482, -6.51683e-07, -1, -1.19249e-08, 0, 0.58, 0 )
@@ -162,18 +169,18 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0
 visible = false
 
 [node name="AnimeHands" type="AnimationPlayer" parent="Arms"]
-anims/Hit = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/Walk = SubResource( 6 )
+anims/Hit = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Walk = SubResource( 7 )
 
 [node name="Left" type="MeshInstance" parent="Arms"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0899997, 0.73, -1.82 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Right" type="MeshInstance" parent="Arms"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.154938, -0.486937, 1.72 )
-mesh = SubResource( 8 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Mannequin" parent="." instance=ExtResource( 2 )]
@@ -185,10 +192,11 @@ lifetime = 0.5
 randomness = 1.0
 local_coords = false
 draw_order = 2
-process_material = SubResource( 12 )
-draw_pass_1 = SubResource( 14 )
+process_material = SubResource( 13 )
+draw_pass_1 = SubResource( 15 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 56.1573
 margin_top = 37.9244
 margin_right = 96.1573
@@ -199,6 +207,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="deathTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
+[connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 
 [editable path="Mannequin"]

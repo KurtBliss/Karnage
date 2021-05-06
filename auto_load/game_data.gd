@@ -3,9 +3,12 @@ extends Node
 
 const FILE_NAME = "user://game-data.json"
 
-var settings = {
-	"fullscreen": false
+var settings_defaults = {
+	"fullscreen": false,
+	"keep": true
 }
+
+var settings = settings_defaults
 
 func save():
 	var file = File.new()
@@ -20,7 +23,10 @@ func load():
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
-			settings = data
+			if data.size() == settings.size():
+				settings = data
+			else:
+				print("cant load data, may be an older version")
 		else:
 			printerr("Corrupted data!")
 	else:

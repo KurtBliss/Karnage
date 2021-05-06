@@ -82,6 +82,7 @@ func respawn(_health, _score, _pos):
 #	player.global_position = nearest_spawn_point.global_position
 	player.set_translation(nearest_spawn_point.get_translation())
 	get_parent().add_child(player)
+	Master.Player = player
 	
 
 func go_to_post(_health, _score):

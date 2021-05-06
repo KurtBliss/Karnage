@@ -108,6 +108,8 @@ func _physics_process(delta):
 	
 	dir.normalized()
 	
+	
+	
 	# Update walking speed
 #	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
 	
@@ -175,9 +177,10 @@ func _on_Player_died():
 #		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 #			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Mouse.set_capture(false)
+		Master.Player = null
 		queue_free()
-		
 		Master.Manager.respawn(health, score, get_translation())
+		
 
 func _on_Timer_timeout():
 	if Master.Manager != null:
@@ -201,7 +204,9 @@ func score_set(value):
 	emit_signal("score_changed", value)
 
 func _enter_tree() -> void:
-	Master.Player = self
+	pass
+	# Master.Player = self
 
 func _exit_tree() -> void:
-	Master.Player = null
+	pass
+	# Master.Player = null

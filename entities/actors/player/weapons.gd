@@ -57,6 +57,7 @@ func throw_weapon():
 	var ld = load(cur.pickup_file)
 	var inst: PickupBody = ld.instance()
 	inst.pass_clip = cur.clip
+	inst.rotation_degrees.y = get_parent().get_parent().rotation_degrees.y + 180
 	inst.transform.origin = Master.Player.transform.origin
 	holder.do_emit_clip(-1)
 	inst.velocity =  (Master.Player.dir) * 10

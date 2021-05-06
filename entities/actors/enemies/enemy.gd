@@ -13,6 +13,7 @@ var enemy_tween : Tween
 var spawn_position : Vector3
 
 
+
 func _ready():
 	add_to_group("Enemy")
 	spawn_position = transform.origin
@@ -56,7 +57,7 @@ func on_alterted():
 #		set_physics_state("state_alert")
 
 func _on_Enemy_died():
-	get_player().score += 10
+	get_player().score += 50
 	var ld = load("res://entities/enemiess/EnemySpawn.tscn")
 	var inst = ld.instance()
 	inst.transform.origin = starting_origin

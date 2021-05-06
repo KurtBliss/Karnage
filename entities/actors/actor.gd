@@ -13,7 +13,7 @@ export (int) var speed = 10
 export (float) var gravity = 0.98
 export (int) var jump_power = 30
 export (int) var injured_delay = 30 # Not in use?
-var health = 100 setget set_health
+export (int) var health = 100 setget set_health
 var state = "" setget set_state, get_state
 var physics_state = "" setget set_physics_state, get_physics_state
 var previous_physics_state = "" 
@@ -78,6 +78,7 @@ func process_velocity(_delta):
 		blood_delay -= _delta * 60
 		if blood_delay <= 0:
 			blood.emitting = false
+	
 	velocity.y -= 10
 	velocity = move_and_slide(velocity, Vector3.UP)
 	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)

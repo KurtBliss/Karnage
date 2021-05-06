@@ -11,6 +11,7 @@ var path_ind = 0
 var path_hit_point = false
 var bot_cast
 var delay_in_progress = false
+var dead = false
 
 func _ready():
 	speed = 7

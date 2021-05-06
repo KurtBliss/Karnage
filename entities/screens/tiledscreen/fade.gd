@@ -11,6 +11,7 @@ func _process(_delta):
 			can_play = false
 			InjuredSound.play()
 	else:
+		rotation_degrees = rand_range(0, 359)
 		can_play = true
 
 

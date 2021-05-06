@@ -3,13 +3,13 @@
 [ext_resource path="res://assets/garbaj/bullet-hole-001.png" type="Texture" id=1]
 [ext_resource path="res://entities/decals/BulletDecal.gd" type="Script" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 albedo_color = Color( 0.239216, 0.239216, 0.239216, 1 )
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="QuadMesh" id=2]
-material = SubResource( 3 )
+material = SubResource( 1 )
 size = Vector2( 0.2, 0.2 )
 
 [node name="BulletDecal" type="Spatial"]
@@ -24,6 +24,5 @@ material/0 = null
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -8,7 +8,8 @@ onready var Ammo = $Ammo
 
 var debug_lines : Array = []
 
-
+var gui_clip = 0
+var gui_ammo = 0
 
 func _on_Player_health_changed(health):
 	if Health:
@@ -25,13 +26,14 @@ func _on_Player_score_changed(score):
 
 func _on_Player_clip_changed(clip):
 	if Clip:
-		Clip.set_text("clip: " + str(clip))
+		gui_clip = clip
+		Clip.set_text(str(gui_clip) + " / " + str(gui_ammo))
 
 
 func _on_Player_ammo_changed(ammo):
-	#TODO: 
-	if Ammo:
-		Ammo.set_text(" / " + str(ammo))
+	if Clip:
+		gui_ammo = ammo
+		Clip.set_text(str(gui_clip) + " / " + str(gui_ammo))
 	pass # Replace with function body.
 
 

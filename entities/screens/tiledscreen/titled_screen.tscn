@@ -55,6 +55,7 @@ margin_left = 0.0
 margin_top = 42.0
 margin_right = 784.0
 margin_bottom = 102.0
+scene = "res://entities/screens/levels_screen.tscn"
 label_text = "Play"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
@@ -86,7 +87,7 @@ margin_right = 784.0
 margin_bottom = 440.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
-text = "Version 0
+text = "Version 0.4.1
 Devloped by KurtBlissZ"
 
 [node name="FadeIn" parent="." instance=ExtResource( 8 )]

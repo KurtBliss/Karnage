@@ -11,6 +11,7 @@ func _ready():
 	var temp : String
 	temp.ends_with("_apply")
 
+# Fullscreen
 func opt_fullscreen_toggle() -> void:
 	GameData.settings["fullscreen"] = !GameData.settings["fullscreen"]
 	opt_fullscreen_apply()
@@ -21,4 +22,14 @@ func opt_fullscreen_get() -> bool:
 func opt_fullscreen_apply() -> void:
 	OS.window_fullscreen = bool(GameData.settings["fullscreen"])
 
+ 
+# Keep (all blood and bodies)
+func opt_keep_toggle() -> void:
+	GameData.settings["keep"] = !GameData.settings["keep"]
+	opt_keep_apply()
 
+func opt_keep_get() -> bool:
+	return GameData.settings["keep"]
+
+func opt_keep_apply() -> void:
+	pass

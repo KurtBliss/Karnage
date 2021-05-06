@@ -84,5 +84,6 @@ text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="PreGame/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="PostGame/Restart" to="." method="_on_Restart_pressed"]

@@ -9,6 +9,7 @@ var offdirzig
 var offdirzag
 enum {ZIG, ZAG}
 
+var died = false
 onready var AnimeHands = $Arms/AnimeHands
 onready var mixamo = $Mannequin/Anime
 
@@ -79,6 +80,9 @@ func state_chase_path(_delta):
 		set_path_to_player()
 
 
+func state_dead(_delta):
+	pass
+
 func timer_zig_zag():
 	var name = "__bot_zig_zag_timer"
 	var timer : Timer
@@ -111,16 +115,32 @@ func on_alterted():
 		set_physics_state("state_alert")
 
 func _on_Enemy_died():
-	get_player().score += 10
-	var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
-	var inst = ld.instance()
-	inst.transform.origin = starting_origin
-	inst.spawn_scene_location = filename
-	Master.GameWorld.add_child(inst)
-	queue_free()
+	if not died:
+		died = true
+		get_player().score += 100
+		var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
+		var inst = ld.instance()
+		inst.transform.origin = starting_origin
+		inst.spawn_scene_location = filename
+		Master.GameWorld.add_child(inst)
+		mixamo.play("Death")
+		$Particles.emitting = true
+		drain_player_on_proximity = false
+		set_physics_state("state_dead")
+		$Particles.emitting = false
+		$CollisionShape.disabled = true
+		$CollisionShapeDeath.disabled = false
+		
+		$deathTimer.start()
+#	queue_free()
 
 func _on_attacked_from_Player(_dmg : float = 5):
 	on_alterted()
 	
 func _on_player_died():
 	wait_for_player = true
+
+func _on_deathTimer_timeout():
+	$Particles.emitting = false
+	if not GameSettings.opt_keep_get():
+		queue_free()
