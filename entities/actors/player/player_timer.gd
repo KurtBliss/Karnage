@@ -4,6 +4,7 @@ signal time_left(time_left)
 
 func _ready():
 	Master.GameTimer = self
+	
 
 func _process(_delta):
 	var secs_left = floor(get_time_left())

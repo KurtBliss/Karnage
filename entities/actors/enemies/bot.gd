@@ -12,6 +12,7 @@ var path_hit_point = false
 var bot_cast
 var delay_in_progress = false
 var dead = false
+export var respawn = true
 
 func _ready():
 	speed = 7

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://entities/screens/tiledscreen/buttons/options.tscn" type="PackedScene" id=1]
 [ext_resource path="res://graphics/textures/logo.png" type="Texture" id=2]
@@ -10,7 +10,11 @@
 [ext_resource path="res://entities/screens/tiledscreen/fade_in.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/button.tscn" type="PackedScene" id=9]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.513726 )
+expand_margin_left = 10.0
+
+[sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 6 )
 
@@ -52,11 +56,20 @@ alignment = 1
 
 [node name="New" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_left = 0.0
-margin_top = 42.0
+margin_top = 2.0
 margin_right = 784.0
-margin_bottom = 102.0
+margin_bottom = 62.0
 scene = "res://entities/screens/levels_screen.tscn"
 label_text = "Play"
+
+[node name="Tutorial" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
+margin_left = 0.0
+margin_top = 82.0
+margin_right = 784.0
+margin_bottom = 142.0
+custom_styles/focus = SubResource( 1 )
+scene = "res://maps/Tutorial.tscn"
+label_text = "Play Tutorial"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 visible = false
@@ -67,17 +80,17 @@ margin_bottom = 182.0
 
 [node name="Options" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 122.0
+margin_top = 162.0
 margin_right = 784.0
-margin_bottom = 182.0
+margin_bottom = 222.0
 scene = "res://entities/screens/options/options_screen.tscn"
 label_text = "Options"
 
 [node name="Button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
 margin_left = 0.0
-margin_top = 202.0
+margin_top = 242.0
 margin_right = 784.0
-margin_bottom = 262.0
+margin_bottom = 302.0
 method = "game_end"
 label_text = "Exit"
 
@@ -86,7 +99,7 @@ margin_top = 383.0
 margin_right = 784.0
 margin_bottom = 440.0
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Version 0.4.2
 Devloped by KurtBlissZ"
 

@@ -29,12 +29,12 @@ data = PoolVector3Array( 4, 0, 4, -4, 0, 4, 4, 0, -4, -4, 0, 4, -4, 0, -4, 4, 0,
 
 [sub_resource type="SpatialMaterial" id=6]
 flags_transparent = true
-albedo_color = Color( 1, 1, 1, 0.309804 )
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 2, 2, 2 )
 
 [sub_resource type="PlaneMesh" id=7]
 material = SubResource( 6 )
+flip_faces = true
 size = Vector2( 8, 8 )
 
 [sub_resource type="Image" id=14]

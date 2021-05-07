@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/tutorial/TutorialPoint.gd" type="Script" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[node name="TutorialPoint" type="Area"]
+script = ExtResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76988, 0 )
+light_color = Color( 0.0745098, 0.258824, 0.898039, 1 )
+light_energy = 10.0
+omni_range = 16.2648
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 23.7069, 0, 0, 0, 1, 0, 0, 0, 23.7069, 0, 0, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[connection signal="body_entered" from="." to="." method="_on_TutorialPoint_body_entered"]

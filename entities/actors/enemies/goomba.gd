@@ -28,6 +28,9 @@ func state_idle(_delta):
 #		yield(get_tree().create_timer(1.0), "timeout")
 #		set_physics_state("state_chase")
 
+func state_dumb(_delta):
+	pass
+
 func state_alert(_delta):
 	pass
 
@@ -118,11 +121,15 @@ func _on_Enemy_died():
 	if not died:
 		died = true
 		get_player().score += 100
-		var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
-		var inst = ld.instance()
-		inst.transform.origin = starting_origin
-		inst.spawn_scene_location = filename
-		Master.GameWorld.add_child(inst)
+		
+		if respawn == true:
+			var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
+			var inst = ld.instance()
+			inst.transform.origin = starting_origin
+			inst.spawn_scene_location = filename
+			Master.GameWorld.add_child(inst)
+		
+		
 		mixamo.play("Death")
 		$Particles.emitting = true
 		drain_player_on_proximity = false
