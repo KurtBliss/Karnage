@@ -7,9 +7,6 @@ func _ready():
 		var temp_name = method.name
 		if method.name.ends_with("_apply"):
 			call(temp_name)
-	
-	var temp : String
-	temp.ends_with("_apply")
 
 # Fullscreen
 func opt_fullscreen_toggle() -> void:

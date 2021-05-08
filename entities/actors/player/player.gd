@@ -30,7 +30,7 @@ onready var camera = $Head/Camera
 #export(NodePath) 
 onready var Weapons = $"Head/Camera/Weapon"
 onready var Anime = $Anime
-onready var Hud = $Hud
+onready var Hud : Player_Hud = $Hud
 onready var JumpCast = $JumpCast
 onready var Weapon = $Head/Camera/Weapon
 onready var InjuredSprite = $Hud/Injured/Sprite
@@ -161,10 +161,10 @@ func do_emit_clip(clip):
 	#to get rid of cautoin in log
 	emit_signal("clip_changed", clip)
 
-func do_emit_ammo(ammo):
+func do_emit_ammo(emit_ammo):
 	#to get rid of cautoin in log
 	#TODO: 
-	emit_signal("ammo_changed", ammo)
+	emit_signal("ammo_changed", emit_ammo)
 
 func gain_ammo(type, amount):
 	if ammo[type] != null:

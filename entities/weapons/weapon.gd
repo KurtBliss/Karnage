@@ -1,6 +1,6 @@
 class_name Weapon
 extends MeshInstance
-signal fired()
+#signal fired()
 export var equiped : bool = true 
 
 enum CAN_SHOOT {ANIME_END, FIRE_RATE} 

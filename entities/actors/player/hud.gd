@@ -1,3 +1,4 @@
+class_name Player_Hud
 extends Control
 
 onready var Health = $Health
@@ -44,7 +45,20 @@ func _draw():
 func add_debug_line(pos1:Vector3,pos2:Vector3,color:Color=Color.green,width:float = 1.0):
 	debug_lines.append([pos1,pos2,color,width])
 
+func hide_all():
+	Health.visible = false
+	Time.visible = false
+	Score.visible = false
+	Clip.visible = false
 
+func show_clip():
+	Clip.visible = true
+
+func show_time():
+	Time.visible = true
+
+func show_score():
+	Score.visible = true
 
 func draw_line_3D(line:Array):
 	var color = Color.green
