@@ -13,13 +13,13 @@ func _process(_delta):
 		print(get_player_visibility())
 
 func _on_Area_body_entered(body):
-	if body == Master.Player:
+	if body == ref.player:
 		print("Player HIT ", swing_damage)
 		
 		if swing_damage > 0:
 			swing_damage = 0
 			print("Player HIT")
-			Master.Player.do_damage(swing_damage, self)
+			ref.player.do_damage(swing_damage, self)
 
 func state_idle(_delta):
 	if get_player_spotted():
@@ -65,8 +65,8 @@ func _on_Anime_animation_finished(anim_name):
 
 
 func _on_Area_body_exited(_body):
-	if is_instance_valid(Master.Player):
+	if is_instance_valid(ref.player):
 		if swing_damage > 0:
 			print("Player HIT")
-			Master.Player.do_damage(swing_damage, self)
+			ref.player.do_damage(swing_damage, self)
 			swing_damage = 0

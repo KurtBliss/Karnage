@@ -58,11 +58,11 @@ func throw_weapon():
 	var inst: PickupBody = ld.instance()
 	inst.pass_clip = cur.clip
 	inst.rotation_degrees.y = get_parent().get_parent().rotation_degrees.y + 180
-	inst.transform.origin = Master.Player.transform.origin
+	inst.transform.origin = ref.player.transform.origin
 	holder.do_emit_clip(-1)
-	inst.velocity =  (Master.Player.dir) * 10
+	inst.velocity =  (ref.player.dir) * 10
 	cur.queue_free()
-	Master.GameWorld.add_child(inst)
+	ref.level.add_child(inst)
 	current_weapon = null
 	
 	

@@ -23,30 +23,30 @@ func set_path_to(target_pos):
 
 func set_path_to_player():
 	if get_player():	
-		path =nav.get_simple_path(global_transform.origin, Master.Player.global_transform.origin)
+		path =nav.get_simple_path(global_transform.origin, ref.player.global_transform.origin)
 		path_ind = 0
 
 func get_player():
-	var p = Master.Player
+	var p = ref.player
 	if is_instance_valid(p):
 		return p
 	else:
 		return null
 
 func get_player_vector():
-	if not is_instance_valid(Master.Player): 
+	if not is_instance_valid(ref.player): 
 		return null
-	var vect = (Master.Player.get_translation()  - get_translation())
+	var vect = (ref.player.get_translation()  - get_translation())
 	vect.angle_diff()
 
 func get_player_distance(offset = Vector3.ZERO):
-	if not is_instance_valid(Master.Player): 
+	if not is_instance_valid(ref.player): 
 		return null
 	var _len
 	if typeof(offset)==TYPE_VECTOR3:
 		_len = (get_player_position() + offset - get_position()).length()
 	else:
-		_len = (Master.Player.get_translation() - get_translation()).length()
+		_len = (ref.player.get_translation() - get_translation()).length()
 	return _len
 
 func get_player_visibility():
@@ -135,7 +135,7 @@ func detect_facing_self(body: Actor, fov = detect_fov ):
 func do_face_player(offset: Vector3 = Vector3.ZERO):
 	if not get_player():
 		return
-	var a: Vector3 = Master.Player.get_transform().origin + offset
+	var a: Vector3 = ref.player.get_transform().origin + offset
 	a.y = get_transform().origin.y
 	look_at(a, Vector3(0,1,0))
 	

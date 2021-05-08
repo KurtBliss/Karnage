@@ -1,3 +1,4 @@
+class_name Manager
 extends Camera
 # pause.gd
 
@@ -14,7 +15,7 @@ onready var PreGameStart = $PreGame/Start
 onready var PostGameRestart = $PostGame/Restart
 
 func _ready():
-	Master.Manager = self
+	ref.manager = self
 	change_mode(MODE.PRE_GAME)
 	$AnimationPlayer.play("mapsSpin")
 
@@ -22,10 +23,10 @@ func change_mode(set_mode):
 	match set_mode:
 		MODE.IN_GAME:
 			current_mode = MODE.IN_GAME
-			Master.GameTimer.start()
+			ref.level_timer.start()
 			PreGame.visible = false
 			PostGame.visible = false
-			if Master.Player == null or not is_instance_valid(Master.Player):
+			if ref.player == null or not is_instance_valid(ref.player):
 				var ld = load("res://entities/actors/player/player.tscn")
 				var inst : KinematicBody = ld.instance()
 				
@@ -84,7 +85,7 @@ func respawn(_health, _score, _pos):
 #	player.global_position = nearest_spawn_point.global_position
 	player.set_translation(nearest_spawn_point.get_translation())
 	get_parent().add_child(player)
-	Master.Player = player
+	ref.player = player
 	
 
 func go_to_post(_health, _score):

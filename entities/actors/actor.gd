@@ -95,7 +95,7 @@ func do_damage(dmg : float, from : Actor):
 	
 	var b = blood_decal.instance()
 	if is_on_floor():
-		Master.GameWorld.add_child(b)
+		ref.level.add_child(b)
 		b.global_transform.origin = global_transform.origin 
 	
 	blood.emitting = true

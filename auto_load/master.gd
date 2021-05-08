@@ -1,10 +1,5 @@
 """master.gd"""
 extends Node
-var Player # Init on player _ready()
-var Manager # Init on manager _ready()
-var GameWorld # Init on Nav _ready()
-var GameTimer # Init on GameTimer _ready()
-var Tutorial
 var console # Init on Console _ready()
 var mute = false
 onready var CmdManager = load("res://auto_load/Console/CmdManager.gd")

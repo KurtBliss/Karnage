@@ -28,8 +28,8 @@ func new_challenge(_label, _type, _condition):
 	}
 
 func typeHS(challenge):
-	if is_instance_valid(Master.Player):
-		if Master.Player.score >= challenge["condition"]:
+	if is_instance_valid(ref.player):
+		if ref.player.score >= challenge["condition"]:
 			do_mark(challenge["label"])
 
 func do_mark(node:Label):

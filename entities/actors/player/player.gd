@@ -39,14 +39,14 @@ onready var InjuredSprite = $Hud/Injured/Sprite
 
 func _ready():
 	
-	Master.Player = self
-	prints("Master.Player", Master.Player)
+	ref.player = self
+	prints("ref.player", ref.player)
 	
 	Mouse.set_capture(true)
 	add_child(rstick)
 	add_to_group("Player")
-	Master.GameTimer.connect("timeout", self,  "_on_Timer_timeout")
-	Master.GameTimer.connect("time_left", Hud, "_on_Timer_time_left")
+	ref.level_timer.connect("timeout", self,  "_on_Timer_timeout")
+	ref.level_timer.connect("time_left", Hud, "_on_Timer_time_left")
 	ammo[Master.AMMO.PISTOL] += 10
 	ammo[Master.AMMO.M16] += 32
 	
@@ -178,22 +178,22 @@ func _on_Player_died():
 	
 	Weapon.throw_weapon()
 	
-	if Master.Manager != null:
+	if ref.manager != null:
 #		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 #			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Mouse.set_capture(false)
-		Master.Player = null
+		ref.player = null
 		queue_free()
-		Master.Manager.respawn(health, score, get_translation())
+		ref.manager.respawn(health, score, get_translation())
 		
 
 func _on_Timer_timeout():
-	if Master.Manager != null:
+	if ref.manager != null:
 		queue_free()
 #		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 #			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Mouse.set_capture(false)
-		Master.Manager.go_to_post(health, score)
+		ref.manager.go_to_post(health, score)
 
 func _on_Player_injured():#should change to red flash
 	InjuredSprite.modulate.a = 1
@@ -210,8 +210,8 @@ func score_set(value):
 
 func _enter_tree() -> void:
 	pass
-	# Master.Player = self
+	# ref.player = self
 
 func _exit_tree() -> void:
 	pass
-	# Master.Player = null
+	# ref.player = null

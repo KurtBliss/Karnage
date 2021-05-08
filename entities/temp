@@ -15,7 +15,7 @@ var rstick = Stick.new("look_left", "look_right", "look_up", "look_down", 10, se
 var lstick = Stick.new("move_left", "move_right", "move_forward", "move_backward", 1, self, "move_player")
 
 func _ready():
-	Master.Player = self
+	ref.player = self
 	add_to_group("Player")
 	add_child(mouse)
 	add_child(rstick)

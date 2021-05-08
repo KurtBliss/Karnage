@@ -20,7 +20,7 @@ static func execute_command(words:PoolStringArray):
 				var function : String = words[2]
 				var wordammount = targetArray.size()
 				var i :int = 0
-				var target : Node = Master.GameWorld
+				var target : Node = ref.level
 				while i< wordammount:
 					var takenode:bool = true
 					i+=1
@@ -29,13 +29,13 @@ static func execute_command(words:PoolStringArray):
 					if i== 1:
 						match nodename.to_lower():
 							"world":
-								target = Master.GameWorld
+								target = ref.level
 								takenode=false
 							"master":
 								target = Master
 								takenode=false
 							"player":
-								target = Master.Player
+								target = ref.player
 								takenode=false
 					if takenode:
 						target = target.get_node(nodename)
@@ -52,7 +52,7 @@ static func execute_command(words:PoolStringArray):
 						target.callv(function,argarray)
 						return
 				else:
-					Master.println("node ["+target.name+"] has no method named :\""+function+"\"",Color.red)
+					ref.println("node ["+target.name+"] has no method named :\""+function+"\"",Color.red)
 					return
 			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
 			return
@@ -64,7 +64,7 @@ static func execute_command(words:PoolStringArray):
 				var targetArray : Array = targetword.split(".",false)
 				var wordammount = targetArray.size()
 				var i :int = 0
-				var target : Node = Master.GameWorld
+				var target : Node = ref.level
 				while i< wordammount:
 					var takenode:bool = true
 					i+=1
@@ -72,13 +72,13 @@ static func execute_command(words:PoolStringArray):
 					if i== 1:
 						match nodename.to_lower():
 							"world":
-								target = Master.GameWorld
+								target = ref.level
 								takenode=false
 							"master":
 								target = Master
 								takenode=false
 							"player":
-								target = Master.Player
+								target = ref.player
 								takenode=false
 					if takenode:
 						target = target.get_node(nodename)
@@ -92,8 +92,8 @@ static func execute_command(words:PoolStringArray):
 			return
 		"god":
 			if words.size()==1:
-				Master.Player.undamageable = !Master.Player.undamageable
-				match Master.Player.undamageable:
+				ref.player.undamageable = !ref.player.undamageable
+				match ref.player.undamageable:
 					true:
 						Master.println("Godmode ON",Color.green)
 					false:
@@ -105,8 +105,8 @@ static func execute_command(words:PoolStringArray):
 				if boolfromword == null:
 					Master.println("["+boolword+"] is not a valid value for command:["+command+"]",Color.red)
 					return
-				Master.Player.undamageable = boolfromword
-				match Master.Player.undamageable:
+				ref.player.undamageable = boolfromword
+				match ref.player.undamageable:
 					true:
 						Master.println("Godmode ON",Color.green)
 					false:

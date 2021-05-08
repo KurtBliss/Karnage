@@ -73,7 +73,7 @@ func draw_line_3D(line:Array):
 	if line.size() > 2:
 		if line[2] != null:
 			color = line[2]
-	var camera:Camera = Master.Player.camera
+	var camera:Camera = ref.player.camera
 	var start = camera.unproject_position(line[0])
 	var end = camera.unproject_position(line[1])
 	

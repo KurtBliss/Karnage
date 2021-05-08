@@ -19,7 +19,7 @@ func _process(_delta):
 		parrent.queue_free()
 
 func _on_PistolPickup_body_entered(body):
-	if body == Master.Player:
+	if body == ref.player:
 		curbody = body
 
 func _on_Area_body_exited(body):

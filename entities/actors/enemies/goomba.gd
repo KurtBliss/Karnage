@@ -127,7 +127,7 @@ func _on_Enemy_died():
 			var inst = ld.instance()
 			inst.transform.origin = starting_origin
 			inst.spawn_scene_location = filename
-			Master.GameWorld.add_child(inst)
+			ref.level.add_child(inst)
 		
 		
 		mixamo.play("Death")

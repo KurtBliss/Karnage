@@ -1,9 +1,10 @@
+class_name LevelTimer
 extends Timer
 
 signal time_left(time_left)
 
 func _ready():
-	Master.GameTimer = self
+	ref.level_timer = self
 	
 
 func _process(_delta):

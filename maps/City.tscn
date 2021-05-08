@@ -13,10 +13,7 @@
 [ext_resource path="res://entities/pickups/Ammo.tscn" type="PackedScene" id=14]
 
 [sub_resource type="GDScript" id=1]
-script/source = "extends Navigation
-
-func _ready():
-	Master.GameWorld = self
+script/source = "extends Level
 "
 
 [sub_resource type="NavigationMesh" id=2]

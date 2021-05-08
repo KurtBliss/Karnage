@@ -61,10 +61,10 @@ func get_player_visibility():
 #			color = Color.green
 #		if raycast_fromto(BodyRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0)):
 #			color2 = Color.green
-#		Master.Player.Hud.debug_lines.clear()
-#		Master.Player.Hud.add_debug_line(GunRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color)
-#		Master.Player.Hud.add_debug_line(BodyRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color2)
-#		Master.Player.Hud.update()
+#		ref.player.Hud.debug_lines.clear()
+#		ref.player.Hud.add_debug_line(GunRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color)
+#		ref.player.Hud.add_debug_line(BodyRayPos.global_transform.origin,player.global_transform.origin+Vector3(0,0.5,0),color2)
+#		ref.player.Hud.update()
 		return raycast_fromto(GunRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0))&&raycast_fromto(BodyRayPos,player,Vector3(0,0,0),Vector3(0,0.5,0))
 
 

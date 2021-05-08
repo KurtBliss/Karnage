@@ -1,3 +1,4 @@
+class_name Tutorial
 extends Control
 onready var label = $Label
 onready var visible_char_timer = $Char_Increase
@@ -27,7 +28,7 @@ var message = {
 func _ready():
 	message("Welcome", true)
 	message_que.append("Movement")
-	Master.Tutorial = self
+	ref.tutorial = self
 
 func _process(delta):
 	if label.visible_characters > label.text.length() + 20:
@@ -48,7 +49,7 @@ func _triggered_point(trig):
 		"WeaponPickup":
 			message("WeaponPickup", true)
 			message_que.append("M16Pickup")
-			Master.Player.Hud.show_clip()
+			ref.player.Hud.show_clip()
 		_:message(trig.msg_name, trig.que)
 
 func message(id, que = false):
@@ -72,9 +73,9 @@ func _on_Start_pressed():
 	call_deferred("stopTimer")
 
 func stopTimer():
-#	Master.Player.Hud.visible = false
-	Master.Player.Hud.hide_all()
-	Master.GameTimer.stop()
+#	ref.player.Hud.visible = false
+	ref.player.Hud.hide_all()
+	ref.level_timer.stop()
 	visible_char_timer.start()
 
 
