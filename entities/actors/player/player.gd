@@ -162,8 +162,7 @@ func do_emit_clip(clip):
 	emit_signal("clip_changed", clip)
 
 func do_emit_ammo(emit_ammo):
-	#to get rid of cautoin in log
-	#TODO: 
+	#TODO: to get rid of caution in log
 	emit_signal("ammo_changed", emit_ammo)
 
 func gain_ammo(type, amount):
