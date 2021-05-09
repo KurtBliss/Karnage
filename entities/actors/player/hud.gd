@@ -26,12 +26,17 @@ func _on_Player_score_changed(score):
 
 
 func _on_Player_clip_changed(clip):
+	if not Clip:
+		Clip = $Clip
 	if Clip:
 		gui_clip = clip
 		Clip.set_text(str(gui_clip) + " / " + str(gui_ammo))
 
 
 func _on_Player_ammo_changed(ammo):
+	if not Clip:
+		Clip = $Clip
+	
 	if Clip:
 		gui_ammo = ammo
 		Clip.set_text(str(gui_clip) + " / " + str(gui_ammo))

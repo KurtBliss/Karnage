@@ -22,6 +22,7 @@ var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var ammo = Master.ammo_container
 var challenges_ld = preload("res://entities/manager/VBoxContainer.tscn")
+var start_with_pistol = true
 
 # Nodes
 onready var raycast = $Head/Camera/RayLong
@@ -50,12 +51,13 @@ func _ready():
 	ammo[Master.AMMO.PISTOL] += 10
 	ammo[Master.AMMO.M16] += 32
 	
-	
+
 func _process(delta):
 	if Input.is_action_pressed("show_challenges"):
 		var c = challenges_ld.instance()
 		c.destroy_on_release = true
 		add_child(c)
+		
 		
 
 func _physics_process(delta):
@@ -150,6 +152,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
 
+
 func move_camera(look, delta):
 	look *= delta * 15
 	head.rotate_y(deg2rad(-look.x))
@@ -192,7 +195,6 @@ func _on_Player_died():
 		ref.player = null
 		queue_free()
 		ref.manager.respawn(health, score, get_translation())
-		
 
 func _on_Timer_timeout():
 	if ref.manager != null:

@@ -30,8 +30,6 @@ func change_mode(set_mode):
 				var ld = load("res://entities/actors/player/player.tscn")
 				var inst : Player = ld.instance()
 				
-				
-				
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
 				get_parent().add_child(inst)
 				

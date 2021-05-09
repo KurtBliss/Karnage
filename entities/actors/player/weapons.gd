@@ -1,4 +1,4 @@
-"""../player/weapons.gd"""
+""".../player/weapons.gd"""
 extends Spatial
 
 export(NodePath) onready var holder_path
@@ -13,13 +13,24 @@ onready var raycast_hit = $"../RayShort"
 
 func _ready():
 	add_to_group("hand")
+	current_weapon = get_child(0)
+	if is_instance_valid(current_weapon):
+		weapons.append(current_weapon)
+		current = 0 #weapons size
+		holder.do_emit_clip(current_weapon.clip)
+		call_deferred("ready_deferred")
+		
+
+func ready_deferred():
+	holder.do_emit_ammo(holder.ammo[current_weapon.ammo_type])		
+	
 
 func _process(_delta):
 #	if weapons.size() < 1:
 #		return
 	var can_input = Master.input_enabled()
 	
-	if current_weapon:
+	if is_instance_valid(current_weapon):
 		if current_weapon.automatic:
 			if Input.is_action_pressed("fire") and can_input:
 				current_weapon.do_fire()
@@ -48,7 +59,33 @@ func _process(_delta):
 					collider.do_damage(5, holder)
 					hit = true
 			holder.do_emit_hit(hit, current_weapon.name, -1, true)
+		
+	if Input.is_action_just_pressed("switch_weapon"):
+		switch_weapon()
 
+	
+
+func switch_weapon():
+	var count = weapons.size()
+	var switch_to = current + 1
+	
+	if count == 0:
+		return
+	
+	if switch_to > count - 1:
+		switch_to = 0
+	
+	if is_instance_valid(current_weapon):
+		current_weapon.visible = false
+		current_weapon.equiped = false
+	
+	current = switch_to
+	current_weapon = weapons[current]
+	current_weapon.visible = true
+	current_weapon.equiped = true
+	
+	holder.do_emit_clip(current_weapon.clip)
+	holder.do_emit_ammo(holder.ammo[current_weapon.ammo_type])
 	
 
 func throw_weapon():
@@ -73,36 +110,33 @@ func throw_weapon():
 	weapons.remove(current)
 	current = -1
 
-func add_weapon(weapon : Node):
-	if current_weapon:
-		current_weapon.queue_free()
+func add_weapon(weapon : Weapon):
 	
-	current_weapon = weapon
-	print("adding weapon, ", weapon)
+	if not is_instance_valid(weapon):
+		return false
 	
-	if not weapon == null:	
-		weapons.append(weapon)
-		weapon.equiped = true
-		weapon.target_group = "Enemy"
-		weapon.raycast_path = String(raycast.get_path())+String(raycast.name)
-		weapon.holder_path = String(holder.get_path())+String(holder.name)
-		weapon.raycast = raycast
-		weapon.holder = holder
-		holder.do_emit_clip(weapon.clip)
-		Master.reparent(weapon, self)
+	if is_instance_valid(current_weapon):
+		if current_weapon.name == weapon.name:
+			return false
+		
+		current_weapon.equiped = false
+		current_weapon.visible = false
+
+	current_weapon = weapon	
+	weapons.append(weapon)
+	current = weapons.size() - 1
+	weapon.equiped = true
+	weapon.target_group = "Enemy"
+	weapon.raycast_path = String(raycast.get_path())+String(raycast.name)
+	weapon.holder_path = String(holder.get_path())+String(holder.name)
+	weapon.raycast = raycast
+	weapon.holder = holder
+	holder.do_emit_clip(weapon.clip)
+	Master.reparent(weapon, self)
+	return true
 
 func has_weapon(_weapon_name):
 	return has_node(_weapon_name)
 
 func get_current_weapon():
 	return current_weapon
-#
-#func handle_pistol():
-#	if Input.is_action_just_pressed("hit"):
-#		PistolAnime.seek(0)
-#		PistolAnime.play("Hit", -1, 2)
-#		if raycast_hit.is_colliding():
-#			var collider = raycast_hit.get_collider()
-#			if collider.is_in_group("Enemy"):
-#				collider.do_damage(5, self)
-#

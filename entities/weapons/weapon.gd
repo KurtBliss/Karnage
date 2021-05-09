@@ -1,6 +1,5 @@
 class_name Weapon
 extends MeshInstance
-#signal fired()
 export var equiped : bool = true 
 
 enum CAN_SHOOT {ANIME_END, FIRE_RATE} 
@@ -18,13 +17,27 @@ export(int) var clip  = clip_size
 
 var b_decal = preload("res://entities/decals/BulletDecal.tscn")
 
+var wait_for_parrent_holder = false
+
 func _ready():
 	if equiped:
-		if raycast:
-			raycast.cast_to.z = -ray_cast_range
+		if not is_instance_valid(raycast):
+			print(self, " missing raycast, wait_for_parrent_holder")
+			wait_for_parrent_holder = true
 		else:
-			print(self, " missing raycast")
+			update_raycast_range()
 	anime.play("Idle")
+
+func _process(_delta):
+	if wait_for_parrent_holder:
+		var par = get_parent()
+		var par_holder = par.holder
+		
+		if is_instance_valid(par_holder):
+			holder = par_holder
+			raycast = par_holder.Weapon.raycast
+			update_raycast_range()
+			wait_for_parrent_holder = false
 
 func do_fire():
 	if can_fire:
@@ -71,6 +84,9 @@ func do_reload():
 			holder.do_emit_ammo(holder.ammo[ammo_type])
 		else:
 			return
+
+func update_raycast_range():
+	raycast.cast_to.z = -ray_cast_range
 
 func _on_Rate_timeout():
 	if can_shoot_mode == CAN_SHOOT.FIRE_RATE:
