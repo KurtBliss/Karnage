@@ -95,7 +95,7 @@ _global_script_classes=[ {
 "path": "res://entities/actors/player/hud.gd"
 }, {
 "base": "Node",
-"class": "Ref",
+"class": "RefClass",
 "language": "GDScript",
 "path": "res://auto_load/ref.gd"
 }, {
@@ -152,7 +152,7 @@ _global_script_class_icons={
 "PickupBody": "",
 "Player": "",
 "Player_Hud": "",
-"Ref": "",
+"RefClass": "",
 "Screen": "",
 "Screen_Levels": "",
 "Screen_Options": "",
@@ -174,12 +174,12 @@ default_bus_layout=""
 
 [autoload]
 
+ref="*res://auto_load/ref.gd"
 Master="*res://auto_load/master.gd"
 Mouse="*res://auto_load/mouse.gd"
 Console="*res://auto_load/Console/Console.tscn"
 GameData="*res://auto_load/game_data.gd"
 GameSettings="*res://auto_load/game_settings.gd"
-ref="*res://auto_load/ref.gd"
 
 [debug]
 
