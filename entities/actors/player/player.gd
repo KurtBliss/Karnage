@@ -29,7 +29,6 @@ onready var raycast_hit = $Head/Camera/RayShort
 onready var head = $Head
 onready var camera = $Head/Camera
 #export(NodePath) 
-onready var Weapons = $"Head/Camera/Weapon"
 onready var Anime = $Anime
 onready var Hud : Player_Hud = $Hud
 onready var JumpCast = $JumpCast
