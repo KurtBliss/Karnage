@@ -104,8 +104,7 @@ func throw_weapon():
 	cur.queue_free()
 	ref.level.add_child(inst)
 	current_weapon = null
-	
-	
+
 	#remove
 	weapons.remove(current)
 	current = -1

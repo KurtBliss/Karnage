@@ -47,12 +47,12 @@ func melee_miss_gain():
 func _on_enemy_attacked(enemy):
 	match enemy:
 		_:
-			points_gain(25)
+			points_gain(5)
 
 func _on_enemy_killed(enemy):
 	match enemy:
 		_:
-			points_gain(250)
+			points_gain(100)
 	kills += 1
 
 func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee): #TODO: 	

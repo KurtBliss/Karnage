@@ -2,9 +2,10 @@ extends VBoxContainer
 signal challenge_completed(msg)
 var destroy_on_release = false
 onready var challenges = [
-	new_challenge($HS1000, "typeHS", 1000),
-	new_challenge($HS750, "typeHS", 750),
-	new_challenge($HS500, "typeHS", 500),
+	new_challenge($HS_1, "typeHS", 2000),
+	new_challenge($HS_2, "typeHS", 1500),
+	new_challenge($HS_3, "typeHS", 1000),
+	
 ]
 
 func _process(_delta):

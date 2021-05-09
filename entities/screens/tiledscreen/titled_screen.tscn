@@ -107,7 +107,7 @@ margin_right = 784.0
 margin_bottom = 440.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
-text = "Version 0.4.3
+text = "Version 0.5.0
 Devloped by KurtBlissZ"
 
 [node name="FadeIn" parent="." instance=ExtResource( 8 )]

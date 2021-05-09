@@ -167,16 +167,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -178.0
-margin_top = -118.5
-margin_right = 178.0
-margin_bottom = 118.5
+margin_left = -244.742
+margin_top = -125.174
+margin_right = 233.258
+margin_bottom = 111.826
 custom_fonts/font = ExtResource( 11 )
 text = "WASD to Move
 Left Mouse to Shoot
 R to Reload
-Right Mouse to Melee
+Right Mouse Mouse to Melee
+Hold Right Mouse to throw weapon
 E to pickup weapons
+Tab to Switch Weapons
 Shift to roll while walking"
 align = 1
 valign = 1
