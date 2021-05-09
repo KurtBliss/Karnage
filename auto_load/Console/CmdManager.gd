@@ -10,6 +10,7 @@ static func execute_command(words:PoolStringArray):
 			msg += "exec [node path] [method name] [method arguments/nothing]"
 			msg += "children [node path]\n"
 			msg += "node paths are written:\nI:999\nF:999.0\nS:\"text text text\""
+			msg += "god\ntimer"
 			Master.println(msg)
 			return
 		
@@ -112,6 +113,23 @@ static func execute_command(words:PoolStringArray):
 					false:
 						Master.println("Godmode OFF",Color.green)
 				return
+			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
+			return
+		"timer":
+			if words.size() == 1:
+				if is_instance_valid(ref.level_timer):
+					if ref.level_timer.is_stopped():
+						if is_instance_valid(ref.player):
+							ref.level_timer.start()
+							Master.println("Timer start",Color.green)
+							return
+					else:
+						ref.level_timer.stop()
+						Master.println("Timer stop",Color.green)
+						return
+				else:
+					Master.println("Timer not valid",Color.green)
+					return
 			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
 			return
 		
