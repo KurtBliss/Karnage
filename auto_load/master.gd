@@ -3,6 +3,7 @@ extends Node
 var console # Init on Console _ready()
 var mute = false
 onready var CmdManager = load("res://auto_load/Console/CmdManager.gd")
+var quit_timer = 0
 
 enum AMMO {PISTOL, M16, SHOTGUN, SNIPER}
 
@@ -18,7 +19,16 @@ func _process(_delta):
 		if Mouse.toggle and Mouse.capture:
 			Mouse.set_toggle(false)
 		else:
+			if Input.is_action_pressed("shift"):
+				get_tree().quit()
+	
+	
+	if Input.is_action_pressed("game_end"):
+		quit_timer += _delta
+		if  quit_timer > 1:
 			get_tree().quit()
+	else:
+		quit_timer = 0
 	
 	OS.set_window_title("Karnage " + str(Engine.get_frames_per_second()))
 	
