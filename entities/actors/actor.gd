@@ -1,6 +1,5 @@
 class_name Actor
 extends KinematicBody
-# actor.gd
 
 signal died()
 signal injured()
@@ -8,23 +7,26 @@ signal health_changed(value)
 signal physics_state_changed(func_name)
 signal state_changed(func_name)
 
+export(ref.ACTORS) var actor_name
 export (int) var acceleration = 5
 export (int) var speed = 10
 export (float) var gravity = 0.98
 export (int) var jump_power = 30
 export (int) var injured_delay = 30 # Not in use?
 export (int) var health = 100 setget set_health
+export (float) var direction_offset = 90
+
+onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
+onready var blood_effect = preload("res://effects/blood.tscn")
+
 var state = "" setget set_state, get_state
 var physics_state = "" setget set_physics_state, get_physics_state
 var previous_physics_state = "" 
 var previous_state = ""
 var previous_health = 0
 var injured = 0 # Not in use?
-export var direction_offset = 90
 var undamageable : bool = false
 var velocity = Vector3.ZERO
-var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
-onready var blood_effect = preload("res://effects/blood.tscn")
 var blood : Particles
 var blood_delay = 0
 
@@ -129,7 +131,6 @@ func get_direction():
 
 func get_facing_vector():
 	return Vector3(lengthdir_x(1, get_direction()), 0, lengthdir_y(1, get_direction()) ).normalized()
-
 
 func angle_difference(ang0, ang1):
 	return ((((ang0 - ang1) % 360) + 540) % 360) - 180;
