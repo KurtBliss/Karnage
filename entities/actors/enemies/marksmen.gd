@@ -73,7 +73,6 @@ func _on_Fire_timeout():
 
 
 func _on_Marksmen_died():
-	get_player().score += 100
 	create_respawn()
 
 

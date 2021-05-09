@@ -120,7 +120,6 @@ func on_alterted():
 func _on_Enemy_died():
 	if not died:
 		died = true
-		get_player().score += 100
 		
 		if respawn == true:
 			var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
@@ -141,11 +140,6 @@ func _on_Enemy_died():
 		$deathTimer.start()
 #	queue_free()
 
-func _on_attacked_from_Player(_dmg : float = 5):
-	on_alterted()
-	
-func _on_player_died():
-	wait_for_player = true
 
 func _on_deathTimer_timeout():
 	$Particles.emitting = false
