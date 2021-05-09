@@ -35,6 +35,7 @@ background_sky = SubResource( 4 )
 
 [node name="Nav" type="Navigation"]
 script = SubResource( 1 )
+level = "City"
 
 [node name="GameTimer" parent="." instance=ExtResource( 1 )]
 

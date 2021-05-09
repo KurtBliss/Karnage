@@ -44,6 +44,7 @@ func change_mode(set_mode):
 			PreGame.visible = false
 			PostGame.visible = true
 			PostGameRestart.has_focus()
+			$PostGame/VBoxContainer/Score.text = "Score: " + String(score)
 
 func _process(_delta):
 	if Master.input_disabled():

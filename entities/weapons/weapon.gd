@@ -30,6 +30,7 @@ func do_fire():
 	if can_fire:
 		if clip > 0:
 			clip -= 1
+			var hit = false
 			can_fire = false 
 			timer.start(rate)
 			if fire_type == FIRE_TYPE.RAYCAST:
@@ -37,6 +38,7 @@ func do_fire():
 					var collider = raycast.get_collider()
 					if collider.is_in_group(target_group):
 						collider.do_damage(damage, holder)
+						hit = true
 					else:
 						var aa = collider is GridMap 
 						var bb = collider.is_in_group("door")
@@ -49,6 +51,8 @@ func do_fire():
 			holder.do_emit_fire()
 			holder.do_emit_clip(clip)
 			holder.do_emit_ammo(holder.ammo[ammo_type])
+			if holder.has_method("do_emit_hit"):
+				holder.do_emit_hit(hit, name, clip)
 		
 
 func start_reload():

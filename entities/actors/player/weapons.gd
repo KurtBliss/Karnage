@@ -39,12 +39,15 @@ func _process(_delta):
 			throw_timer = 15
 			
 		if Input.is_action_just_pressed("hit") and can_input:
+			var hit = false
 			current_weapon.anime.seek(0)
 			current_weapon.anime.play("Hit", -1, 2)
 			if raycast_hit.is_colliding():
 				var collider = raycast_hit.get_collider()
 				if collider.is_in_group("Enemy"):
-					collider.do_damage(5, self)
+					collider.do_damage(5, holder)
+					hit = true
+			holder.do_emit_hit(hit, current_weapon.name, -1, true)
 
 	
 

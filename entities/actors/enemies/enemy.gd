@@ -1,15 +1,30 @@
 class_name Enemy
 extends Bot
+
+enum ENEMY {
+	MANNEQUIN, MARKSMEN
+}
+var EnemyNames = {
+	ENEMY.MANNEQUIN: "Mannequin",
+	ENEMY.MARKSMEN: "Marksmen"
+}
+
+export(ENEMY) var enemy
+var enemy_name = EnemyNames[enemy]
+
+export(float) var wandering_radius:float = 10
+
+onready var starting_origin = transform.origin
+
 var drain_player_on_proximity = true
-var enemy_atk_delay_set = 30
-var enemy_atk_delay = 0
 var wait_for_player = true
 var wandering_timer : Timer
-export(float) var wandering_radius:float = 10
-onready var starting_origin = transform.origin
-var enemyRNG = RandomNumberGenerator.new()
+var enemy_atk_delay_set = 30 #TODO: Should make this timer
+var enemy_atk_delay = 0
 var enemy_tween : Tween
 var spawn_position : Vector3
+var enemyRNG = RandomNumberGenerator.new()
+export var anger = 0
 
 ###################-BUILT IN-####################
 
@@ -65,14 +80,29 @@ func create_respawn():
 func _on_fired(): # Hears gunshot
 	set_physics_state("state_chase")
 
-func _on_attacked_from_Player(_dmg : float):
-	do_altert()
-	#TODO: ref.level._on_enemy_hit()
+func _on_attacked(_dmg):
+	var b = blood_decal.instance()
+	if is_on_floor():
+		ref.level.add_child(b)
+		b.global_transform.origin = global_transform.origin 
 	
+	blood.emitting = true
+	blood_delay = 30
+
+func _on_attacked_from_Player(dmg):
+	anger += dmg
+	do_altert()
+	ref.level._on_enemy_attacked(ENEMY)
+	
+func _on_attacked_killed_from_Player(_dmg):
+	ref.level._on_enemy_killed(ENEMY)	
+
 func _on_player_died():
 	wait_for_player = true
-	
-func _on_wandering_timer_timeout():
+
+func _on_wandering_timer_timeout(): 
+	#TODO: Wandering State State?
+	#TODO: Put basic states on enemy.gd, then overide or add to states in children
 	if get_physics_state() == "state_idle":
 		wandering_timer.wait_time = enemyRNG.randf_range(4,8)
 		

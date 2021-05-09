@@ -9,18 +9,19 @@ signal ammo_changed(ammo)
 
 ###################-VARIABLES-####################
 
-var Player:Player
+#var Player:Player
 var camera_x_rotation = 0
 var roll_basis 
 var head_basis
 var is_dashing = false
 # var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
-var score = 0 setget score_set
+var score = ref.level.points setget score_set
 var can_double = true
 var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var ammo = Master.ammo_container
+var challenges_ld = preload("res://entities/manager/VBoxContainer.tscn")
 
 # Nodes
 onready var raycast = $Head/Camera/RayLong
@@ -51,7 +52,12 @@ func _ready():
 	ammo[Master.AMMO.M16] += 32
 	
 	
-	
+func _process(delta):
+	if Input.is_action_pressed("show_challenges"):
+		var c = challenges_ld.instance()
+		c.destroy_on_release = true
+		add_child(c)
+		
 
 func _physics_process(delta):
 	var can_input = Master.input_enabled()
@@ -164,6 +170,9 @@ func do_emit_clip(clip):
 func do_emit_ammo(emit_ammo):
 	#TODO: to get rid of caution in log
 	emit_signal("ammo_changed", emit_ammo)
+
+func do_emit_hit(hit, name, clip, melee = false):
+	ref.level._on_player_weapon_hit(hit, name, clip, melee)
 
 func gain_ammo(type, amount):
 	if ammo[type] != null:

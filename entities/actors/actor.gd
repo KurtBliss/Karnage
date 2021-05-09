@@ -1,13 +1,14 @@
 class_name Actor
 extends KinematicBody
 
+
+
 signal died()
 signal injured()
 signal health_changed(value)
 signal physics_state_changed(func_name)
 signal state_changed(func_name)
 
-export(ref.ACTORS) var actor_name
 export (int) var acceleration = 5
 export (int) var speed = 10
 export (float) var gravity = 0.98
@@ -16,7 +17,7 @@ export (int) var injured_delay = 30 # Not in use?
 export (int) var health = 100 setget set_health
 export (float) var direction_offset = 90
 
-onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
+export onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
 onready var blood_effect = preload("res://effects/blood.tscn")
 
 var state = "" setget set_state, get_state
@@ -89,28 +90,24 @@ func process_velocity(_delta):
 func do_damage(dmg : float, from : Actor):
 	if undamageable:
 		return
-#	health -= dmg
-
-	print(name, " actor recived dmg: ", dmg)
-
+	
+	var alive = get_health() > 0 	
+	
 	set_health(get_health() - dmg)
 	
-	var b = blood_decal.instance()
-	if is_on_floor():
-		ref.level.add_child(b)
-		b.global_transform.origin = global_transform.origin 
-	
-	blood.emitting = true
-	blood_delay = 30
+	var method = "_on_attacked"
+	if alive and get_health() <= 0:
+		method += "_killed"
+
+	if has_method(method):
+		call(method, dmg)
+		
 	
 	if from:
-		var method = "_on_attacked_from_" + from.name
-		print("doing damage ", dmg)
+		method += "_from_" + from.name
 		if has_method(method):
 			call(method, dmg)
-		
-	if has_method("_on_attacked"):
-		call("_on_attacked", dmg)
+			
 
 func state_reset(set_state, set_physics_state):
 	set_state(set_state)
