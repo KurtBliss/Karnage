@@ -38,12 +38,12 @@ func change_mode(set_mode):
 			current_mode = MODE.PRE_GAME	
 			PreGame.visible = true
 			PostGame.visible = false
-			PreGameStart.has_focus()
+			PreGameStart.grab_focus()
 		MODE.POST_GAME:
 			current_mode = MODE.POST_GAME
 			PreGame.visible = false
 			PostGame.visible = true
-			PostGameRestart.has_focus()
+			PostGameRestart.grab_focus()
 			$PostGame/VBoxContainer/Score.text = "Score: " + String(score)
 
 func _process(_delta):
