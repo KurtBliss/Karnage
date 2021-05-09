@@ -128,10 +128,15 @@ static func execute_command(words:PoolStringArray):
 						Master.println("Timer stop",Color.green)
 						return
 				else:
-					Master.println("Timer not valid",Color.green)
+					Master.println("Timer not valid",Color.red)
 					return
+			elif words.size() == 2:
+				ref.level_timer.start(float(words[1]))
+				Master.println("time_left is now " + str(ref.level_timer.time_left),Color.green)				
+				return
 			Master.println("wrong number of arguments for command: ["+command+"]" ,Color.red)
 			return
+
 		
 		
 	Master.println("["+command+"] is not a valid command" ,Color.red)
