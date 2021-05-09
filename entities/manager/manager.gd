@@ -28,7 +28,9 @@ func change_mode(set_mode):
 			PostGame.visible = false
 			if ref.player == null or not is_instance_valid(ref.player):
 				var ld = load("res://entities/actors/player/player.tscn")
-				var inst : KinematicBody = ld.instance()
+				var inst : Player = ld.instance()
+				
+				
 				
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
 				get_parent().add_child(inst)
