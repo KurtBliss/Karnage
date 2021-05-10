@@ -28,8 +28,8 @@ background_sky = SubResource( 3 )
 [node name="TitledScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -3.63416
-margin_right = -3.63416
+margin_left = -4.69361
+margin_right = -4.6936
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

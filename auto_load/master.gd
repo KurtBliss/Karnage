@@ -15,12 +15,12 @@ var ammo_container = {
 }
 
 func _process(_delta):
-	if Input.is_action_just_pressed("game_end"):
-		if Mouse.toggle and Mouse.capture:
-			Mouse.set_toggle(false)
-		else:
-			if Input.is_action_pressed("shift"):
-				get_tree().quit()
+#	if Input.is_action_just_pressed("game_end"):
+#		if Mouse.toggle and Mouse.capture:
+#			Mouse.set_toggle(false)
+#		else:
+#			if Input.is_action_pressed("shift"):
+#				get_tree().quit()
 	
 	
 	if Input.is_action_pressed("game_end"):
