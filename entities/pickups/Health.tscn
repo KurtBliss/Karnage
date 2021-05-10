@@ -45,6 +45,7 @@ shape = SubResource( 5 )
 
 [node name="UseMedKit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -15.735
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="finished" from="UseMedKit" to="." method="_on_UseMedKit_finished"]

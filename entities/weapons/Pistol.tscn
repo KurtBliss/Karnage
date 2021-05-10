@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0.008, -0.001, 2.22 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
-tracks/1/path = NodePath("GunShot")
+tracks/1/path = NodePath("Melee")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -96,7 +96,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.19,
 "stream": ExtResource( 2 )
 } ],
 "times": PoolRealArray( 0 )
@@ -171,7 +171,7 @@ tracks/1/keys = {
 }
 
 [node name="Pistol" type="MeshInstance"]
-transform = Transform( 14.9801, -2.37487e-07, -0.771713, -0.0251956, 14.992, -0.489096, 0.771295, 0.48974, 14.9722, 0, 0, -7.45058e-09 )
+transform = Transform( 14.9801, -2.37487e-07, -0.771713, -0.0251956, 14.992, -0.489096, 0.771295, 0.48974, 14.9722, 0, 0, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -212,6 +212,10 @@ omni_range = 2.2
 
 [node name="GunShot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Melee" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+unit_db = 10.874
 
 [node name="Cock" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )

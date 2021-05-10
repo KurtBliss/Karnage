@@ -66,10 +66,12 @@ func do_fire():
 			holder.do_emit_ammo(holder.ammo[ammo_type])
 			if holder.has_method("do_emit_hit"):
 				holder.do_emit_hit(hit, name, clip)
+		else:
+			start_reload()
 		
 
 func start_reload():
-	if can_fire:
+	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:
 		can_fire = false
 		anime.play("Reload", -1, reload_anime_speed)
 
