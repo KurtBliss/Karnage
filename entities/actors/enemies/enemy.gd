@@ -1,6 +1,8 @@
 class_name Enemy
 extends Bot
 
+onready var snd_impact_ld = preload("res://assets/freesounds/511194__pablobd__headshot.tscn")
+
 enum ENEMY {
 	MANNEQUIN, MARKSMEN
 }
@@ -88,6 +90,9 @@ func _on_attacked(_dmg):
 	
 	blood.emitting = true
 	blood_delay = 30
+	
+	var snd = snd_impact_ld.instance()
+	add_child(snd)
 
 func _on_attacked_from_Player(dmg):
 	anger += dmg

@@ -53,7 +53,7 @@ func _ready():
 	
 
 func _process(delta):
-	if Input.is_action_pressed("show_challenges"):
+	if Input.is_action_just_pressed("show_challenges"):
 		var c = challenges_ld.instance()
 		c.destroy_on_release = true
 		add_child(c)
@@ -208,7 +208,8 @@ func _on_Timer_timeout():
 		ref.manager.go_to_post(health, score)
 
 func _on_Player_injured():#should change to red flash
-	InjuredSprite.modulate.a = 1
+	InjuredSprite._on_player_hurt(health)
+#	Hud.get_node("Injured/Sprite/InjuredSound").play()
 
 func score_set(value):
 	score = value

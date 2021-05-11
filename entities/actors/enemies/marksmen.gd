@@ -44,12 +44,18 @@ func state_chase_path(_delta):
 		set_path_to_player()
 
 func do_fire():
-	if !get_player():
+	if not is_instance_valid(ref.player):
 		return
-	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
-	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
+#	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
+#	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
 	var inst = bullet.instance()
-	muzzel.add_child(inst)
+#	inst.set_as_toplevel(true)
+	ref.level.add_child(inst)
+	inst.target_group = "Player"
+	inst.global_transform.origin = muzzel.global_transform.origin
+	var h = ref.player.head.global_transform.origin
+	h.y -= 1
+	inst.look_at(h,Vector3.UP)
 
 func get_player_visibility():
 	var player = get_player()
@@ -73,7 +79,8 @@ func _on_Fire_timeout():
 
 
 func _on_Marksmen_died():
-	create_respawn()
+	$Death.play("death", -1, 1.25)
+	
 
 
 func _on_Marksmen_injured():
@@ -84,3 +91,8 @@ func _on_Marksmen_injured():
 func _on_InjuredDelayr_timeout():
 	print("_on_InjuredDelayr_timeout")
 	Injured.play()
+
+
+func _on_Death_animation_finished(anim_name):
+	create_respawn()
+	pass # Replace with function body.

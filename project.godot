@@ -198,6 +198,7 @@ Mouse="*res://auto_load/mouse.gd"
 Console="*res://auto_load/Console/Console.tscn"
 GameData="*res://auto_load/game_data.gd"
 GameSettings="*res://auto_load/game_settings.gd"
+BgmEternalNight="*res://auto_load/BgmEternalNight.tscn"
 
 [debug]
 

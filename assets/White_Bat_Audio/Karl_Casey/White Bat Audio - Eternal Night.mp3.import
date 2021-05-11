@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/White Bat Audio - Eternal Night.mp3-7bfe4340e3a5dbca3fcff147b2018335.mp3str"
+
+[deps]
+
+source_file="res://assets/White_Bat_Audio/Karl_Casey/White Bat Audio - Eternal Night.mp3"
+dest_files=[ "res://.import/White Bat Audio - Eternal Night.mp3-7bfe4340e3a5dbca3fcff147b2018335.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -5,13 +5,39 @@ export(LEVEL) onready var level
 var destroy_on_release = false
 var challenges = []
 onready var challenge_ld = preload("res://entities/challenges/Challenge.tscn")
+var level_not_set = false
 
 ###################-BUILT IN-####################
 
 func _ready():
 	ref.challenges = self
+	update_level_challenges()
+
+func _process(_delta):
+	if destroy_on_release:
+		if not Input.is_action_pressed("show_challenges"):
+			queue_free()
 	
-	match level:
+	if level_not_set:
+		if is_instance_valid(ref.level):
+			update_level_challenges(ref.level.challenges_id)
+			level_not_set = false
+	
+	for challenge in challenges:
+		if not challenge["done"]:
+			if call(challenge["method"], challenge):
+				challenge["done"] = true
+				challenge["label"].set_done(true)
+
+func update_level_challenges(set = level):
+	for child in get_children():
+		child.queue_free()
+	
+	challenges = []
+	
+	level = set
+	
+	match set:
 		LEVEL.CORRIDOR:
 			challenge_add_highscore(2000)
 			challenge_add_highscore(1500)
@@ -22,19 +48,8 @@ func _ready():
 			challenge_add_highscore(1500)
 			challenge_add_highscore(1000)
 			challenge_add_kills(10)
-	
-	
-
-func _process(_delta):
-	if destroy_on_release:
-		if not Input.is_action_pressed("show_challenges"):
-			queue_free()
-	
-	for challenge in challenges:
-		if not challenge["done"]:
-			if call(challenge["method"], challenge):
-				challenge["done"] = true
-				challenge["label"].set_done(true)
+		_:
+			level_not_set = true
 
 ###################-Challenges Add-####################
 

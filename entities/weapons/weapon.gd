@@ -40,6 +40,8 @@ func _process(_delta):
 			wait_for_parrent_holder = false
 
 func do_fire():
+	if not is_instance_valid(holder):
+		return
 	if can_fire:
 		if clip > 0:
 			clip -= 1

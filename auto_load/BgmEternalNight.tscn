@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/White_Bat_Audio/Karl_Casey/White Bat Audio - Eternal Night.mp3" type="AudioStream" id=1]
+[ext_resource path="res://auto_load/BgmEternalNight.gd" type="Script" id=2]
+
+[node name="BgmEternalNight" type="AudioStreamPlayer"]
+pause_mode = 2
+stream = ExtResource( 1 )
+volume_db = -25.078
+script = ExtResource( 2 )

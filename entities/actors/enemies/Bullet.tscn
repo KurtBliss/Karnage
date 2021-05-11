@@ -41,4 +41,5 @@ shape = SubResource( 4 )
 [node name="GunShotSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
+
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

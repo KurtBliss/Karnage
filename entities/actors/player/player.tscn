@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://graphics/fonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -13,9 +13,12 @@
 [ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
 [ext_resource path="res://audio/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/button.tscn" type="PackedScene" id=13]
-[ext_resource path="res://audio/528263__magnuswaker__pound-of-flesh-2.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/freesounds/micahlg/413180__micahlg__male-hurt13.wav" type="AudioStream" id=14]
 [ext_resource path="res://entities/screens/Title.tscn" type="PackedScene" id=15]
 [ext_resource path="res://graphics/fonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/freesounds/micahlg/413184__micahlg__male-hurt6.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/freesounds/micahlg/413185__micahlg__male-hurt8.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/freesounds/micahlg/413186__micahlg__male-hurt9.wav" type="AudioStream" id=19]
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"
@@ -146,11 +149,83 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "Hurt0"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("InjuredSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Hurt1"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("InjuredSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Hurt2"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("InjuredSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 14 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Hurt3"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("InjuredSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
 [sub_resource type="DynamicFont" id=7]
 size = 64
 font_data = ExtResource( 16 )
 
-[sub_resource type="CapsuleMesh" id=6]
+[sub_resource type="CapsuleMesh" id=8]
 
 [node name="Player" type="KinematicBody" groups=[
 "Player",
@@ -309,11 +384,18 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
+[node name="InjuredPlayer" type="AnimationPlayer" parent="Hud/Injured/Sprite"]
+anims/Hurt0 = SubResource( 9 )
+anims/Hurt1 = SubResource( 10 )
+anims/Hurt2 = SubResource( 6 )
+anims/Hurt3 = SubResource( 11 )
+
 [node name="InjuredSound" type="AudioStreamPlayer" parent="Hud/Injured/Sprite"]
-stream = ExtResource( 14 )
+stream = ExtResource( 18 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -368,7 +450,7 @@ margin_left = 1.41425
 margin_top = -1.41422
 margin_right = 1.41425
 margin_bottom = -1.41422
-text = "Exit"
+text = "Exit Level"
 align = 1
 
 [node name="Game_End" parent="Pause/VBoxContainer" instance=ExtResource( 13 )]
@@ -395,7 +477,7 @@ visible = false
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 visible = false
-mesh = SubResource( 6 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="CollisionShape" parent="." instance=ExtResource( 6 )]
@@ -416,6 +498,7 @@ stream = ExtResource( 12 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="animation_finished" from="Hud/Injured/Sprite/InjuredPlayer" to="Hud/Injured/Sprite" method="_on_InjuredPlayer_animation_finished"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
 
 [editable path="Pause/VBoxContainer/Continue"]

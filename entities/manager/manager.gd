@@ -8,6 +8,7 @@ enum MODE {IN_GAME, PRE_GAME, POST_GAME, RESPAWN}
 var current_mode
 var health
 var score
+var wait_for_level = true
 
 onready var PreGame = $PreGame
 onready var PostGame = $PostGame
@@ -19,7 +20,15 @@ func _ready():
 	change_mode(MODE.PRE_GAME)
 	$AnimationPlayer.play("mapsSpin")
 
+
+
 func _process(_delta):
+	if wait_for_level:
+		if is_instance_valid(ref.level):
+			$PreGame/Level.text = ref.level.level
+			$PostGame/Challenges.update_level_challenges(ref.level.challenges_id)
+			$PreGame/Challenges.update_level_challenges(ref.level.challenges_id)
+			wait_for_level = false
 	if Master.input_disabled():
 		return
 	match current_mode:

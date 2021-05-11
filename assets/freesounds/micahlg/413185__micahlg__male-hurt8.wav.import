@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/413185__micahlg__male-hurt8.wav-4db1a101bf4055c45789157a58d5cb46.sample"
+
+[deps]
+
+source_file="res://assets/freesounds/micahlg/413185__micahlg__male-hurt8.wav"
+dest_files=[ "res://.import/413185__micahlg__male-hurt8.wav-4db1a101bf4055c45789157a58d5cb46.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

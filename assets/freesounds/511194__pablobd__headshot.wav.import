@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/511194__pablobd__headshot.wav-a5dc620ee5ec26a46991da8e7138bc8a.sample"
+
+[deps]
+
+source_file="res://assets/freesounds/511194__pablobd__headshot.wav"
+dest_files=[ "res://.import/511194__pablobd__headshot.wav-a5dc620ee5ec26a46991da8e7138bc8a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

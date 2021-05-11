@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://assets/mixamo/mannequin/scene/Mannequin.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
 [ext_resource path="res://maps/temp_debug.gd" type="Script" id=6]
+[ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -137,11 +138,29 @@ albedo_texture = ExtResource( 4 )
 [sub_resource type="QuadMesh" id=15]
 material = SubResource( 14 )
 
+[sub_resource type="Animation" id=16]
+resource_name = "Impact"
+length = 0.8
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer3DImpact")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.3,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
 [node name="Enemy" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 script = ExtResource( 1 )
 speed = 15
-health = 60
+health = 40
 
 [node name="Sunglasses" type="MeshInstance" parent="."]
 transform = Transform( -0.820092, 0, -5.26939e-08, 0, 0.251679, 0, 2.6722e-07, 0, -0.161716, 0.0199668, 0.399263, -0.968341 )
@@ -186,6 +205,9 @@ material/0 = null
 [node name="Mannequin" parent="." instance=ExtResource( 2 )]
 transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -1.78381, 0 )
 
+[node name="AudioStreamPlayer3D" parent="Mannequin/Anime" index="0"]
+unit_db = 33.238
+
 [node name="Particles" type="Particles" parent="."]
 amount = 200
 lifetime = 0.5
@@ -210,6 +232,13 @@ __meta__ = {
 [node name="deathTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer3DImpact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 7 )
+unit_db = 52.487
+
+[node name="AnimeSound" type="AnimationPlayer" parent="."]
+anims/Impact = SubResource( 16 )
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]

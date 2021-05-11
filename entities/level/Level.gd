@@ -14,13 +14,17 @@ var hit_combo = 0
 var melees = 0
 var melee_combo = 0
 var melee_misses = 0
-export(NodePath) onready var challenges_path
-onready var challenges = get_node(challenges_path)
 
 
 ###################-BUILT IN-####################
 func _ready():
+	if not BgmEternalNight.playing:
+		BgmEternalNight.play()
 	ref.level = self
+
+func _exit_tree() -> void:
+	BgmEternalNight.stop()
+	pass
 
 ###################-FUNCS-####################
 func set_points(set):

@@ -36,7 +36,6 @@ script = ExtResource( 1 )
 spawn_player_path = NodePath("../PlayerSpawn")
 
 [node name="PreGame" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -73,6 +72,7 @@ text = "Start"
 align = 1
 
 [node name="PostGame" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -115,9 +115,9 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="PostGame/Stats"]
-margin_top = 34.0
-margin_right = 357.0
-margin_bottom = 64.0
+margin_top = 33.0
+margin_right = 356.0
+margin_bottom = 63.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.92549, 0.945098, 0.117647, 1 )
 text = "Score: 0"
@@ -128,9 +128,9 @@ __meta__ = {
 }
 
 [node name="Highest Score" type="Label" parent="PostGame/Stats"]
-margin_top = 68.0
-margin_right = 357.0
-margin_bottom = 98.0
+margin_top = 67.0
+margin_right = 356.0
+margin_bottom = 97.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.92549, 0.945098, 0.117647, 1 )
 text = "Highest Score: 0"
@@ -141,9 +141,9 @@ __meta__ = {
 }
 
 [node name="Kills" type="Label" parent="PostGame/Stats"]
-margin_top = 102.0
-margin_right = 357.0
-margin_bottom = 132.0
+margin_top = 101.0
+margin_right = 356.0
+margin_bottom = 131.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.117647, 0.117647, 1 )
 text = "Kills: 0"
@@ -154,9 +154,9 @@ __meta__ = {
 }
 
 [node name="Highest Combo" type="Label" parent="PostGame/Stats"]
-margin_top = 136.0
-margin_right = 357.0
-margin_bottom = 166.0
+margin_top = 135.0
+margin_right = 356.0
+margin_bottom = 165.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.117647, 0.117647, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -168,9 +168,9 @@ __meta__ = {
 }
 
 [node name="Deaths" type="Label" parent="PostGame/Stats"]
-margin_top = 170.0
-margin_right = 357.0
-margin_bottom = 200.0
+margin_top = 169.0
+margin_right = 356.0
+margin_bottom = 199.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.117647, 0.117647, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )

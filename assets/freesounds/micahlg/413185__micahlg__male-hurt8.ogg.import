@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/413185__micahlg__male-hurt8.ogg-829063d1690ed44b365f2c9b21727109.oggstr"
+
+[deps]
+
+source_file="res://assets/freesounds/micahlg/413185__micahlg__male-hurt8.ogg"
+dest_files=[ "res://.import/413185__micahlg__male-hurt8.ogg-829063d1690ed44b365f2c9b21727109.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
