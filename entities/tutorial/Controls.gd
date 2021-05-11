@@ -11,4 +11,8 @@ func _ready():
 		"ROLL": "Shift",
 		"JUMP": "Spacebar"
 	}
+	
+	Input
+	
+	#TODO: Make controls screen dynamic
 	text = text.format(fm)
