@@ -19,6 +19,17 @@ func _ready():
 	change_mode(MODE.PRE_GAME)
 	$AnimationPlayer.play("mapsSpin")
 
+func _process(_delta):
+	if Master.input_disabled():
+		return
+	match current_mode:
+		MODE.POST_GAME:
+			if Input.is_action_just_pressed("ui_accept"):
+				_on_Restart_pressed()
+		MODE.PRE_GAME:
+			if Input.is_action_just_pressed("ui_accept"):
+				_on_Start_pressed()
+
 func change_mode(set_mode):
 	match set_mode:
 		MODE.IN_GAME:
@@ -44,20 +55,24 @@ func change_mode(set_mode):
 			PreGame.visible = false
 			PostGame.visible = true
 			PostGameRestart.grab_focus()
-			$PostGame/VBoxContainer/Score.text = "Score: " + String(score)
+			var lv = ref.level.level
+			var hs = 0
+			if is_instance_valid(GameData):
+				hs = GameData.get_level_highscore(lv)
+				if score > hs:
+					GameData.set_level_highscore(ref.level.level, score)
+				GameData.save()
+			set_stat("Score", score)
+			set_stat("Highest Score", hs)
+			set_stat("Kills", ref.level.kills)
+			set_stat("Highest Combo", ref.level.kill_combo)
+			set_stat("Deaths", ref.level.deaths)
 
-func _process(_delta):
-	if Master.input_disabled():
-		return
-	match current_mode:
-		MODE.POST_GAME:
-			if Input.is_action_just_pressed("ui_accept"):
-				_on_Restart_pressed()
-		MODE.PRE_GAME:
-			if Input.is_action_just_pressed("ui_accept"):
-				_on_Start_pressed()
 
-	
+func set_stat(prop, value):
+	var nd = $PostGame/Stats.get_node(prop)
+	nd.text = prop + ": " + String(value)
+	return nd
 
 func _on_Start_pressed():
 	if current_mode == MODE.PRE_GAME:

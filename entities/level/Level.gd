@@ -2,14 +2,21 @@ class_name Level
 extends Navigation
 
 export var level = ""
+export(Challenges.LEVEL) var challenges_id
 var points = 0 setget set_points, get_points
 var kills = 0
+var kills_since_death = 0
+var kill_combo = 0
+var deaths = 0
 var hits = 0
 var misses = 0
 var hit_combo = 0
 var melees = 0
 var melee_combo = 0
 var melee_misses = 0
+export(NodePath) onready var challenges_path
+onready var challenges = get_node(challenges_path)
+
 
 ###################-BUILT IN-####################
 func _ready():
@@ -43,6 +50,16 @@ func melee_miss_gain():
 	melee_misses += 1
 	melee_combo = 0
 
+func kills_gain():
+	kills += 1
+	kills_since_death += 1
+	if kills_since_death > kill_combo:
+		kill_combo = kills_since_death
+
+func deaths_gain():
+	deaths += 1
+	kills_since_death = 0
+
 ###################-VIRTUAL FUNCS-####################
 func _on_enemy_attacked(enemy):
 	match enemy:
@@ -53,7 +70,7 @@ func _on_enemy_killed(enemy):
 	match enemy:
 		_:
 			points_gain(100)
-	kills += 1
+	kills_gain()
 
 func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee): #TODO: 	
 	if is_melee:
@@ -67,3 +84,5 @@ func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee): #TODO:
 		else:
 			miss_gain()
 	
+func _on_player_died():
+	deaths_gain()

@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/actors/enemies/bot.gd"
 }, {
+"base": "Label",
+"class": "ChallengeLabel",
+"language": "GDScript",
+"path": "res://entities/challenges/Challenge.gd"
+}, {
+"base": "VBoxContainer",
+"class": "Challenges",
+"language": "GDScript",
+"path": "res://entities/challenges/Challenges.gd"
+}, {
 "base": "Object",
 "class": "CmdHelp",
 "language": "GDScript",
@@ -143,6 +153,8 @@ _global_script_class_icons={
 "Actor": "",
 "AmmoPickup": "",
 "Bot": "",
+"ChallengeLabel": "",
+"Challenges": "",
 "CmdHelp": "",
 "Door": "",
 "Enemy": "",

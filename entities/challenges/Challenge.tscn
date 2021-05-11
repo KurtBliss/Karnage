@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entities/challenges/Challenge.gd" type="Script" id=1]
+[ext_resource path="res://graphics/fonts/Turret_Road/TurretRoad-Medium.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Challenge" type="Label"]
+margin_left = -1.0
+margin_right = 356.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = " Challenge"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crossout" type="Line2D" parent="."]
+visible = false
+position = Vector2( 19.6533, 13.8217 )
+points = PoolVector2Array( 0.363007, 2.02841, 241.408, 1.4023, 309.2, 1.22623 )
+default_color = Color( 1, 0, 0, 0.54902 )

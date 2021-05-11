@@ -37,8 +37,30 @@ level = "Corridor"
 transform = Transform( 0.99969, -0.0249033, 2.31495e-09, 0.0248891, 0.999119, -0.0337832, 0.000841311, 0.0337727, 0.999429, 65.4991, 2.0487, 22.3015 )
 cull_mask = 2148532223
 
-[node name="Label" parent="Manager/PreGame" index="0"]
-text = "Corridor"
+[node name="Score" parent="Manager/PostGame/Stats" index="0"]
+margin_top = 33.0
+margin_right = 356.0
+margin_bottom = 63.0
+
+[node name="Highest Score" parent="Manager/PostGame/Stats" index="1"]
+margin_top = 67.0
+margin_right = 356.0
+margin_bottom = 97.0
+
+[node name="Kills" parent="Manager/PostGame/Stats" index="2"]
+margin_top = 101.0
+margin_right = 356.0
+margin_bottom = 131.0
+
+[node name="Highest Combo" parent="Manager/PostGame/Stats" index="3"]
+margin_top = 135.0
+margin_right = 356.0
+margin_bottom = 165.0
+
+[node name="Deaths" parent="Manager/PostGame/Stats" index="4"]
+margin_top = 169.0
+margin_right = 356.0
+margin_bottom = 199.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
 anims/mapsSpin = ExtResource( 13 )

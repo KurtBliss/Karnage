@@ -67,7 +67,7 @@ func println(text:String,color:Color = Color.white):
 	pass
 
 func _enter_tree() -> void:
-	GameData.load()
+	GameData.load_data()
 
 func _exit_tree() -> void:
 	GameData.save()

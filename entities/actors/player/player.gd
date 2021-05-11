@@ -21,7 +21,7 @@ var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var ammo = Master.ammo_container
-var challenges_ld = preload("res://entities/manager/VBoxContainer.tscn")
+var challenges_ld = preload("res://entities/challenges/Challenges.tscn")
 var start_with_pistol = true
 
 # Nodes
@@ -186,6 +186,7 @@ func gain_ammo(type, amount):
 
 func _on_Player_died():
 	
+	#TODO: Throw other weapons too
 	Weapon.throw_weapon()
 	
 	if ref.manager != null:
@@ -195,6 +196,8 @@ func _on_Player_died():
 		ref.player = null
 		queue_free()
 		ref.manager.respawn(health, score, get_translation())
+	
+	ref.level._on_player_died()
 
 func _on_Timer_timeout():
 	if ref.manager != null:
@@ -207,20 +210,6 @@ func _on_Timer_timeout():
 func _on_Player_injured():#should change to red flash
 	InjuredSprite.modulate.a = 1
 
-func enemy_injured():
-	score_set(score + 1)
-
-func enemy_death():
-	score_set(score + 50)
-
 func score_set(value):
 	score = value
 	emit_signal("score_changed", value)
-
-func _enter_tree() -> void:
-	pass
-	# ref.player = self
-
-func _exit_tree() -> void:
-	pass
-	# ref.player = null
