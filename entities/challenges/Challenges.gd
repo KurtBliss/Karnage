@@ -1,6 +1,6 @@
 class_name Challenges
 extends VBoxContainer
-enum LEVEL {CORRIDOR, CITY}
+enum LEVEL {NONE, CORRIDOR, CITY}
 export(LEVEL) onready var level
 var destroy_on_release = false
 var challenges = []
@@ -16,7 +16,14 @@ func _ready():
 			challenge_add_highscore(2000)
 			challenge_add_highscore(1500)
 			challenge_add_highscore(1000)
+			challenge_add_kills(5)
+		LEVEL.CITY:
+			challenge_add_highscore(2000)
+			challenge_add_highscore(1500)
+			challenge_add_highscore(1000)
 			challenge_add_kills(10)
+	
+	
 
 func _process(_delta):
 	if destroy_on_release:

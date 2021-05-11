@@ -10,7 +10,7 @@
 [ext_resource path="res://entities/pickups/PistolPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/pickups/Ammo.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/pickups/M16Pickup.tscn" type="PackedScene" id=10]
-[ext_resource path="res://graphics/fonts/Turret_Road/hud.tres" type="DynamicFont" id=11]
+[ext_resource path="res://entities/tutorial/Controls.tscn" type="PackedScene" id=11]
 [ext_resource path="res://entities/actors/enemies/enemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://res/mapsSpin.tres" type="Animation" id=13]
 [ext_resource path="res://entities/tutorial/dumbdownenemy.gd" type="Script" id=14]
@@ -125,18 +125,16 @@ transform = Transform( 0.99969, -0.0249033, 2.22218e-09, 0.0248891, 0.999119, -0
 cull_mask = 2148532223
 
 [node name="PreGame" parent="Manager" index="0"]
+visible = true
 margin_top = 1.05951
 margin_bottom = 1.05951
 
-[node name="Label" parent="Manager/PreGame" index="0"]
-margin_left = -151.381
-margin_top = 41.3191
-margin_right = 155.619
-margin_bottom = 94.3191
+[node name="Level" parent="Manager/PreGame" index="0"]
+margin_left = -226.497
+margin_top = 24.0677
+margin_right = 236.503
+margin_bottom = 104.068
 text = "Controls"
-
-[node name="VBoxContainer" parent="Manager/PreGame" index="1"]
-visible = false
 
 [node name="Button" type="Button" parent="Manager/PreGame" index="2"]
 margin_left = 457.919
@@ -162,27 +160,35 @@ margin_right = 5.36346
 margin_bottom = 6.08774
 text = "Tutoiral"
 
-[node name="Label2" type="Label" parent="Manager/PreGame" index="4"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -244.742
-margin_top = -125.174
-margin_right = 233.258
-margin_bottom = 111.826
-custom_fonts/font = ExtResource( 11 )
-text = "WASD to Move
-Left Mouse to Shoot
-R to Reload
-Right Mouse Mouse to Melee
-Hold Right Mouse to throw weapon
-E to pickup weapons
-Tab to Switch Weapons
-Shift to roll while walking"
-align = 1
-valign = 1
-uppercase = true
+[node name="Controls" parent="Manager/PreGame" index="4" instance=ExtResource( 11 )]
+
+[node name="PostGame" parent="Manager" index="1"]
+visible = false
+
+[node name="Score" parent="Manager/PostGame/Stats" index="0"]
+margin_top = 33.0
+margin_right = 356.0
+margin_bottom = 63.0
+
+[node name="Highest Score" parent="Manager/PostGame/Stats" index="1"]
+margin_top = 67.0
+margin_right = 356.0
+margin_bottom = 97.0
+
+[node name="Kills" parent="Manager/PostGame/Stats" index="2"]
+margin_top = 101.0
+margin_right = 356.0
+margin_bottom = 131.0
+
+[node name="Highest Combo" parent="Manager/PostGame/Stats" index="3"]
+margin_top = 135.0
+margin_right = 356.0
+margin_bottom = 165.0
+
+[node name="Deaths" parent="Manager/PostGame/Stats" index="4"]
+margin_top = 169.0
+margin_right = 356.0
+margin_bottom = 199.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
 anims/mapsSpin = ExtResource( 13 )
