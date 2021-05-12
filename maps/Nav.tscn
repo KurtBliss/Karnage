@@ -95,8 +95,6 @@ transform = Transform( -0.0551904, -0.026327, -0.998128, -0.056801, 0.998116, -0
 [node name="AmmoPistolSix" parent="AmmoM18" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 4.47035e-08, 2.23517e-08, 1, 1.86265e-09, 0, 1.39698e-09, 1, 0.532562, 0.354317, 3.05633 )
 
-[node name="MeleeEnemy" parent="." instance=ExtResource( 11 )]
-
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.204, 4, -15.806 )
 
@@ -115,6 +113,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.939, 1.95426, -35.4956 )
 stream = ExtResource( 6 )
 volume_db = 10.847
 autoplay = true
+
+[node name="MeleeEnemy" parent="Disabled" instance=ExtResource( 11 )]
 
 [node name="PistolPickup" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.0406399, -0.0255156, -0.998848, -0.056801, 0.998116, -0.0231859, 0.997558, 0.0557933, -0.0420126, 10.6625, 1.99605, -32.621 )

@@ -18,10 +18,39 @@ export(int) var clip  = clip_size
 var b_decal = preload("res://entities/decals/BulletDecal.tscn")
 
 export var anime_fire = "Fire"
+export var anime_reload = "Reload"
 
 var wait_for_parrent_holder = false
+export var do_reload_bullet = false
+
+
+# Stats
+export var damage : int = 0
+export var ray_cast_range : int = 0 
+export var rate : float = 0 
+export var fire_anime_speed : float = 1
+export var reload_anime_speed : float = 0.7
+
+# Node References
+export(String, "None", "Enemy", "Player") var target_group
+export(NodePath) onready var raycast_path
+export(NodePath) onready var holder_path
+export(NodePath) onready var animation_player
+export(NodePath) onready var cock_path
+export(String, FILE, "*.tscn") onready var pickup_file
+export(String, FILE, "*.tscn") onready var projectile_file setget set_projectile
+onready var projectileInst
+onready var raycast #: RayCast 
+onready var holder #: Actor 
+onready var anime : AnimationPlayer = get_node(animation_player)
+onready var timer : Timer = $Rate 
+onready var cock = get_node(cock_path) 
+
+var can_fire = true
+
 
 func _ready():
+	do_reload_bullet = false 
 	if equiped:
 		if not is_instance_valid(raycast):
 			wait_for_parrent_holder = true
@@ -39,6 +68,10 @@ func _process(_delta):
 			raycast = par_holder.Weapon.raycast
 			update_raycast_range()
 			wait_for_parrent_holder = false
+		
+	elif is_instance_valid(holder) and do_reload_bullet:
+		do_reload_bullet = false
+		do_reload_bullet()
 
 func do_fire():
 	if not is_instance_valid(holder):
@@ -80,33 +113,52 @@ func fire_raycast():
 
 func fire_projectile():
 	var projectile_ld = preload("res://entities/projectiles/Projectile.tscn")
-#	if name == "Shotgun":
-#		var shots = 3
-#		while shots > 0:
-#			shots -= 1
-#	else:
-	var inst = projectile_ld.instance()
-	inst.global_transform.origin = raycast.global_transform.origin
-	ref.level.add_child(inst)
+	if name == "Shotgun":
+		var shots = 7
+		while shots > 0:
+			var inst = projectile_ld.instance()
+			inst.global_transform = raycast.global_transform
+			var spread = 15
+			inst.rotation_degrees.y += rand_range(-spread / 2, spread / 2)
+			inst.rotation_degrees.x += rand_range(-spread / 2, spread / 2)
+			inst.rotation_degrees.z += rand_range(-spread / 2, spread / 2)
+			ref.level.add_child(inst)
+			shots -= 1
+	else:
+		var inst = projectile_ld.instance()
+		inst.global_transform = raycast.global_transform
+		ref.level.add_child(inst)
 	
 	
 
 func start_reload():
 	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:
-		can_fire = false
-		anime.play("Reload", -1, reload_anime_speed)
+		if name == "Shotgun": 
+			can_fire = true
+		else:
+			can_fire = false
+		anime.play(anime_reload, -1, reload_anime_speed)
 
 func do_reload():
 	while clip < clip_size:
 		if holder.ammo[ammo_type] == null:
 			return
 		if holder.ammo[ammo_type] > 0:
-			holder.ammo[ammo_type] -= 1
-			clip += 1
-			holder.do_emit_clip(clip)
-			holder.do_emit_ammo(holder.ammo[ammo_type])
+			do_reload_bullet()
 		else:
 			return
+
+func do_reload_bullet():
+	if clip < clip_size and holder.ammo[ammo_type] > 0:
+		holder.ammo[ammo_type] -= 1
+		clip += 1
+		holder.do_emit_clip(clip)
+		holder.do_emit_ammo(holder.ammo[ammo_type])
+	if clip >= clip_size and name == "Shotgun":
+		if anime.current_animation == anime_reload:
+			if anime.current_animation_position < 2.1:
+				anime.seek(2.1)
+				can_fire = true
 
 func update_raycast_range():
 	raycast.cast_to.z = -ray_cast_range
@@ -126,6 +178,8 @@ func _on_Anime_animation_finished(anim_name):
 	elif anim_name == "Reload":
 		can_fire = true
 		do_reload()
+	elif anim_name == "ReloadShotgun":
+		can_fire = true
 
 func _on_Pistol_tree_entered():
 	var par = get_parent()
@@ -135,30 +189,6 @@ func _on_Pistol_tree_entered():
 			holder.do_emit_clip(clip)
 			holder.do_emit_ammo(holder.ammo[ammo_type])			
 
-
-# Stats
-export var damage : int = 0
-export var ray_cast_range : int = 0 
-export var rate : float = 0 
-export var fire_anime_speed : float = 1
-export var reload_anime_speed : float = 0.7
-
-# Node References
-export(String, "None", "Enemy", "Player") var target_group
-export(NodePath) onready var raycast_path
-export(NodePath) onready var holder_path
-export(NodePath) onready var animation_player
-export(NodePath) onready var cock_path
-export(String, FILE, "*.tscn") onready var pickup_file
-export(String, FILE, "*.tscn") onready var projectile_file setget set_projectile
-onready var projectileInst
-onready var raycast #: RayCast 
-onready var holder #: Actor 
-onready var anime : AnimationPlayer = get_node(animation_player)
-onready var timer : Timer = $Rate 
-onready var cock = get_node(cock_path) 
-
-var can_fire = true
 
 func set_equiped(e):
 	equiped = e

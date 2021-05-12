@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://graphics/fonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -19,8 +19,6 @@
 [ext_resource path="res://assets/freesounds/micahlg/413184__micahlg__male-hurt6.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/freesounds/micahlg/413185__micahlg__male-hurt8.wav" type="AudioStream" id=18]
 [ext_resource path="res://assets/freesounds/micahlg/413186__micahlg__male-hurt9.wav" type="AudioStream" id=19]
-
-[sub_resource type="CapsuleMesh" id=12]
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"
@@ -244,11 +242,6 @@ transform = Transform( 1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, 0, 2.4, 0
 [node name="Camera" type="Camera" parent="Head"]
 current = true
 far = 400.0
-
-[node name="Tar" type="MeshInstance" parent="Head/Camera"]
-transform = Transform( -0.998676, -3.56903e-09, 0.0514475, -5.8363e-09, 1, -4.39194e-08, -0.0514475, -4.41615e-08, -0.998676, 0, 0, -31 )
-mesh = SubResource( 12 )
-material/0 = null
 
 [node name="Weapon" type="Position3D" parent="Head/Camera"]
 transform = Transform( -1, -1.55741e-08, 1.50915e-07, -1.06385e-08, 0.999467, 0.0326493, -1.51343e-07, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )

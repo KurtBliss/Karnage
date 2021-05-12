@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/weapons/shotgun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/freesounds/427595__michorvath__20-gauge-shotgun-gunshot.wav" type="AudioStream" id=3]
+[ext_resource path="res://models/weapons/ammo_shotgun.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/freesounds/513348__shelbyshark__load-shotgun_cropped0.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FireShotgun"
@@ -71,6 +73,108 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "ReloadShotgun"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 2.1, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -7.45058e-09 ), Vector3( 0, 0.266394, -7.45058e-09 ), Vector3( 0, 0.266394, -7.45058e-09 ), Vector3( 0, 0, -7.45058e-09 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.86853, -2.95058, -0.0962914 ), Vector3( 1.86853, -2.95058, -0.0962914 ), Vector3( 1.86853, -2.95058, -0.0962914 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ammo_shotgun:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9, 1.2, 1.4, 1.7, 1.8, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ammo_shotgun:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9, 1.2, 1.4, 1.7, 1.8, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.00785096, -0.0141971, -0.0212796 ), Vector3( 0.0195478, -0.0198614, -0.0273429 ), Vector3( -0.00088592, -0.00146297, -0.00317372 ), Vector3( 0.0195478, -0.0198614, -0.0273429 ), Vector3( -0.00088592, -0.00146297, -0.00317372 ), Vector3( 0.0195478, -0.0198614, -0.0273429 ), Vector3( -0.00088592, -0.00146297, -0.00317372 ), Vector3( 0.0195478, -0.0198614, -0.0273429 ), Vector3( -0.00088592, -0.00146297, -0.00317372 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:do_reload_bullet")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.7, 1.2, 1.7, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, true, true ]
+}
+tracks/6/type = "audio"
+tracks/6/path = NodePath("Reload")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"clips": [ {
+"end_offset": 0.47,
+"start_offset": 0.5,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.47,
+"start_offset": 0.5,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.47,
+"start_offset": 0.5,
+"stream": ExtResource( 5 )
+}, {
+"end_offset": 0.47,
+"start_offset": 0.5,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.5, 1, 1.5, 1.9 )
+}
+
 [node name="Shotgun" instance=ExtResource( 1 )]
 transform = Transform( 14.9801, -2.37487e-07, -0.771711, -0.0251956, 14.992, -0.489095, 0.771295, 0.489742, 14.9722, 0, 0, -7.45058e-09 )
 mesh = ExtResource( 2 )
@@ -98,11 +202,43 @@ ammo_type = 2
 clip_size = 4
 clip = 4
 anime_fire = "FireShotgun"
+anime_reload = "ReloadShotgun"
+do_reload_bullet = true
 damage = 30
 ray_cast_range = 100
 
 [node name="Anime" parent="." index="0"]
 anims/FireShotgun = SubResource( 1 )
+anims/ReloadShotgun = SubResource( 2 )
 
 [node name="GunShot" parent="." index="2"]
 stream = ExtResource( 3 )
+
+[node name="Reload" parent="." index="6"]
+stream = ExtResource( 5 )
+
+[node name="ammo_shotgun" type="MeshInstance" parent="." index="7"]
+transform = Transform( 0.997351, -0.0514469, -0.0513794, 0.0514469, -6.70552e-08, 0.998679, -0.0513785, -0.99866, 0.00264676, -0.00088592, -0.00146297, -0.00317372 )
+visible = false
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null

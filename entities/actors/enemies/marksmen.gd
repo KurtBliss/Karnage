@@ -84,12 +84,10 @@ func _on_Marksmen_died():
 
 
 func _on_Marksmen_injured():
-	# print("_on_Marksmen_injured")
 	InjuredDelay.start()
 
 
 func _on_InjuredDelayr_timeout():
-	# print("_on_InjuredDelayr_timeout")
 	Injured.play()
 
 
