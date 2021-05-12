@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/pickups/Pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=2]
+
+[node name="ShotgunPickup" instance=ExtResource( 1 )]
+weapon_path = NodePath("Area/Shotgun")
+
+[node name="Shotgun" parent="Area" index="0" instance=ExtResource( 2 )]
+equiped = false

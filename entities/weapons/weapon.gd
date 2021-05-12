@@ -17,6 +17,8 @@ export(int) var clip  = clip_size
 
 var b_decal = preload("res://entities/decals/BulletDecal.tscn")
 
+
+
 var wait_for_parrent_holder = false
 
 func _ready():
@@ -45,32 +47,41 @@ func do_fire():
 	if can_fire:
 		if clip > 0:
 			clip -= 1
-			var hit = false
 			can_fire = false 
 			timer.start(rate)
 			if fire_type == FIRE_TYPE.RAYCAST:
-				if raycast.is_colliding():
-					var collider = raycast.get_collider()
-					if collider.is_in_group(target_group):
-						collider.do_damage(damage, holder)
-						hit = true
-					else:
-						var aa = collider is GridMap 
-						var bb = collider.is_in_group("door")
-						if aa or bb:
-							var b = b_decal.instance()
-							collider.add_child(b)
-							b.global_transform.origin = raycast.get_collision_point()
-							b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
+				fire_raycast()
+			elif fire_type == FIRE_TYPE.PROJECTILE:
+				fire_projectile()
 			anime.play("Fire", -1, fire_anime_speed)
 			holder.do_emit_fire()
 			holder.do_emit_clip(clip)
 			holder.do_emit_ammo(holder.ammo[ammo_type])
-			if holder.has_method("do_emit_hit"):
-				holder.do_emit_hit(hit, name, clip)
+			
 		else:
 			start_reload()
 		
+func fire_raycast():
+	var hit = false	
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider.is_in_group(target_group):
+			collider.do_damage(damage, holder)
+			hit = true
+		else:
+			var aa = collider is GridMap 
+			var bb = collider.is_in_group("door")
+			if aa or bb:
+				var b = b_decal.instance()
+				collider.add_child(b)
+				b.global_transform.origin = raycast.get_collision_point()
+				b.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
+		if holder.has_method("do_emit_hit"):
+			holder.do_emit_hit(hit, name, clip)
+
+func fire_projectile():
+	
+	pass
 
 func start_reload():
 	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:
