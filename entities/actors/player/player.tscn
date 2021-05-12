@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://graphics/fonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -19,6 +19,62 @@
 [ext_resource path="res://assets/freesounds/micahlg/413184__micahlg__male-hurt6.wav" type="AudioStream" id=17]
 [ext_resource path="res://assets/freesounds/micahlg/413185__micahlg__male-hurt8.wav" type="AudioStream" id=18]
 [ext_resource path="res://assets/freesounds/micahlg/413186__micahlg__male-hurt9.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/freesounds/396806__scorpion67890__cyborg-death-1.wav" type="AudioStream" id=20]
+[ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
+
+[sub_resource type="Animation" id=12]
+resource_name = "death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 0.436248, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Roll")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hud/Injured/Sprite2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Head/Camera/Weapon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"
@@ -237,7 +293,7 @@ gravity = 1.2
 jump_power = 36
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, 0, 2.4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 current = true
@@ -262,6 +318,7 @@ enabled = true
 cast_to = Vector3( 0, 0, -5 )
 
 [node name="Anime" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 12 )
 anims/roll = SubResource( 1 )
 "anims/roll back" = SubResource( 2 )
 "anims/roll left" = SubResource( 3 )
@@ -392,6 +449,14 @@ anims/Hurt3 = SubResource( 9 )
 [node name="InjuredSound" type="AudioStreamPlayer" parent="Hud/Injured/Sprite"]
 stream = ExtResource( 18 )
 
+[node name="Sprite2" type="Sprite" parent="Hud/Injured"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.541176 )
+position = Vector2( -512, -292 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+script = ExtResource( 21 )
+
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 visible = false
@@ -489,7 +554,7 @@ enabled = true
 cast_to = Vector3( 0, -0.4, 0 )
 
 [node name="Roll" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 20 )
 
 [connection signal="ammo_changed" from="." to="Hud" method="_on_Player_ammo_changed"]
 [connection signal="clip_changed" from="." to="Hud" method="_on_Player_clip_changed"]
@@ -497,6 +562,7 @@ stream = ExtResource( 12 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 [connection signal="animation_finished" from="Hud/Injured/Sprite/InjuredPlayer" to="Hud/Injured/Sprite" method="_on_InjuredPlayer_animation_finished"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]
 

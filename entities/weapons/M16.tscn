@@ -1,10 +1,79 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/weapons/machinegun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://entities/weapons/M16.gd" type="Script" id=3]
+[ext_resource path="res://assets/freesounds/515322__generalsigma__ar15-single-shot.wav" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "M16Fire"
+length = 0.6
+step = 0.082
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.00767732, 0.000250787 ), Vector3( 0, 0, -7.45058e-09 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -14.4464, -3.04538, 0.760419 ), Vector3( 1.86853, -2.95058, -0.0962914 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.492 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flash:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.41 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 16.0, 1.87 ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("GunShot")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="M16" instance=ExtResource( 1 )]
+transform = Transform( 14.9801, -2.37487e-07, -0.771711, -0.0251956, 14.992, -0.489095, 0.771295, 0.489742, 14.9722, 0, 0, -7.45058e-09 )
 mesh = ExtResource( 2 )
 material/14 = null
 material/15 = null
@@ -42,8 +111,14 @@ automatic = true
 ammo_type = 1
 clip_size = 12
 clip = 12
+anime_fire = "M16Fire"
 damage = 10
-rate = 25.0
-fire_anime_speed = 2.0
+fire_anime_speed = 3.0
 target_group = "Enemy"
 pickup_file = "res://entities/pickups/M16Pickup.tscn"
+
+[node name="Anime" parent="." index="0"]
+anims/M16Fire = SubResource( 1 )
+
+[node name="GunShot" parent="." index="2"]
+stream = ExtResource( 4 )

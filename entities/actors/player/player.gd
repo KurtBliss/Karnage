@@ -23,6 +23,7 @@ var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
 var ammo = Master.ammo_container
 var challenges_ld = preload("res://entities/challenges/Challenges.tscn")
 var start_with_pistol = true
+var death = false
 
 # Nodes
 onready var raycast = $Head/Camera/RayLong
@@ -63,6 +64,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	var can_input = Master.input_enabled()
+	if death:
+		can_input = false
 	"""
 		Check if dashing
 	"""
@@ -155,6 +158,8 @@ func _physics_process(delta):
 
 
 func move_camera(look, delta):
+	if death:
+		return
 	look *= delta * 15
 	head.rotate_y(deg2rad(-look.x))
 	var x_delta = look.y
@@ -189,14 +194,8 @@ func _on_Player_died():
 	
 	#TODO: Throw other weapons too
 	Weapon.throw_weapon()
-	
-	if ref.manager != null:
-#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Mouse.set_capture(false)
-		ref.player = null
-		queue_free()
-		ref.manager.respawn(health, score, get_translation())
+	death = true
+	Anime.play("death")
 	
 	ref.level._on_player_died()
 
@@ -215,3 +214,14 @@ func _on_Player_injured():#should change to red flash
 func score_set(value):
 	score = value
 	emit_signal("score_changed", value)
+
+
+func _on_Anime_animation_finished(anim_name):
+	if anim_name == "death":
+			if ref.manager != null:
+		#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				Mouse.set_capture(false)
+				ref.player = null
+				queue_free()
+				ref.manager.respawn(health, score, get_translation())

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/427596__michorvath__ar15-rifle-shot.wav-6bcc107df0f11bc2a34b7b0ac4ad497b.sample"
+
+[deps]
+
+source_file="res://assets/freesounds/427596__michorvath__ar15-rifle-shot.wav"
+dest_files=[ "res://.import/427596__michorvath__ar15-rifle-shot.wav-6bcc107df0f11bc2a34b7b0ac4ad497b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
