@@ -211,6 +211,7 @@ light_energy = 1.87
 omni_range = 2.2
 
 [node name="GunShot" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 0.0666668, 6.1118e-10, 1.11759e-08, -3.63798e-11, 0.0666667, 1.42027e-08, -2.79397e-09, -2.32831e-09, 0.0666664, 0.0495098, 0.0185326, 0.052063 )
 stream = ExtResource( 4 )
 
 [node name="Melee" type="AudioStreamPlayer3D" parent="."]

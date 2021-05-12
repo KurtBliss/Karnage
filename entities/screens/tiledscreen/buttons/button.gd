@@ -19,7 +19,6 @@ func label_text_set(text) -> void:
 		label.text = text
 	else:
 		pass
-#		print("missing label...")
 
 
 func _ready():

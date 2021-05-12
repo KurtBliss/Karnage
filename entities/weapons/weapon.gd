@@ -17,14 +17,13 @@ export(int) var clip  = clip_size
 
 var b_decal = preload("res://entities/decals/BulletDecal.tscn")
 
-
+export var anime_fire = "Fire"
 
 var wait_for_parrent_holder = false
 
 func _ready():
 	if equiped:
 		if not is_instance_valid(raycast):
-			print(self, " missing raycast, wait_for_parrent_holder")
 			wait_for_parrent_holder = true
 		else:
 			update_raycast_range()
@@ -53,7 +52,7 @@ func do_fire():
 				fire_raycast()
 			elif fire_type == FIRE_TYPE.PROJECTILE:
 				fire_projectile()
-			anime.play("Fire", -1, fire_anime_speed)
+			anime.play(anime_fire, -1, fire_anime_speed)
 			holder.do_emit_fire()
 			holder.do_emit_clip(clip)
 			holder.do_emit_ammo(holder.ammo[ammo_type])
@@ -80,8 +79,17 @@ func fire_raycast():
 			holder.do_emit_hit(hit, name, clip)
 
 func fire_projectile():
+	var projectile_ld = preload("res://entities/projectiles/Projectile.tscn")
+#	if name == "Shotgun":
+#		var shots = 3
+#		while shots > 0:
+#			shots -= 1
+#	else:
+	var inst = projectile_ld.instance()
+	inst.global_transform.origin = raycast.global_transform.origin
+	ref.level.add_child(inst)
 	
-	pass
+	
 
 func start_reload():
 	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:
@@ -108,7 +116,7 @@ func _on_Rate_timeout():
 		can_fire = true
 
 func _on_Anime_animation_finished(anim_name):
-	if anim_name == "Fire":
+	if anim_name == anime_fire:
 		if can_shoot_mode == CAN_SHOOT.ANIME_END:
 			can_fire = true
 	elif anim_name == "Hit":

@@ -15,9 +15,6 @@ func _ready():
 			
 		var result = button.connect("pressed", self, "_on_Button_pressed", [button])
 		
-		print(button.label_text, " [", result, "]")
-		
-#		print(button.scene)
 #	FadeIn.connect("fade_finished", self, "_on_FadeIn_fade_finished")
 	
 #[button.scene, button.method]

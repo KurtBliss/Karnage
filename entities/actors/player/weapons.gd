@@ -93,7 +93,7 @@ func throw_weapon():
 	var cur = get_current_weapon()
 	if cur == null:
 		return
-	print(cur)
+	
 	var ld = load(cur.pickup_file)
 	var inst: PickupBody = ld.instance()
 	inst.pass_clip = cur.clip

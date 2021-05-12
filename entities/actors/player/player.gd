@@ -41,7 +41,7 @@ onready var InjuredSprite = $Hud/Injured/Sprite
 func _ready():
 	
 	ref.player = self
-	prints("ref.player", ref.player)
+	
 	
 	Mouse.set_capture(true)
 	add_child(rstick)
@@ -50,6 +50,7 @@ func _ready():
 	ref.level_timer.connect("time_left", Hud, "_on_Timer_time_left")
 	ammo[Master.AMMO.PISTOL] += 10
 	ammo[Master.AMMO.M16] += 32
+	ammo[Master.AMMO.SHOTGUN] += 24
 	
 
 func _process(delta):

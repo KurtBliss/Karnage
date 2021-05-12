@@ -19,12 +19,13 @@ func _process(delta):
 			pos = 0
 	else:
 		if pos < 7:
+			if not $Open.is_playing():
+				$Open.play(1.05)
 			pos += delta * 30
 		elif pos > 7:
 			pos = 7
 
 func _on_Area_body_entered(body):
-	print("body entered ", body)
 	
 	if body.is_in_group("actor"):
 		bodies.append(body)

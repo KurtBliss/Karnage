@@ -10,15 +10,15 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("test"):
-		print(get_player_visibility())
+		pass
 
 func _on_Area_body_entered(body):
 	if body == ref.player:
-		print("Player HIT ", swing_damage)
+		pass
 		
 		if swing_damage > 0:
 			swing_damage = 0
-			print("Player HIT")
+			pass
 			ref.player.do_damage(swing_damage, self)
 
 func state_idle(_delta):
@@ -67,6 +67,6 @@ func _on_Anime_animation_finished(anim_name):
 func _on_Area_body_exited(_body):
 	if is_instance_valid(ref.player):
 		if swing_damage > 0:
-			print("Player HIT")
+			pass
 			ref.player.do_damage(swing_damage, self)
 			swing_damage = 0

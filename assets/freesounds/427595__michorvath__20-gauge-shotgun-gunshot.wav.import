@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/427595__michorvath__20-gauge-shotgun-gunshot.wav-43a913c76214251753a9b80cb449da13.sample"
+
+[deps]
+
+source_file="res://assets/freesounds/427595__michorvath__20-gauge-shotgun-gunshot.wav"
+dest_files=[ "res://.import/427595__michorvath__20-gauge-shotgun-gunshot.wav-43a913c76214251753a9b80cb449da13.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
