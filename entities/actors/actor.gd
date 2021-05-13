@@ -20,6 +20,7 @@ export (float) var direction_offset = 90
 export onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
 onready var blood_effect = preload("res://effects/blood.tscn")
 
+export var actor_name = ""
 var state = "" setget set_state, get_state
 var physics_state = "" setget set_physics_state, get_physics_state
 var previous_physics_state = "" 
@@ -88,6 +89,8 @@ func process_velocity(_delta):
 
 
 func do_damage(dmg : float, from : Actor, how = "unkown"):
+	
+	
 	if undamageable:
 		return
 	
@@ -104,7 +107,9 @@ func do_damage(dmg : float, from : Actor, how = "unkown"):
 		
 	
 	if from:
-		method += "_from_" + from.name
+		if from.actor_name == "":
+			print_debug("Check this...")
+		method += "_from_" + from.actor_name
 		if has_method(method):
 			call(method, dmg, how)
 			

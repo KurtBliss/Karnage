@@ -66,6 +66,7 @@ func deaths_gain():
 
 ###################-VIRTUAL FUNCS-####################
 func _on_enemy_attacked(enemy, _how):
+	
 	match enemy:
 		_:
 			if _how.to_lower() == "shotgun":
@@ -74,6 +75,7 @@ func _on_enemy_attacked(enemy, _how):
 				points_gain(5)
 
 func _on_enemy_killed(enemy, _how):
+	
 	match enemy:
 		_:
 			points_gain(100)

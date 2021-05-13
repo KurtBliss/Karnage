@@ -97,6 +97,7 @@ func _on_attacked(_dmg):
 func _on_attacked_from_Player(dmg, how):
 	anger += dmg
 	do_altert()
+	
 	ref.level._on_enemy_attacked(ENEMY, how)
 	
 func _on_attacked_killed_from_Player(_dmg, how):

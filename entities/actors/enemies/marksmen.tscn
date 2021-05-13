@@ -124,6 +124,8 @@ tracks/3/keys = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27348, 0 )
 script = ExtResource( 1 )
 health = 50
+actor_name = "Marksmen"
+enemy = 1
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53, 0 )

@@ -161,6 +161,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 script = ExtResource( 1 )
 speed = 15
 health = 40
+actor_name = "Mannequin"
 
 [node name="Sunglasses" type="MeshInstance" parent="."]
 transform = Transform( -0.820092, 0, -5.26939e-08, 0, 0.251679, 0, 2.6722e-07, 0, -0.161716, 0.0199668, 0.399263, -0.968341 )
