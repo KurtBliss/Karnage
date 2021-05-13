@@ -119,9 +119,9 @@ func _physics_process(delta):
 	direction += head_basis.z * move_z
 	direction += head_basis.x * move_x
 	
-	if Input.is_action_just_pressed("roll") and can_input:
-		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
-			roll_basis = head_basis
+#	if Input.is_action_just_pressed("roll") and can_input:
+#		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
+#			roll_basis = head_basis
 	
 	
 	dir = Vector3()
