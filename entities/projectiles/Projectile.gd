@@ -7,6 +7,8 @@ export(int) var damage = 7
 var ignore = [self]
 var holder : Actor
 var face = Vector3.ZERO
+var other_shots = []
+var type = ""
 
 func _ready():
 #	face = -ref.player.camera.global_transform.basis.z.normalized()
@@ -26,7 +28,7 @@ func _physics_process(_delta : float) -> void:
 	var hit = raycast_direct(last_position, global_transform.origin + (face * 10))
 	if hit.has("collider"):	
 		if hit.collider.is_in_group(target_group):
-			hit.collider.do_damage(damage, holder)
+			hit.collider.do_damage(damage, holder, type)
 	
 		queue_free()
 

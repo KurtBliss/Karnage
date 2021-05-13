@@ -49,6 +49,9 @@ func _ready():
 	add_to_group("Player")
 	ref.level_timer.connect("timeout", self,  "_on_Timer_timeout")
 	ref.level_timer.connect("time_left", Hud, "_on_Timer_time_left")
+	
+	score_set(score)
+	
 	ammo[Master.AMMO.PISTOL] += 10
 	ammo[Master.AMMO.M16] += 32
 	ammo[Master.AMMO.SHOTGUN] += 24
@@ -225,3 +228,4 @@ func _on_Anime_animation_finished(anim_name):
 				ref.player = null
 				queue_free()
 				ref.manager.respawn(health, score, get_translation())
+				

@@ -87,7 +87,7 @@ func process_velocity(_delta):
 	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)
 
 
-func do_damage(dmg : float, from : Actor):
+func do_damage(dmg : float, from : Actor, how = "unkown"):
 	if undamageable:
 		return
 	
@@ -106,7 +106,7 @@ func do_damage(dmg : float, from : Actor):
 	if from:
 		method += "_from_" + from.name
 		if has_method(method):
-			call(method, dmg)
+			call(method, dmg, how)
 			
 
 func state_reset(set_state, set_physics_state):

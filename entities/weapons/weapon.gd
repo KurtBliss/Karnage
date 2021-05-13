@@ -115,6 +115,7 @@ func fire_projectile():
 	var projectile_ld = preload("res://entities/projectiles/Projectile.tscn")
 	if name == "Shotgun":
 		var shots = 7
+#		var shot_insts = []
 		while shots > 0:
 			var inst = projectile_ld.instance()
 			inst.global_transform = raycast.global_transform
@@ -124,7 +125,11 @@ func fire_projectile():
 			inst.rotation_degrees.z += rand_range(-spread / 2, spread / 2)
 			ref.level.add_child(inst)
 			inst.holder = holder
+			inst.type = "shotgun"
+#			shot_insts.append(inst)
 			shots -= 1
+#		for shot in shot_insts:
+#			shot.other_shots = shot_insts
 	else:
 		create_projectile(projectile_ld)
 	

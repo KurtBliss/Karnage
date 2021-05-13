@@ -94,13 +94,13 @@ func _on_attacked(_dmg):
 	var snd = snd_impact_ld.instance()
 	add_child(snd)
 
-func _on_attacked_from_Player(dmg):
+func _on_attacked_from_Player(dmg, how):
 	anger += dmg
 	do_altert()
-	ref.level._on_enemy_attacked(ENEMY)
+	ref.level._on_enemy_attacked(ENEMY, how)
 	
-func _on_attacked_killed_from_Player(_dmg):
-	ref.level._on_enemy_killed(ENEMY)	
+func _on_attacked_killed_from_Player(_dmg, how):
+	ref.level._on_enemy_killed(ENEMY, how)	
 
 func _on_player_died():
 	wait_for_player = true
