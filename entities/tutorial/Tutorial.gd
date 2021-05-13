@@ -26,20 +26,20 @@ var message = {
 }
 		
 func _ready():
-	message("Welcome", true)
+	message_update("Welcome", true)
 	message_que.append("Movement")
 	ref.tutorial = self
 
 func _process(delta):
 	if label.visible_characters > label.text.length() + 20:
 		if message_que.size() > 0:
-			message(message_que[0])
+			message_update(message_que[0])
 			message_que.remove(0)
 	match last_msg_id:
 		"M16Pickup":
 			
 			if Input.get_action_strength("fire"):
-				message("act_like_you_done_this")
+				message_update("act_like_you_done_this")
 				pass
 			pass
 		_: pass
@@ -47,12 +47,12 @@ func _process(delta):
 func _triggered_point(trig):
 	match trig.name:
 		"WeaponPickup":
-			message("WeaponPickup", true)
+			message_update("WeaponPickup", true)
 			message_que.append("M16Pickup")
 			ref.player.Hud.show_clip()
-		_:message(trig.msg_name, trig.que)
+		_:message_update(trig.msg_name, trig.que)
 
-func message(id, que = false):
+func message_update(id, que = false):
 	if not id == null:
 		if message.has(id):
 			last_msg_id = id
