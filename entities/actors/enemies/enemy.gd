@@ -88,9 +88,10 @@ func create_respawn():
 ###################-VIRTUAL FUNCS-####################
 
 func _on_fired(): # Hears gunshot
-	if get_player():
-		if get_player_distance() < 35 or get_player_visibility():
-			set_physics_state("state_chase")
+	if health > 0:
+		if get_player():
+			if get_player_distance() < 35 or get_player_visibility():
+				set_physics_state("state_chase")
 
 func _on_attacked(_dmg):
 	var b = blood_decal.instance()

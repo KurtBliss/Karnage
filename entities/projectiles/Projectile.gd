@@ -30,6 +30,9 @@ func _physics_process(_delta : float) -> void:
 		if hit.collider.is_in_group(target_group):
 			hit.collider.do_damage(damage, holder, type)
 	
+		if holder is Player and hit.collider is Target:
+			hit.collider._on_shot()
+	
 		queue_free()
 
 

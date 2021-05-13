@@ -103,6 +103,11 @@ func fire_raycast():
 		else:
 			var aa = collider is GridMap 
 			var bb = collider.is_in_group("door")
+			
+			if holder is Player and collider is Target:
+				hit = true
+				collider._on_shot()
+			
 			if aa or bb:
 				var b = b_decal.instance()
 				collider.add_child(b)

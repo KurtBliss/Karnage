@@ -14,6 +14,7 @@ var hit_combo = 0
 var melees = 0
 var melee_combo = 0
 var melee_misses = 0
+var targets = 0
 
 
 ###################-BUILT IN-####################
@@ -63,6 +64,10 @@ func kills_gain():
 func deaths_gain():
 	deaths += 1
 	kills_since_death = 0
+
+func target_gain():
+	targets += 1
+	print_debug("Targets: ", targets)
 
 ###################-VIRTUAL FUNCS-####################
 func _on_enemy_attacked(enemy, _how):
