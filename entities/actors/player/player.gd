@@ -15,7 +15,7 @@ var roll_basis
 var head_basis
 var is_dashing = false
 # var bulletLoad = preload("res://entities/projectiles/bullet.tscn")
-var score = ref.level.points setget score_set
+var score = ref.level.points if is_instance_valid(ref.level) else 0 setget score_set
 var can_double = true
 var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
@@ -30,6 +30,7 @@ onready var raycast = $Head/Camera/RayLong
 onready var raycast_hit = $Head/Camera/RayShort
 onready var head = $Head
 onready var camera = $Head/Camera
+onready var gun_cam = $Head/Camera/ViewportContainer/Viewport/GunCam
 #export(NodePath) 
 onready var Anime = $Anime
 onready var Hud : Player_Hud = $Hud
@@ -58,6 +59,8 @@ func _ready():
 	
 
 func _process(delta):
+	gun_cam.global_transform = camera.global_transform
+	
 	if Input.is_action_just_pressed("show_challenges"):
 		var c = challenges_ld.instance()
 		c.destroy_on_release = true

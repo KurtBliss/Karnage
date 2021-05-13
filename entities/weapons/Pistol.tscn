@@ -206,6 +206,7 @@ anims/Reload = SubResource( 4 )
 [node name="Flash" type="OmniLight" parent="."]
 transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
 visible = false
+layers = 3
 light_color = Color( 0.882353, 0.886275, 0.298039, 1 )
 light_energy = 1.87
 omni_range = 2.2

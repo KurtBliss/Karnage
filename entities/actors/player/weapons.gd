@@ -130,6 +130,7 @@ func add_weapon(weapon : Weapon):
 	weapon.holder_path = String(holder.get_path())+String(holder.name)
 	weapon.raycast = raycast
 	weapon.holder = holder
+	weapon.set("layers", 2)
 	holder.do_emit_clip(weapon.clip)
 	Master.reparent(weapon, self)
 	return true
