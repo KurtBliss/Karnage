@@ -115,8 +115,9 @@ func _on_attacked_killed_from_Player(_dmg, how):
 	ref.level._on_enemy_killed(ENEMY, how)	
 
 func _on_player_died():
-	state_reset("", "state_idle")
-	wait_for_player = true
+	if health > 0:
+		state_reset("", "state_idle")
+		wait_for_player = true
 
 func _on_wandering_timer_timeout(): 
 	#TODO: Wandering State State?

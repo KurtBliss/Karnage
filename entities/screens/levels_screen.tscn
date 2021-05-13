@@ -52,7 +52,7 @@ margin_left = 0.0
 margin_top = 72.0
 margin_right = 784.0
 margin_bottom = 132.0
-scene = "res://maps/Nav.tscn"
+scene = "res://maps/Corridor.tscn"
 label_text = "Corridor"
 
 [node name="City" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]

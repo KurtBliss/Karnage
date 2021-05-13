@@ -15,6 +15,7 @@ var melees = 0
 var melee_combo = 0
 var melee_misses = 0
 var targets = 0
+var target_goal = 0
 
 
 ###################-BUILT IN-####################
@@ -67,7 +68,11 @@ func deaths_gain():
 
 func target_gain():
 	targets += 1
-	print_debug("Targets: ", targets)
+	if targets >= target_goal:
+		var method = "_on_target_reached"
+		if has_method(method):
+			call(method)
+			
 
 ###################-VIRTUAL FUNCS-####################
 func _on_enemy_attacked(enemy, _how):
