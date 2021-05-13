@@ -123,13 +123,17 @@ func fire_projectile():
 			inst.rotation_degrees.x += rand_range(-spread / 2, spread / 2)
 			inst.rotation_degrees.z += rand_range(-spread / 2, spread / 2)
 			ref.level.add_child(inst)
+			inst.holder = holder
 			shots -= 1
 	else:
-		var inst = projectile_ld.instance()
-		inst.global_transform = raycast.global_transform
-		ref.level.add_child(inst)
+		create_projectile(projectile_ld)
 	
-	
+func create_projectile(projectile_ld):
+	var inst = projectile_ld.instance()
+	inst.holder = holder
+	inst.global_transform = raycast.global_transform
+	ref.level.add_child(inst)
+	pass
 
 func start_reload():
 	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:

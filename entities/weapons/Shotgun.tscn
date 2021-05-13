@@ -206,6 +206,7 @@ anime_reload = "ReloadShotgun"
 do_reload_bullet = true
 damage = 30
 ray_cast_range = 100
+pickup_file = "res://entities/pickups/ShotgunPickup.tscn"
 
 [node name="Anime" parent="." index="0"]
 anims/FireShotgun = SubResource( 1 )

@@ -113,7 +113,7 @@ clip_size = 12
 clip = 12
 anime_fire = "M16Fire"
 damage = 10
-fire_anime_speed = 3.0
+fire_anime_speed = 2.4
 target_group = "Enemy"
 pickup_file = "res://entities/pickups/M16Pickup.tscn"
 

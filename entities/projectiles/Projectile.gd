@@ -26,7 +26,7 @@ func _physics_process(_delta : float) -> void:
 	var hit = raycast_direct(last_position, global_transform.origin + (face * 10))
 	if hit.has("collider"):	
 		if hit.collider.is_in_group(target_group):
-			hit.collider.do_damage(damage, self)
+			hit.collider.do_damage(damage, holder)
 	
 		queue_free()
 
