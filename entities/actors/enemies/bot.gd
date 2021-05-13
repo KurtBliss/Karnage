@@ -29,18 +29,19 @@ func set_path_to_player():
 func get_player():
 	var p = ref.player
 	if is_instance_valid(p):
-		return p
+		if p.health > 0:
+			return p
 	else:
 		return null
 
 func get_player_vector():
-	if not is_instance_valid(ref.player): 
+	if not get_player():
 		return null
 	var vect = (ref.player.get_translation()  - get_translation())
 	vect.angle_diff()
 
 func get_player_distance(offset = Vector3.ZERO):
-	if not is_instance_valid(ref.player): 
+	if not get_player(): 
 		return null
 	var _len
 	if typeof(offset)==TYPE_VECTOR3:

@@ -98,15 +98,6 @@ transform = Transform( 1, 0, 4.47035e-08, 2.23517e-08, 1, 1.86265e-09, 0, 1.3969
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.204, 4, -15.806 )
 
-[node name="Marksmen2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6765, 3.9543, 39.962 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7669, 3.9543, 10.831 )
-
-[node name="Marksmen" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.939, 1.95426, -35.4956 )
-
 [node name="Disabled" parent="." instance=ExtResource( 5 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Disabled"]
@@ -115,6 +106,15 @@ volume_db = 10.847
 autoplay = true
 
 [node name="MeleeEnemy" parent="Disabled" instance=ExtResource( 11 )]
+
+[node name="Marksmen2" parent="Disabled" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6765, 3.9543, 39.962 )
+
+[node name="Enemy2" parent="Disabled" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7669, 3.9543, 10.831 )
+
+[node name="Marksmen" parent="Disabled" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 97.939, 1.95426, -35.4956 )
 
 [node name="PistolPickup" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.0406399, -0.0255156, -0.998848, -0.056801, 0.998116, -0.0231859, 0.997558, 0.0557933, -0.0420126, 10.6625, 1.99605, -32.621 )

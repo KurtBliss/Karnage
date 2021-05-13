@@ -41,14 +41,22 @@ func _ready():
 
 func _process(_delta):
 	var p = get_player()
+	
+#	if not is_instance_valid(p):
+#		wait_for_player = true
+	
 	if wait_for_player:
-		if p:
-			p.connect("fired", self, "_on_fired")
-			p.connect("died", self, "_on_player_died")
-			wait_for_player = false
-	elif p:
+		
+		if is_instance_valid(p):
+			if p.health > 0:
+				p.connect("fired", self, "_on_fired")
+				p.connect("died", self, "_on_player_died")
+				wait_for_player = false
+	elif is_instance_valid(p):
 		if drain_player_on_proximity:
 			do_drain_player_health(p)
+	else:
+		wait_for_player = true
 
 func _physics_process(delta):
 	process_velocity(delta)
@@ -80,7 +88,9 @@ func create_respawn():
 ###################-VIRTUAL FUNCS-####################
 
 func _on_fired(): # Hears gunshot
-	set_physics_state("state_chase")
+	if get_player():
+		if get_player_distance() < 35 or get_player_visibility():
+			set_physics_state("state_chase")
 
 func _on_attacked(_dmg):
 	var b = blood_decal.instance()
@@ -104,6 +114,7 @@ func _on_attacked_killed_from_Player(_dmg, how):
 	ref.level._on_enemy_killed(ENEMY, how)	
 
 func _on_player_died():
+	state_reset("", "state_idle")
 	wait_for_player = true
 
 func _on_wandering_timer_timeout(): 

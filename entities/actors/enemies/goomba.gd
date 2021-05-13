@@ -109,9 +109,9 @@ func _timeout_zig_zag():
 		switch_zig_zag()
 		timer_zig_zag()
 
-func _on_fired():
-	if get_physics_state() == "state_idle":
-		set_physics_state("state_chase")
+#func _on_fired():
+#	if get_physics_state() == "state_idle":
+#		set_physics_state("state_chase")
 
 func on_alterted():
 	if get_physics_state() == "state_idle":
