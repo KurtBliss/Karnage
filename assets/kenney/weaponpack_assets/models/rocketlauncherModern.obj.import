@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rocketlauncherModern.obj-b2998c113d6a1a312fa69606ee635d65.mesh"
+
+[deps]
+
+files=[ "res://.import/rocketlauncherModern.obj-b2998c113d6a1a312fa69606ee635d65.mesh" ]
+
+source_file="res://assets/kenney/weaponpack_assets/models/rocketlauncherModern.obj"
+dest_files=[ "res://.import/rocketlauncherModern.obj-b2998c113d6a1a312fa69606ee635d65.mesh", "res://.import/rocketlauncherModern.obj-b2998c113d6a1a312fa69606ee635d65.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -4,13 +4,14 @@
 [ext_resource path="res://entities/manager/manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/disable/Disabled.tscn" type="PackedScene" id=5]
-[ext_resource path="res://audio/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/freesounds/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=6]
 [ext_resource path="res://entities/actors/enemies/enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/pickups/PistolPickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/pickups/M16Pickup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://entities/navigation/Door/Door.tscn" type="PackedScene" id=12]
-[ext_resource path="res://res/mapsSpin.tres" type="Animation" id=13]
+[ext_resource path="res://entities/mapsSpin.tres" type="Animation" id=13]
 [ext_resource path="res://entities/pickups/Ammo.tscn" type="PackedScene" id=14]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level

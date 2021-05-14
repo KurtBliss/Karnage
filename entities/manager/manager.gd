@@ -62,15 +62,17 @@ func _process(_delta):
 	
 	match current_mode:
 		MODE.POST_GAME:
-			if Input.is_action_just_pressed("ui_accept"):
-				_on_Restart_pressed()
+			pass
+#			if Input.is_action_just_pressed("ui_accept"):
+#				_on_Restart_pressed()
 		MODE.PRE_GAME:
-			if Input.is_action_just_pressed("ui_accept"):
-				_on_Start_pressed()
-			if Input.is_action_just_pressed("ui_right"):
-				map_next()
-			if Input.is_action_just_pressed("ui_left"):
-				map_previous()
+			pass
+#			if Input.is_action_just_pressed("ui_accept"):
+#				_on_Start_pressed()
+#			if Input.is_action_just_pressed("ui_right"):
+#				map_next()
+#			if Input.is_action_just_pressed("ui_left"):
+#				map_previous()
 
 func map_next():
 	var findcurrent = levels.find(ref.level.filename)
@@ -169,3 +171,13 @@ func _on_ButtonPrev_pressed():
 
 func _on_ButtonNext_pressed():
 	map_next()
+
+
+func _on_ButtonNext_focus_entered():
+	map_next()
+	pass # Replace with function body.
+
+
+func _on_ButtonPrev_focus_entered():
+	map_previous()
+	pass # Replace with function body.

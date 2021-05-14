@@ -1,8 +1,8 @@
 [gd_resource type="MeshLibrary" load_steps=16 format=2]
 
-[ext_resource path="res://graphics/textures/floor/basecolor.png" type="Texture" id=1]
-[ext_resource path="res://graphics/textures/04pavinform256.png" type="Texture" id=2]
-[ext_resource path="res://graphics/textures/grass.png" type="Texture" id=3]
+[ext_resource path="res://assets/opengameart/musdasch/MedivelStoneFloor/basecolor.png" type="Texture" id=1]
+[ext_resource path="res://assets/opengameart/Tiziana(bart)/04pavinform256.png" type="Texture" id=2]
+[ext_resource path="res://assets/opengameart/The Chayed/HandPaintedGrassTexture.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )

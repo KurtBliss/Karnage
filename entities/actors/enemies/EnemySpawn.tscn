@@ -4,6 +4,7 @@
 
 
 
+
 [node name="EnemySpawn" type="Spatial"]
 script = ExtResource( 1 )
 

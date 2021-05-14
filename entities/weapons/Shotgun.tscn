@@ -1,10 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
-[ext_resource path="res://models/weapons/shotgun.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/kenney/weaponpack_assets/models/shotgun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/freesounds/427595__michorvath__20-gauge-shotgun-gunshot.wav" type="AudioStream" id=3]
-[ext_resource path="res://models/weapons/ammo_shotgun.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/kenney/weaponpack_assets/models/ammo_shotgun.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://assets/freesounds/513348__shelbyshark__load-shotgun_cropped0.wav" type="AudioStream" id=5]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "FireShotgun"

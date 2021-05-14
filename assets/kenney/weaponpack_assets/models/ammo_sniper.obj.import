@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ammo_sniper.obj-b161f83342083f61d61074a0e7b7a53c.mesh"
+
+[deps]
+
+files=[ "res://.import/ammo_sniper.obj-b161f83342083f61d61074a0e7b7a53c.mesh" ]
+
+source_file="res://assets/kenney/weaponpack_assets/models/ammo_sniper.obj"
+dest_files=[ "res://.import/ammo_sniper.obj-b161f83342083f61d61074a0e7b7a53c.mesh", "res://.import/ammo_sniper.obj-b161f83342083f61d61074a0e7b7a53c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

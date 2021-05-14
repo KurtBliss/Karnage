@@ -18,7 +18,7 @@ export (int) var health = 100 setget set_health
 export (float) var direction_offset = 90
 
 export onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
-onready var blood_effect = preload("res://effects/blood.tscn")
+onready var blood_effect = preload("res://entities/decals/blood.tscn")
 
 export var actor_name = ""
 var state = "" setget set_state, get_state

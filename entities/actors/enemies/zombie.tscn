@@ -5,6 +5,7 @@
 
 
 
+
 [sub_resource type="CapsuleShape" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]

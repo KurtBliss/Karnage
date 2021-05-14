@@ -1,16 +1,17 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
-[ext_resource path="res://graphics/textures/logo.png" type="Texture" id=2]
+[ext_resource path="res://assets/Karnage/logo.png" type="Texture" id=2]
 [ext_resource path="res://entities/screens/tiledscreen/titled_screen.gd" type="Script" id=3]
 [ext_resource path="res://entities/screens/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/continue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/screens/tiledscreen/fade_in.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/new_game.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/options.tscn" type="PackedScene" id=8]
-[ext_resource path="res://audio/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/freesounds/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=9]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/button.tscn" type="PackedScene" id=10]
-[ext_resource path="res://graphics/fonts/Turret_Road/TurretRoad-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-Regular.ttf" type="DynamicFontData" id=11]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.513726 )

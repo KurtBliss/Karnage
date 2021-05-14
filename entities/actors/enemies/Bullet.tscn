@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://audio/458380__mozfoo__laser-pistol-3.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/freesounds/458380__mozfoo__laser-pistol-3.wav" type="AudioStream" id=1]
 [ext_resource path="res://entities/actors/enemies/Bullet.gd" type="Script" id=2]
-[ext_resource path="res://models/weapons/ammo_machinegun.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/kenney/weaponpack_assets/models/ammo_machinegun.obj" type="ArrayMesh" id=3]
+
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.1

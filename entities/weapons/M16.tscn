@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=1]
-[ext_resource path="res://models/weapons/machinegun.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/kenney/weaponpack_assets/models/machinegun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://entities/weapons/M16.gd" type="Script" id=3]
 [ext_resource path="res://assets/freesounds/515322__generalsigma__ar15-single-shot.wav" type="AudioStream" id=4]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "M16Fire"
