@@ -5,8 +5,8 @@
 [ext_resource path="res://entities/screens/tiledscreen/buttons/new_game.tscn" type="PackedScene" id=3]
 [ext_resource path="res://graphics/fonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 72
+[sub_resource type="DynamicFont" id=5]
+size = 48
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
@@ -36,33 +36,95 @@ script = ExtResource( 1 )
 spawn_player_path = NodePath("../PlayerSpawn")
 
 [node name="PreGame" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PreviousBack2" type="Polygon2D" parent="PreGame"]
+position = Vector2( -416, -328 )
+rotation = -1.5708
+scale = Vector2( -15.876, 2.95967 )
+color = Color( 0, 0.533333, 0.698039, 0.0784314 )
+polygon = PoolVector2Array( 0, 0, 120, 0, 120, 146.674, 120, 600, 0, 600 )
+
 [node name="Level" type="Label" parent="PreGame"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -223.5
-margin_top = 84.0
-margin_right = 239.5
-margin_bottom = 164.0
-custom_fonts/font = SubResource( 1 )
+margin_left = -169.0
+margin_top = 24.0
+margin_right = 169.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 5 )
 text = "ALPHA ROOM"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PreviousBack" type="Polygon2D" parent="PreGame"]
+position = Vector2( -64, 0 )
+color = Color( 0, 0, 0, 0.392157 )
+polygon = PoolVector2Array( 0, 0, 120, 0, 120, 600, 0, 600 )
+
+[node name="Previous" type="Label" parent="PreGame"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -488.0
+margin_top = 1.0
+margin_right = -480.0
+margin_bottom = 614.0
+rect_pivot_offset = Vector2( 433.121, 24.9444 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0.505882, 1, 1 )
+text = "Pev level"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextBack" type="Polygon2D" parent="PreGame"]
+position = Vector2( 968, 0 )
+color = Color( 0, 0, 0, 0.392157 )
+polygon = PoolVector2Array( 0, 0, 120, 0, 120, 600, 0, 600 )
+
+[node name="Next" type="Label" parent="PreGame"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 472.0
+margin_top = 8.0
+margin_right = 481.0
+margin_bottom = 608.0
+rect_pivot_offset = Vector2( 433.121, 24.9444 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0.505882, 1, 1 )
+text = "Nex level"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Challenges" parent="PreGame" instance=ExtResource( 2 )]
+margin_left = -486.4
+margin_top = -285.0
+margin_right = 486.4
+margin_bottom = 285.0
 
 [node name="Start" parent="PreGame" instance=ExtResource( 3 )]
-margin_left = 339.5
-margin_top = 501.0
-margin_right = 699.5
-margin_bottom = 561.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -180.0
+margin_top = -84.0
+margin_right = 180.0
+margin_bottom = -24.0
 custom_styles/focus = SubResource( 2 )
 scene = "res://entities/screens/levels_screen.tscn"
 label_text = "Start"
@@ -71,8 +133,18 @@ label_text = "Start"
 text = "Start"
 align = 1
 
+[node name="ButtonPrev" type="Button" parent="PreGame"]
+modulate = Color( 1, 1, 1, 0.211765 )
+margin_right = 56.0
+margin_bottom = 600.0
+
+[node name="ButtonNext" type="Button" parent="PreGame"]
+modulate = Color( 1, 1, 1, 0.211765 )
+margin_left = 968.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
 [node name="PostGame" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -188,17 +260,19 @@ margin_right = 693.5
 margin_bottom = 561.0
 custom_styles/focus = SubResource( 2 )
 scene = "res://entities/screens/levels_screen.tscn"
-label_text = "Restart  "
+label_text = "Continue"
 
 [node name="Label" parent="PostGame/Restart" index="0"]
 margin_left = 2.245
 margin_top = -6.10352e-05
 margin_right = 2.245
 margin_bottom = -6.10352e-05
-text = "Restart  "
+text = "Continue"
 align = 1
 
 [connection signal="pressed" from="PreGame/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="PreGame/ButtonPrev" to="." method="_on_ButtonPrev_pressed"]
+[connection signal="pressed" from="PreGame/ButtonNext" to="." method="_on_ButtonNext_pressed"]
 [connection signal="pressed" from="PostGame/Restart" to="." method="_on_Restart_pressed"]
 
 [editable path="PreGame/Start"]

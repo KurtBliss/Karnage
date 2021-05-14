@@ -64,6 +64,7 @@ tracks/1/keys = {
 
 [node name="Nav" type="Navigation"]
 script = SubResource( 1 )
+level = "Tutorial"
 
 [node name="BlueLights" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6371, 2.99829, 109.471 )
@@ -125,11 +126,10 @@ transform = Transform( 0.99969, -0.0249033, 2.22218e-09, 0.0248891, 0.999119, -0
 cull_mask = 2148532223
 
 [node name="PreGame" parent="Manager" index="0"]
-visible = true
 margin_top = 1.05951
 margin_bottom = 1.05951
 
-[node name="Level" parent="Manager/PreGame" index="0"]
+[node name="Level" parent="Manager/PreGame" index="1"]
 margin_left = -226.497
 margin_top = 24.0677
 margin_right = 236.503
@@ -146,7 +146,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" parent="Manager/PreGame" index="3"]
+[node name="Controls" parent="Manager/PreGame" index="4" instance=ExtResource( 11 )]
+
+[node name="Start" parent="Manager/PreGame" index="9"]
 margin_left = 329.179
 margin_top = 430.714
 margin_right = 689.179
@@ -159,36 +161,6 @@ margin_top = 6.08774
 margin_right = 5.36346
 margin_bottom = 6.08774
 text = "Tutoiral"
-
-[node name="Controls" parent="Manager/PreGame" index="4" instance=ExtResource( 11 )]
-
-[node name="PostGame" parent="Manager" index="1"]
-visible = false
-
-[node name="Score" parent="Manager/PostGame/Stats" index="0"]
-margin_top = 33.0
-margin_right = 356.0
-margin_bottom = 63.0
-
-[node name="Highest Score" parent="Manager/PostGame/Stats" index="1"]
-margin_top = 67.0
-margin_right = 356.0
-margin_bottom = 97.0
-
-[node name="Kills" parent="Manager/PostGame/Stats" index="2"]
-margin_top = 101.0
-margin_right = 356.0
-margin_bottom = 131.0
-
-[node name="Highest Combo" parent="Manager/PostGame/Stats" index="3"]
-margin_top = 135.0
-margin_right = 356.0
-margin_bottom = 165.0
-
-[node name="Deaths" parent="Manager/PostGame/Stats" index="4"]
-margin_top = 169.0
-margin_right = 356.0
-margin_bottom = 199.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
 anims/mapsSpin = ExtResource( 13 )

@@ -67,7 +67,7 @@ margin_left = 0.0
 margin_top = 2.0
 margin_right = 784.0
 margin_bottom = 62.0
-scene = "res://entities/screens/levels_screen.tscn"
+scene = "res://maps/Corridor.tscn"
 label_text = "Play"
 
 [node name="Tutorial" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]

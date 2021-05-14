@@ -10,6 +10,18 @@ var health
 var score
 var wait_for_level = true
 
+var levels = [
+	"res://maps/Tutorial.tscn",
+	"res://maps/Corridor.tscn",
+	"res://maps/City.tscn"
+]
+var levelsNames = [
+	"Tutorial",
+	"Corridor",
+	"City"
+]
+var level_index = -2
+
 onready var PreGame = $PreGame
 onready var PostGame = $PostGame
 onready var PreGameStart = $PreGame/Start
@@ -25,12 +37,29 @@ func _ready():
 func _process(_delta):
 	if wait_for_level:
 		if is_instance_valid(ref.level):
+			level_index = levels.find(ref.level.filename)
+			
+			var n = level_index + 1
+			if n >= levels.size():
+				n = 0
+			$PreGame/Next.text = levelsNames[n]
+			
+			var p = level_index - 1
+			if n < 0:
+				n = levels.size() - 1
+			$PreGame/Previous.text = levelsNames[p]
+			
 			$PreGame/Level.text = ref.level.level
+			
+			$PostGame/Finished.text = ref.level.level
+			
 			$PostGame/Challenges.update_level_challenges(ref.level.challenges_id)
 			$PreGame/Challenges.update_level_challenges(ref.level.challenges_id)
 			wait_for_level = false
+	
 	if Master.input_disabled():
 		return
+	
 	match current_mode:
 		MODE.POST_GAME:
 			if Input.is_action_just_pressed("ui_accept"):
@@ -38,6 +67,26 @@ func _process(_delta):
 		MODE.PRE_GAME:
 			if Input.is_action_just_pressed("ui_accept"):
 				_on_Start_pressed()
+			if Input.is_action_just_pressed("ui_right"):
+				map_next()
+			if Input.is_action_just_pressed("ui_left"):
+				map_previous()
+
+func map_next():
+	var findcurrent = levels.find(ref.level.filename)
+	if findcurrent > -1:
+		var goto = findcurrent + 1
+		if goto >= levels.size():
+			goto = 0
+		get_tree().change_scene(levels[goto])
+
+func map_previous():
+	var findcurrent = levels.find(ref.level.filename)
+	if findcurrent > -1:
+		var goto = findcurrent - 1
+		if goto < 0:
+			goto = levels.size() - 1
+		get_tree().change_scene(levels[goto])
 
 func change_mode(set_mode):
 	match set_mode:
@@ -88,30 +137,23 @@ func _on_Start_pressed():
 		change_mode(MODE.IN_GAME)
 
 func respawn(_health, _score, _pos):
-	
 	var ld = load("res://entities/actors/player/player.tscn")
 	var player : KinematicBody = ld.instance()
 	player.health = 100
 	player.score = _score
 	player.set_translation(_pos)
 	
-		# get spawn nodes
 	var spawn_points = get_tree().get_nodes_in_group("spawn_point")
 
-	# assume the first spawn node is closest
 	var nearest_spawn_point = spawn_points[0]
 
-	# look through spawn nodes to see if any are closer
 	for spawn_point in spawn_points:
 		if spawn_point.get_translation().distance_to(player.get_translation()) < nearest_spawn_point.get_translation().distance_to(player.get_translation()):
 			nearest_spawn_point = spawn_point
 
-	# reposition player
-#	player.global_position = nearest_spawn_point.global_position
 	player.set_translation(nearest_spawn_point.get_translation())
 	get_parent().add_child(player)
 	ref.player = player
-	
 
 func go_to_post(_health, _score):
 	health = _health
@@ -120,6 +162,10 @@ func go_to_post(_health, _score):
 
 func _on_Restart_pressed():
 	if current_mode == MODE.POST_GAME:
-#		change_mode(MODE.IN_GAME)
 		get_tree().reload_current_scene()
-#		change_mode(MODE.PRE_GAME)
+
+func _on_ButtonPrev_pressed():
+	map_previous()
+
+func _on_ButtonNext_pressed():
+	map_next()
