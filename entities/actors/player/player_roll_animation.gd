@@ -25,10 +25,13 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 		anime.track_set_key_value(0, key3, vect)
 		if x_dir > 0:
 			play("rollside")
+			print_debug("rollside")
 			return 1
 		elif x_dir < 0:
 #			play_backwards("rollside")
 			play("roll left")
+			print_debug("roll left")
+			
 			return -1
 	else:
 		var vect = Vector3(0, yy, zz)
@@ -40,6 +43,7 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 		anime.track_set_key_value(0, key3, vect)
 		if z_dir < 0:
 			play("roll")
+			
 			return -1
 		elif z_dir > 0:
 #			play_backwards("roll")
