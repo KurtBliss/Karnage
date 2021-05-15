@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -275,8 +275,6 @@ size = 64
 font_data = ExtResource( 16 )
 
 [sub_resource type="CapsuleMesh" id=12]
-
-[sub_resource type="PlaneMesh" id=13]
 
 [node name="Player" type="KinematicBody" groups=[
 "Player",
@@ -566,11 +564,6 @@ cast_to = Vector3( 0, -0.4, 0 )
 
 [node name="Roll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 59.4956, 0, 0, 0, 1, 0, 0, 0, 59.4956, 0, 0, 0 )
-mesh = SubResource( 13 )
-material/0 = null
 
 [connection signal="ammo_changed" from="." to="Hud" method="_on_Player_ammo_changed"]
 [connection signal="clip_changed" from="." to="Hud" method="_on_Player_clip_changed"]

@@ -12,7 +12,6 @@
 [ext_resource path="res://entities/mapsSpin.tres" type="Animation" id=13]
 [ext_resource path="res://entities/pickups/Ammo.tscn" type="PackedScene" id=14]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level
 "
@@ -161,5 +160,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 176.966, 4.78977, -48.4248 )
 
 [editable path="Manager"]
 [editable path="Manager/PreGame/Start"]
+[editable path="Manager/PreGame/Exit"]
 [editable path="Manager/PostGame/Restart"]
 [editable path="NavMesh"]

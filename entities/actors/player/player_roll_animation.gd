@@ -7,7 +7,10 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 	playback_speed = 1.45
 
 	var side = true if abs(z_dir) < abs(x_dir) else false
-	var anime = get_animation("rollside") if side else get_animation("roll")
+	var sideanime = get_animation("rollside") if x_dir > 0 else get_animation("roll left")
+	var frontanime = get_animation("roll") if z_dir < 0 else get_animation("roll back")
+	var anime = sideanime if side else frontanime
+	
 	var key1 = anime.track_find_key(0, 0, true)
 	var key2 = anime.track_find_key(0, 0.5, true)
 	var key3 = anime.track_find_key(0, 1, true)
