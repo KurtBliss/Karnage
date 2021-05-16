@@ -67,6 +67,7 @@ func update_level_challenges(set = level):
 			challenge_add_highscore(1500)
 			challenge_add_highscore(1000)
 			challenge_add_kills(5)
+			challenge_add("Shoot all 4 targets", 4, "method_targets")
 		LEVEL.CITY:
 			challenge_add_highscore(2000)
 			challenge_add_highscore(1500)
@@ -118,3 +119,8 @@ func method_kills(challenge):
 			return true
 	return false
 
+func method_targets(challenge):
+	if is_instance_valid(ref.level):
+		if ref.level.targets >= challenge["points"]:
+			return true
+	return false

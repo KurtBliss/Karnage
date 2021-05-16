@@ -8,3 +8,4 @@ func _on_target_reached():
 			var shotgun = shotgun_ld.instance()
 			add_child(shotgun)
 			ref.player.Weapon.add_weapon(shotgun)
+			
