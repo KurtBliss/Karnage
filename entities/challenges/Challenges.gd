@@ -68,6 +68,10 @@ func update_level_challenges(set = level):
 			challenge_add_highscore(1000)
 			challenge_add_kills(5)
 			challenge_add("Shoot all 4 targets", 4, "method_targets")
+			challenge_add("Find the secret room", 1, "method_secret_area")
+#			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
+#			challenge_add("TODO: Save the princess", 1, "method_princess")
+			
 		LEVEL.CITY:
 			challenge_add_highscore(2000)
 			challenge_add_highscore(1500)
@@ -123,4 +127,13 @@ func method_targets(challenge):
 	if is_instance_valid(ref.level):
 		if ref.level.targets >= challenge["points"]:
 			return true
+	return false
+
+func method_secret_area(challenge):
+	if is_instance_valid(ref.level):
+		if ref.level.secret_area:
+			return true
+	return false
+
+func method_princess(_challenge):
 	return false

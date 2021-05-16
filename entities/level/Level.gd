@@ -16,6 +16,7 @@ var melee_combo = 0
 var melee_misses = 0
 var targets = 0
 var target_goal = 0
+var secret_area = false
 var challenges = []
 var loads = {}
 

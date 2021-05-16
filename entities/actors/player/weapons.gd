@@ -24,6 +24,12 @@ func _ready():
 func ready_deferred():
 	holder.do_emit_ammo(holder.ammo[current_weapon.ammo_type])		
 	
+#func has_weapon(weapon_name):
+#	var weapons = get_children()
+#	for wpn in weapons:
+#		if wpn.name == weapon_name:
+#			return true
+#	return false
 
 func _process(_delta):
 #	if weapons.size() < 1:
@@ -110,6 +116,8 @@ func throw_weapon():
 	current = -1
 
 func add_weapon(weapon : Weapon):
+	if has_weapon(weapon.name):
+		return false
 	
 	if not is_instance_valid(weapon):
 		return false
