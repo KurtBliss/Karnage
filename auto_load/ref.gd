@@ -8,4 +8,4 @@ var level : Level # Init on Nav _ready()
 var challenges : Challenges
 var level_timer : LevelTimer # Init on GameTimer _ready()
 var tutorial : Tutorial
-
+var challenge_anime : ChallengeAnime

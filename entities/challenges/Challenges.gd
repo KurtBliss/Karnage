@@ -3,15 +3,17 @@ extends VBoxContainer
 enum LEVEL {NONE, CORRIDOR, CITY}
 export(LEVEL) onready var level
 var destroy_on_release = false
-var challenges = []
+var challenges = [] 
 onready var challenge_ld = preload("res://entities/challenges/Challenge.tscn")
-var level_not_set = false
+export var level_not_set = false
+export var main = false
 
 ###################-BUILT IN-####################
 
 func _ready():
 	ref.challenges = self
-	update_level_challenges()
+	if level != LEVEL.NONE:
+		update_level_challenges()
 
 func _process(_delta):
 	if destroy_on_release:
@@ -23,20 +25,42 @@ func _process(_delta):
 			update_level_challenges(ref.level.challenges_id)
 			level_not_set = false
 	
-	for challenge in challenges:
-		if not challenge["done"]:
-			if call(challenge["method"], challenge):
-				challenge["done"] = true
-				challenge["label"].set_done(true)
+	if not main and is_instance_valid(ref.level):
+		for challenge in challenges:
+			if not is_instance_valid(challenge["label"]):
+				remove_challenges()
+		if not ref.level.challenges == challenges:
+			remove_challenges()
+			challenges = ref.level.challenges
+			update_challenge_labels()
+			
+	
+	if main == true:
+		for challenge in challenges:
+			if not challenge["done"]:
+				if call(challenge["method"], challenge):
+#					print(challenge["label"].text)
+					print(challenge["title"])
+					ref.challenge_anime.challenge_anime(challenge["title"])
+					challenge["done"] = true
+					if not is_instance_valid(challenge["label"]):
+						update_challenge_labels()
+					challenge["label"].set_done(true)
+		if is_instance_valid(ref.level):
+			ref.level.challenges = challenges
 
-func update_level_challenges(set = level):
+func remove_labels():
 	for child in get_children():
 		child.queue_free()
-	
+
+func remove_challenges():
+	for child in get_children():
+		child.queue_free()
 	challenges = []
-	
+
+func update_level_challenges(set = level):
+	remove_challenges()
 	level = set
-	
 	match set:
 		LEVEL.CORRIDOR:
 			challenge_add_highscore(2000)
@@ -51,6 +75,15 @@ func update_level_challenges(set = level):
 		_:
 			level_not_set = true
 
+func update_challenge_labels():
+	remove_labels()
+	for challenge in challenges:
+		var label_node = challenge_ld.instance()
+		label_node.set_name(challenge["title"])
+		add_child(label_node)
+		challenge["label"] = label_node
+		challenge["label"].set_done(challenge["done"])
+
 ###################-Challenges Add-####################
 
 func challenge_add(title, points = 0, method = ""):
@@ -59,9 +92,10 @@ func challenge_add(title, points = 0, method = ""):
 	label_node.set_name(title)
 	challenges.append({
 		"label": label_node,
+		"title": title,
 		"done": false,
 		"method": method,
-		"points": points 
+		"points": points
 	})
 
 func challenge_add_highscore(points):

@@ -6,7 +6,7 @@ var done = false setget set_done
 func set_name(set):
 	text = set
 
-func set_done(set):
+func set_done(set = false):
 	done = set
 	if set:
 		crossout.visible = true

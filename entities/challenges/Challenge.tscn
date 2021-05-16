@@ -3,7 +3,6 @@
 [ext_resource path="res://entities/challenges/Challenge.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-Medium.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 26
 outline_size = 3

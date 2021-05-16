@@ -114,6 +114,7 @@ margin_left = -486.4
 margin_top = -285.0
 margin_right = 486.4
 margin_bottom = 285.0
+main = true
 
 [node name="Start" parent="PreGame" instance=ExtResource( 3 )]
 anchor_left = 0.5
