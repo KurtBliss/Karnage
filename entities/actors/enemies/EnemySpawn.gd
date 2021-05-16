@@ -7,8 +7,15 @@ func _on_Spawn_timeout():
 		var dist = (ref.player.transform.origin - transform.origin).length()
 		if dist < 19:
 			Spawn.start()
-
-	var ld = load(spawn_scene_location)
+	
+	var ld
+	
+	if ref.level.loads.has(spawn_scene_location):
+		ld = ref.level.loads[spawn_scene_location]
+	else:
+		ld = load(spawn_scene_location)
+		ref.level.loads[spawn_scene_location] = ld
+	
 	var inst = ld.instance()
 	inst.transform.origin = transform.origin
 	ref.level.add_child(inst)

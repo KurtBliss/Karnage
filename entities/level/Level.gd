@@ -17,6 +17,7 @@ var melee_misses = 0
 var targets = 0
 var target_goal = 0
 var challenges = []
+var loads = {}
 
 
 ###################-BUILT IN-####################

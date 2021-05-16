@@ -41,12 +41,7 @@ func _ready():
 
 func _process(_delta):
 	var p = get_player()
-	
-#	if not is_instance_valid(p):
-#		wait_for_player = true
-	
 	if wait_for_player:
-		
 		if is_instance_valid(p):
 			if p.health > 0:
 				p.connect("fired", self, "_on_fired")
@@ -78,10 +73,12 @@ func do_drain_player_health(p):
 		enemy_atk_delay = enemy_atk_delay_set
 
 func create_respawn():
-	var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
+	var ld = preload("res://entities/actors/enemies/EnemySpawn.tscn")
 	var inst = ld.instance()
 	inst.transform.origin = starting_origin
+	
 	inst.spawn_scene_location = filename
+	
 	ref.level.add_child(inst)
 	queue_free()
 
