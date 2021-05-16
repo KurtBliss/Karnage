@@ -6,6 +6,7 @@ signal score_changed(score)
 signal fired()
 signal clip_changed(clip)
 signal ammo_changed(ammo)
+signal score_meter_changed(meter)
 
 ###################-VARIABLES-####################
 
@@ -24,6 +25,7 @@ var ammo = Master.ammo_container
 var challenges_ld = preload("res://entities/challenges/Challenges.tscn")
 var start_with_pistol = true
 var death = false
+var score_meter = 0
 
 # Nodes
 onready var raycast = $Head/Camera/RayLong
@@ -41,10 +43,7 @@ onready var InjuredSprite = $Hud/Injured/Sprite
 ###################-BUILT IN-####################
 
 func _ready():
-	
 	ref.player = self
-	
-	
 	Mouse.set_capture(true)
 	add_child(rstick)
 	add_to_group("Player")
@@ -59,14 +58,12 @@ func _ready():
 	
 
 func _process(delta):
+	score_meter_set(score_meter - delta * 3)
 	gun_cam.global_transform = camera.global_transform
-	
 	if Input.is_action_just_pressed("show_challenges"):
 		var c = challenges_ld.instance()
 		c.destroy_on_release = true
 		add_child(c)
-		
-		
 
 func _physics_process(delta):
 	var can_input = Master.input_enabled()
@@ -123,26 +120,25 @@ func _physics_process(delta):
 		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis
 	
-	
 	dir = Vector3()
 	dir += head_basis.z * -10
 	dir += head_basis.x
 	
 	dir.normalized()
 	
-	
-	
-	# Update walking speed
-#	$Anime.playback_speed = 1 if abs(velocity.z)>1 or abs(velocity.z)>1 else 0
-	
 	"""
 		Handle gravity and movement
 	"""
 	# Apply speed
-	var vector = direction * speed
+	var score_boast = score_meter / 100
+	var speed_boast = score_boast * 7
+	var acc_boast = score_boast * 2
+	
+	
+	var vector = direction * (speed + speed_boast)
 	if is_dashing:
 		vector *= 2.4
-	var rate = acceleration * delta 
+	var rate = (acceleration + acc_boast) * delta 
 	velocity = velocity.linear_interpolate(vector, rate)
 	
 	# Jump
@@ -150,11 +146,11 @@ func _physics_process(delta):
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump") and can_input:
 			can_double = true
-			velocity.y += jump_power
+			velocity.y += (jump_power - 10) + (10 * (score_meter / 100))
 	else:
 		if Input.is_action_just_pressed("jump") and can_input and can_double:
 			can_double = false
-			velocity.y += jump_power
+			velocity.y += (jump_power - 10) + (10 * (score_meter / 100))
 		else:
 			velocity.y -= gravity
 	
@@ -197,12 +193,10 @@ func gain_ammo(type, amount):
 ###################-VIRTUAL FUNCS-####################
 
 func _on_Player_died():
-	
 	#TODO: Throw other weapons too
 	Weapon.throw_weapon()
 	death = true
 	Anime.play("death")
-	
 	ref.level._on_player_died()
 
 func _on_Timer_timeout():
@@ -215,12 +209,16 @@ func _on_Timer_timeout():
 
 func _on_Player_injured():#should change to red flash
 	InjuredSprite._on_player_hurt(health)
+	score_meter_set(score_meter * 0.7)
 #	Hud.get_node("Injured/Sprite/InjuredSound").play()
 
 func score_set(value):
 	score = value
 	emit_signal("score_changed", value)
 
+func score_meter_set(set):
+	score_meter = clamp(set, 0, 100)
+	emit_signal("score_meter_changed", score_meter)
 
 func _on_Anime_animation_finished(anim_name):
 	if anim_name == "death":
@@ -232,3 +230,6 @@ func _on_Anime_animation_finished(anim_name):
 				queue_free()
 				ref.manager.respawn(health, score, get_translation())
 				
+
+func _on_points_gained(points):
+	score_meter += max(15, points) * 0.15

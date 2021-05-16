@@ -6,6 +6,7 @@ onready var Time = $Time
 onready var Score = $Score
 onready var Clip = $Clip
 onready var Ammo = $Ammo
+onready var ScoreMeter = $ScoreMeter
 
 var debug_lines : Array = []
 
@@ -93,4 +94,5 @@ func draw_line_3D(line:Array):
 		end = end+((start - end)*2)
 	draw_line(start, end, color, width)
 
-
+func _on_Player_score_meter_changed(meter):
+	ScoreMeter.set_meter(meter)

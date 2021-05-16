@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/freesounds/413186__micahlg__male-hurt9.wav" type="AudioStream" id=19]
 [ext_resource path="res://assets/freesounds/396806__scorpion67890__cyborg-death-1.wav" type="AudioStream" id=20]
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
+[ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
 
 [sub_resource type="Animation" id=1]
 length = 5.0
@@ -468,6 +469,19 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 7 )
 script = ExtResource( 21 )
 
+[node name="ScoreMeter" type="Node2D" parent="Hud"]
+position = Vector2( 720, 72 )
+script = ExtResource( 22 )
+
+[node name="Back" type="Polygon2D" parent="Hud/ScoreMeter"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 288, 0, 288, 24, 0, 24 )
+
+[node name="Front" type="Polygon2D" parent="Hud/ScoreMeter"]
+scale = Vector2( 0.5, 1 )
+color = Color( 0.905882, 0.956863, 0.0392157, 1 )
+polygon = PoolVector2Array( 0, 0, 288, 0, 288, 24, 0, 24 )
+
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
 visible = false
@@ -573,6 +587,7 @@ stream = ExtResource( 20 )
 [connection signal="health_changed" from="." to="Hud" method="_on_Player_health_changed"]
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
+[connection signal="score_meter_changed" from="." to="Hud" method="_on_Player_score_meter_changed"]
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 [connection signal="animation_finished" from="Hud/Injured/Sprite/InjuredPlayer" to="Hud/Injured/Sprite" method="_on_InjuredPlayer_animation_finished"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]

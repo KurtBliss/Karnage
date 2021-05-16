@@ -42,6 +42,8 @@ func get_points():
 
 func points_gain(gain):
 	set_points(get_points()+gain)
+	if is_instance_valid(ref.player):
+		ref.player._on_points_gained(gain)
 
 func hit_gain():
 	hits += 1
