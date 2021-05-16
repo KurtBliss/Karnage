@@ -63,14 +63,14 @@ func update_level_challenges(set = level):
 	level = set
 	match set:
 		LEVEL.CORRIDOR:
-			challenge_add_highscore(2000)
-			challenge_add_highscore(1500)
 			challenge_add_highscore(1000)
-			challenge_add_kills(5)
+			challenge_add_highscore(1500)
+			challenge_add_highscore(2000)
+			challenge_add_kills(7)
 			challenge_add("Shoot all 4 targets", 4, "method_targets")
 			challenge_add("Find the secret room", 1, "method_secret_area")
 #			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
-#			challenge_add("TODO: Save the princess", 1, "method_princess")
+			challenge_add("Save the princess", 1, "method_princess")
 			
 		LEVEL.CITY:
 			challenge_add_highscore(2000)
@@ -107,7 +107,7 @@ func challenge_add_highscore(points):
 	challenge_add("Score "+str(points)+" points", points, "method_highscore")
 
 func challenge_add_kills(points):
-	challenge_add("Get "+str(points)+" kills", points, "method_kills")
+	challenge_add("Get "+str(points)+" kills without dying", points, "method_kills")
 
 ###################-Challenge Methods-####################
 
@@ -119,7 +119,7 @@ func method_highscore(challenge):
 
 func method_kills(challenge):
 	if is_instance_valid(ref.level):
-		if ref.level.kills >= challenge["points"]:
+		if ref.level.kill_combo >= challenge["points"]:
 			return true
 	return false
 
@@ -136,4 +136,7 @@ func method_secret_area(challenge):
 	return false
 
 func method_princess(_challenge):
+	if is_instance_valid(ref.level):
+		if ref.level.princess_saved:
+			return true
 	return false

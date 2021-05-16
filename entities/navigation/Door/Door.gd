@@ -37,3 +37,9 @@ func _on_Area_body_exited(body):
 			bodies.remove(i)
 			return
 		i+=1
+
+
+func _on_PrincessDoorArea_body_entered(body):
+	if body.name == "Princess":
+		locked = false
+	pass # Replace with function body.

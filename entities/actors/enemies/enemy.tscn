@@ -8,7 +8,6 @@
 [ext_resource path="res://maps/temp_debug.gd" type="Script" id=6]
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 1 )
 

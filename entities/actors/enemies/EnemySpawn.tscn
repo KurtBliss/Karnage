@@ -1,9 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://entities/actors/enemies/EnemySpawn.gd" type="Script" id=1]
-
-
-
+[ext_resource path="res://entities/actors/enemies/spawnbot.gd" type="Script" id=2]
 
 [node name="EnemySpawn" type="Spatial"]
 script = ExtResource( 1 )
@@ -16,4 +14,10 @@ autostart = true
 [node name="OmniLight" type="OmniLight" parent="."]
 light_color = Color( 0.0823529, 0.443137, 0.952941, 1 )
 light_energy = 5.02
+
+[node name="Bot" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200725, 0 )
+visible = false
+script = ExtResource( 2 )
+
 [connection signal="timeout" from="Spawn" to="." method="_on_Spawn_timeout"]

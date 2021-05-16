@@ -2,7 +2,7 @@
 extends Level
 
 var targets_reached = false
-
+var princess_saved = false
 
 func _on_target_reached():
 	if not targets_reached:
@@ -21,7 +21,14 @@ func _on_target_reached():
 					ref.player.Weapon.add_weapon(shotgun)
 					targets_reached = true
 
-
 func _on_Health_grabbed():
 	ref.level.secret_area = true
+	pass # Replace with function body.
+
+func _on_switch_switched(on):
+	$CagesAnime.play("down")
+
+
+func _on_Princess_saved():
+	princess_saved = true
 	pass # Replace with function body.
