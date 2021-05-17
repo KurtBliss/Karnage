@@ -151,7 +151,10 @@ func start_reload():
 			can_fire = true
 		else:
 			can_fire = false
-		anime.play(anime_reload, -1, reload_anime_speed)
+		var boast = 0
+		if holder == ref.player:
+			boast = (ref.player.score_meter / 100) * 0.5
+		anime.play(anime_reload, -1, reload_anime_speed + boast)
 
 func do_reload():
 	while clip < clip_size:

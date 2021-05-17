@@ -146,3 +146,8 @@ func _on_deathTimer_timeout():
 	$Particles.emitting = false
 	if not GameSettings.opt_keep_get():
 		queue_free()
+
+
+func _on_switch_switched(on):
+	if on and health > 0 and get_physics_state() == "state_idle":
+		set_physics_state("state_chase")

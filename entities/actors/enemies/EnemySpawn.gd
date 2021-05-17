@@ -5,7 +5,7 @@ onready var Spawn = $Spawn
 func _on_Spawn_timeout():
 	if is_instance_valid(ref.player):
 		var dist = (ref.player.transform.origin - transform.origin).length()
-		if $Bot.get_player_visibility() or dist < 60:
+		if ($Bot.get_player_visibility() and dist < 60) or dist < 30:
 			Spawn.start()
 			return
 	var ld

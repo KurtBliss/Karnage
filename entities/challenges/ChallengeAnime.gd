@@ -5,11 +5,11 @@ onready var label = $Label
 func _ready():
 	ref.challenge_anime = self
 
-func challenge_anime(title):
+func challenge_anime_finished(title):
 	if label.text != "":
 		label.text += "\n"
 	label.text += title
-	play("newgoal", -1, 1.3)
+	play("goal_finished", -1, 1.3)
 
 func _on_ChallengeAnime_animation_finished(anim_name):
 	label.text = ""

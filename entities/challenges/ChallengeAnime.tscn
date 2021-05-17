@@ -1,25 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/challenges/ChallengeAnime.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://entities/challenges/Challenge.tscn" type="PackedScene" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "newgoal"
+[sub_resource type="Animation" id=3]
+resource_name = "goal_finished"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("ChallengeAnime/Label:modulate")
+tracks/0/path = NodePath("ChallengeAnime/Challenge:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2.6, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.109804 ) ]
+"values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ChallengeAnime/Label:custom_fonts/font:size")
+tracks/1/path = NodePath("ChallengeAnime/Challenge:custom_fonts/font:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -31,23 +32,88 @@ tracks/1/keys = {
 "values": [ 32, 64, 32 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ChallengeAnime/Label:percent_visible")
+tracks/2/path = NodePath("ChallengeAnime/Challenge:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0, 2.6, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.109804 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ChallengeAnime/Challenge/Crossout:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "newgoal"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ChallengeAnime/Challenge:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChallengeAnime/Challenge:custom_fonts/font:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 32, 64, 32 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ChallengeAnime/Challenge:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.6, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.109804 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ChallengeAnime/Challenge/Crossout:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
 
 [sub_resource type="DynamicFont" id=2]
-size = 48
+size = 32
 font_data = ExtResource( 2 )
 
 [node name="ChallengeAnime" type="AnimationPlayer"]
+anims/goal_finished = SubResource( 3 )
 anims/newgoal = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -56,6 +122,7 @@ anchor_right = 1.0
 margin_top = 128.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 2 )
+text = "testsetfews"
 align = 1
 valign = 1
 percent_visible = 0.0
@@ -63,4 +130,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Challenge" parent="." instance=ExtResource( 3 )]
+percent_visible = 0.0
+
+[node name="Crossout" parent="Challenge" index="0"]
+position = Vector2( 19.653, 33.556 )
+
 [connection signal="animation_finished" from="." to="." method="_on_ChallengeAnime_animation_finished"]
+
+[editable path="Challenge"]

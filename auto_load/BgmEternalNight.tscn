@@ -7,5 +7,4 @@
 pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -25.078
-stream_paused = true
 script = ExtResource( 2 )

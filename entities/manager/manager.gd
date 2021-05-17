@@ -4,7 +4,7 @@ extends Camera
 
 export(NodePath) var spawn_player_path
 export(String, FILE, "*.tscn") var player_tscn = "res://entities/player.tscn"
-enum MODE {IN_GAME, PRE_GAME, POST_GAME, RESPAWN}
+enum MODE {IN_GAME, PRE_GAME, POST_GAME, PRE_GAME_CHALLENGES}
 var current_mode
 var health
 var score
