@@ -1,5 +1,5 @@
 class_name ChallengeAnime
-extends Control
+extends Position2D
 
 func challenge_anime_finished(title):
 	$Challenge.text = title

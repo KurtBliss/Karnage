@@ -3,5 +3,5 @@
 [ext_resource path="res://entities/challenges/ChallengeAnimeContainer.gd" type="Script" id=1]
 
 [node name="ChallengeAnimeContainer" type="Position2D"]
-position = Vector2( 512, 64 )
+position = Vector2( 514, 148 )
 script = ExtResource( 1 )

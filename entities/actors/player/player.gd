@@ -58,7 +58,7 @@ func _ready():
 	
 
 func _process(delta):
-	score_meter_set(score_meter - delta * 3)
+	score_meter_set(score_meter - delta * 1)
 	gun_cam.global_transform = camera.global_transform
 	if Input.is_action_just_pressed("show_challenges"):
 		var c = challenges_ld.instance()
@@ -146,11 +146,11 @@ func _physics_process(delta):
 		velocity.y = 0
 		if Input.is_action_just_pressed("jump") and can_input:
 			can_double = true
-			velocity.y += (jump_power - 10) + (10 * (score_meter / 100))
+			velocity.y += (jump_power - 6) + (10 * (score_meter / 100))
 	else:
 		if Input.is_action_just_pressed("jump") and can_input and can_double:
 			can_double = false
-			velocity.y += (jump_power - 10) + (10 * (score_meter / 100))
+			velocity.y += (jump_power - 6) + (10 * (score_meter / 100))
 		else:
 			velocity.y -= gravity
 	

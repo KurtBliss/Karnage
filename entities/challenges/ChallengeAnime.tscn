@@ -4,14 +4,13 @@
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://entities/challenges/Challenge.tscn" type="PackedScene" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "goal_finished"
+[sub_resource type="Animation" id=2]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Challenge:percent_visible")
@@ -44,10 +43,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2.2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Challenge/Crossout:visible")
@@ -56,10 +55,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Challenge:visible")
@@ -71,29 +70,50 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Challenge/Crossout:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 2, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Challenge/Crossout:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 159.059, 33.6755 ), Vector2( 294.67, 33.7593 ) ]
 }
 
-[node name="ChallengeAnime" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ChallengeAnime" type="Position2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Challenge" parent="." instance=ExtResource( 3 )]
-visible = false
-margin_bottom = 44.0
-custom_fonts/font = SubResource( 2 )
-percent_visible = 0.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -459.183
+margin_top = -19.8811
+margin_right = 465.817
+margin_bottom = 24.1189
+custom_fonts/font = SubResource( 1 )
 
 [node name="Crossout" parent="Challenge" index="0"]
 visible = true
-position = Vector2( 19.653, 33.556 )
+position = Vector2( 294.67, 33.7593 )
 
 [node name="ChallengeAnime" type="AnimationPlayer" parent="."]
-anims/goal_finished = SubResource( 1 )
+anims/goal_finished = SubResource( 2 )
 
 [connection signal="animation_finished" from="ChallengeAnime" to="." method="_on_ChallengeAnime_animation_finished"]
 
