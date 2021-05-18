@@ -41,7 +41,8 @@ func _process(_delta):
 				if call(challenge["method"], challenge):
 #					print(challenge["label"].text)
 					print(challenge["title"])
-					ref.challenge_anime.challenge_anime(challenge["title"])
+					ref.challenge_anime_container.add_challenge_finished(challenge["title"])
+					
 					challenge["done"] = true
 					if not is_instance_valid(challenge["label"]):
 						update_challenge_labels()

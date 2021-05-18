@@ -24,10 +24,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/actors/enemies/bot.gd"
 }, {
-"base": "AnimationPlayer",
+"base": "Control",
 "class": "ChallengeAnime",
 "language": "GDScript",
 "path": "res://entities/challenges/ChallengeAnime.gd"
+}, {
+"base": "Position2D",
+"class": "ChallengeAnimeContainer",
+"language": "GDScript",
+"path": "res://entities/challenges/ChallengeAnimeContainer.gd"
 }, {
 "base": "Label",
 "class": "ChallengeLabel",
@@ -79,7 +84,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/manager/manager.gd"
 }, {
-"base": "Reference",
+"base": "Enemy",
 "class": "Marksmen",
 "language": "GDScript",
 "path": "res://entities/actors/enemies/marksmen.gd"
@@ -134,7 +139,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/screens/options/options_screen.gd"
 }, {
-"base": "Reference",
+"base": "Screen",
 "class": "Screen_Pause",
 "language": "GDScript",
 "path": "res://entities/actors/player/Pause.gd"
@@ -164,7 +169,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/weapons/weapon.gd"
 }, {
-"base": "Reference",
+"base": "Bot",
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://entities/actors/enemies/zombie.gd"
@@ -174,6 +179,7 @@ _global_script_class_icons={
 "AmmoPickup": "",
 "Bot": "",
 "ChallengeAnime": "",
+"ChallengeAnimeContainer": "",
 "ChallengeLabel": "",
 "Challenges": "",
 "CmdHelp": "",
