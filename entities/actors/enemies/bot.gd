@@ -14,9 +14,6 @@ var delay_in_progress = false
 var dead = false
 export var respawn = true
 
-func _ready():
-	speed = 7
-
 func set_path_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_ind = 0
@@ -181,7 +178,7 @@ func process_path():
 		var curpos = global_transform.origin
 		curpos.y = 0
 		var move_vec = (pathpoint - curpos + Vector3(0, y_offset, 0))
-		if move_vec.length() < 0.1:
+		if move_vec.length() < 1:
 			path_ind += 1
 		else:
 			var dir = move_vec.normalized() * speed

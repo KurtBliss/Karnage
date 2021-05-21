@@ -13,12 +13,14 @@ var wait_for_level = true
 var levels = [
 	"res://maps/Tutorial.tscn",
 	"res://maps/Corridor.tscn",
-	"res://maps/City.tscn"
+	"res://maps/City.tscn",
+	"res://maps/Alpha.tscn"
 ]
 var levelsNames = [
 	"Tutorial",
 	"Corridor",
-	"City"
+	"City", 
+	"Alpha"
 ]
 var level_index = -2
 
@@ -180,4 +182,9 @@ func _on_ButtonNext_focus_entered():
 
 func _on_ButtonPrev_focus_entered():
 	map_previous()
+	pass # Replace with function body.
+
+
+func _on_Exit_pressed():
+	get_tree().change_scene("res://entities/screens/tiledscreen/titled_screen.tscn")
 	pass # Replace with function body.

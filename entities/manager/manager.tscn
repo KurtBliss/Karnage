@@ -292,7 +292,7 @@ text = "Continue"
 align = 1
 
 [connection signal="pressed" from="PreGame/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="PreGame/Exit" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="PreGame/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="focus_entered" from="PreGame/ButtonPrev" to="." method="_on_ButtonPrev_focus_entered"]
 [connection signal="pressed" from="PreGame/ButtonPrev" to="." method="_on_ButtonPrev_pressed"]
 [connection signal="focus_entered" from="PreGame/ButtonNext" to="." method="_on_ButtonNext_focus_entered"]

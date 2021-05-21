@@ -41,7 +41,10 @@ func _ready():
 func _process(delta):
 	if state != "" and has_method(state):
 		call(state, delta)
-	
+	if global_transform.origin.y < -10:
+		do_damage(1000, self)
+		if actor_name != "Player":
+			queue_free()
 
 func _physics_process(delta):
 	if physics_state != "" and has_method(physics_state):
@@ -78,6 +81,7 @@ func get_physics_state():
 	return physics_state
 
 func process_velocity(_delta):
+	
 	if blood_delay > 0:
 		blood_delay -= _delta * 60
 		if blood_delay <= 0:
@@ -86,6 +90,9 @@ func process_velocity(_delta):
 	velocity.y -= 10
 	velocity = move_and_slide(velocity, Vector3.UP)
 	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)
+	
+	if has_method("update_step_check"):
+		call("update_step_check")
 
 
 func do_damage(dmg : float, from : Actor, how = "unkown"):

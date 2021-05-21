@@ -15,7 +15,6 @@
 [ext_resource path="res://entities/mapsSpin.tres" type="Animation" id=13]
 [ext_resource path="res://entities/tutorial/dumbdownenemy.gd" type="Script" id=14]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level
 "
@@ -137,30 +136,17 @@ margin_right = 236.503
 margin_bottom = 104.068
 text = "Controls"
 
-[node name="Button" type="Button" parent="Manager/PreGame" index="2"]
-margin_left = 457.919
-margin_top = 528.94
-margin_right = 573.919
-margin_bottom = 548.94
-text = "Exit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Controls" parent="Manager/PreGame" index="3" instance=ExtResource( 11 )]
 
-[node name="Controls" parent="Manager/PreGame" index="4" instance=ExtResource( 11 )]
-
-[node name="Start" parent="Manager/PreGame" index="9"]
-margin_left = 329.179
-margin_top = 430.714
-margin_right = 689.179
-margin_bottom = 490.714
+[node name="Start" parent="Manager/PreGame" index="8"]
+margin_left = -367.242
+margin_top = -90.5198
+margin_right = 14.7579
+margin_bottom = -30.5198
 label_text = "Tutoiral"
 
 [node name="Label" parent="Manager/PreGame/Start" index="0"]
-margin_left = 5.36346
-margin_top = 6.08774
-margin_right = 5.36346
-margin_bottom = 6.08774
+margin_bottom = -3.05176e-05
 text = "Tutoiral"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
@@ -220,11 +206,11 @@ transform = Transform( 0.78888, 0, 0.614547, 0, 1.44699, 0, -0.889246, 0, 1.1415
 type = 1
 size = 99999999
 
-[connection signal="pressed" from="Manager/PreGame/Button" to="Tutorial" method="_on_Button_pressed"]
 [connection signal="pressed" from="Manager/PreGame/Start" to="Tutorial" method="_on_Start_pressed"]
 [connection signal="tree_exiting" from="M16Pickup" to="Tutorial" method="_on_M16Pickup_tree_exiting"]
 
 [editable path="NavMesh"]
 [editable path="Manager"]
 [editable path="Manager/PreGame/Start"]
+[editable path="Manager/PreGame/Exit"]
 [editable path="Manager/PostGame/Restart"]

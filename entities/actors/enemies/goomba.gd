@@ -7,6 +7,9 @@ var zigzag_dist_stop = 6
 var zigzag_dist_start = 16
 var offdirzig
 var offdirzag
+var bodies = ["wait"]
+
+var stick_to_path = false
 enum {ZIG, ZAG}
 
 var died = false
@@ -14,7 +17,8 @@ onready var AnimeHands = $Arms/AnimeHands
 onready var mixamo = $Mannequin/Anime
 
 func _ready():
-	speed *= 1.3
+	#speed *= 1.3
+	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
 
 func state_idle(_delta):
@@ -36,6 +40,8 @@ func state_alert(_delta):
 	pass
 
 func state_chase(_delta):
+	if process_chase_step():
+		return
 	AnimeHands.play("Walk")
 	mixamo.play("Walk")
 	if get_player_visibility():
@@ -55,6 +61,9 @@ func switch_zig_zag():
 	timer_zig_zag()
 
 func state_chase_zig_zag(_delta):
+	if process_chase_step():
+		return
+	
 	mixamo.play("Walk")
 	
 	if not get_player_visibility():
@@ -74,11 +83,11 @@ func state_chase_zig_zag(_delta):
 func state_chase_path(_delta):
 	mixamo.play("Walk")
 	
-	if get_player_visibility():
+	
+	if get_player_visibility() and not stick_to_path:
 		set_physics_state("state_chase")
-		
 		return
-		
+	
 	var process = process_path()
 	if not process:
 		set_path_to_player()
@@ -86,6 +95,25 @@ func state_chase_path(_delta):
 
 func state_dead(_delta):
 	pass
+
+func update_step_check():
+	var pos = Vector3(velocity.x, -1, velocity.z)
+	$StepCheck.rotation = velocity.normalized()
+
+func process_chase_step():
+	if not process_step_check():
+		stick_to_path = true
+		set_path_to_player()
+		set_physics_state("state_chase_path")
+		return true
+	return false
+
+func process_step_check():
+	if bodies.has("wait"):
+		return true
+	if bodies.size() == 0:
+		return false
+	return true
 
 func timer_zig_zag():
 	var name = "__bot_zig_zag_timer"
@@ -137,6 +165,7 @@ func _on_Enemy_died():
 		$Particles.emitting = false
 		$CollisionShape.disabled = true
 		$CollisionShapeDeath.disabled = false
+		$SwitchMask.play("dead")
 		
 		$deathTimer.start()
 #	queue_free()
@@ -151,3 +180,18 @@ func _on_deathTimer_timeout():
 func _on_switch_switched(on):
 	if on and health > 0 and get_physics_state() == "state_idle":
 		set_physics_state("state_chase")
+
+
+func _on_StepCheck_body_entered(body):
+	bodies.append(body)
+	var wait = bodies.find("wait")
+	if wait != -1:
+		bodies.remove(wait)
+	if get_physics_state() == "":
+		set_physics_state("state_idle")
+
+
+func _on_StepCheck_body_exited(body):
+	var f = bodies.find(body)
+	if f != -1:
+		bodies.remove(f)
