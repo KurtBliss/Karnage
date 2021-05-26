@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/kenney/weaponpack_assets/models/ammo_shotgun.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://assets/freesounds/513348__shelbyshark__load-shotgun_cropped0.wav" type="AudioStream" id=5]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "FireShotgun"
 length = 1.2

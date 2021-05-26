@@ -1,4 +1,5 @@
-extends WeaponContainer
+class_name WeaponContainer
+extends Spatial
 
 export(NodePath) onready var holder_path
 onready var holder = get_node(holder_path)

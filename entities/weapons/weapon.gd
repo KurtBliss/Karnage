@@ -64,10 +64,14 @@ func _process(_delta):
 		var par_holder = par.holder
 		
 		if is_instance_valid(par_holder):
-			holder = par_holder
-			raycast = par_holder.Weapon.raycast
-			update_raycast_range()
-			wait_for_parrent_holder = false
+			if par_holder is Actor:
+				holder = par_holder
+				raycast = par_holder.Weapon.raycast
+				update_raycast_range()
+				wait_for_parrent_holder = false
+			else: 
+				#I SUCK
+				pass
 		
 	elif is_instance_valid(holder) and do_reload_bullet:
 		do_reload_bullet = false

@@ -3,7 +3,6 @@
 [ext_resource path="res://entities/projectiles/Projectile.gd" type="Script" id=1]
 [ext_resource path="res://assets/kenney/weaponpack_assets/models/ammo_shotgun.obj" type="ArrayMesh" id=2]
 
-
 [node name="Projectile" type="Position3D"]
 transform = Transform( 1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 1.11467, 0.445413 )
 script = ExtResource( 1 )

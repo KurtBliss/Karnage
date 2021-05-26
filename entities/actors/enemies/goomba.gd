@@ -8,13 +8,16 @@ var zigzag_dist_start = 16
 var offdirzig
 var offdirzag
 var bodies = ["wait"]
+var set_fire_delay = 3
+var cur_fire_delay = set_fire_delay
 
 var stick_to_path = false
 enum {ZIG, ZAG}
 
 var died = false
-onready var AnimeHands = $Arms/AnimeHands
 onready var mixamo = $Mannequin/Anime
+onready var raycast = $RayCast
+onready var Weapon = $Mannequin/Skeleton/BoneAttachment/Weapon
 
 func _ready():
 	#speed *= 1.3
@@ -39,12 +42,28 @@ func state_dumb(_delta):
 func state_alert(_delta):
 	pass
 
+func do_aim():
+	set_physics_state("state_aim")
+	mixamo.play("Aim")
+	do_face_player()
+	
+
+func state_aim(delta):
+	cur_fire_delay -= delta 
+	if cur_fire_delay <= 0:
+		print_debug("Fire")
+		cur_fire_delay = set_fire_delay
+		do_aim()
+
 func state_chase(_delta):
 	if process_chase_step():
 		return
-	AnimeHands.play("Walk")
 	mixamo.play("Walk")
 	if get_player_visibility():
+		if get_player_distance() < 20:
+			cur_fire_delay = set_fire_delay
+			do_aim()
+			return
 		do_chase_player()
 		if get_player_distance() > zigzag_dist_start:
 			switch_zig_zag()
