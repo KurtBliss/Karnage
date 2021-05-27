@@ -21,7 +21,7 @@ var can_double = true
 var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
 var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
-var ammo = Master.ammo_container
+
 var challenges_ld = preload("res://entities/challenges/Challenges.tscn")
 var start_with_pistol = true
 var death = false
@@ -37,7 +37,7 @@ onready var gun_cam = $Head/Camera/ViewportContainer/Viewport/GunCam
 onready var Anime = $Anime
 onready var Hud : Player_Hud = $Hud
 onready var JumpCast = $JumpCast
-onready var Weapon = $Head/Camera/Weapon
+onready var weapon = $Head/Camera/Weapon
 onready var InjuredSprite = $Hud/Injured/Sprite
 
 ###################-BUILT IN-####################
@@ -194,7 +194,7 @@ func gain_ammo(type, amount):
 
 func _on_Player_died():
 	#TODO: Throw other weapons too
-	Weapon.throw_weapon()
+	weapon.throw_weapon()
 	death = true
 	Anime.play("death")
 	ref.level._on_player_died()

@@ -338,6 +338,9 @@ bones/35/bound_children = [  ]
 [node name="BoneAttachment" parent="Enemy11/Mannequin/Skeleton" index="1"]
 transform = Transform( 0.776427, 0.248274, 0.57924, 0.3397, -0.939048, -0.0528458, 0.530814, 0.237799, -0.813441, -0.214827, 0.892613, 0.0803911 )
 
+[node name="Weapon" parent="Enemy11/Mannequin/Skeleton/BoneAttachment" index="0"]
+raycast_path = NodePath("")
+
 [node name="Shotgun" parent="Enemy11/Mannequin/Skeleton/BoneAttachment/Weapon" index="0"]
 transform = Transform( 7.9894, -1.2666e-07, -0.411577, -0.0134376, 7.99572, -0.260849, 0.411358, 0.261195, 7.98514, 0, 0, -7.45058e-09 )
 

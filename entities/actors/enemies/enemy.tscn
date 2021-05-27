@@ -9,22 +9,22 @@
 [ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=1]
 height = 2.25719
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.955069, 0.203253, 1.506 )
 
-[sub_resource type="GradientTexture" id=10]
+[sub_resource type="GradientTexture" id=3]
 gradient = ExtResource( 5 )
 
-[sub_resource type="Curve" id=11]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0.0108367, 0.0341597 ), 0.0, 0.0, 0, 0, Vector2( 0.188441, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998194, 0.349475 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=12]
-curve = SubResource( 11 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticlesMaterial" id=6]
 trail_divisor = 6
 emission_shape = 1
 emission_sphere_radius = 0.4
@@ -40,13 +40,13 @@ linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
 scale_random = 0.8
-scale_curve = SubResource( 12 )
-color_ramp = SubResource( 10 )
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
 anim_speed = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -57,10 +57,10 @@ particles_anim_v_frames = 5
 particles_anim_loop = true
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="QuadMesh" id=15]
-material = SubResource( 14 )
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 7 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=9]
 resource_name = "Impact"
 length = 0.8
 tracks/0/type = "audio"
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=10]
 resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:collision_layer")
@@ -105,7 +105,7 @@ tracks/1/keys = {
 "values": [ 2048 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:collision_layer")
 tracks/0/interp = 1
@@ -131,9 +131,9 @@ tracks/1/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="BoxShape" id=19]
+[sub_resource type="BoxShape" id=12]
 
-[sub_resource type="CubeMesh" id=20]
+[sub_resource type="CubeMesh" id=13]
 
 [node name="Goomba" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
@@ -145,14 +145,16 @@ health = 40
 actor_name = "Mannequin"
 
 [node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84357, 0 )
+cast_to = Vector3( 0, 0, -100 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -1.05879e-22, 0.525525, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="CollisionShapeDeath" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 5.30863e-14, 2.10321e-16, 0.999992, -0.0039617, -5.30859e-14, 0.0039617, 0.999992, -1.05879e-22, -1.38442, -4.00815 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 2 )]
@@ -165,7 +167,7 @@ bones/35/bound_children = [ NodePath("BoneAttachment") ]
 transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( -0.031928, 0.628059, 0.777508, 0.915405, 0.330683, -0.229528, -0.401265, 0.704406, -0.585487, -0.169406, 1.37857, 0.197839 )
+transform = Transform( 0.574626, -0.778059, 0.253829, -0.0537487, -0.345354, -0.936932, 0.81665, 0.524743, -0.240269, -0.711551, 1.40425, -0.00455018 )
 bone_name = "mixamorig1_RightHandThumb1"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
@@ -193,8 +195,8 @@ lifetime = 0.5
 randomness = 1.0
 local_coords = false
 draw_order = 2
-process_material = SubResource( 13 )
-draw_pass_1 = SubResource( 15 )
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -217,11 +219,11 @@ stream = ExtResource( 7 )
 unit_db = 52.487
 
 [node name="AnimeSound" type="AnimationPlayer" parent="."]
-anims/Impact = SubResource( 16 )
+anims/Impact = SubResource( 9 )
 
 [node name="SwitchMask" type="AnimationPlayer" parent="."]
-anims/dead = SubResource( 17 )
-anims/normal = SubResource( 18 )
+anims/dead = SubResource( 10 )
+anims/normal = SubResource( 11 )
 
 [node name="StepCheck" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -230,12 +232,12 @@ collision_mask = 1024
 
 [node name="CollisionShape" type="CollisionShape" parent="StepCheck"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
-shape = SubResource( 19 )
+shape = SubResource( 12 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StepCheck"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
 visible = false
-mesh = SubResource( 20 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]

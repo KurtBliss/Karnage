@@ -8,17 +8,17 @@ func _on_target_reached():
 	if not targets_reached:
 		if is_instance_valid(ref.player):
 			if ref.player.health > 0:
-				if not ref.player.Weapon.has_weapon("Shotgun"):
+				if not ref.player.weapon.has_weapon("Shotgun"):
 					var shotgun_ld = preload("res://entities/weapons/Shotgun.tscn")
 					var shotgun = shotgun_ld.instance()
 					add_child(shotgun)
-					ref.player.Weapon.add_weapon(shotgun)
+					ref.player.weapon.add_weapon(shotgun)
 					targets_reached = true
-				elif not ref.player.Weapon.has_weapon("M16"):
+				elif not ref.player.weapon.has_weapon("M16"):
 					var shotgun_ld = preload("res://entities/weapons/M16.tscn")
 					var shotgun = shotgun_ld.instance()
 					add_child(shotgun)
-					ref.player.Weapon.add_weapon(shotgun)
+					ref.player.weapon.add_weapon(shotgun)
 					targets_reached = true
 
 func _on_Health_grabbed():

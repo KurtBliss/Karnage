@@ -31,6 +31,7 @@ var undamageable : bool = false
 var velocity = Vector3.ZERO
 var blood : Particles
 var blood_delay = 0
+var ammo = Master.ammo_container
 
 func _ready():
 	add_to_group("actor")

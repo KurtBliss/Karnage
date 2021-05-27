@@ -13,7 +13,7 @@ func _process(_delta):
 	if not Input.is_action_just_pressed("interact"):
 		return
 
-	var weapons = curbody.Weapon
+	var weapons = curbody.weapon
 	if true:#not weapons.has_weapon():
 		if weapons.add_weapon(parrent.weapon):
 			parrent.queue_free()

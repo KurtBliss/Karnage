@@ -17,7 +17,7 @@ enum {ZIG, ZAG}
 var died = false
 onready var mixamo = $Mannequin/Anime
 onready var raycast = $RayCast
-onready var Weapon = $Mannequin/Skeleton/BoneAttachment/Weapon
+onready var weapon = $Mannequin/Skeleton/BoneAttachment/Weapon
 
 func _ready():
 	#speed *= 1.3
@@ -52,6 +52,8 @@ func state_aim(delta):
 	cur_fire_delay -= delta 
 	if cur_fire_delay <= 0:
 		print_debug("Fire")
+		if weapon.current_weapon:
+			weapon.current_weapon.do_fire()
 		cur_fire_delay = set_fire_delay
 		do_aim()
 
@@ -176,6 +178,7 @@ func _on_Enemy_died():
 			inst.spawn_scene_location = filename
 			ref.level.add_child(inst)
 		
+		weapon.throw_weapon()
 		
 		mixamo.play("Death")
 		$Particles.emitting = true

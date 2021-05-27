@@ -62,16 +62,18 @@ func _process(_delta):
 	if wait_for_parrent_holder:
 		var par = get_parent()
 		var par_holder = par.holder
-		
 		if is_instance_valid(par_holder):
-			if par_holder is Actor:
-				holder = par_holder
-				raycast = par_holder.Weapon.raycast
-				update_raycast_range()
-				wait_for_parrent_holder = false
-			else: 
-				#I SUCK
+			holder = par_holder
+			
+			var w = holder.weapon
+			
+			if w == null:
 				pass
+			
+			raycast = holder.raycast
+			update_raycast_range()
+			
+			wait_for_parrent_holder = false
 		
 	elif is_instance_valid(holder) and do_reload_bullet:
 		do_reload_bullet = false
@@ -90,9 +92,10 @@ func do_fire():
 			elif fire_type == FIRE_TYPE.PROJECTILE:
 				fire_projectile()
 			anime.play(anime_fire, -1, fire_anime_speed)
-			holder.do_emit_fire()
-			holder.do_emit_clip(clip)
-			holder.do_emit_ammo(holder.ammo[ammo_type])
+			if holder is Player:
+				holder.do_emit_fire()
+				holder.do_emit_clip(clip)
+				holder.do_emit_ammo(holder.ammo[ammo_type])
 			
 		else:
 			start_reload()
@@ -145,6 +148,7 @@ func fire_projectile():
 func create_projectile(projectile_ld):
 	var inst = projectile_ld.instance()
 	inst.holder = holder
+	inst.target_group = target_group
 	inst.global_transform = raycast.global_transform
 	ref.level.add_child(inst)
 	pass
@@ -173,8 +177,9 @@ func do_reload_bullet():
 	if clip < clip_size and holder.ammo[ammo_type] > 0:
 		holder.ammo[ammo_type] -= 1
 		clip += 1
-		holder.do_emit_clip(clip)
-		holder.do_emit_ammo(holder.ammo[ammo_type])
+		if holder is Player:
+			holder.do_emit_clip(clip)
+			holder.do_emit_ammo(holder.ammo[ammo_type])
 	if clip >= clip_size and name == "Shotgun":
 		if anime.current_animation == anime_reload:
 			if anime.current_animation_position < 2.1:
