@@ -136,6 +136,9 @@ func lengthdir_x(dist, angle):
 func lengthdir_y(dist, angle):
 	return dist * -sin( angle )
 
+func set_direction(set):
+	rotation_degrees.y = set
+
 func get_direction():
 	return wrap(rotation_degrees.y + direction_offset, 0, 359)
 

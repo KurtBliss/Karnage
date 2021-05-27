@@ -123,6 +123,8 @@ func get_direction_to(body: Actor):
 
 	return wrap(rad2deg(dir_2d), 0, 359)
 
+
+
 func detect_facing_self(body: Actor, fov = detect_fov ):
 	var dir_to = abs(get_direction_to(body))
 	var dir_dif = abs(angle_difference(dir_to, get_direction()))

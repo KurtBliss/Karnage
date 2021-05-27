@@ -10,6 +10,7 @@ var offdirzag
 var bodies = ["wait"]
 var set_fire_delay = 3
 var cur_fire_delay = set_fire_delay
+var vec_look_at = Vector3.ZERO
 
 var stick_to_path = false
 enum {ZIG, ZAG}
@@ -17,7 +18,7 @@ enum {ZIG, ZAG}
 var died = false
 onready var mixamo = $Mannequin/Anime
 onready var raycast = $RayCast
-onready var weapon = $Mannequin/Skeleton/BoneAttachment/Weapon
+onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
 
 func _ready():
 	#speed *= 1.3
@@ -46,10 +47,26 @@ func do_aim():
 	set_physics_state("state_aim")
 	mixamo.play("Aim")
 	do_face_player()
-	
+	vec_look_at = -global_transform.basis.z
 
 func state_aim(delta):
 	cur_fire_delay -= delta 
+	
+	var prev_rot = rotation
+	look_at(global_transform.origin + vec_look_at, Vector3.UP)
+	var new_y = rotation.y
+	rotation = prev_rot
+	rotation.y = new_y
+#	linear_interpolate(vector, rate)
+
+	var p : Player = get_player()
+	if p:
+		var dir =  p.global_transform.origin - global_transform.origin 
+		vec_look_at+=dir.normalized()*10
+		vec_look_at.normalized()
+		
+		print(vec_look_at)
+	
 	if cur_fire_delay <= 0:
 		print_debug("Fire")
 		if weapon.current_weapon:
