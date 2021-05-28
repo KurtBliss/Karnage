@@ -9,3 +9,8 @@ var challenges : Challenges
 var level_timer : LevelTimer # Init on GameTimer _ready()
 var tutorial : Tutorial
 var challenge_anime_container : ChallengeAnimeContainer
+
+func is_valid(a):
+	if a != null and is_instance_valid(a):
+		return true
+	return false

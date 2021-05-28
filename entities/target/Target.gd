@@ -6,6 +6,10 @@ var wait_for_level = true
 var hit = false
 
 func _process(delta):
+	
+	if ref.is_valid(ref.player):
+		look_at(ref.player.global_transform.origin, Vector3.UP)
+	
 	if wait_for_level:
 		if is_instance_valid(ref.level):
 			wait_for_level = false

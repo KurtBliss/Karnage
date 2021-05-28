@@ -21,21 +21,16 @@ onready var raycast = $RayCast
 onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
 
 func _ready():
-	#speed *= 1.3
 	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
 
 func state_idle(_delta):
 	mixamo.play("Idle")
-	
 	if not get_player():
 		return
 	if get_player_spotted():
 		set_physics_state("state_chase")
-#		delay_state_change(2.0, "", "state_chase")
 	process_path()
-#		yield(get_tree().create_timer(1.0), "timeout")
-#		set_physics_state("state_chase")
 
 func state_dumb(_delta):
 	pass
@@ -47,25 +42,30 @@ func do_aim():
 	set_physics_state("state_aim")
 	mixamo.play("Aim")
 	do_face_player()
-	vec_look_at = -global_transform.basis.z
 
 func state_aim(delta):
 	cur_fire_delay -= delta 
 	
-	var prev_rot = rotation
-	look_at(global_transform.origin + vec_look_at, Vector3.UP)
-	var new_y = rotation.y
-	rotation = prev_rot
-	rotation.y = new_y
-#	linear_interpolate(vector, rate)
-
 	var p : Player = get_player()
 	if p:
-		var dir =  p.global_transform.origin - global_transform.origin 
-		vec_look_at+=dir.normalized()*10
-		vec_look_at.normalized()
+		var wandering_position = p.global_transform.origin
 		
-		print(vec_look_at)
+		var previous_rot = rotation
+		look_at(wandering_position,Vector3.UP)
+		var rotation_y = wrapf(rotation.y,-PI,PI)
+		rotation = previous_rot
+		rotation.y = wrapf(rotation.y,-PI,PI)
+		
+		var dif = rotation_y - rotation.y
+		if dif < -PI:
+			rotation_y+= TAU
+		if dif > PI:
+			rotation_y-= TAU
+		var absdif = abs(rotation_y - rotation.y)
+		
+		enemy_tween.interpolate_property(self,"rotation:y",rotation.y,rotation_y,absdif * 1.3,Tween.TRANS_LINEAR)
+		enemy_tween.start()
+		yield(enemy_tween,"tween_completed")
 	
 	if cur_fire_delay <= 0:
 		print_debug("Fire")
@@ -80,9 +80,10 @@ func state_chase(_delta):
 	mixamo.play("Walk")
 	if get_player_visibility():
 		if get_player_distance() < 20:
-			cur_fire_delay = set_fire_delay
-			do_aim()
-			return
+			if weapon != null and is_instance_valid(weapon) and weapon.get_children().size() > 0:
+				cur_fire_delay = set_fire_delay
+				do_aim()
+				return
 		do_chase_player()
 		if get_player_distance() > zigzag_dist_start:
 			switch_zig_zag()
