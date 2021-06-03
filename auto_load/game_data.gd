@@ -25,7 +25,8 @@ func get_default_level_data():
 	}
 
 func get_level_data(level):
-	return game_data["levels"][level]
+	if game_data["levels"].has(level):
+		return game_data["levels"][level]
 
 func get_level_highscore(level):
 	var ld = get_level_data(level)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/freesounds/467354__nicklas3799__gun-cock.wav" type="AudioStream" id=1]
 [ext_resource path="res://assets/freesounds/394413__inspectorj__bamboo-swing-a11.wav" type="AudioStream" id=2]
@@ -7,8 +7,21 @@
 [ext_resource path="res://entities/weapons/Pistol.gd" type="Script" id=5]
 [ext_resource path="res://assets/freesounds/386744__ken788__handgun-reload.wav" type="AudioStream" id=6]
 
+[sub_resource type="Skin" id=1]
+bind_count = 3
+bind/0/name = ""
+bind/0/bone = -1
+bind/0/pose = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+bind/1/name = ""
+bind/1/bone = -1
+bind/1/pose = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+bind/2/name = ""
+bind/2/bone = -1
+bind/2/pose = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="ShaderMaterial" id=2]
+
+[sub_resource type="Animation" id=3]
 length = 0.5
 step = 0.082
 tracks/0/type = "value"
@@ -74,7 +87,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
@@ -103,8 +116,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -142,8 +154,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Reload"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -174,7 +185,8 @@ tracks/1/keys = {
 [node name="Pistol" type="MeshInstance"]
 transform = Transform( 14.9801, -2.37487e-07, -0.771713, -0.0251956, 14.992, -0.489096, 0.771295, 0.48974, 14.9722, 0, 0, 0 )
 mesh = ExtResource( 3 )
-material/0 = null
+skin = SubResource( 1 )
+material/0 = SubResource( 2 )
 material/1 = null
 material/2 = null
 material/3 = null
@@ -199,10 +211,10 @@ cock_path = NodePath("Cock")
 pickup_file = "res://entities/pickups/PistolPickup.tscn"
 
 [node name="Anime" type="AnimationPlayer" parent="."]
-anims/Fire = SubResource( 1 )
-anims/Hit = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Reload = SubResource( 4 )
+anims/Fire = SubResource( 3 )
+anims/Hit = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Reload = SubResource( 6 )
 
 [node name="Flash" type="OmniLight" parent="."]
 transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
