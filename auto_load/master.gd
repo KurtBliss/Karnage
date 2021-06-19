@@ -14,6 +14,11 @@ var ammo_container = {
 	AMMO.SNIPER: 0
 }
 
+func _ready() -> void:
+	mute = !mute
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(bus_index, mute)
+
 func _process(_delta):
 #	if Input.is_action_just_pressed("game_end"):
 #		if Mouse.toggle and Mouse.capture:

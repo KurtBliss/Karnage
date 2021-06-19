@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://addons/project_map/pm_comment_node.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/project_map/pm_comment_node.gd" type="Script" id=2]
 [ext_resource path="res://addons/project_map/project_map.gd" type="Script" id=3]
+[ext_resource path="res://addons/project_map/pm_file_node.gd" type="Script" id=4]
+[ext_resource path="res://addons/project_map/pm_file_node.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/project_map/node.stylebox" type="StyleBox" id=6]
+[ext_resource path="res://addons/project_map/node_selected.stylebox" type="StyleBox" id=7]
+[ext_resource path="res://addons/project_map/pm_group_node.gd" type="Script" id=8]
+[ext_resource path="res://addons/project_map/pm_group_node.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/project_map/group.stylebox" type="StyleBox" id=10]
+[ext_resource path="res://addons/project_map/group_selected.stylebox" type="StyleBox" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
@@ -13,32 +21,54 @@ bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
 
 [node name="ProjectMap" type="GraphEdit"]
 visible = false
-margin_right = 1301.0
-margin_bottom = 675.0
+margin_right = 509.0
+margin_bottom = 500.0
 rect_min_size = Vector2( 500, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 1 )
-scroll_offset = Vector2( -1079.07, -538.508 )
+scroll_offset = Vector2( -509, -500 )
 snap_distance = 32
-zoom = 0.578704
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
+[node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 9 )]
+margin_left = -835.0
+margin_top = -556.0
+margin_right = -131.0
+margin_bottom = -140.0
+rect_min_size = Vector2( 704, 416 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 11 )
+custom_styles/comment = ExtResource( 10 )
+offset = Vector2( -1344, -1056 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Actors"
+
 [node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 1 )]
-margin_left = 560.551
-margin_top = 279.249
-margin_right = 960.551
-margin_bottom = 479.249
-rect_min_size = Vector2( 400, 200 )
-rect_scale = Vector2( 0.578704, 0.578704 )
+margin_left = -853.0
+margin_top = -777.0
+margin_right = -484.999
+margin_bottom = -625.0
+rect_min_size = Vector2( 368.001, 152 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 2 )
 custom_styles/comment = SubResource( 3 )
-offset = Vector2( -896, -448 )
+offset = Vector2( -1362, -1277 )
 comment = true
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -50,6 +80,157 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-comment_text = "Karnage"
+comment_text = "KARNAGE"
+comment_rect = Vector2( 368.001, 152 )
+
+[node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -611.0
+margin_top = -524.0
+margin_right = -513.0
+margin_bottom = -492.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1120, -1024 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/actor.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -771.0
+margin_top = -460.0
+margin_right = -655.0
+margin_bottom = -398.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1280, -960 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/player/player.tscn"
+resource_type = 1
+icon_class = "KinematicBody"
+script_path = "res://entities/actors/player/player.gd"
+script_name = "player.gd"
+
+[node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -483.0
+margin_top = -460.0
+margin_right = -397.0
+margin_bottom = -428.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -992, -960 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/enemies/bot.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -547.0
+margin_top = -364.0
+margin_right = -428.0
+margin_bottom = -302.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1056, -864 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/enemies/enemy.tscn"
+resource_type = 1
+icon_class = "KinematicBody"
+script_path = "res://entities/actors/enemies/goomba.gd"
+script_name = "goomba.gd"
+
+[node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -419.0
+margin_top = -364.0
+margin_right = -274.0
+margin_bottom = -302.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -928, -864 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/enemies/marksmen.tscn"
+resource_type = 1
+icon_class = "KinematicBody"
+script_path = "res://entities/actors/enemies/marksmen.gd"
+script_name = "marksmen.gd"
+
+[node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = -483.0
+margin_top = -396.0
+margin_right = -374.0
+margin_bottom = -364.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -992, -896 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/enemies/enemy.gd"
+resource_type = 2
+icon_class = "Script"
 
 [connection signal="delete_nodes_request" from="." to="." method="_on_GraphEdit_delete_nodes_request"]
