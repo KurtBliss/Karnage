@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/kenney/weaponpack_assets/models/machinegun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/freesounds/444671__tissman__death-2.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 0, 0, 1 )
 

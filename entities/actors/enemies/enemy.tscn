@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://assets/mixamo/mannequin/scene/Mannequin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/label3d/Label3d.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
 [ext_resource path="res://maps/temp_debug.gd" type="Script" id=6]
@@ -228,6 +229,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
 visible = false
 mesh = SubResource( 13 )
 material/0 = null
+
+[node name="Label3d" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5, 0 )
+label_text = "Enemy"
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]

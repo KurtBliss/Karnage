@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/label3d/Label3d.gd" type="Script" id=1]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="Label3d" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 300, 25 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 14.0
+align = 1
+valign = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+flip_v = true
+billboard = 2
+texture = SubResource( 1 )

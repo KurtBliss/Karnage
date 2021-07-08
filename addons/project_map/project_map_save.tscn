@@ -21,54 +21,31 @@ bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
 
 [node name="ProjectMap" type="GraphEdit"]
 visible = false
-margin_right = 509.0
-margin_bottom = 500.0
+margin_right = 1388.0
+margin_bottom = 889.0
 rect_min_size = Vector2( 500, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 1 )
-scroll_offset = Vector2( -509, -500 )
+scroll_offset = Vector2( -1754, -1474 )
 snap_distance = 32
+minimap_size = Vector2( 196, 174 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 9 )]
-margin_left = -835.0
-margin_top = -556.0
-margin_right = -131.0
-margin_bottom = -140.0
-rect_min_size = Vector2( 704, 416 )
-mouse_filter = 1
-custom_styles/commentfocus = ExtResource( 11 )
-custom_styles/comment = ExtResource( 10 )
-offset = Vector2( -1344, -1056 )
-resizable = true
-comment = true
-slot/0/left_enabled = false
-slot/0/left_type = 0
-slot/0/left_color = Color( 1, 1, 1, 1 )
-slot/0/right_enabled = false
-slot/0/right_type = 0
-slot/0/right_color = Color( 1, 1, 1, 1 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-group_name = "Actors"
-
 [node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 1 )]
-margin_left = -853.0
-margin_top = -777.0
-margin_right = -484.999
-margin_bottom = -625.0
+margin_left = 406.0
+margin_top = 95.0
+margin_right = 774.001
+margin_bottom = 247.0
 rect_min_size = Vector2( 368.001, 152 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 2 )
 custom_styles/comment = SubResource( 3 )
-offset = Vector2( -1362, -1277 )
+offset = Vector2( -1348, -1379 )
 comment = true
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -83,16 +60,64 @@ __meta__ = {
 comment_text = "KARNAGE"
 comment_rect = Vector2( 368.001, 152 )
 
-[node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -611.0
-margin_top = -524.0
-margin_right = -513.0
-margin_bottom = -492.0
+[node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 9 )]
+margin_left = 634.0
+margin_top = 226.0
+margin_right = 1018.0
+margin_bottom = 418.0
+rect_min_size = Vector2( 384, 192 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 11 )
+custom_styles/comment = ExtResource( 10 )
+offset = Vector2( -1120, -1248 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Actors"
+
+[node name="GroupNode2" type="GraphNode" parent="." instance=ExtResource( 9 )]
+margin_left = 314.0
+margin_top = 226.0
+margin_right = 506.0
+margin_bottom = 482.0
+rect_min_size = Vector2( 192, 256 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 11 )
+custom_styles/comment = ExtResource( 10 )
+offset = Vector2( -1440, -1248 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Maps"
+
+[node name="FileNode7" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 314.0
+margin_top = 258.0
+margin_right = 444.0
+margin_bottom = 320.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -1120, -1024 )
+offset = Vector2( -1440, -1216 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -103,20 +128,74 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://entities/actors/actor.gd"
-resource_type = 2
-icon_class = "Script"
+path = "res://maps/Corridor.tscn"
+resource_type = 1
+icon_class = "Navigation"
+script_path = "res://maps/Corridor.gd"
+script_name = "Corridor.gd"
 
-[node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -771.0
-margin_top = -460.0
-margin_right = -655.0
-margin_bottom = -398.0
+[node name="FileNode8" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 314.0
+margin_top = 322.0
+margin_right = 447.0
+margin_bottom = 384.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -1280, -960 )
+offset = Vector2( -1440, -1152 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://maps/City.tscn"
+resource_type = 1
+icon_class = "Navigation"
+script_path = "res://maps/City.tscn::1"
+script_name = "built-in script"
+
+[node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 314.0
+margin_top = 386.0
+margin_right = 447.0
+margin_bottom = 448.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1440, -1088 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://maps/Tutorial.tscn"
+resource_type = 1
+icon_class = "Navigation"
+script_path = "res://maps/Tutorial.tscn::1"
+script_name = "built-in script"
+
+[node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 634.0
+margin_top = 258.0
+margin_right = 750.0
+margin_bottom = 320.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1120, -1216 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -134,15 +213,15 @@ script_path = "res://entities/actors/player/player.gd"
 script_name = "player.gd"
 
 [node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -483.0
-margin_top = -460.0
-margin_right = -397.0
-margin_bottom = -428.0
+margin_left = 794.0
+margin_top = 258.0
+margin_right = 880.0
+margin_bottom = 290.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -992, -960 )
+offset = Vector2( -960, -1216 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -157,16 +236,40 @@ path = "res://entities/actors/enemies/bot.gd"
 resource_type = 2
 icon_class = "Script"
 
-[node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -547.0
-margin_top = -364.0
-margin_right = -428.0
-margin_bottom = -302.0
+[node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 794.0
+margin_top = 290.0
+margin_right = 903.0
+margin_bottom = 322.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -1056, -864 )
+offset = Vector2( -960, -1184 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://entities/actors/enemies/enemy.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 730.0
+margin_top = 322.0
+margin_right = 849.0
+margin_bottom = 384.0
+mouse_filter = 1
+custom_styles/frame = ExtResource( 6 )
+custom_styles/selectedframe = ExtResource( 7 )
+custom_constants/port_offset = 0
+offset = Vector2( -1024, -1152 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -184,15 +287,15 @@ script_path = "res://entities/actors/enemies/goomba.gd"
 script_name = "goomba.gd"
 
 [node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -419.0
-margin_top = -364.0
-margin_right = -274.0
-margin_bottom = -302.0
+margin_left = 858.0
+margin_top = 322.0
+margin_right = 1003.0
+margin_bottom = 384.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -928, -864 )
+offset = Vector2( -896, -1152 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -209,16 +312,16 @@ icon_class = "KinematicBody"
 script_path = "res://entities/actors/enemies/marksmen.gd"
 script_name = "marksmen.gd"
 
-[node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -483.0
-margin_top = -396.0
-margin_right = -374.0
-margin_bottom = -364.0
+[node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 5 )]
+margin_left = 730.0
+margin_top = 226.0
+margin_right = 828.0
+margin_bottom = 258.0
 mouse_filter = 1
 custom_styles/frame = ExtResource( 6 )
 custom_styles/selectedframe = ExtResource( 7 )
 custom_constants/port_offset = 0
-offset = Vector2( -992, -896 )
+offset = Vector2( -1024, -1248 )
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
@@ -229,7 +332,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-path = "res://entities/actors/enemies/enemy.gd"
+path = "res://entities/actors/actor.gd"
 resource_type = 2
 icon_class = "Script"
 
