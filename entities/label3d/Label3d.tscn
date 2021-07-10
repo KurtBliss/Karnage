@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/label3d/Label3d.gd" type="Script" id=1]
 
 [sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+render_priority = 1
+albedo_texture = SubResource( 1 )
+
+[sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("Viewport")
 
 [node name="Label3d" type="Spatial"]
@@ -20,6 +28,8 @@ align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+material_override = SubResource( 2 )
 flip_v = true
 billboard = 2
-texture = SubResource( 1 )
+alpha_cut = 2
+texture = SubResource( 3 )

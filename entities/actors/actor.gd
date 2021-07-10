@@ -8,6 +8,8 @@ signal injured()
 signal health_changed(value)
 signal physics_state_changed(func_name)
 signal state_changed(func_name)
+signal stuned()
+signal unstuned()
 
 export (int) var acceleration = 5
 export (int) var speed = 10
@@ -32,6 +34,8 @@ var velocity = Vector3.ZERO
 var blood : Particles
 var blood_delay = 0
 var ammo = Master.ammo_container
+var stun = 0
+var stun_limit = 100
 
 func _ready():
 	add_to_group("actor")
@@ -46,6 +50,12 @@ func _process(delta):
 		do_damage(1000, self)
 		if actor_name != "Player":
 			queue_free()
+	if stun > 0:
+		stun -= delta
+	if stun >= stun_limit:
+		emit_signal("stuned");
+		if has_method("on_stuned"):
+			call("on_stunned");
 
 func _physics_process(delta):
 	if physics_state != "" and has_method(physics_state):
