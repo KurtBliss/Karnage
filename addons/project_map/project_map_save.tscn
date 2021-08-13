@@ -39,8 +39,8 @@ __meta__ = {
 [node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 1 )]
 margin_left = 339.08
 margin_top = -58.0
-margin_right = 759.08
-margin_bottom = 112.0
+margin_right = 707.081
+margin_bottom = 94.0
 rect_min_size = Vector2( 368.001, 152 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 2 )

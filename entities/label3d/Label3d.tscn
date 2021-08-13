@@ -8,6 +8,7 @@ viewport_path = NodePath("Viewport")
 [sub_resource type="SpatialMaterial" id=2]
 resource_local_to_scene = true
 render_priority = 1
+flags_transparent = true
 albedo_texture = SubResource( 1 )
 
 [sub_resource type="ViewportTexture" id=3]
@@ -15,6 +16,7 @@ viewport_path = NodePath("Viewport")
 
 [node name="Label3d" type="Spatial"]
 script = ExtResource( 1 )
+label_text = "test"
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 300, 25 )
@@ -24,12 +26,15 @@ transparent_bg = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 14.0
+text = "test"
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 material_override = SubResource( 2 )
 flip_v = true
-billboard = 2
+billboard = 1
+double_sided = false
 alpha_cut = 2
 texture = SubResource( 3 )

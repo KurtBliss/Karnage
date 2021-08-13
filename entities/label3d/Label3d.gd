@@ -8,6 +8,11 @@ func _ready():
 func set_label(set):
 	label_text = set
 	if label != null and is_instance_valid(label):
-		label.text = set
+		label.text = str(set)
 func get_label():
 	return label_text
+func _process(delta):
+	if is_instance_valid(ref.player):
+		var lookat = ref.player.global_transform.origin
+		lookat.y = global_transform.origin.y # + 1
+		look_at(ref.player.global_transform.origin, Vector3.UP)

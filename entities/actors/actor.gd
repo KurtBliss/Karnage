@@ -35,7 +35,7 @@ var blood : Particles
 var blood_delay = 0
 var ammo = Master.ammo_container
 var stun = 0
-var stun_limit = 100
+export var stun_limit = 40
 
 func _ready():
 	add_to_group("actor")
@@ -106,24 +106,25 @@ func process_velocity(_delta):
 		call("update_step_check")
 
 
-func do_damage(dmg : float, from : Actor, how = "unkown"):
-	
-	
+func do_damage(dmg : float, from : Actor, how = "", etc = {}):
+	if how == "":
+		how = "unkown"
 	if undamageable:
 		return
-	
-	var alive = get_health() > 0 	
-	
+	var alive = get_health() > 0
 	set_health(get_health() - dmg)
-	
+	if etc.has("stun"):
+		stun += etc["stun"]
+	else:
+		stun += dmg
+	if etc.has("knock"):
+		move_and_slide(etc["knock"].normalized() * 100, Vector3.UP)
+		prints("Knock=", etc["knock"])
 	var method = "_on_attacked"
 	if alive and get_health() <= 0:
 		method += "_killed"
-
 	if has_method(method):
 		call(method, dmg)
-		
-	
 	if from:
 		if from.actor_name == "":
 			print_debug("Check this...")

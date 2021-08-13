@@ -19,10 +19,14 @@ var died = false
 onready var mixamo = $Mannequin/Anime
 onready var raycast = $RayCast
 onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
+onready var label : Label3d = $Label3d
 
 func _ready():
 	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
+
+func _process(delta : float) -> void:
+	label.label_text = stun
 
 func state_idle(_delta):
 	mixamo.play("Idle")
@@ -36,6 +40,13 @@ func state_dumb(_delta):
 	pass
 
 func state_alert(_delta):
+	pass
+
+func start_stun():
+	set_physics_state("state_stunned")
+	$Stunned.play("Stunned")
+
+func state_stunned(_delta):
 	pass
 
 func do_aim():
@@ -185,6 +196,9 @@ func on_alterted():
 	if get_physics_state() == "state_idle":
 		set_physics_state("state_alert")
 
+func on_stunned():
+	pass
+
 func _on_Enemy_died():
 	if not died:
 		died = true
@@ -235,3 +249,14 @@ func _on_StepCheck_body_exited(body):
 	var f = bodies.find(body)
 	if f != -1:
 		bodies.remove(f)
+
+
+func _on_Stunned_animation_finished(anim_name):
+	state_reset("","")
+	set_physics_state("state_chase")
+
+func _on_Goomba_stuned():
+	if get_health() > 0:
+		if get_physics_state() != "state_stunned":
+			start_stun()
+			stun = 0

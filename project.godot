@@ -104,7 +104,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/manager/manager.gd"
 }, {
-"base": "Enemy",
+"base": "Reference",
 "class": "Marksmen",
 "language": "GDScript",
 "path": "res://entities/actors/enemies/marksmen.gd"
@@ -159,7 +159,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/screens/options/options_screen.gd"
 }, {
-"base": "Screen",
+"base": "Reference",
 "class": "Screen_Pause",
 "language": "GDScript",
 "path": "res://entities/actors/player/Pause.gd"
@@ -194,7 +194,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/weapons/WeaponsContainer.gd"
 }, {
-"base": "Bot",
+"base": "Reference",
 "class": "Zombie",
 "language": "GDScript",
 "path": "res://entities/actors/enemies/zombie.gd"
@@ -296,6 +296,7 @@ move_forward={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 move_backward={

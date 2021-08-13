@@ -40,8 +40,8 @@ export(NodePath) onready var cock_path
 export(String, FILE, "*.tscn") onready var pickup_file
 export(String, FILE, "*.tscn") onready var projectile_file setget set_projectile
 onready var projectileInst
-onready var raycast #: RayCast 
-onready var holder #: Actor 
+onready var raycast : RayCast 
+onready var holder : Actor 
 onready var anime : AnimationPlayer = get_node(animation_player)
 onready var timer : Timer = $Rate 
 onready var cock = get_node(cock_path) 
@@ -105,7 +105,9 @@ func fire_raycast():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_in_group(target_group):
-			collider.do_damage(damage, holder)
+			collider.do_damage(damage, holder, "Pistol", {
+				"knock": -holder.transform.basis.z
+			})
 			hit = true
 		else:
 			var aa = collider is GridMap 

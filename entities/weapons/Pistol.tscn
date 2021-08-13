@@ -19,7 +19,7 @@ bind/2/name = ""
 bind/2/bone = -1
 bind/2/pose = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.5
 step = 0.082
 tracks/0/type = "value"
@@ -85,7 +85,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
@@ -114,7 +114,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -152,7 +152,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -209,10 +209,10 @@ cock_path = NodePath("Cock")
 pickup_file = "res://entities/pickups/PistolPickup.tscn"
 
 [node name="Anime" type="AnimationPlayer" parent="."]
-anims/Fire = SubResource( 3 )
-anims/Hit = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/Reload = SubResource( 6 )
+anims/Fire = SubResource( 2 )
+anims/Hit = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Reload = SubResource( 5 )
 
 [node name="Flash" type="OmniLight" parent="."]
 transform = Transform( 0.0666667, 6.62748e-12, 1.16415e-09, -1.48492e-15, 0.0666667, 1.86928e-09, -2.32831e-10, -1.86265e-09, 0.0666667, 0.00645423, 0.0347296, 0.0372007 )
