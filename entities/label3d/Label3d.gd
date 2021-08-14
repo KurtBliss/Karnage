@@ -11,8 +11,8 @@ func set_label(set):
 		label.text = str(set)
 func get_label():
 	return label_text
-func _process(delta):
-	if is_instance_valid(ref.player):
-		var lookat = ref.player.global_transform.origin
-		lookat.y = global_transform.origin.y # + 1
-		look_at(ref.player.global_transform.origin, Vector3.UP)
+#func _process(delta):
+#	if ref.is_valid(ref.player):
+#		var lookat = ref.player.global_transform.origin
+#		lookat.y = global_transform.origin.y # + 1
+#		look_at(ref.player.global_transform.origin, Vector3.UP)

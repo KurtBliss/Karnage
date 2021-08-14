@@ -23,7 +23,7 @@ func _on_target_reached():
 
 func _on_Health_grabbed():
 	ref.level.secret_area = true
-	pass # Replace with function body.
+"res://maps/Alpha.tscn"	pass # Replace with function body.
 
 func _on_switch_switched(on):
 	$CagesAnime.play("down")

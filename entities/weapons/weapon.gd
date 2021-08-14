@@ -105,6 +105,7 @@ func fire_raycast():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_in_group(target_group):
+			print(-holder.transform.basis.z)
 			collider.do_damage(damage, holder, "Pistol", {
 				"knock": -holder.transform.basis.z
 			})

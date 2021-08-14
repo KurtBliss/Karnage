@@ -155,9 +155,6 @@ gravity = 0.0
 [node name="Mannequin" parent="Princess" instance=ExtResource( 23 )]
 transform = Transform( -3, 0, -2.09815e-07, 0, 3, 0, 2.62268e-07, 0, -2.4, 7.62939e-06, 0, -4.76837e-07 )
 
-[node name="Skeleton" parent="Princess/Mannequin" index="0"]
-bones/5/bound_children = [ NodePath("BoneAttachment") ]
-
 [node name="Ch36" parent="Princess/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 6 )
 
