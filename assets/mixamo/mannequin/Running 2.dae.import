@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Rifle Aiming Idle.dae-b64d5b7426b5462adef41423718fd2ae.scn"
+path="res://.import/Running 2.dae-ca220911fe286bf4e767dcb69bac2cf0.scn"
 
 [deps]
 
-source_file="res://assets/mixamo/mannequin/Rifle Aiming Idle.dae"
-dest_files=[ "res://.import/Rifle Aiming Idle.dae-b64d5b7426b5462adef41423718fd2ae.scn" ]
+source_file="res://assets/mixamo/mannequin/Running 2.dae"
+dest_files=[ "res://.import/Running 2.dae-ca220911fe286bf4e767dcb69bac2cf0.scn" ]
 
 [params]
 
@@ -16,7 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://assets/mixamo/mannequin/scene/Mannequin.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
 [ext_resource path="res://maps/temp_debug.gd" type="Script" id=6]
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/mixamo/mannequin/MannequinLowPolly.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -152,8 +153,6 @@ tracks/0/keys = {
 
 [node name="Goomba" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
-collision_layer = 2048
-collision_mask = 2048
 script = ExtResource( 1 )
 speed = 7
 health = 80
@@ -173,15 +172,11 @@ transform = Transform( 1, 0, 5.30863e-14, 2.10321e-16, 0.999992, -0.0039617, -5.
 shape = SubResource( 2 )
 disabled = true
 
-[node name="Mannequin" parent="." instance=ExtResource( 2 )]
-transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -1.78381, 0 )
-
-[node name="Ch36" parent="Mannequin/Skeleton" index="0"]
-transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
+[node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( 0.708375, 0.254153, 0.65849, 0.327923, -0.944629, 0.0118282, 0.625036, 0.207556, -0.752495, -0.213973, 0.901832, 0.0680202 )
-bone_name = "mixamorig1_RightHandThumb1"
+transform = Transform( -0.20566, 0.0273695, 0.97824, 0.973923, 0.103591, 0.201857, -0.0958133, 0.994243, -0.0479601, -0.241182, 1.29417, 0.162727 )
+bone_name = "mixamorig_RightHand"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
 transform = Transform( 0.011301, 0.83536, -0.549587, 0.482093, 0.476974, 0.734904, 0.876048, -0.273257, -0.397331, -0.0624065, 0.14178, -0.0756599 )
@@ -189,10 +184,18 @@ script = ExtResource( 9 )
 holder_path = NodePath("../../../..")
 raycast_path = NodePath("../../../../RayCast")
 
-[node name="AudioStreamPlayer3D" parent="Mannequin/Anime" index="0"]
+[node name="MannequinH" parent="." instance=ExtResource( 2 )]
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -1.78381, 0 )
+visible = false
+
+[node name="Ch36" parent="MannequinH/Skeleton" index="0"]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
+
+[node name="AudioStreamPlayer3D" parent="MannequinH/Anime" index="0"]
 unit_db = 33.238
 
 [node name="Particles" type="Particles" parent="."]
+visible = false
 amount = 200
 lifetime = 0.5
 randomness = 1.0
@@ -258,3 +261,4 @@ anims/Stunned = SubResource( 14 )
 [connection signal="animation_finished" from="Stunned" to="." method="_on_Stunned_animation_finished"]
 
 [editable path="Mannequin"]
+[editable path="MannequinH"]

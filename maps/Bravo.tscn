@@ -124,12 +124,12 @@ transform = Transform( 4.37047e-08, 7.55241e-10, 0.99, 0.999848, 0.0172779, -4.3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 
 [node name="Skeleton" parent="Disabled/Enemy/Mannequin" index="0"]
-bones/35/bound_children = [ NodePath("BoneAttachment") ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" parent="Disabled/Enemy/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.574626, -0.778059, 0.253829, -0.0537487, -0.345354, -0.936932, 0.81665, 0.524743, -0.240269, -0.711551, 1.40425, -0.00455018 )
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
-[node name="Label3d" parent="Disabled/Enemy" index="11"]
+[node name="Label3d" parent="Disabled/Enemy" index="12"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.97789, 0 )
 label_text = ""
 
@@ -150,6 +150,21 @@ shape = SubResource( 5 )
 [node name="ShotgunPickup" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4486, 0, 5.18617 )
 
+[node name="Goomba" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50548, 13.0452 )
+
+[node name="Goomba2" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133944, 2.42994, -14.7587 )
+
+[node name="Goomba3" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104.495, 2.42994, 4.91231 )
+
+[node name="Goomba4" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.4791, 2.42994, -9.4762 )
+
+[node name="Goomba5" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.4791, 2.42994, 28.8089 )
+
 [connection signal="grabbed" from="Health" to="." method="_on_Health_grabbed"]
 
 [editable path="Manager"]
@@ -159,3 +174,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4486, 0, 5.18617 )
 [editable path="NavMesh"]
 [editable path="Disabled/Enemy"]
 [editable path="Disabled/Enemy/Mannequin"]
+[editable path="Disabled/Enemy/MannequinH"]
