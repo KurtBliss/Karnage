@@ -16,16 +16,16 @@ height = 2.25719
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.955069, 0.203253, 1.506 )
 
-[sub_resource type="GradientTexture" id=3]
+[sub_resource type="GradientTexture" id=15]
 gradient = ExtResource( 5 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=16]
 _data = [ Vector2( 0.0108367, 0.0341597 ), 0.0, 0.0, 0, 0, Vector2( 0.188441, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998194, 0.349475 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=18]
 trail_divisor = 6
 emission_shape = 1
 emission_sphere_radius = 0.4
@@ -41,13 +41,13 @@ linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
 scale_random = 0.8
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
 anim_speed = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=19]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -58,8 +58,8 @@ particles_anim_v_frames = 5
 particles_anim_loop = true
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="QuadMesh" id=8]
-material = SubResource( 7 )
+[sub_resource type="QuadMesh" id=20]
+material = SubResource( 19 )
 
 [sub_resource type="Animation" id=9]
 resource_name = "Impact"
@@ -175,7 +175,7 @@ disabled = true
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( -0.20566, 0.0273695, 0.97824, 0.973923, 0.103591, 0.201857, -0.0958133, 0.994243, -0.0479601, -0.241182, 1.29417, 0.162727 )
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 bone_name = "mixamorig_RightHand"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
@@ -201,8 +201,8 @@ lifetime = 0.5
 randomness = 1.0
 local_coords = false
 draw_order = 2
-process_material = SubResource( 6 )
-draw_pass_1 = SubResource( 8 )
+process_material = SubResource( 18 )
+draw_pass_1 = SubResource( 20 )
 
 [node name="Label" type="Label" parent="."]
 visible = false

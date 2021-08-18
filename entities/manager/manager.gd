@@ -32,7 +32,7 @@ onready var PostGameRestart = $PostGame/Restart
 func _ready():
 	ref.manager = self
 	change_mode(MODE.PRE_GAME)
-	$AnimationPlayer.play("mapsSpin")
+	$AnimationPlayer.play("fastSpin")
 
 
 
@@ -188,3 +188,8 @@ func _on_ButtonPrev_focus_entered():
 func _on_Exit_pressed():
 	get_tree().change_scene("res://entities/screens/tiledscreen/titled_screen.tscn")
 	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "fastSpin":
+		$AnimationPlayer.play("mapsSpin")

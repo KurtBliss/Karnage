@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/manager/manager.gd" type="Script" id=1]
 [ext_resource path="res://entities/challenges/Challenges.tscn" type="PackedScene" id=2]
@@ -27,8 +27,40 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "fastSpin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.936, 0, 1.427 ), Vector3( 1.936, 359, 1.427 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Spin"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 30 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.936, 0, 1.427 ), Vector3( 1.936, 359, 1.427 ) ]
+}
+
 [node name="Manager" type="Camera"]
-transform = Transform( 0.995704, -0.0695951, 0.0610813, 0.0316946, 0.875943, 0.481373, -0.087005, -0.477369, 0.874385, -5.56125, 36.9145, 86.8942 )
+transform = Transform( 0.99969, -0.0249033, 0, 0.0248891, 0.99912, -0.0337831, 0.000841311, 0.0337727, 0.999429, -5.56125, 36.9145, 86.8942 )
 current = true
 fov = 45.0
 far = 1000.0
@@ -290,6 +322,10 @@ margin_right = 2.245
 margin_bottom = -6.10352e-05
 text = "Continue"
 align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fastSpin = SubResource( 5 )
+anims/mapsSpin = SubResource( 6 )
 
 [connection signal="pressed" from="PreGame/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="PreGame/Exit" to="." method="_on_Exit_pressed"]

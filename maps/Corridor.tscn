@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://entities/mapsSpin.tres" type="Animation" id=1]
 [ext_resource path="res://entities/navigation/blocks_fixed.tres" type="MeshLibrary" id=2]
 [ext_resource path="res://entities/pickups/Health.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/pickups/M16Pickup.tscn" type="PackedScene" id=4]
@@ -114,11 +113,8 @@ challenges_id = 1
 [node name="ChallengeAnimeContainer" parent="." instance=ExtResource( 20 )]
 
 [node name="Manager" parent="." instance=ExtResource( 10 )]
-transform = Transform( 0.99969, -0.0249033, 2.31495e-09, 0.0248891, 0.999119, -0.0337832, 0.000841311, 0.0337727, 0.999429, 65.4991, 2.0487, 22.3015 )
+transform = Transform( 0.99969, -0.0249033, 0, 0.0248891, 0.999119, -0.0337831, 0.000841311, 0.0337727, 0.999429, 65.4991, 2.0487, 22.3015 )
 cull_mask = 2148532223
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Manager"]
-anims/mapsSpin = ExtResource( 1 )
 
 [node name="NavMesh" parent="." instance=ExtResource( 5 )]
 navmesh = SubResource( 1 )
@@ -154,6 +150,9 @@ gravity = 0.0
 
 [node name="Mannequin" parent="Princess" instance=ExtResource( 23 )]
 transform = Transform( -3, 0, -2.09815e-07, 0, 3, 0, 2.62268e-07, 0, -2.4, 7.62939e-06, 0, -4.76837e-07 )
+
+[node name="Skeleton" parent="Princess/Mannequin" index="0"]
+bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Princess/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 6 )
@@ -334,10 +333,10 @@ transform = Transform( -0.0551904, -0.026327, -0.998128, -0.056801, 0.998116, -0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 
 [node name="Skeleton" parent="Enemy/Mannequin" index="0"]
-bones/35/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" parent="Enemy/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.574626, -0.778059, 0.253829, -0.0537487, -0.345354, -0.936932, 0.81665, 0.524743, -0.240269, -0.711551, 1.40425, -0.00455018 )
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Label3d" parent="Enemy" index="12"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.97789, 0 )
@@ -350,66 +349,66 @@ stream = ExtResource( 19 )
 volume_db = 10.847
 autoplay = true
 
-[node name="Enemy8" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy8" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8128, 3.99999, -37.4914 )
 
-[node name="Enemy10" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy10" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.229, 3.99999, -54.3148 )
 
-[node name="Enemy9" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy9" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8128, 3.99999, -37.4914 )
 
-[node name="Enemy5" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy5" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.922, 4, -35.9263 )
 
-[node name="Enemy6" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy6" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 197.922, 4, 12.0737 )
 
-[node name="Enemy7" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy7" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 143.922, 4, 35.0737 )
 
-[node name="Enemy3" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy3" parent="." instance=ExtResource( 17 )]
 transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 92.1381, 2.31045, -29.3331 )
 
-[node name="Enemy4" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy4" parent="." instance=ExtResource( 17 )]
 transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 79.3155, 2.31045, -49.5502 )
 
-[node name="Enemy2" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy2" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7669, 3.9543, 10.831 )
 
-[node name="Enemy11" parent="Disabled" instance=ExtResource( 17 )]
+[node name="Enemy11" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.771, 3.99999, 12.6852 )
 
-[node name="Skeleton" parent="Disabled/Enemy11/Mannequin" index="0"]
-bones/35/bound_children = [  ]
+[node name="Skeleton" parent="Enemy11/Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
-[node name="BoneAttachment" parent="Disabled/Enemy11/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.574626, -0.778059, 0.253829, -0.0537487, -0.345354, -0.936932, 0.81665, 0.524743, -0.240269, -0.711551, 1.40425, -0.00455018 )
+[node name="BoneAttachment" parent="Enemy11/Mannequin/Skeleton" index="1"]
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
-[node name="Weapon" parent="Disabled/Enemy11/Mannequin/Skeleton/BoneAttachment" index="0"]
+[node name="Weapon" parent="Enemy11/Mannequin/Skeleton/BoneAttachment" index="0"]
 raycast_path = NodePath("")
 
-[node name="Label3d" parent="Disabled/Enemy11" index="12"]
+[node name="Label3d" parent="Enemy11" index="12"]
 label_text = ""
 
-[node name="Marksmen2" parent="Disabled" instance=ExtResource( 9 )]
+[node name="Marksmen2" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6765, 3.9543, 39.962 )
 
-[node name="Marksmen3" parent="Disabled" instance=ExtResource( 9 )]
+[node name="Marksmen3" parent="." instance=ExtResource( 9 )]
 transform = Transform( -1.05366, 0, -0.707107, 0, 1.4901, 0, 1.05366, 0, -0.707107, 138.442, 2.31564, 4.07781 )
 acceleration = 0
 speed = 0
 health = 100
 
-[node name="Marksmen4" parent="Disabled" instance=ExtResource( 9 )]
+[node name="Marksmen4" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 172.577, 3.9543, 49.2066 )
 acceleration = 0
 speed = 0
 
-[node name="Marksmen" parent="Disabled" instance=ExtResource( 9 )]
+[node name="Marksmen" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 107.928, 1.95426, -35.4956 )
 
-[node name="Marksmen5" parent="Disabled" instance=ExtResource( 9 )]
+[node name="Marksmen5" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9004, 1.95426, 50.1102 )
 
 [node name="Health" parent="." instance=ExtResource( 3 )]
@@ -503,10 +502,10 @@ label_text = "3d label"
 [editable path="Princess/Mannequin"]
 [editable path="Princess/Mannequin/Skeleton/BoneAttachment/crown"]
 [editable path="Enemy"]
-[editable path="Enemy/Running"]
 [editable path="Enemy/Mannequin"]
-[editable path="Disabled/Enemy11"]
-[editable path="Disabled/Enemy11/Running"]
-[editable path="Disabled/Enemy11/Mannequin"]
+[editable path="Enemy/MannequinH"]
+[editable path="Enemy11"]
+[editable path="Enemy11/Mannequin"]
+[editable path="Enemy11/MannequinH"]
 [editable path="DoorPrincess"]
 [editable path="Target"]
