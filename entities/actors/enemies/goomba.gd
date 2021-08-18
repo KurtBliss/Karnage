@@ -45,6 +45,8 @@ func state_alert(_delta):
 func start_stun():
 	set_physics_state("state_stunned")
 	$Stunned.play("Stunned")
+	if weapon != null and is_instance_valid(weapon) and weapon.get_children().size() > 0:
+		weapon.throw_weapon()
 
 func state_stunned(_delta):
 	pass

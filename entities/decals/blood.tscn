@@ -1,6 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_diffuse_mode = 3
+albedo_color = Color( 0.615686, 0.0784314, 0.0784314, 1 )
+metallic = 0.38
+roughness = 0.3
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 0.4
+height = 0.4
+radial_segments = 32
+rings = 16
+
+[node name="Blood" type="CPUParticles"]
+emitting = false
+amount = 4
+lifetime = 0.35
+mesh = SubResource( 2 )
 direction = Vector3( 0, 0, 0 )
 spread = 31.75
 gravity = Vector3( 0, 0, 0 )
@@ -10,25 +28,3 @@ angular_velocity = 3.0
 linear_accel = 0.7
 color = Color( 1, 0.00784314, 0.00784314, 1 )
 hue_variation = 0.14
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_transparent = true
-params_diffuse_mode = 3
-albedo_color = Color( 0.615686, 0.0784314, 0.0784314, 1 )
-metallic = 0.38
-roughness = 0.3
-
-[sub_resource type="SphereMesh" id=3]
-material = SubResource( 2 )
-radius = 0.4
-height = 0.4
-radial_segments = 32
-rings = 16
-
-[node name="Blood" type="Particles"]
-emitting = false
-amount = 4
-lifetime = 0.35
-visibility_aabb = AABB( -2.07238, -2.10397, -2.1592, 4.14476, 4.20794, 4.3184 )
-process_material = SubResource( 1 )
-draw_pass_1 = SubResource( 3 )

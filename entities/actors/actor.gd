@@ -31,7 +31,7 @@ var previous_health = 0
 var injured = 0 # Not in use?
 var undamageable : bool = false
 var velocity = Vector3.ZERO
-var blood : Particles
+var blood : CPUParticles
 var blood_delay = 0
 var ammo = Master.ammo_container
 var stun = 0
