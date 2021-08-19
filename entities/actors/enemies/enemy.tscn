@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=2]
@@ -124,6 +124,51 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
+[sub_resource type="Animation" id=14]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.67451, 0.67451, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.784314, 0.67451, 0.67451, 1 ) ]
+}
+
 [node name="Goomba" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 collision_layer = 2048
@@ -136,6 +181,7 @@ stun_limit = 35
 
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84357, 0 )
+enabled = true
 cast_to = Vector3( 0, 0, -100 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -148,9 +194,6 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
-
-[node name="Skeleton" parent="Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
 transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
@@ -243,10 +286,16 @@ material/0 = null
 
 [node name="Label3d" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5, 0 )
+visible = false
 label_text = "Enemy"
 
 [node name="Stunned" type="AnimationPlayer" parent="."]
 anims/Stunned = SubResource( 11 )
+
+[node name="Hit" type="AnimationPlayer" parent="."]
+anims/dead = SubResource( 14 )
+anims/default = SubResource( 12 )
+anims/hit = SubResource( 13 )
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
 [connection signal="injured" from="." to="." method="_on_Goomba_injured"]

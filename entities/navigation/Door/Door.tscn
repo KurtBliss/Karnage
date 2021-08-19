@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/navigation/Door/Door.gd" type="Script" id=1]
 [ext_resource path="res://assets/freesounds/185311__acorcuera__automatic-door.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/doors_medieval_4481_5881_Small.jpg" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 6.04402, 3.34791, 6.80686 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
 size = Vector3( 8, 8, 2 )
 
-[sub_resource type="ConcavePolygonShape" id=3]
+[sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -4, 4, 1, 4, 4, 1, -4, -4, 1, 4, 4, 1, 4, -4, 1, -4, -4, 1, 4, 4, -1, -4, 4, -1, 4, -4, -1, -4, 4, -1, -4, -4, -1, 4, -4, -1, 4, 4, 1, 4, 4, -1, 4, -4, 1, 4, 4, -1, 4, -4, -1, 4, -4, 1, -4, 4, -1, -4, 4, 1, -4, -4, -1, -4, 4, 1, -4, -4, 1, -4, -4, -1, 4, 4, 1, -4, 4, 1, 4, 4, -1, -4, 4, 1, -4, 4, -1, 4, 4, -1, -4, -4, 1, 4, -4, 1, -4, -4, -1, 4, -4, 1, 4, -4, -1, -4, -4, -1 )
 
 [node name="Door" type="Position3D" groups=[
@@ -29,13 +34,13 @@ shape = SubResource( 1 )
 [node name="Mesh" type="MeshInstance" parent="." groups=[
 "door",
 ]]
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Mesh"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Mesh/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Open" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )

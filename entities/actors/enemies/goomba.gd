@@ -202,6 +202,7 @@ func on_stunned():
 	pass
 
 func _on_Enemy_died():
+	$Hit.play("dead")
 	if not died:
 		died = true
 		
@@ -259,5 +260,7 @@ func _on_Goomba_stuned():
 			stun = 0
 
 func _on_Goomba_injured(dmg, how):
+	$Hit.play("hit")
+	$Hit.seek(0, true)
 	if get_physics_state() == "state_stunned": # and how == "Hit"
 		weapon.throw_weapon()

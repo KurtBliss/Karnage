@@ -360,7 +360,7 @@ __meta__ = {
 margin_right = 124.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.545098, 0.0313726, 0.0313726, 1 )
 text = "100"
 align = 1
 valign = 1
@@ -375,6 +375,7 @@ margin_left = -62.0
 margin_right = 62.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 0.580392 )
 text = "2:00"
 align = 1
 valign = 1
@@ -383,6 +384,7 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="Hud"]
+modulate = Color( 1, 1, 1, 0.537255 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -124.0
@@ -402,7 +404,7 @@ anchor_bottom = 1.0
 margin_top = -72.0
 margin_right = 124.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.0588235, 0, 1, 1 )
+custom_colors/font_color = Color( 0.0588235, 0, 0.670588, 0.521569 )
 text = "0 / 0"
 align = 1
 valign = 1
@@ -470,6 +472,7 @@ texture = ExtResource( 7 )
 script = ExtResource( 21 )
 
 [node name="ScoreMeter" type="Node2D" parent="Hud"]
+modulate = Color( 1, 1, 1, 0.505882 )
 position = Vector2( 720, 72 )
 script = ExtResource( 22 )
 
@@ -484,7 +487,6 @@ polygon = PoolVector2Array( 0, 0, 288, 0, 288, 24, 0, 24 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
@@ -494,7 +496,7 @@ __meta__ = {
 np_button_container = NodePath("VBoxContainer")
 
 [node name="Polygon2D" type="Polygon2D" parent="Pause"]
-color = Color( 0.54902, 0, 0, 0.792157 )
+color = Color( 0.223529, 0.211765, 0.211765, 0.792157 )
 polygon = PoolVector2Array( -104.288, -117.271, 1272.81, -162.46, 1301.35, 850.744, -289.804, 914.961, -330.237, -105.379 )
 
 [node name="Title" parent="Pause" instance=ExtResource( 15 )]

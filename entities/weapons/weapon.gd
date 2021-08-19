@@ -104,9 +104,12 @@ func fire_raycast():
 	var hit = false	
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
+		var knock_back = Vector3.ZERO
+		if holder == ref.player:
+			knock_back = -holder.head.transform.basis.z
 		if collider.is_in_group(target_group):
 			collider.do_damage(damage, holder, "Pistol", {
-				"knock": -holder.head.transform.basis.z * 10
+				"knock": knock_back * 10
 			})
 			hit = true
 		else:
