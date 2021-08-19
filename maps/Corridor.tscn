@@ -333,8 +333,11 @@ transform = Transform( -0.0551904, -0.026327, -0.998128, -0.056801, 0.998116, -0
 [node name="Enemy" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 
-[node name="Skeleton" parent="Enemy/Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
+[node name="Ch36" parent="Enemy/Mannequin/Skeleton" index="0"]
+transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
+
+[node name="BoneAttachment" parent="Enemy/Mannequin/Skeleton" index="1"]
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Label3d" parent="Enemy" index="11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.97789, 0 )
@@ -374,8 +377,8 @@ transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926,
 [node name="Enemy2" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7669, 3.9543, 10.831 )
 
-[node name="Skeleton" parent="Enemy2/Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
+[node name="BoneAttachment" parent="Enemy2/Mannequin/Skeleton" index="1"]
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Weapon" parent="Enemy2/Mannequin/Skeleton/BoneAttachment" index="0"]
 transform = Transform( -0.013351, 0.693868, -0.0914798, -0.105055, 0.0884729, 0.686393, 0.691943, 0.0268206, 0.102447, -0.0222888, 0.272642, 0.0968089 )
@@ -383,8 +386,8 @@ transform = Transform( -0.013351, 0.693868, -0.0914798, -0.105055, 0.0884729, 0.
 [node name="Enemy11" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4288, 3.99999, 12.6852 )
 
-[node name="Skeleton" parent="Enemy11/Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
+[node name="BoneAttachment" parent="Enemy11/Mannequin/Skeleton" index="1"]
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Weapon" parent="Enemy11/Mannequin/Skeleton/BoneAttachment" index="0"]
 raycast_path = NodePath("")
@@ -495,8 +498,8 @@ environment = ExtResource( 1 )
 [connection signal="saved" from="Princess" to="." method="_on_Princess_saved"]
 [connection signal="grabbed" from="Health" to="." method="_on_Health_grabbed"]
 [connection signal="switched" from="switch" to="." method="_on_switch_switched"]
-[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="Princess" method="_on_PrincessDoorArea_body_entered"]
 [connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="DoorPrincess" method="_on_PrincessDoorArea_body_entered"]
+[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="Princess" method="_on_PrincessDoorArea_body_entered"]
 
 [editable path="Manager"]
 [editable path="Manager/PreGame/Start"]
