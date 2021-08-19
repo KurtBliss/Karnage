@@ -28,6 +28,7 @@ seamless = true
 noise = SubResource( 3 )
 
 [sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
 albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
 albedo_texture = SubResource( 4 )
 
@@ -204,6 +205,9 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
+
+[node name="Skeleton" parent="Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
 material/0 = SubResource( 5 )

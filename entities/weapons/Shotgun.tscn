@@ -204,7 +204,7 @@ clip = 4
 anime_fire = "FireShotgun"
 anime_reload = "ReloadShotgun"
 do_reload_bullet = true
-damage = 30
+damage = 37
 ray_cast_range = 100
 pickup_file = "res://entities/pickups/ShotgunPickup.tscn"
 

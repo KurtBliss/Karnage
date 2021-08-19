@@ -17,6 +17,7 @@ enum {ZIG, ZAG}
 
 var died = false
 onready var mixamo = $Mannequin/Anime
+onready var ch36 = $Mannequin/Skeleton/Ch36
 onready var raycast = $RayCast
 onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
 onready var label : Label3d = $Label3d
@@ -24,6 +25,8 @@ onready var label : Label3d = $Label3d
 func _ready():
 	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
+	
+
 
 func _process(delta : float) -> void:
 	label.label_text = stun
@@ -250,8 +253,9 @@ func _on_StepCheck_body_exited(body):
 		bodies.remove(f)
 
 func _on_Stunned_animation_finished(anim_name):
-	state_reset("","")
-	set_physics_state("state_chase")
+	if get_health() > 0:
+		state_reset("","")
+		set_physics_state("state_chase")
 
 func _on_Goomba_stuned():
 	if get_health() > 0:

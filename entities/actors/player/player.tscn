@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://assets/freesounds/396806__scorpion67890__cyborg-death-1.wav" type="AudioStream" id=20]
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
 [ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
+
+[sub_resource type="Environment" id=13]
+ambient_light_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="Animation" id=1]
 length = 5.0
@@ -305,6 +308,7 @@ holder_path = NodePath("../../..")
 
 [node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
 layers = 2
+use_in_baked_light = true
 target_group = "Enemy"
 raycast_path = NodePath("../../RayLong")
 holder_path = NodePath("../../../..")
@@ -329,6 +333,7 @@ render_target_update_mode = 3
 
 [node name="GunCam" type="Camera" parent="Head/Camera/ViewportContainer/Viewport"]
 cull_mask = 2
+environment = SubResource( 13 )
 
 [node name="RayLong" type="RayCast" parent="Head/Camera"]
 enabled = true
