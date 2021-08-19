@@ -45,8 +45,8 @@ func state_alert(_delta):
 func start_stun():
 	set_physics_state("state_stunned")
 	$Stunned.play("Stunned")
-	if weapon != null and is_instance_valid(weapon) and weapon.get_children().size() > 0:
-		weapon.throw_weapon()
+#	if weapon != null and is_instance_valid(weapon) and weapon.get_children().size() > 0:
+#		weapon.throw_weapon()
 
 func state_stunned(_delta):
 	pass
@@ -226,17 +226,14 @@ func _on_Enemy_died():
 		$deathTimer.start()
 #	queue_free()
 
-
 func _on_deathTimer_timeout():
 	$Particles.emitting = false
 	if not GameSettings.opt_keep_get():
 		queue_free()
 
-
 func _on_switch_switched(on):
 	if on and health > 0 and get_physics_state() == "state_idle":
 		set_physics_state("state_chase")
-
 
 func _on_StepCheck_body_entered(body):
 	bodies.append(body)
@@ -246,12 +243,10 @@ func _on_StepCheck_body_entered(body):
 	if get_physics_state() == "":
 		set_physics_state("state_idle")
 
-
 func _on_StepCheck_body_exited(body):
 	var f = bodies.find(body)
 	if f != -1:
 		bodies.remove(f)
-
 
 func _on_Stunned_animation_finished(anim_name):
 	state_reset("","")
@@ -262,3 +257,7 @@ func _on_Goomba_stuned():
 		if get_physics_state() != "state_stunned":
 			start_stun()
 			stun = 0
+
+func _on_Goomba_injured(dmg, how):
+	if get_physics_state() == "state_stunned": # and how == "Hit"
+		weapon.throw_weapon()

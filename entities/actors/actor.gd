@@ -4,7 +4,7 @@ extends KinematicBody
 
 
 signal died()
-signal injured()
+signal injured(dmg, how)
 signal health_changed(value)
 signal physics_state_changed(func_name)
 signal state_changed(func_name)
@@ -67,8 +67,6 @@ func set_health(value):
 	health = value
 	if (health < 0):
 		emit_signal("died")
-	elif (health < previous_health):
-		emit_signal("injured")
 
 func get_health(): 
 	return health
@@ -109,6 +107,7 @@ func process_velocity(_delta):
 func do_damage(dmg : float, from : Actor, how = "", etc = {}):
 	if how == "":
 		how = "unkown"
+	emit_signal("injured", dmg, how)
 	if undamageable:
 		return
 	var alive = get_health() > 0

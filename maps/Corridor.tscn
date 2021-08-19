@@ -332,9 +332,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 [node name="Skeleton" parent="Enemy/Mannequin" index="0"]
 bones/18/bound_children = [  ]
 
-[node name="BoneAttachment" parent="Enemy/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
-
 [node name="Label3d" parent="Enemy" index="11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.97789, 0 )
 label_text = ""
@@ -376,17 +373,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7669, 3.9543, 10.831 )
 [node name="Skeleton" parent="Enemy2/Mannequin" index="0"]
 bones/18/bound_children = [  ]
 
-[node name="BoneAttachment" parent="Enemy2/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
-
 [node name="Enemy11" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4288, 3.99999, 12.6852 )
 
 [node name="Skeleton" parent="Enemy11/Mannequin" index="0"]
 bones/18/bound_children = [  ]
-
-[node name="BoneAttachment" parent="Enemy11/Mannequin/Skeleton" index="1"]
-transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Weapon" parent="Enemy11/Mannequin/Skeleton/BoneAttachment" index="0"]
 raycast_path = NodePath("")
@@ -494,8 +485,8 @@ label_text = "3d label"
 [connection signal="saved" from="Princess" to="." method="_on_Princess_saved"]
 [connection signal="grabbed" from="Health" to="." method="_on_Health_grabbed"]
 [connection signal="switched" from="switch" to="." method="_on_switch_switched"]
-[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="DoorPrincess" method="_on_PrincessDoorArea_body_entered"]
 [connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="Princess" method="_on_PrincessDoorArea_body_entered"]
+[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="DoorPrincess" method="_on_PrincessDoorArea_body_entered"]
 
 [editable path="Manager"]
 [editable path="Manager/PreGame/Start"]

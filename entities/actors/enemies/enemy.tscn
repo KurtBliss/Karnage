@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/mixamo/mannequin/MannequinLowPolly.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
+[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 2.25719
@@ -161,7 +162,14 @@ script = ExtResource( 9 )
 holder_path = NodePath("../../../..")
 raycast_path = NodePath("../../../../RayCast")
 
+[node name="Pistol" parent="Mannequin/Skeleton/BoneAttachment/Weapon" instance=ExtResource( 10 )]
+transform = Transform( 14.9801, -1.78814e-07, -0.771712, -0.0251957, 14.992, -0.489096, 0.771294, 0.48974, 14.9722, 0, 0, 0 )
+target_group = "Player"
+raycast_path = NodePath("../../../../../RayCast")
+
 [node name="Shotgun" parent="Mannequin/Skeleton/BoneAttachment/Weapon" instance=ExtResource( 2 )]
+visible = false
+target_group = "Player"
 
 [node name="Particles" type="CPUParticles" parent="."]
 emitting = false
@@ -241,6 +249,7 @@ label_text = "Enemy"
 anims/Stunned = SubResource( 11 )
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
+[connection signal="injured" from="." to="." method="_on_Goomba_injured"]
 [connection signal="stuned" from="." to="." method="_on_Goomba_stuned"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 [connection signal="body_entered" from="StepCheck" to="." method="_on_StepCheck_body_entered"]
