@@ -207,7 +207,8 @@ func _on_Timer_timeout():
 		Mouse.set_capture(false)
 		ref.manager.go_to_post(health, score)
 
-func _on_Player_injured():#should change to red flash
+func _on_Player_injured(dmg, how):#should change to red flash
+	print("_on_Player_injured")
 	InjuredSprite._on_player_hurt(health)
 	score_meter_set(score_meter * 0.7)
 #	Hud.get_node("Injured/Sprite/InjuredSound").play()
@@ -233,3 +234,9 @@ func _on_Anime_animation_finished(anim_name):
 
 func _on_points_gained(points):
 	score_meter += max(15, points) * 0.15
+
+
+func _on_Injured_timeout():
+	print("_on_Injured_timeout")
+	
+	pass # Replace with function body.

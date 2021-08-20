@@ -8,7 +8,7 @@ var zigzag_dist_start = 16
 var offdirzig
 var offdirzag
 var bodies = ["wait"]
-var set_fire_delay = 3
+var set_fire_delay = 1.5
 var cur_fire_delay = set_fire_delay
 var vec_look_at = Vector3.ZERO
 

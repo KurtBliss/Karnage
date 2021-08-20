@@ -23,10 +23,10 @@
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
 [ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:translation")
@@ -79,7 +79,7 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -107,7 +107,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -135,7 +135,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -163,7 +163,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:rotation_degrees")
 tracks/0/interp = 1
@@ -191,7 +191,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Head:translation")
@@ -206,7 +206,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/path = NodePath("InjuredSound")
@@ -223,7 +223,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/path = NodePath("InjuredSound")
@@ -240,7 +240,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/path = NodePath("InjuredSound")
@@ -257,7 +257,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/path = NodePath("InjuredSound")
@@ -274,11 +274,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 64
 font_data = ExtResource( 16 )
 
-[sub_resource type="CapsuleMesh" id=12]
+[sub_resource type="CapsuleMesh" id=13]
 
 [node name="Player" type="KinematicBody" groups=[
 "Player",
@@ -333,7 +333,7 @@ render_target_update_mode = 3
 
 [node name="GunCam" type="Camera" parent="Head/Camera/ViewportContainer/Viewport"]
 cull_mask = 2
-environment = SubResource( 13 )
+environment = SubResource( 1 )
 
 [node name="RayLong" type="RayCast" parent="Head/Camera"]
 enabled = true
@@ -344,12 +344,12 @@ enabled = true
 cast_to = Vector3( 0, 0, -5 )
 
 [node name="Anime" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 1 )
-anims/roll = SubResource( 2 )
-"anims/roll back" = SubResource( 3 )
-"anims/roll left" = SubResource( 4 )
-anims/rollside = SubResource( 5 )
-anims/walk = SubResource( 6 )
+anims/death = SubResource( 2 )
+anims/roll = SubResource( 3 )
+"anims/roll back" = SubResource( 4 )
+"anims/roll left" = SubResource( 5 )
+anims/rollside = SubResource( 6 )
+anims/walk = SubResource( 7 )
 script = ExtResource( 4 )
 
 [node name="Hud" type="Control" parent="."]
@@ -461,10 +461,10 @@ texture = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="InjuredPlayer" type="AnimationPlayer" parent="Hud/Injured/Sprite"]
-anims/Hurt0 = SubResource( 7 )
-anims/Hurt1 = SubResource( 8 )
-anims/Hurt2 = SubResource( 9 )
-anims/Hurt3 = SubResource( 10 )
+anims/Hurt0 = SubResource( 8 )
+anims/Hurt1 = SubResource( 9 )
+anims/Hurt2 = SubResource( 10 )
+anims/Hurt3 = SubResource( 11 )
 
 [node name="InjuredSound" type="AudioStreamPlayer" parent="Hud/Injured/Sprite"]
 stream = ExtResource( 18 )
@@ -509,7 +509,7 @@ margin_left = 332.0
 margin_top = 80.0
 margin_right = 692.0
 margin_bottom = 151.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "PAUSED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
@@ -573,7 +573,7 @@ visible = false
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 visible = false
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="CollisionShape" parent="." instance=ExtResource( 6 )]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
-[ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/label3d/Label3d.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
@@ -9,7 +8,7 @@
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/mixamo/mannequin/MannequinLowPolly.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
-[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/fabric_6315_9064_Small.jpg" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 2.25719
@@ -17,22 +16,13 @@ height = 2.25719
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.955069, 0.203253, 1.506 )
 
-[sub_resource type="OpenSimplexNoise" id=3]
-seed = 4
-octaves = 9
-period = 165.1
-persistence = 0.815
-
-[sub_resource type="NoiseTexture" id=4]
-seamless = true
-noise = SubResource( 3 )
-
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 resource_local_to_scene = true
 albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
-albedo_texture = SubResource( 4 )
+albedo_texture = ExtResource( 11 )
+uv1_scale = Vector3( 3, 3, 3 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=4]
 flags_transparent = true
 flags_unshaded = true
 vertex_color_use_as_albedo = true
@@ -43,13 +33,13 @@ particles_anim_v_frames = 5
 particles_anim_loop = true
 albedo_texture = ExtResource( 4 )
 
-[sub_resource type="QuadMesh" id=7]
-material = SubResource( 6 )
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=6]
 _data = [ Vector2( 0.0108367, 0.0341597 ), 0.0, 0.0, 0, 0, Vector2( 0.188441, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998194, 0.349475 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 length = 0.8
 tracks/0/type = "audio"
 tracks/0/path = NodePath("AudioStreamPlayer3DImpact")
@@ -66,7 +56,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:collision_layer")
 tracks/0/interp = 1
@@ -92,7 +82,7 @@ tracks/1/keys = {
 "values": [ 2048 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:collision_layer")
 tracks/0/interp = 1
@@ -118,11 +108,11 @@ tracks/1/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="BoxShape" id=12]
+[sub_resource type="BoxShape" id=10]
 
-[sub_resource type="CubeMesh" id=13]
+[sub_resource type="CubeMesh" id=11]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
@@ -136,7 +126,7 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:material/0:albedo_color")
 tracks/0/interp = 1
@@ -150,7 +140,7 @@ tracks/0/keys = {
 "values": [ Color( 0.784314, 0.67451, 0.67451, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=14]
 resource_name = "default"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:material/0:albedo_color")
@@ -165,7 +155,7 @@ tracks/0/keys = {
 "values": [ Color( 0.784314, 0.67451, 0.67451, 1 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 resource_name = "hit"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:material/0:albedo_color")
@@ -185,10 +175,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
 collision_layer = 2048
 collision_mask = 2048
 script = ExtResource( 1 )
-speed = 7
-health = 80
+acceleration = 2
+speed = 11
+injured_delay = 20
+health = 59
 actor_name = "Mannequin"
-stun_limit = 35
+stun_limit = 18
+wandering_radius = 20.098
 
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84357, 0 )
@@ -210,7 +203,7 @@ disabled = true
 bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
-material/0 = SubResource( 5 )
+material/0 = SubResource( 3 )
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
 transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
@@ -222,15 +215,6 @@ script = ExtResource( 9 )
 holder_path = NodePath("../../../..")
 raycast_path = NodePath("../../../../RayCast")
 
-[node name="Pistol" parent="Mannequin/Skeleton/BoneAttachment/Weapon" instance=ExtResource( 10 )]
-transform = Transform( 14.9801, -1.78814e-07, -0.771712, -0.0251957, 14.992, -0.489096, 0.771294, 0.48974, 14.9722, 0, 0, 0 )
-target_group = "Player"
-raycast_path = NodePath("../../../../../RayCast")
-
-[node name="Shotgun" parent="Mannequin/Skeleton/BoneAttachment/Weapon" instance=ExtResource( 2 )]
-visible = false
-target_group = "Player"
-
 [node name="Particles" type="CPUParticles" parent="."]
 emitting = false
 amount = 200
@@ -238,7 +222,7 @@ lifetime = 0.5
 randomness = 1.0
 local_coords = false
 draw_order = 2
-mesh = SubResource( 7 )
+mesh = SubResource( 5 )
 emission_shape = 1
 emission_sphere_radius = 0.4
 direction = Vector3( 0, 1, 0 )
@@ -253,7 +237,7 @@ linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
 scale_amount_random = 0.8
-scale_amount_curve = SubResource( 8 )
+scale_amount_curve = SubResource( 6 )
 color_ramp = ExtResource( 5 )
 anim_speed = 1.0
 anim_offset = 1.0
@@ -280,11 +264,11 @@ stream = ExtResource( 7 )
 unit_db = 52.487
 
 [node name="AnimeSound" type="AnimationPlayer" parent="."]
-anims/Impact = SubResource( 9 )
+anims/Impact = SubResource( 7 )
 
 [node name="SwitchMask" type="AnimationPlayer" parent="."]
-anims/dead = SubResource( 10 )
-anims/normal = SubResource( 11 )
+anims/dead = SubResource( 8 )
+anims/normal = SubResource( 9 )
 
 [node name="StepCheck" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -293,12 +277,12 @@ collision_mask = 1024
 
 [node name="CollisionShape" type="CollisionShape" parent="StepCheck"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
-shape = SubResource( 12 )
+shape = SubResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StepCheck"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
 visible = false
-mesh = SubResource( 13 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="Label3d" parent="." instance=ExtResource( 3 )]
@@ -307,12 +291,12 @@ visible = false
 label_text = "Enemy"
 
 [node name="Stunned" type="AnimationPlayer" parent="."]
-anims/Stunned = SubResource( 14 )
+anims/Stunned = SubResource( 12 )
 
 [node name="Hit" type="AnimationPlayer" parent="."]
-anims/dead = SubResource( 15 )
-anims/default = SubResource( 16 )
-anims/hit = SubResource( 17 )
+anims/dead = SubResource( 13 )
+anims/default = SubResource( 14 )
+anims/hit = SubResource( 15 )
 
 [connection signal="died" from="." to="." method="_on_Enemy_died"]
 [connection signal="injured" from="." to="." method="_on_Goomba_injured"]
