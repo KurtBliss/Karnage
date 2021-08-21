@@ -109,14 +109,14 @@ resource_local_to_scene = true
 albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
 albedo_texture = SubResource( 12 )
 
-[sub_resource type="ConcavePolygonShape" id=16]
+[sub_resource type="ConcavePolygonShape" id=14]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="CubeMesh" id=17]
+[sub_resource type="CubeMesh" id=15]
 material = SubResource( 5 )
 size = Vector3( 8, 8, 2 )
 
-[sub_resource type="BoxShape" id=18]
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 5.3008, 1, 6.34446 )
 
 [node name="Corridor" type="Navigation"]
@@ -166,6 +166,9 @@ gravity = 0.0
 
 [node name="Mannequin" parent="Princess" instance=ExtResource( 23 )]
 transform = Transform( -3, 0, -2.09815e-07, 0, 3, 0, 2.62268e-07, 0, -2.4, 7.62939e-06, 0, -4.76837e-07 )
+
+[node name="Skeleton" parent="Princess/Mannequin" index="0"]
+bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Princess/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 6 )
@@ -345,12 +348,12 @@ transform = Transform( -0.0551904, -0.026327, -0.998128, -0.056801, 0.998116, -0
 [node name="Enemy" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 
-[node name="Skeleton" parent="Enemy/Mannequin" index="0"]
-bones/18/bound_children = [  ]
-
 [node name="Ch36" parent="Enemy/Mannequin/Skeleton" index="0"]
 transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
 material/0 = SubResource( 13 )
+
+[node name="BoneAttachment" parent="Enemy/Mannequin/Skeleton" index="1"]
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 
 [node name="Label3d" parent="Enemy" index="11"]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.97789, 0 )
@@ -422,21 +425,21 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
-shape = SubResource( 16 )
+shape = SubResource( 14 )
 
 [node name="DoorPrincess" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.1413, 4, 3.7607 )
 locked = true
 
 [node name="Mesh" parent="DoorPrincess" index="1"]
-mesh = SubResource( 17 )
+mesh = SubResource( 15 )
 
 [node name="PrincessDoorArea" type="Area" parent="DoorPrincess"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47691, 0, -7.57117 )
 
 [node name="CollisionShape" type="CollisionShape" parent="DoorPrincess/PrincessDoorArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.588982, 0, 1.03803 )
-shape = SubResource( 18 )
+shape = SubResource( 16 )
 
 [node name="PrincessRunTo" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -163.628, 2.77699, -7.89933 )
@@ -481,8 +484,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.6741, 1.95426, 14.6101 )
 [connection signal="saved" from="Princess" to="." method="_on_Princess_saved"]
 [connection signal="grabbed" from="Health" to="." method="_on_Health_grabbed"]
 [connection signal="switched" from="switch" to="." method="_on_switch_switched"]
-[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="Princess" method="_on_PrincessDoorArea_body_entered"]
 [connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="DoorPrincess" method="_on_PrincessDoorArea_body_entered"]
+[connection signal="body_entered" from="DoorPrincess/PrincessDoorArea" to="Princess" method="_on_PrincessDoorArea_body_entered"]
 
 [editable path="Manager"]
 [editable path="Manager/PreGame/Start"]

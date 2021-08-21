@@ -3,8 +3,4 @@
 [ext_resource path="res://entities/screens/tiledscreen/buttons/button.tscn" type="PackedScene" id=1]
 
 [node name="NewGame" instance=ExtResource( 1 )]
-text = ""
 scene = "res://maps/Nav.tscn"
-
-[node name="Label" parent="." index="0"]
-visible = true
