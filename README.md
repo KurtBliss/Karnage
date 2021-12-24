@@ -1,3 +1,6 @@
+
+[![Video](https://img.youtube.com/vi/Mba8C8WMWUQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=Mba8C8WMWUQ)
+
 # KARNAGE
 First person shooter currently in devlopment where you have 2 minutes to rack up as much points as possible.
 
