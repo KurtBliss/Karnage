@@ -205,6 +205,9 @@ func on_stunned():
 	pass
 
 func _on_Enemy_died():
+	var hp_ld = preload("res://entities/pickups/Health.tscn")
+	add_child(hp_ld.instance())
+	
 	$Hit.play("dead")
 	if not died:
 		died = true

@@ -14,5 +14,5 @@ func _ready():
 	
 	Input
 	
-	#TODO: Make controls screen dynamic
+	
 	text = text.format(fm)

@@ -17,8 +17,6 @@ func _ready():
 
 func _process(delta):
 	var visible_lines = CommandText.rect_size.y/line_width -1
-	#TODO: add previous command list you can access with arrows
-	#TODO: add command completion with tab
 	if Input.is_action_just_pressed("open_debug_console"):
 		if !visible:
 			open()

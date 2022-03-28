@@ -96,7 +96,7 @@ func _on_enemy_killed(enemy, _how):
 			points_gain(100)
 	kills_gain()
 
-func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee): #TODO: 	
+func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee): 	
 	if is_melee:
 		if hit:
 			melee_gain()

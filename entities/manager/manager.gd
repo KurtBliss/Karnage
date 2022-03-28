@@ -106,7 +106,7 @@ func change_mode(set_mode):
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
 				get_parent().add_child(inst)
 				
-				#TODO: Start player with weapon
+
 		MODE.PRE_GAME:
 			current_mode = MODE.PRE_GAME	
 			PreGame.visible = true

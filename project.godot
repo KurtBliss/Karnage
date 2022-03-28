@@ -244,6 +244,7 @@ _global_script_class_icons={
 
 config/name="Karnage"
 run/main_scene="res://entities/screens/tiledscreen/titled_screen.tscn"
+boot_splash/image="res://assets/Karnage/logo.png"
 config/icon="res://assets/Karnage/logo.png"
 
 [audio]

@@ -5,8 +5,11 @@ sky_top_color = Color( 0.419608, 0.317647, 0.0784314, 1 )
 sky_horizon_color = Color( 0.407843, 0.384314, 0.333333, 1 )
 
 [resource]
-background_mode = 3
+background_mode = 1
 background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.901961, 0.976471, 1, 0 )
+ambient_light_energy = 1.67
+fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
 fog_sun_color = Color( 1, 1, 1, 1 )
 fog_depth_begin = 29.0
@@ -14,4 +17,5 @@ fog_depth_end = 304.3
 fog_depth_curve = 0.466516
 fog_transmit_curve = 0.353554
 fog_height_max = -31.4
+glow_enabled = true
 glow_intensity = 0.42

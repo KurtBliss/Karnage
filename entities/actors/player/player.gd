@@ -178,7 +178,7 @@ func do_emit_clip(clip):
 	emit_signal("clip_changed", clip)
 
 func do_emit_ammo(emit_ammo):
-	#TODO: to get rid of caution in log
+	
 	emit_signal("ammo_changed", emit_ammo)
 
 func do_emit_hit(hit, name, clip, melee = false):
@@ -193,7 +193,6 @@ func gain_ammo(type, amount):
 ###################-VIRTUAL FUNCS-####################
 
 func _on_Player_died():
-	#TODO: Throw other weapons too
 	weapon.throw_weapon()
 	death = true
 	Anime.play("death")

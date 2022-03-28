@@ -21,7 +21,7 @@ onready var starting_origin = transform.origin
 var drain_player_on_proximity = true
 var wait_for_player = true
 var wandering_timer : Timer
-var enemy_atk_delay_set = 30 #TODO: Should make this timer
+var enemy_atk_delay_set = 30 
 var enemy_atk_delay = 0
 var enemy_tween : Tween
 var spawn_position : Vector3
@@ -117,8 +117,6 @@ func _on_player_died():
 		wait_for_player = true
 
 func _on_wandering_timer_timeout(): 
-	#TODO: Wandering State State?
-	#TODO: Put basic states on enemy.gd, then overide or add to states in children
 	if get_physics_state() == "state_idle":
 		wandering_timer.wait_time = enemyRNG.randf_range(4,8)
 		
