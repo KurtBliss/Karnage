@@ -32,9 +32,6 @@ anchor_bottom = 1.0
 margin_left = -4.69361
 margin_right = -4.6936
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 np_button_container = NodePath("Menu/CenterRow/Buttons")
 
 [node name="Menu" type="VBoxContainer" parent="."]

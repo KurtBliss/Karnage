@@ -15,7 +15,7 @@ var ammo_container = {
 }
 
 func _ready() -> void:
-	mute = !mute
+	#mute = !mute
 	var bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_mute(bus_index, mute)
 
