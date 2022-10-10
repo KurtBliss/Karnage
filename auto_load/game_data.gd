@@ -30,15 +30,23 @@ func get_level_data(level):
 
 func get_level_highscore(level):
 	var ld = get_level_data(level)
-	var hs = ld["highscore"]
-	
-	return hs
+	return ld["highscore"]
+
+func get_level_challenges(level):
+	var ld : Dictionary = get_level_data(level)
+	if ld.has("challenges"):
+		return ld["challenges"]
+	return null
 
 func set_level_data(level, set):
 	game_data["levels"][level] = set
 
 func set_level_highscore(level, set):
 	game_data["levels"][level]["highscore"] = set
+
+func set_level_challenges(level, set):
+	game_data["levels"][level]["challenges"] = set
+
 
 ###################-FILE MNG-####################
 

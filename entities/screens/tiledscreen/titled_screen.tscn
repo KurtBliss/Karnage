@@ -29,8 +29,6 @@ background_sky = SubResource( 3 )
 [node name="TitledScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -4.69361
-margin_right = -4.6936
 script = ExtResource( 3 )
 np_button_container = NodePath("Menu/CenterRow/Buttons")
 
@@ -119,7 +117,6 @@ texture = ExtResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = 10.847
-autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )

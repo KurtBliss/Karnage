@@ -212,6 +212,8 @@ func _on_Enemy_died():
 	if not died:
 		died = true
 		
+		
+		
 		if respawn == true:
 			var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
 			var inst = ld.instance()
@@ -271,3 +273,7 @@ func _on_Goomba_injured(dmg, how):
 	$Hit.seek(0, true)
 	if get_physics_state() == "state_stunned": # and how == "Hit"
 		weapon.throw_weapon()
+
+
+func _on_Goomba_died():
+	_on_Enemy_died()

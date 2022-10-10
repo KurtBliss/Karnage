@@ -4,11 +4,11 @@
 [ext_resource path="res://assets/kenney/weaponpack_assets/models/machinegun.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/freesounds/444671__tissman__death-2.wav" type="AudioStream" id=3]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+material = SubResource( 6 )
 size = Vector3( 2, 5, 2 )
 
 [sub_resource type="BoxShape" id=3]
@@ -118,9 +118,7 @@ tracks/3/keys = {
 "times": PoolRealArray(  )
 }
 
-[node name="Marksmen" type="KinematicBody" groups=[
-"Enemy",
-]]
+[node name="Marksmen" type="KinematicBody" groups=["Enemy"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27348, 0 )
 script = ExtResource( 1 )
 health = 50

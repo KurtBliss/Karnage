@@ -33,7 +33,6 @@ albedo_texture = ExtResource( 1 )
 
 [sub_resource type="PlaneMesh" id=7]
 material = SubResource( 6 )
-flip_faces = true
 size = Vector2( 8, 8 )
 
 [sub_resource type="Image" id=14]

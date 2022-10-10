@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/shandor/tree.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+height = 3.42704
+
+[node name="Tree" type="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.52823, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.77117, 0 )
+billboard = 2
+texture = ExtResource( 1 )
+hframes = 2

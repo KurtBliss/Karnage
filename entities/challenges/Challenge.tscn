@@ -18,9 +18,6 @@ text = " Challenge"
 align = 1
 valign = 1
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Crossout" type="Line2D" parent="."]
 visible = false

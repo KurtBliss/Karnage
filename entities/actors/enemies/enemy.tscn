@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://entities/label3d/Label3d.tscn" type="PackedScene" id=3]
@@ -8,19 +8,12 @@
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/mixamo/mannequin/MannequinLowPolly.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
-[ext_resource path="res://assets/fabric_6315_9064_Small.jpg" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 2.25719
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.955069, 0.203253, 1.506 )
-
-[sub_resource type="SpatialMaterial" id=3]
-resource_local_to_scene = true
-albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
-albedo_texture = ExtResource( 11 )
-uv1_scale = Vector3( 3, 3, 3 )
 
 [sub_resource type="SpatialMaterial" id=4]
 flags_transparent = true
@@ -199,9 +192,6 @@ disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
-[node name="Ch36" parent="Mannequin/Skeleton" index="0"]
-material/0 = SubResource( 3 )
-
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
 transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 bone_name = "mixamorig_RightHand"
@@ -209,8 +199,6 @@ bone_name = "mixamorig_RightHand"
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
 transform = Transform( -0.013351, 0.693868, -0.0914798, -0.105055, 0.0884729, 0.686393, 0.691943, 0.0268206, 0.102447, -0.0222889, 0.272644, 0.0968093 )
 script = ExtResource( 9 )
-holder_path = NodePath("../../../..")
-raycast_path = NodePath("../../../../RayCast")
 
 [node name="Particles" type="CPUParticles" parent="."]
 emitting = false
@@ -280,7 +268,6 @@ shape = SubResource( 10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
 visible = false
 mesh = SubResource( 11 )
-material/0 = null
 
 [node name="Label3d" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5, 0 )
@@ -295,9 +282,7 @@ anims/dead = SubResource( 13 )
 anims/default = SubResource( 14 )
 anims/hit = SubResource( 15 )
 
-[connection signal="died" from="." to="." method="_on_Enemy_died"]
-[connection signal="injured" from="." to="." method="_on_Goomba_injured"]
-[connection signal="stuned" from="." to="." method="_on_Goomba_stuned"]
+[connection signal="died" from="." to="." method="_on_Goomba_died"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 [connection signal="body_entered" from="StepCheck" to="." method="_on_StepCheck_body_entered"]
 [connection signal="body_exited" from="StepCheck" to="." method="_on_StepCheck_body_exited"]

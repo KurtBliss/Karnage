@@ -64,6 +64,8 @@ func update_level_challenges(set = level):
 	level = set
 	match set:
 		LEVEL.CORRIDOR:
+			var challenges = GameData.get_level_challenges(LEVEL.CORRIDOR)
+			
 			challenge_add_highscore(1000)
 			challenge_add_highscore(1500)
 			challenge_add_highscore(2000)
@@ -72,6 +74,8 @@ func update_level_challenges(set = level):
 			challenge_add("Find the secret room", 1, "method_secret_area")
 #			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
 			challenge_add("Save the princess", 1, "method_princess")
+			
+			
 			
 		LEVEL.CITY:
 			challenge_add_highscore(2000)
