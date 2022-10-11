@@ -3,7 +3,7 @@
 [ext_resource path="res://entities/manager/manager.gd" type="Script" id=1]
 [ext_resource path="res://entities/challenges/Challenges.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/new_game.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=4]
+[ext_resource path="res://entities/challenges/Challenge.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://entities/manager/managerFont48.tres" type="DynamicFont" id=6]
 
@@ -195,17 +195,16 @@ margin_left = 836.833
 margin_top = 41.632
 margin_right = 876.833
 margin_bottom = 55.632
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 script = SubResource( 7 )
 
-[node name="UnlockAt" type="Label" parent="PreGame"]
-margin_left = 96.0
-margin_top = 160.0
-margin_right = 401.0
-margin_bottom = 213.0
-rect_rotation = -30.0
-custom_fonts/font = ExtResource( 6 )
-text = "UNLOCK AT %s"
+[node name="UnlockAt" parent="PreGame" instance=ExtResource( 4 )]
+margin_left = 16.0
+margin_top = 128.0
+margin_right = 373.0
+margin_bottom = 158.0
+rect_rotation = -15.0
+text = "UnlockAt"
 
 [node name="Locked" type="Label" parent="PreGame"]
 visible = false
