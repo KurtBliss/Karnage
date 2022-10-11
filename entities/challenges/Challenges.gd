@@ -59,7 +59,7 @@ func remove_labels():
 func remove_challenges():
 	for child in get_children():
 		child.queue_free()
-	challenges = []
+	challenges = []    
 
 func update_level_challenges(set = level):
 	remove_challenges()
@@ -73,10 +73,10 @@ func update_level_challenges(set = level):
 				challenge_add_highscore(1500)
 				challenge_add_highscore(2000)
 				challenge_add_kills(7)
-				challenge_add("Shoot all 4 targets", 4, "method_targets")
+				challenge_add("Shoot all 4 targets", 4, "method_targets", "challenge_targets")
 				challenge_add("Find the secret room", 1, "method_secret_area")
 	#			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
-				challenge_add("Save the princess", 1, "method_princess")
+				challenge_add("Save the princess", 1, "method_princess", "challenge_princess")
 			else:
 				load_challenges(ld_challenges)
 				update_challenge_labels()
@@ -86,10 +86,13 @@ func update_level_challenges(set = level):
 			var ld_challenges = GameData.get_level_challenges("City")
 			
 			if ld_challenges == null:
-				challenge_add_highscore(2000)
-				challenge_add_highscore(1500)
 				challenge_add_highscore(1000)
+				challenge_add_highscore(1500)
+				challenge_add_highscore(2000)
 				challenge_add_kills(10)
+				challenge_add("Shoot all 4 targets", 4, "method_targets", "challenge_targets")
+				challenge_add("Find the secret room", 1, "method_secret_area")
+				
 			else:
 				load_challenges(ld_challenges)
 				update_challenge_labels()
@@ -118,7 +121,7 @@ func load_challenges(ld_challenges):
 
 ###################-Challenges Add-####################
 
-func challenge_add(title, points = 0, method = ""):
+func challenge_add(title, points = 0, method = "", group = ""):
 	var label_node = challenge_ld.instance()
 	add_child(label_node)
 	label_node.set_name(title)
@@ -127,7 +130,8 @@ func challenge_add(title, points = 0, method = ""):
 		"title": title,
 		"done": false,
 		"method": method,
-		"points": points
+		"points": points,
+		"group": group # Used to destory nodes of x group if challenge si allready completed in a future play through
 	})
 
 func challenge_add_highscore(points):

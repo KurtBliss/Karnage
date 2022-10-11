@@ -2,9 +2,8 @@
 
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=1]
 
-
 [resource]
-size = 48
+size = 70
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )

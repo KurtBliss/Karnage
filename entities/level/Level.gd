@@ -3,6 +3,7 @@ extends Navigation
 
 export var level = ""
 export(Challenges.LEVEL) var challenges_id
+export var unlock_at = 0
 var points = 0 setget set_points, get_points
 var kills = 0
 var kills_since_death = 0
@@ -26,6 +27,7 @@ func _ready():
 	if not BgmEternalNight.playing:
 		BgmEternalNight.play()
 	ref.level = self
+	done_challenges()
 
 func _exit_tree() -> void:
 	BgmEternalNight.stop()
@@ -77,7 +79,16 @@ func target_gain():
 		var method = "_on_target_reached"
 		if has_method(method):
 			call(method)
-			
+
+func done_challenges():
+	var level_challenges = GameData.get_level_challenges(level)
+	if level_challenges == null:
+		return
+	for challenge in level_challenges:
+		if challenge.done and challenge.group != "":
+			for nd in get_tree().get_nodes_in_group(challenge.group):
+				nd.queue_free()
+	pass
 
 ###################-VIRTUAL FUNCS-####################
 func _on_enemy_attacked(enemy, _how):

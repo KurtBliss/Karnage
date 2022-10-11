@@ -38,6 +38,15 @@ func get_level_challenges(level):
 		return ld["challenges"]
 	return null
 
+func get_total_challenges():
+	var count = 0
+	for level in game_data["levels"]:
+		if game_data["levels"][level].has("challenges"):
+			for challenge in game_data["levels"][level]["challenges"]:
+				if challenge["done"]:
+					count += 1
+	return count
+
 func set_level_data(level, set):
 	game_data["levels"][level] = set
 

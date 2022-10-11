@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://entities/manager/manager.gd" type="Script" id=1]
 [ext_resource path="res://entities/challenges/Challenges.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/screens/tiledscreen/buttons/new_game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/googlefonts/Turret_Road/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://entities/manager/managerFont48.tres" type="DynamicFont" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -14,6 +16,14 @@ font_data = ExtResource( 5 )
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.513726 )
 expand_margin_left = 10.0
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Label
+
+func _process(delta):
+	if visible:
+		text = str(GameData.get_total_challenges())
+"
 
 [sub_resource type="DynamicFont" id=3]
 size = 72
@@ -88,9 +98,6 @@ margin_bottom = 53.0
 custom_fonts/font = SubResource( 1 )
 text = "ALPHA ROOM"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PreviousBack" type="Polygon2D" parent="PreGame"]
 position = Vector2( -64, 0 )
@@ -111,9 +118,6 @@ text = "Pev level"
 align = 1
 valign = 1
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NextBack" type="Polygon2D" parent="PreGame"]
 position = Vector2( 968, 0 )
@@ -134,9 +138,6 @@ text = "Nex level"
 align = 1
 valign = 1
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Challenges" parent="PreGame" instance=ExtResource( 2 )]
 main = true
@@ -188,6 +189,34 @@ modulate = Color( 1, 1, 1, 0.211765 )
 margin_left = 968.0
 margin_right = 1024.0
 margin_bottom = 600.0
+
+[node name="ChallengesTotal" type="Label" parent="PreGame"]
+margin_left = 836.833
+margin_top = 41.632
+margin_right = 876.833
+margin_bottom = 55.632
+custom_fonts/font = ExtResource( 4 )
+script = SubResource( 7 )
+
+[node name="UnlockAt" type="Label" parent="PreGame"]
+margin_left = 96.0
+margin_top = 160.0
+margin_right = 401.0
+margin_bottom = 213.0
+rect_rotation = -30.0
+custom_fonts/font = ExtResource( 6 )
+text = "UNLOCK AT %s"
+
+[node name="Locked" type="Label" parent="PreGame"]
+visible = false
+margin_left = 192.0
+margin_top = 408.0
+margin_right = 243.0
+margin_bottom = 422.0
+rect_rotation = 15.0
+rect_scale = Vector2( 6.56706, 9.96501 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "LOCKED"
 
 [node name="PostGame" type="Control" parent="."]
 visible = false

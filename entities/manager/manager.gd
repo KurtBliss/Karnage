@@ -68,6 +68,17 @@ func _process(_delta):
 #			if Input.is_action_just_pressed("ui_accept"):
 #				_on_Restart_pressed()
 		MODE.PRE_GAME:
+			
+			if GameData.get_total_challenges() >= ref.level.unlock_at:
+				$PreGame/Start.disabled = false
+				$PreGame/Locked.visible = false
+				$PreGame/UnlockAt.visible = false
+			else:
+				$PreGame/Start.disabled = true
+				$PreGame/Locked.visible = true
+				$PreGame/UnlockAt.visible = true
+				$PreGame/UnlockAt.text = "Unlock at " + str(ref.level.unlock_at)
+			
 			pass
 #			if Input.is_action_just_pressed("ui_accept"):
 #				_on_Start_pressed()

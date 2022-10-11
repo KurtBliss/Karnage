@@ -39,6 +39,7 @@ background_sky = SubResource( 4 )
 script = SubResource( 1 )
 level = "City"
 challenges_id = 2
+unlock_at = 3
 
 [node name="GameTimer" parent="." instance=ExtResource( 1 )]
 
