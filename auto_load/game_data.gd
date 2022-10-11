@@ -33,8 +33,8 @@ func get_level_highscore(level):
 	return ld["highscore"]
 
 func get_level_challenges(level):
-	var ld : Dictionary = get_level_data(level)
-	if ld.has("challenges"):
+	var ld = get_level_data(level)
+	if ld != null and ld.has("challenges"):
 		return ld["challenges"]
 	return null
 
