@@ -123,6 +123,7 @@ func change_mode(set_mode):
 				hs = GameData.get_level_highscore(lv)
 				if score > hs:
 					GameData.set_level_highscore(ref.level.level, score)
+				GameData.set_level_challenges(ref.level.level, ref.challenges)
 				GameData.save()
 			set_stat("Score", score)
 			set_stat("Highest Score", hs)
