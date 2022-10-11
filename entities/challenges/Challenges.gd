@@ -11,7 +11,8 @@ export var main = false
 ###################-BUILT IN-####################
 
 func _ready():
-	ref.challenges = self
+	if main:
+		ref.challenges = self
 	if level != LEVEL.NONE:
 		update_level_challenges()
 
@@ -44,6 +45,7 @@ func _process(_delta):
 					ref.challenge_anime_container.add_challenge_finished(challenge["title"])
 					
 					challenge["done"] = true
+					
 					if not is_instance_valid(challenge["label"]):
 						update_challenge_labels()
 					challenge["label"].set_done(true)
@@ -64,7 +66,7 @@ func update_level_challenges(set = level):
 	level = set
 	match set:
 		LEVEL.CORRIDOR:
-			var ld_challenges = GameData.get_level_challenges(LEVEL.CORRIDOR)
+			var ld_challenges = GameData.get_level_challenges("Corridor")
 			
 			if ld_challenges == null:
 				challenge_add_highscore(1000)
@@ -77,13 +79,20 @@ func update_level_challenges(set = level):
 				challenge_add("Save the princess", 1, "method_princess")
 			else:
 				load_challenges(ld_challenges)
+				update_challenge_labels()
 			
 			
 		LEVEL.CITY:
-			challenge_add_highscore(2000)
-			challenge_add_highscore(1500)
-			challenge_add_highscore(1000)
-			challenge_add_kills(10)
+			var ld_challenges = GameData.get_level_challenges("City")
+			
+			if ld_challenges == null:
+				challenge_add_highscore(2000)
+				challenge_add_highscore(1500)
+				challenge_add_highscore(1000)
+				challenge_add_kills(10)
+			else:
+				load_challenges(ld_challenges)
+				update_challenge_labels()
 		_:
 			level_not_set = true
 
@@ -102,6 +111,8 @@ func load_challenges(ld_challenges):
 		add_child(label_node)
 		label_node.set_name(challenge.title)
 		challenge.label = label_node
+#		if challenge.done:
+#			label_node.set_done(true)
 		challenges.append(challenge)
 		
 
