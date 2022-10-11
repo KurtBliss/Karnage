@@ -64,17 +64,19 @@ func update_level_challenges(set = level):
 	level = set
 	match set:
 		LEVEL.CORRIDOR:
-			var challenges = GameData.get_level_challenges(LEVEL.CORRIDOR)
+			var ld_challenges = GameData.get_level_challenges(LEVEL.CORRIDOR)
 			
-			challenge_add_highscore(1000)
-			challenge_add_highscore(1500)
-			challenge_add_highscore(2000)
-			challenge_add_kills(7)
-			challenge_add("Shoot all 4 targets", 4, "method_targets")
-			challenge_add("Find the secret room", 1, "method_secret_area")
-#			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
-			challenge_add("Save the princess", 1, "method_princess")
-			
+			if ld_challenges == null:
+				challenge_add_highscore(1000)
+				challenge_add_highscore(1500)
+				challenge_add_highscore(2000)
+				challenge_add_kills(7)
+				challenge_add("Shoot all 4 targets", 4, "method_targets")
+				challenge_add("Find the secret room", 1, "method_secret_area")
+	#			challenge_add("TODO: Shotgun blast then pan enemy", 1, "method_princess")
+				challenge_add("Save the princess", 1, "method_princess")
+			else:
+				load_challenges(ld_challenges)
 			
 			
 		LEVEL.CITY:
@@ -93,6 +95,15 @@ func update_challenge_labels():
 		add_child(label_node)
 		challenge["label"] = label_node
 		challenge["label"].set_done(challenge["done"])
+
+func load_challenges(ld_challenges):
+	for challenge in ld_challenges:
+		var label_node = challenge_ld.instance()
+		add_child(label_node)
+		label_node.set_name(challenge.title)
+		challenge.label = label_node
+		challenges.append(challenge)
+		
 
 ###################-Challenges Add-####################
 
