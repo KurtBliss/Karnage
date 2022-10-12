@@ -33,6 +33,7 @@ albedo_texture = ExtResource( 1 )
 
 [sub_resource type="PlaneMesh" id=7]
 material = SubResource( 6 )
+flip_faces = true
 size = Vector2( 8, 8 )
 
 [sub_resource type="Image" id=14]
@@ -71,7 +72,7 @@ item/1/mesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/1/shapes = [ SubResource( 10 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/1/navmesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/1/preview = SubResource( 9 )
-item/2/name = ""
+item/2/name = "Grass"
 item/2/mesh = SubResource( 12 )
 item/2/mesh_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 item/2/shapes = [ SubResource( 10 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]

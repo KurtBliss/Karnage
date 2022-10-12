@@ -14,12 +14,14 @@ var levels = [
 	"res://maps/Tutorial.tscn",
 	"res://maps/Corridor.tscn",
 	"res://maps/City.tscn",
+	"res://maps/Forest.tscn",
 	"res://maps/Alpha.tscn"
 ]
 var levelsNames = [
 	"Tutorial",
 	"Corridor",
 	"City", 
+	"Forest",
 	"Alpha"
 ]
 var level_index = -2

@@ -27,1811 +27,1509 @@ data = PoolVector3Array( -8, 0.5, 8, 8, 0.5, 8, -8, -0.5, 8, 8, 0.5, 8, 8, -0.5,
 [node name="GroundArea1" type="MeshInstance" parent="Env"]
 transform = Transform( 1, 0, 0, 0, 14.5627, 0, 0, 0, 1, 0, -6.62415, 0.0124245 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Ground2" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar1" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar2" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar3" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar4" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block1" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.82388, 0.480911, -6.88061 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block2" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.91491, 0.480911, -6.80311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block3" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00696397, 0.000104249, -0.097763, 4.55468e-06, 0.0686683, 3.79005e-07, 0.097763, -0.000671039, -0.00696398, 6.93732, 0.480911, -5.01876 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block4" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.14929, 0.480911, -5.09291 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block5" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.24032, 0.480911, -5.01541 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block6" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00698704, 0, -0.0977613, 0, 0.0686684, 0, 0.0977613, 0, 0.00698704, 4.17997, 0.465605, -3.07599 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block7" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.96943, 0.480911, -3.23832 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block8" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 6.06045, 0.480911, -3.16081 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block9" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00698704, -0.0579042, -0.0975965, 0, 0.0685525, -0.000390703, 0.0977613, 0.00413844, 0.00697526, 7.08287, 0.483155, -1.37646 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block10" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.29484, 0.480911, -1.45062 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block11" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.38586, 0.480911, -1.37311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block12" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0260521, 0, -0.0944848, 0, 0.0686684, 0, 0.0944848, 0, 0.0260521, 4.40828, 0.480911, 0.411238 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block13" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.6812, 0.480911, -6.68715 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block26" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.7709, 0.480911, -6.6573 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block27" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00940154, 0.000120963, -0.0975587, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0975587, -0.000668228, -0.00940155, 12.7484, 0.480911, -4.848 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block28" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 10.9628, 0.480911, -4.96675 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block29" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.0525, 0.480911, -4.93691 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block30" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00454517, 0, -0.0979053, 0, 0.0686684, 0, 0.0979053, 0, 0.00454517, 9.94346, 0.465605, -2.97465 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block31" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.7358, 0.480911, -3.04235 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block32" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.8255, 0.480911, -3.01251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block33" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00454517, -0.0579894, -0.0977401, 0, 0.0685525, -0.000390703, 0.0979053, 0.00269211, 0.0045375, 12.803, 0.483155, -1.2032 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block34" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.0174, 0.480911, -1.32196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block35" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.1071, 0.480911, -1.29211 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block36" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.023686, 0, -0.0951056, 0, 0.0686684, 0, 0.0951056, 0, 0.023686, 10.0847, 0.480911, 0.517194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block14" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6752, 0.480911, -5.23644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block15" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6164, 0.480911, -3.32679 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block16" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0970178, -0.0006619, -0.0139156, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0139156, -0.000151821, 0.0970178, 17.4691, 0.480911, -4.2194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block17" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2677, 0.480911, -2.44121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block18" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2089, 0.480911, -0.531563 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block19" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0980107, 19.2104, 0.465605, -1.33057 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block20" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.3186, 0.480911, -5.12196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block21" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.2599, 0.480911, -3.21231 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block22" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0685525, -0.000390703, 0, 0.0580519, 0.0978454, 21.1125, 0.483155, -4.10492 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block23" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.9111, 0.480911, -2.32673 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block24" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.8523, 0.480911, -0.417085 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block25" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0961017, 0, 0.0192501, 0, 0.0686684, 0, -0.0192501, 0, 0.0961017, 22.705, 0.480911, -1.3097 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block37" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 18.1654, 0.480911, 6.52317 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block38" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.0734, 0.480911, 6.42278 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block39" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00579128, -9.61959e-05, 0.0978395, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0978394, 0.00067224, 0.00579128, 19.0296, 0.480911, 4.65082 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block40" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.8184, 0.480911, 4.70353 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block41" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.7263, 0.480911, 4.60314 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block42" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00815872, 0, 0.0976705, 0, 0.0686684, 0, -0.0976705, 0, -0.00815872, 21.7635, 0.465605, 2.67514 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block43" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 17.9762, 0.480911, 2.88288 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block44" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 19.8841, 0.480911, 2.78249 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block45" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00815872, 0.0578504, 0.0975058, 0, 0.0685525, -0.000390703, -0.0976705, -0.00483242, -0.00814496, 18.8404, 0.483155, 1.01053 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block46" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.6292, 0.480911, 1.06324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block47" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.5371, 0.480911, 0.962851 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block48" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0271831, 0, 0.0941657, 0, 0.0686684, 0, -0.0941657, 0, -0.0271831, 21.4934, 0.480911, -0.809108 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block49" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.3062, 0.480911, 6.39995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block50" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.2161, 0.480911, 6.3472 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block51" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00823112, -0.000112942, 0.0976645, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0976644, 0.00066963, 0.00823113, 13.2169, 0.480911, 4.54975 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block52" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 15.0038, 0.480911, 4.64709 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block53" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.9136, 0.480911, 4.59434 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block54" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00571874, 0, 0.0978437, 0, 0.0686684, 0, -0.0978437, 0, -0.00571874, 15.9992, 0.465605, 2.6429 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block55" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.2079, 0.480911, 2.75607 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block56" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.1178, 0.480911, 2.70333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block57" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00571874, 0.057953, 0.0976787, 0, 0.0685525, -0.000390703, -0.0978437, -0.00338722, -0.0057091, 13.1186, 0.483155, 0.905872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block58" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.9055, 0.480911, 1.00321 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block59" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.8153, 0.480911, 0.950458 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block60" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0248247, 0, 0.0948147, 0, 0.0686684, 0, -0.0948147, 0, -0.0248247, 15.8161, 0.480911, -0.846995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block61" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.295, 0.480911, 4.97325 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block62" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.3308, 0.480911, 3.06304 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block63" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0971776, 0.000663672, 0.0127514, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0127514, 0.000143874, -0.0971777, 8.48897, 0.480911, 3.9778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block64" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.66907, 0.480911, 2.19732 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block65" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.70495, 0.480911, 0.287107 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block66" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0980037, 0, -0.00117517, 0, 0.0686684, 0, 0.00117517, 0, -0.0980037, 6.71321, 0.465605, 1.11005 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block67" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.65044, 0.480911, 4.90247 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block68" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.68631, 0.480911, 2.99225 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block69" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0980037, -0.000696052, -0.00117318, 0, 0.0685525, -0.000390703, 0.00117517, -0.0580477, -0.0978384, 4.84446, 0.483155, 3.90702 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block70" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.02455, 0.480911, 2.12654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block71" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.06043, 0.480911, 0.216322 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block72" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.095864, 0, -0.020401, 0, 0.0686684, 0, 0.020401, 0, -0.095864, 3.21857, 0.480911, 1.13109 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block73" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.49726, 0.488235, 6.53645 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block74" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.4064, 0.488235, 6.46387 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block75" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00721649, -0.000105982, 0.0977447, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0977446, 0.000670767, 0.00721649, 9.38863, 0.488235, 4.67689 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block76" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.1765, 0.488235, 4.75567 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block77" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 13.0856, 0.488235, 4.68309 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block78" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00673449, 0, 0.0977791, 0, 0.0686684, 0, -0.0977791, 0, -0.00673449, 12.151, 0.472929, 2.74126 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block79" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.36113, 0.488235, 2.89379 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block80" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.2703, 0.488235, 2.82121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block81" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00673449, 0.0579147, 0.0976142, 0, 0.0685525, -0.000390703, -0.0977791, -0.00398885, -0.00672313, 9.25249, 0.490479, 1.03423 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block82" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.0403, 0.488235, 1.113 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block83" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 12.9495, 0.488235, 1.04043 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block84" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0258079, 0, 0.0945518, 0, 0.0686684, 0, -0.0945518, 0, -0.0258079, 11.9317, 0.488235, -0.746554 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block85" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.64048, 0.488235, 6.32786 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block86" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.55087, 0.488235, 6.30294 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block87" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00965352, -0.000122689, 0.0975341, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0975341, 0.000667913, 0.00965353, 3.57798, 0.488235, 4.49112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block88" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.36329, 0.488235, 4.61449 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block89" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.27367, 0.488235, 4.58958 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block90" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00429225, 0, 0.0979167, 0, 0.0686684, 0, -0.0979167, 0, -0.00429225, 6.38778, 0.472929, 2.62502 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block91" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.59529, 0.488235, 2.68293 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block92" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.50568, 0.488235, 2.65802 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block93" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00429225, 0.0579962, 0.0977515, 0, 0.0685525, -0.000390703, -0.0979167, -0.0025423, -0.00428501, 3.53279, 0.490479, 0.846197 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block94" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.3181, 0.488235, 0.969562 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block95" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.22849, 0.488235, 0.944652 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block96" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0234403, 0, 0.0951664, 0, 0.0686684, 0, -0.0951664, 0, -0.0234403, 6.25559, 0.488235, -0.867173 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block97" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.650199, 0.488236, 4.872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block98" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.713907, 0.488236, 2.96251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block99" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0969815, 0.000661505, 0.0141662, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0141662, 0.000153531, -0.0969815, -1.14109, 0.488235, 3.85033 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block100" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.935059, 0.488236, 2.07267 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block101" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.87135, 0.488236, 0.163178 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block102" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0980104, 0, 0.000253179, 0, 0.0686684, 0, -0.000253179, 0, -0.0980104, -2.87487, 0.472929, 0.95701 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block103" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.9929, 0.488236, 4.74811 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block104" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.92919, 0.488236, 2.83862 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block105" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0980104, 0.000149958, 0.000252752, 0, 0.0685525, -0.000390703, -0.000253179, -0.0580517, -0.0978451, -4.78418, 0.49048, 3.72644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block106" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.57816, 0.488236, 1.94878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block107" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.51445, 0.488236, 0.0392878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block108" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.0961511, 0, -0.0190018, 0, 0.0686684, 0, 0.0190018, 0, -0.0961511, -6.36944, 0.488235, 0.927112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block109" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.80964, 0.488235, -6.89401 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block110" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.7178, 0.488235, -6.79854 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block111" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00604399, 9.79321e-05, -0.0978242, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0978241, -0.00067199, -0.006044, -2.67864, 0.488235, -5.02389 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block112" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.46729, 0.488235, -5.08123 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block113" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.37545, 0.488235, -4.98576 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block114" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00790639, 0, -0.0976913, 0, 0.0686684, 0, 0.0976913, 0, 0.00790639, -5.4176, 0.472929, -3.05528 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block115" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.62984, 0.488235, -3.25324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block116" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.538, 0.488235, -3.15778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block117" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00790639, -0.0578627, -0.0975265, 0, 0.0685525, -0.000390703, 0.0976913, 0.00468297, 0.00789306, -2.49884, 0.490479, -1.38313 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block118" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.28749, 0.488235, -1.44046 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block119" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.19565, 0.488235, -1.34499 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block120" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0269398, 0, -0.0942356, 0, 0.0686684, 0, 0.0942356, 0, 0.0269398, -5.15649, 0.488235, 0.429654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block121" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.04922, 0.488235, -6.75565 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block122" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.13927, 0.488235, -6.70784 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block123" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( -0.00848338, 0.000114672, -0.0976429, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0976428, -0.000669336, -0.00848338, 3.13382, 0.488235, -4.90781 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block124" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.34716, 0.488235, -5.00976 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block125" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.562793, 0.488235, -4.96194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block126" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00546598, 0, -0.0978582, 0, 0.0686684, 0, 0.0978582, 0, 0.00546598, 0.34659, 0.472929, -3.00815 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block127" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.13811, 0.488235, -3.11153 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block128" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.22816, 0.488235, -3.06372 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block129" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00546598, -0.0579616, -0.0976931, 0, 0.0685525, -0.000390703, 0.0978582, 0.00323751, 0.00545676, 3.22271, 0.490479, -1.26369 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block130" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.43605, 0.488235, -1.36564 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block131" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.473904, 0.488235, -1.31782 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block132" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0245797, 0, -0.0948785, 0, 0.0686684, 0, 0.0948785, 0, 0.0245797, 0.520644, 0.488235, 0.482206 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block133" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.05682, 0.488236, -5.32376 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block134" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.01601, 0.488236, -3.41365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block135" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0971444, -0.000663299, -0.0130024, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0130024, -0.000145588, 0.0971444, 7.86023, 0.488235, -4.32365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block136" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.67553, 0.488236, -2.54364 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block137" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.63472, 0.488236, -0.633523 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block138" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0980064, 0, 0.000922001, 0, 0.0686684, 0, -0.000922001, 0, 0.0980064, 9.62858, 0.472929, -1.45132 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block139" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.70114, 0.488236, -5.24356 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block140" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.66033, 0.488236, -3.33345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block141" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0980064, 0.000546102, 0.000920446, 0, 0.0685525, -0.000390703, -0.000922001, 0.0580493, 0.0978411, 11.5045, 0.49048, -4.24345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block142" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.3199, 0.488236, -2.46344 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block143" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.279, 0.488236, -0.553323 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block144" type="MeshInstance" parent="Env/GroundArea1"]
 transform = Transform( 0.0959163, 0, 0.0201533, 0, 0.0686684, 0, -0.0201533, 0, 0.0959163, 13.1233, 0.488235, -1.46333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="GroundArea2" type="MeshInstance" parent="Env"]
 transform = Transform( 1, 0, 0, 0, 14.5627, 0, 0, 0, 1, 0, -6.62415, -15.3876 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Ground2" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar1" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar2" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar3" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar4" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block1" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.82388, 0.480911, -6.88061 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block2" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.91491, 0.480911, -6.80311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block3" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00696397, 0.000104249, -0.097763, 4.55468e-06, 0.0686683, 3.79005e-07, 0.097763, -0.000671039, -0.00696398, 6.93732, 0.480911, -5.01876 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block4" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.14929, 0.480911, -5.09291 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block5" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.24032, 0.480911, -5.01541 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block6" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00698704, 0, -0.0977613, 0, 0.0686684, 0, 0.0977613, 0, 0.00698704, 4.17997, 0.465605, -3.07599 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block7" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.96943, 0.480911, -3.23832 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block8" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 6.06045, 0.480911, -3.16081 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block9" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00698704, -0.0579042, -0.0975965, 0, 0.0685525, -0.000390703, 0.0977613, 0.00413844, 0.00697526, 7.08287, 0.483155, -1.37646 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block10" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.29484, 0.480911, -1.45062 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block11" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.38586, 0.480911, -1.37311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block12" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0260521, 0, -0.0944848, 0, 0.0686684, 0, 0.0944848, 0, 0.0260521, 4.40828, 0.480911, 0.411238 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block13" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.6812, 0.480911, -6.68715 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block26" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.7709, 0.480911, -6.6573 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block27" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00940154, 0.000120963, -0.0975587, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0975587, -0.000668228, -0.00940155, 12.7484, 0.480911, -4.848 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block28" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 10.9628, 0.480911, -4.96675 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block29" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.0525, 0.480911, -4.93691 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block30" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00454517, 0, -0.0979053, 0, 0.0686684, 0, 0.0979053, 0, 0.00454517, 9.94346, 0.465605, -2.97465 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block31" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.7358, 0.480911, -3.04235 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block32" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.8255, 0.480911, -3.01251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block33" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00454517, -0.0579894, -0.0977401, 0, 0.0685525, -0.000390703, 0.0979053, 0.00269211, 0.0045375, 12.803, 0.483155, -1.2032 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block34" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.0174, 0.480911, -1.32196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block35" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.1071, 0.480911, -1.29211 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block36" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.023686, 0, -0.0951056, 0, 0.0686684, 0, 0.0951056, 0, 0.023686, 10.0847, 0.480911, 0.517194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block14" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6752, 0.480911, -5.23644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block15" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6164, 0.480911, -3.32679 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block16" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0970178, -0.0006619, -0.0139156, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0139156, -0.000151821, 0.0970178, 17.4691, 0.480911, -4.2194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block17" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2677, 0.480911, -2.44121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block18" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2089, 0.480911, -0.531563 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block19" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0980107, 19.2104, 0.465605, -1.33057 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block20" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.3186, 0.480911, -5.12196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block21" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.2599, 0.480911, -3.21231 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block22" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0685525, -0.000390703, 0, 0.0580519, 0.0978454, 21.1125, 0.483155, -4.10492 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block23" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.9111, 0.480911, -2.32673 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block24" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.8523, 0.480911, -0.417085 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block25" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0961017, 0, 0.0192501, 0, 0.0686684, 0, -0.0192501, 0, 0.0961017, 22.705, 0.480911, -1.3097 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block37" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 18.1654, 0.480911, 6.52317 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block38" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.0734, 0.480911, 6.42278 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block39" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00579128, -9.61959e-05, 0.0978395, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0978394, 0.00067224, 0.00579128, 19.0296, 0.480911, 4.65082 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block40" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.8184, 0.480911, 4.70353 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block41" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.7263, 0.480911, 4.60314 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block42" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00815872, 0, 0.0976705, 0, 0.0686684, 0, -0.0976705, 0, -0.00815872, 21.7635, 0.465605, 2.67514 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block43" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 17.9762, 0.480911, 2.88288 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block44" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 19.8841, 0.480911, 2.78249 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block45" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00815872, 0.0578504, 0.0975058, 0, 0.0685525, -0.000390703, -0.0976705, -0.00483242, -0.00814496, 18.8404, 0.483155, 1.01053 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block46" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.6292, 0.480911, 1.06324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block47" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.5371, 0.480911, 0.962851 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block48" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0271831, 0, 0.0941657, 0, 0.0686684, 0, -0.0941657, 0, -0.0271831, 21.4934, 0.480911, -0.809108 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block49" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.3062, 0.480911, 6.39995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block50" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.2161, 0.480911, 6.3472 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block51" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00823112, -0.000112942, 0.0976645, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0976644, 0.00066963, 0.00823113, 13.2169, 0.480911, 4.54975 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block52" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 15.0038, 0.480911, 4.64709 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block53" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.9136, 0.480911, 4.59434 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block54" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00571874, 0, 0.0978437, 0, 0.0686684, 0, -0.0978437, 0, -0.00571874, 15.9992, 0.465605, 2.6429 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block55" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.2079, 0.480911, 2.75607 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block56" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.1178, 0.480911, 2.70333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block57" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00571874, 0.057953, 0.0976787, 0, 0.0685525, -0.000390703, -0.0978437, -0.00338722, -0.0057091, 13.1186, 0.483155, 0.905872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block58" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.9055, 0.480911, 1.00321 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block59" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.8153, 0.480911, 0.950458 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block60" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0248247, 0, 0.0948147, 0, 0.0686684, 0, -0.0948147, 0, -0.0248247, 15.8161, 0.480911, -0.846995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block61" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.295, 0.480911, 4.97325 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block62" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.3308, 0.480911, 3.06304 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block63" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0971776, 0.000663672, 0.0127514, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0127514, 0.000143874, -0.0971777, 8.48897, 0.480911, 3.9778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block64" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.66907, 0.480911, 2.19732 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block65" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.70495, 0.480911, 0.287107 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block66" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0980037, 0, -0.00117517, 0, 0.0686684, 0, 0.00117517, 0, -0.0980037, 6.71321, 0.465605, 1.11005 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block67" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.65044, 0.480911, 4.90247 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block68" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.68631, 0.480911, 2.99225 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block69" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0980037, -0.000696052, -0.00117318, 0, 0.0685525, -0.000390703, 0.00117517, -0.0580477, -0.0978384, 4.84446, 0.483155, 3.90702 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block70" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.02455, 0.480911, 2.12654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block71" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.06043, 0.480911, 0.216322 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block72" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.095864, 0, -0.020401, 0, 0.0686684, 0, 0.020401, 0, -0.095864, 3.21857, 0.480911, 1.13109 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block73" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.49726, 0.488235, 6.53645 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block74" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.4064, 0.488235, 6.46387 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block75" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00721649, -0.000105982, 0.0977447, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0977446, 0.000670767, 0.00721649, 9.38863, 0.488235, 4.67689 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block76" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.1765, 0.488235, 4.75567 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block77" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 13.0856, 0.488235, 4.68309 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block78" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00673449, 0, 0.0977791, 0, 0.0686684, 0, -0.0977791, 0, -0.00673449, 12.151, 0.472929, 2.74126 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block79" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.36113, 0.488235, 2.89379 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block80" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.2703, 0.488235, 2.82121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block81" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00673449, 0.0579147, 0.0976142, 0, 0.0685525, -0.000390703, -0.0977791, -0.00398885, -0.00672313, 9.25249, 0.490479, 1.03423 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block82" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.0403, 0.488235, 1.113 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block83" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 12.9495, 0.488235, 1.04043 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block84" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0258079, 0, 0.0945518, 0, 0.0686684, 0, -0.0945518, 0, -0.0258079, 11.9317, 0.488235, -0.746554 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block85" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.64048, 0.488235, 6.32786 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block86" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.55087, 0.488235, 6.30294 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block87" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00965352, -0.000122689, 0.0975341, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0975341, 0.000667913, 0.00965353, 3.57798, 0.488235, 4.49112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block88" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.36329, 0.488235, 4.61449 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block89" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.27367, 0.488235, 4.58958 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block90" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00429225, 0, 0.0979167, 0, 0.0686684, 0, -0.0979167, 0, -0.00429225, 6.38778, 0.472929, 2.62502 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block91" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.59529, 0.488235, 2.68293 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block92" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.50568, 0.488235, 2.65802 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block93" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00429225, 0.0579962, 0.0977515, 0, 0.0685525, -0.000390703, -0.0979167, -0.0025423, -0.00428501, 3.53279, 0.490479, 0.846197 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block94" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.3181, 0.488235, 0.969562 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block95" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.22849, 0.488235, 0.944652 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block96" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0234403, 0, 0.0951664, 0, 0.0686684, 0, -0.0951664, 0, -0.0234403, 6.25559, 0.488235, -0.867173 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block97" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.650199, 0.488236, 4.872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block98" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.713907, 0.488236, 2.96251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block99" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0969815, 0.000661505, 0.0141662, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0141662, 0.000153531, -0.0969815, -1.14109, 0.488235, 3.85033 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block100" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.935059, 0.488236, 2.07267 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block101" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.87135, 0.488236, 0.163178 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block102" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0980104, 0, 0.000253179, 0, 0.0686684, 0, -0.000253179, 0, -0.0980104, -2.87487, 0.472929, 0.95701 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block103" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.9929, 0.488236, 4.74811 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block104" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.92919, 0.488236, 2.83862 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block105" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0980104, 0.000149958, 0.000252752, 0, 0.0685525, -0.000390703, -0.000253179, -0.0580517, -0.0978451, -4.78418, 0.49048, 3.72644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block106" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.57816, 0.488236, 1.94878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block107" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.51445, 0.488236, 0.0392878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block108" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.0961511, 0, -0.0190018, 0, 0.0686684, 0, 0.0190018, 0, -0.0961511, -6.36944, 0.488235, 0.927112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block109" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.80964, 0.488235, -6.89401 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block110" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.7178, 0.488235, -6.79854 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block111" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00604399, 9.79321e-05, -0.0978242, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0978241, -0.00067199, -0.006044, -2.67864, 0.488235, -5.02389 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block112" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.46729, 0.488235, -5.08123 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block113" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.37545, 0.488235, -4.98576 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block114" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00790639, 0, -0.0976913, 0, 0.0686684, 0, 0.0976913, 0, 0.00790639, -5.4176, 0.472929, -3.05528 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block115" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.62984, 0.488235, -3.25324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block116" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.538, 0.488235, -3.15778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block117" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00790639, -0.0578627, -0.0975265, 0, 0.0685525, -0.000390703, 0.0976913, 0.00468297, 0.00789306, -2.49884, 0.490479, -1.38313 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block118" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.28749, 0.488235, -1.44046 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block119" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.19565, 0.488235, -1.34499 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block120" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0269398, 0, -0.0942356, 0, 0.0686684, 0, 0.0942356, 0, 0.0269398, -5.15649, 0.488235, 0.429654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block121" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.04922, 0.488235, -6.75565 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block122" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.13927, 0.488235, -6.70784 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block123" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( -0.00848338, 0.000114672, -0.0976429, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0976428, -0.000669336, -0.00848338, 3.13382, 0.488235, -4.90781 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block124" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.34716, 0.488235, -5.00976 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block125" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.562793, 0.488235, -4.96194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block126" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00546598, 0, -0.0978582, 0, 0.0686684, 0, 0.0978582, 0, 0.00546598, 0.34659, 0.472929, -3.00815 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block127" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.13811, 0.488235, -3.11153 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block128" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.22816, 0.488235, -3.06372 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block129" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00546598, -0.0579616, -0.0976931, 0, 0.0685525, -0.000390703, 0.0978582, 0.00323751, 0.00545676, 3.22271, 0.490479, -1.26369 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block130" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.43605, 0.488235, -1.36564 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block131" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.473904, 0.488235, -1.31782 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block132" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0245797, 0, -0.0948785, 0, 0.0686684, 0, 0.0948785, 0, 0.0245797, 0.520644, 0.488235, 0.482206 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block133" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.05682, 0.488236, -5.32376 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block134" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.01601, 0.488236, -3.41365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block135" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0971444, -0.000663299, -0.0130024, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0130024, -0.000145588, 0.0971444, 7.86023, 0.488235, -4.32365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block136" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.67553, 0.488236, -2.54364 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block137" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.63472, 0.488236, -0.633523 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block138" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0980064, 0, 0.000922001, 0, 0.0686684, 0, -0.000922001, 0, 0.0980064, 9.62858, 0.472929, -1.45132 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block139" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.70114, 0.488236, -5.24356 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block140" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.66033, 0.488236, -3.33345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block141" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0980064, 0.000546102, 0.000920446, 0, 0.0685525, -0.000390703, -0.000922001, 0.0580493, 0.0978411, 11.5045, 0.49048, -4.24345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block142" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.3199, 0.488236, -2.46344 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block143" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.279, 0.488236, -0.553323 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block144" type="MeshInstance" parent="Env/GroundArea2"]
 transform = Transform( 0.0959163, 0, 0.0201533, 0, 0.0686684, 0, -0.0201533, 0, 0.0959163, 13.1233, 0.488235, -1.46333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="GroundArea3" type="MeshInstance" parent="Env"]
 transform = Transform( 1, 0, 0, 0, 14.5627, 0, 0, 0, 1, 0.274746, -6.62415, -37.2287 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Ground2" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Env/GroundArea3/Ground2"]
 
@@ -1842,889 +1540,741 @@ shape = SubResource( 5 )
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar2" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar3" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar4" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block1" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.82388, 0.480911, -6.88061 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block2" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.91491, 0.480911, -6.80311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block3" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00696397, 0.000104249, -0.097763, 4.55468e-06, 0.0686683, 3.79005e-07, 0.097763, -0.000671039, -0.00696398, 6.93732, 0.480911, -5.01876 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block4" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.14929, 0.480911, -5.09291 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block5" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.24032, 0.480911, -5.01541 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block6" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00698704, 0, -0.0977613, 0, 0.0686684, 0, 0.0977613, 0, 0.00698704, 4.17997, 0.465605, -3.07599 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block7" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.96943, 0.480911, -3.23832 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block8" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 6.06045, 0.480911, -3.16081 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block9" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00698704, -0.0579042, -0.0975965, 0, 0.0685525, -0.000390703, 0.0977613, 0.00413844, 0.00697526, 7.08287, 0.483155, -1.37646 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block10" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.29484, 0.480911, -1.45062 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block11" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.38586, 0.480911, -1.37311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block12" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0260521, 0, -0.0944848, 0, 0.0686684, 0, 0.0944848, 0, 0.0260521, 4.40828, 0.480911, 0.411238 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block13" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.6812, 0.480911, -6.68715 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block26" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.7709, 0.480911, -6.6573 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block27" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00940154, 0.000120963, -0.0975587, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0975587, -0.000668228, -0.00940155, 12.7484, 0.480911, -4.848 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block28" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 10.9628, 0.480911, -4.96675 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block29" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.0525, 0.480911, -4.93691 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block30" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00454517, 0, -0.0979053, 0, 0.0686684, 0, 0.0979053, 0, 0.00454517, 9.94346, 0.465605, -2.97465 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block31" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.7358, 0.480911, -3.04235 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block32" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.8255, 0.480911, -3.01251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block33" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00454517, -0.0579894, -0.0977401, 0, 0.0685525, -0.000390703, 0.0979053, 0.00269211, 0.0045375, 12.803, 0.483155, -1.2032 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block34" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.0174, 0.480911, -1.32196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block35" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.1071, 0.480911, -1.29211 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block36" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.023686, 0, -0.0951056, 0, 0.0686684, 0, 0.0951056, 0, 0.023686, 10.0847, 0.480911, 0.517194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block14" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6752, 0.480911, -5.23644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block15" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6164, 0.480911, -3.32679 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block16" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0970178, -0.0006619, -0.0139156, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0139156, -0.000151821, 0.0970178, 17.4691, 0.480911, -4.2194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block17" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2677, 0.480911, -2.44121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block18" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2089, 0.480911, -0.531563 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block19" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0980107, 19.2104, 0.465605, -1.33057 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block20" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.3186, 0.480911, -5.12196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block21" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.2599, 0.480911, -3.21231 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block22" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0685525, -0.000390703, 0, 0.0580519, 0.0978454, 21.1125, 0.483155, -4.10492 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block23" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.9111, 0.480911, -2.32673 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block24" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.8523, 0.480911, -0.417085 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block25" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0961017, 0, 0.0192501, 0, 0.0686684, 0, -0.0192501, 0, 0.0961017, 22.705, 0.480911, -1.3097 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block37" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 18.1654, 0.480911, 6.52317 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block38" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.0734, 0.480911, 6.42278 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block39" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00579128, -9.61959e-05, 0.0978395, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0978394, 0.00067224, 0.00579128, 19.0296, 0.480911, 4.65082 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block40" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.8184, 0.480911, 4.70353 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block41" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.7263, 0.480911, 4.60314 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block42" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00815872, 0, 0.0976705, 0, 0.0686684, 0, -0.0976705, 0, -0.00815872, 21.7635, 0.465605, 2.67514 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block43" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 17.9762, 0.480911, 2.88288 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block44" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 19.8841, 0.480911, 2.78249 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block45" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00815872, 0.0578504, 0.0975058, 0, 0.0685525, -0.000390703, -0.0976705, -0.00483242, -0.00814496, 18.8404, 0.483155, 1.01053 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block46" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.6292, 0.480911, 1.06324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block47" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.5371, 0.480911, 0.962851 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block48" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0271831, 0, 0.0941657, 0, 0.0686684, 0, -0.0941657, 0, -0.0271831, 21.4934, 0.480911, -0.809108 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block49" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.3062, 0.480911, 6.39995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block50" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.2161, 0.480911, 6.3472 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block51" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00823112, -0.000112942, 0.0976645, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0976644, 0.00066963, 0.00823113, 13.2169, 0.480911, 4.54975 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block52" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 15.0038, 0.480911, 4.64709 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block53" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.9136, 0.480911, 4.59434 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block54" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00571874, 0, 0.0978437, 0, 0.0686684, 0, -0.0978437, 0, -0.00571874, 15.9992, 0.465605, 2.6429 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block55" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.2079, 0.480911, 2.75607 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block56" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.1178, 0.480911, 2.70333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block57" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00571874, 0.057953, 0.0976787, 0, 0.0685525, -0.000390703, -0.0978437, -0.00338722, -0.0057091, 13.1186, 0.483155, 0.905872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block58" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.9055, 0.480911, 1.00321 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block59" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.8153, 0.480911, 0.950458 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block60" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0248247, 0, 0.0948147, 0, 0.0686684, 0, -0.0948147, 0, -0.0248247, 15.8161, 0.480911, -0.846995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block61" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.295, 0.480911, 4.97325 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block62" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.3308, 0.480911, 3.06304 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block63" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0971776, 0.000663672, 0.0127514, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0127514, 0.000143874, -0.0971777, 8.48897, 0.480911, 3.9778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block64" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.66907, 0.480911, 2.19732 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block65" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.70495, 0.480911, 0.287107 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block66" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0980037, 0, -0.00117517, 0, 0.0686684, 0, 0.00117517, 0, -0.0980037, 6.71321, 0.465605, 1.11005 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block67" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.65044, 0.480911, 4.90247 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block68" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.68631, 0.480911, 2.99225 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block69" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0980037, -0.000696052, -0.00117318, 0, 0.0685525, -0.000390703, 0.00117517, -0.0580477, -0.0978384, 4.84446, 0.483155, 3.90702 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block70" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.02455, 0.480911, 2.12654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block71" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.06043, 0.480911, 0.216322 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block72" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.095864, 0, -0.020401, 0, 0.0686684, 0, 0.020401, 0, -0.095864, 3.21857, 0.480911, 1.13109 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block73" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.49726, 0.488235, 6.53645 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block74" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.4064, 0.488235, 6.46387 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block75" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00721649, -0.000105982, 0.0977447, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0977446, 0.000670767, 0.00721649, 9.38863, 0.488235, 4.67689 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block76" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.1765, 0.488235, 4.75567 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block77" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 13.0856, 0.488235, 4.68309 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block78" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00673449, 0, 0.0977791, 0, 0.0686684, 0, -0.0977791, 0, -0.00673449, 12.151, 0.472929, 2.74126 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block79" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.36113, 0.488235, 2.89379 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block80" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.2703, 0.488235, 2.82121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block81" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00673449, 0.0579147, 0.0976142, 0, 0.0685525, -0.000390703, -0.0977791, -0.00398885, -0.00672313, 9.25249, 0.490479, 1.03423 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block82" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.0403, 0.488235, 1.113 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block83" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 12.9495, 0.488235, 1.04043 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block84" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0258079, 0, 0.0945518, 0, 0.0686684, 0, -0.0945518, 0, -0.0258079, 11.9317, 0.488235, -0.746554 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block85" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.64048, 0.488235, 6.32786 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block86" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.55087, 0.488235, 6.30294 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block87" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00965352, -0.000122689, 0.0975341, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0975341, 0.000667913, 0.00965353, 3.57798, 0.488235, 4.49112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block88" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.36329, 0.488235, 4.61449 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block89" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.27367, 0.488235, 4.58958 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block90" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00429225, 0, 0.0979167, 0, 0.0686684, 0, -0.0979167, 0, -0.00429225, 6.38778, 0.472929, 2.62502 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block91" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.59529, 0.488235, 2.68293 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block92" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.50568, 0.488235, 2.65802 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block93" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00429225, 0.0579962, 0.0977515, 0, 0.0685525, -0.000390703, -0.0979167, -0.0025423, -0.00428501, 3.53279, 0.490479, 0.846197 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block94" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.3181, 0.488235, 0.969562 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block95" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.22849, 0.488235, 0.944652 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block96" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0234403, 0, 0.0951664, 0, 0.0686684, 0, -0.0951664, 0, -0.0234403, 6.25559, 0.488235, -0.867173 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block97" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.650199, 0.488236, 4.872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block98" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.713907, 0.488236, 2.96251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block99" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0969815, 0.000661505, 0.0141662, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0141662, 0.000153531, -0.0969815, -1.14109, 0.488235, 3.85033 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block100" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.935059, 0.488236, 2.07267 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block101" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.87135, 0.488236, 0.163178 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block102" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0980104, 0, 0.000253179, 0, 0.0686684, 0, -0.000253179, 0, -0.0980104, -2.87487, 0.472929, 0.95701 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block103" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.9929, 0.488236, 4.74811 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block104" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.92919, 0.488236, 2.83862 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block105" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0980104, 0.000149958, 0.000252752, 0, 0.0685525, -0.000390703, -0.000253179, -0.0580517, -0.0978451, -4.78418, 0.49048, 3.72644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block106" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.57816, 0.488236, 1.94878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block107" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.51445, 0.488236, 0.0392878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block108" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.0961511, 0, -0.0190018, 0, 0.0686684, 0, 0.0190018, 0, -0.0961511, -6.36944, 0.488235, 0.927112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block109" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.80964, 0.488235, -6.89401 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block110" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.7178, 0.488235, -6.79854 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block111" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00604399, 9.79321e-05, -0.0978242, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0978241, -0.00067199, -0.006044, -2.67864, 0.488235, -5.02389 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block112" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.46729, 0.488235, -5.08123 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block113" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.37545, 0.488235, -4.98576 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block114" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00790639, 0, -0.0976913, 0, 0.0686684, 0, 0.0976913, 0, 0.00790639, -5.4176, 0.472929, -3.05528 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block115" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.62984, 0.488235, -3.25324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block116" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.538, 0.488235, -3.15778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block117" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00790639, -0.0578627, -0.0975265, 0, 0.0685525, -0.000390703, 0.0976913, 0.00468297, 0.00789306, -2.49884, 0.490479, -1.38313 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block118" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.28749, 0.488235, -1.44046 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block119" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.19565, 0.488235, -1.34499 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block120" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0269398, 0, -0.0942356, 0, 0.0686684, 0, 0.0942356, 0, 0.0269398, -5.15649, 0.488235, 0.429654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block121" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.04922, 0.488235, -6.75565 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block122" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.13927, 0.488235, -6.70784 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block123" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( -0.00848338, 0.000114672, -0.0976429, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0976428, -0.000669336, -0.00848338, 3.13382, 0.488235, -4.90781 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block124" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.34716, 0.488235, -5.00976 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block125" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.562793, 0.488235, -4.96194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block126" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00546598, 0, -0.0978582, 0, 0.0686684, 0, 0.0978582, 0, 0.00546598, 0.34659, 0.472929, -3.00815 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block127" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.13811, 0.488235, -3.11153 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block128" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.22816, 0.488235, -3.06372 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block129" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00546598, -0.0579616, -0.0976931, 0, 0.0685525, -0.000390703, 0.0978582, 0.00323751, 0.00545676, 3.22271, 0.490479, -1.26369 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block130" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.43605, 0.488235, -1.36564 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block131" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.473904, 0.488235, -1.31782 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block132" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0245797, 0, -0.0948785, 0, 0.0686684, 0, 0.0948785, 0, 0.0245797, 0.520644, 0.488235, 0.482206 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block133" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.05682, 0.488236, -5.32376 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block134" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.01601, 0.488236, -3.41365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block135" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0971444, -0.000663299, -0.0130024, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0130024, -0.000145588, 0.0971444, 7.86023, 0.488235, -4.32365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block136" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.67553, 0.488236, -2.54364 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block137" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.63472, 0.488236, -0.633523 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block138" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0980064, 0, 0.000922001, 0, 0.0686684, 0, -0.000922001, 0, 0.0980064, 9.62858, 0.472929, -1.45132 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block139" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.70114, 0.488236, -5.24356 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block140" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.66033, 0.488236, -3.33345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block141" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0980064, 0.000546102, 0.000920446, 0, 0.0685525, -0.000390703, -0.000922001, 0.0580493, 0.0978411, 11.5045, 0.49048, -4.24345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block142" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.3199, 0.488236, -2.46344 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block143" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.279, 0.488236, -0.553323 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block144" type="MeshInstance" parent="Env/GroundArea3"]
 transform = Transform( 0.0959163, 0, 0.0201533, 0, 0.0686684, 0, -0.0201533, 0, 0.0959163, 13.1233, 0.488235, -1.46333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Env/GroundArea3"]
 
@@ -2734,898 +2284,748 @@ shape = SubResource( 6 )
 [node name="GroundArea4" type="MeshInstance" parent="Env"]
 transform = Transform( 1, 0, 0, 0, 14.5627, 0, 0, 0, 1, 0.274746, -6.62415, -52.6287 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Ground2" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar1" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar2" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, -7.21242 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar3" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, 23, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Pillar4" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.101193, 0, 0, 0, -3.00159e-09, 0.0686684, 0, -1.36804, -5.97988e-08, -6.92392, 1.00422, 7.18757 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block1" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.82388, 0.480911, -6.88061 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block2" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.91491, 0.480911, -6.80311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block3" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00696397, 0.000104249, -0.097763, 4.55468e-06, 0.0686683, 3.79005e-07, 0.097763, -0.000671039, -0.00696398, 6.93732, 0.480911, -5.01876 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block4" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.14929, 0.480911, -5.09291 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block5" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.24032, 0.480911, -5.01541 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block6" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00698704, 0, -0.0977613, 0, 0.0686684, 0, 0.0977613, 0, 0.00698704, 4.17997, 0.465605, -3.07599 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block7" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 7.96943, 0.480911, -3.23832 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block8" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 6.06045, 0.480911, -3.16081 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block9" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00698704, -0.0579042, -0.0975965, 0, 0.0685525, -0.000390703, 0.0977613, 0.00413844, 0.00697526, 7.08287, 0.483155, -1.37646 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block10" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 5.29484, 0.480911, -1.45062 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block11" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00703626, 0, -0.09845, 0, 0.0686684, 0, 0.09845, 0, 0.00703626, 3.38586, 0.480911, -1.37311 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block12" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0260521, 0, -0.0944848, 0, 0.0686684, 0, 0.0944848, 0, 0.0260521, 4.40828, 0.480911, 0.411238 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block13" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.6812, 0.480911, -6.68715 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block26" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.7709, 0.480911, -6.6573 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block27" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00940154, 0.000120963, -0.0975587, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0975587, -0.000668228, -0.00940155, 12.7484, 0.480911, -4.848 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block28" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 10.9628, 0.480911, -4.96675 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block29" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.0525, 0.480911, -4.93691 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block30" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00454517, 0, -0.0979053, 0, 0.0686684, 0, 0.0979053, 0, 0.00454517, 9.94346, 0.465605, -2.97465 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block31" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 13.7358, 0.480911, -3.04235 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block32" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.8255, 0.480911, -3.01251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block33" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00454517, -0.0579894, -0.0977401, 0, 0.0685525, -0.000390703, 0.0979053, 0.00269211, 0.0045375, 12.803, 0.483155, -1.2032 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block34" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 11.0174, 0.480911, -1.32196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block35" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00457718, 0, -0.0985949, 0, 0.0686684, 0, 0.0985949, 0, 0.00457718, 9.1071, 0.480911, -1.29211 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block36" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.023686, 0, -0.0951056, 0, 0.0686684, 0, 0.0951056, 0, 0.023686, 10.0847, 0.480911, 0.517194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block14" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6752, 0.480911, -5.23644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block15" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 15.6164, 0.480911, -3.32679 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block16" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0970178, -0.0006619, -0.0139156, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0139156, -0.000151821, 0.0970178, 17.4691, 0.480911, -4.2194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block17" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2677, 0.480911, -2.44121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block18" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 17.2089, 0.480911, -0.531563 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block19" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0980107, 19.2104, 0.465605, -1.33057 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block20" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.3186, 0.480911, -5.12196 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block21" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 19.2599, 0.480911, -3.21231 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block22" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0980107, 0, 0, 0, 0.0685525, -0.000390703, 0, 0.0580519, 0.0978454, 21.1125, 0.483155, -4.10492 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block23" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.9111, 0.480911, -2.32673 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block24" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0987011, 0, 0, 0, 0.0686684, 0, 0, 0, 0.0987011, 20.8523, 0.480911, -0.417085 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block25" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0961017, 0, 0.0192501, 0, 0.0686684, 0, -0.0192501, 0, 0.0961017, 22.705, 0.480911, -1.3097 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block37" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 18.1654, 0.480911, 6.52317 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block38" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.0734, 0.480911, 6.42278 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block39" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00579128, -9.61959e-05, 0.0978395, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0978394, 0.00067224, 0.00579128, 19.0296, 0.480911, 4.65082 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block40" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.8184, 0.480911, 4.70353 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block41" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.7263, 0.480911, 4.60314 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block42" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00815872, 0, 0.0976705, 0, 0.0686684, 0, -0.0976705, 0, -0.00815872, 21.7635, 0.465605, 2.67514 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block43" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 17.9762, 0.480911, 2.88288 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block44" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 19.8841, 0.480911, 2.78249 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block45" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00815872, 0.0578504, 0.0975058, 0, 0.0685525, -0.000390703, -0.0976705, -0.00483242, -0.00814496, 18.8404, 0.483155, 1.01053 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block46" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 20.6292, 0.480911, 1.06324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block47" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00821619, 0, 0.0983585, 0, 0.0686684, 0, -0.0983585, 0, -0.00821619, 22.5371, 0.480911, 0.962851 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block48" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0271831, 0, 0.0941657, 0, 0.0686684, 0, -0.0941657, 0, -0.0271831, 21.4934, 0.480911, -0.809108 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block49" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.3062, 0.480911, 6.39995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block50" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.2161, 0.480911, 6.3472 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block51" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00823112, -0.000112942, 0.0976645, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0976644, 0.00066963, 0.00823113, 13.2169, 0.480911, 4.54975 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block52" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 15.0038, 0.480911, 4.64709 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block53" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.9136, 0.480911, 4.59434 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block54" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00571874, 0, 0.0978437, 0, 0.0686684, 0, -0.0978437, 0, -0.00571874, 15.9992, 0.465605, 2.6429 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block55" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 12.2079, 0.480911, 2.75607 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block56" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.1178, 0.480911, 2.70333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block57" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00571874, 0.057953, 0.0976787, 0, 0.0685525, -0.000390703, -0.0978437, -0.00338722, -0.0057091, 13.1186, 0.483155, 0.905872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block58" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 14.9055, 0.480911, 1.00321 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block59" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00575902, 0, 0.0985329, 0, 0.0686684, 0, -0.0985329, 0, -0.00575902, 16.8153, 0.480911, 0.950458 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block60" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0248247, 0, 0.0948147, 0, 0.0686684, 0, -0.0948147, 0, -0.0248247, 15.8161, 0.480911, -0.846995 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block61" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.295, 0.480911, 4.97325 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block62" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 10.3308, 0.480911, 3.06304 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block63" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0971776, 0.000663672, 0.0127514, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0127514, 0.000143874, -0.0971777, 8.48897, 0.480911, 3.9778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block64" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.66907, 0.480911, 2.19732 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block65" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 8.70495, 0.480911, 0.287107 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block66" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0980037, 0, -0.00117517, 0, 0.0686684, 0, 0.00117517, 0, -0.0980037, 6.71321, 0.465605, 1.11005 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block67" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.65044, 0.480911, 4.90247 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block68" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 6.68631, 0.480911, 2.99225 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block69" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0980037, -0.000696052, -0.00117318, 0, 0.0685525, -0.000390703, 0.00117517, -0.0580477, -0.0978384, 4.84446, 0.483155, 3.90702 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block70" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.02455, 0.480911, 2.12654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block71" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.098694, 0, -0.00118344, 0, 0.0686684, 0, 0.00118344, 0, -0.098694, 5.06043, 0.480911, 0.216322 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block72" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.095864, 0, -0.020401, 0, 0.0686684, 0, 0.020401, 0, -0.095864, 3.21857, 0.480911, 1.13109 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block73" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.49726, 0.488235, 6.53645 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block74" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.4064, 0.488235, 6.46387 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block75" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00721649, -0.000105982, 0.0977447, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0977446, 0.000670767, 0.00721649, 9.38863, 0.488235, 4.67689 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block76" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.1765, 0.488235, 4.75567 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block77" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 13.0856, 0.488235, 4.68309 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block78" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00673449, 0, 0.0977791, 0, 0.0686684, 0, -0.0977791, 0, -0.00673449, 12.151, 0.472929, 2.74126 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block79" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 8.36113, 0.488235, 2.89379 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block80" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 10.2703, 0.488235, 2.82121 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block81" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00673449, 0.0579147, 0.0976142, 0, 0.0685525, -0.000390703, -0.0977791, -0.00398885, -0.00672313, 9.25249, 0.490479, 1.03423 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block82" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 11.0403, 0.488235, 1.113 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block83" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00678192, 0, 0.0984678, 0, 0.0686684, 0, -0.0984678, 0, -0.00678192, 12.9495, 0.488235, 1.04043 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block84" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0258079, 0, 0.0945518, 0, 0.0686684, 0, -0.0945518, 0, -0.0258079, 11.9317, 0.488235, -0.746554 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block85" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.64048, 0.488235, 6.32786 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block86" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.55087, 0.488235, 6.30294 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block87" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00965352, -0.000122689, 0.0975341, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0975341, 0.000667913, 0.00965353, 3.57798, 0.488235, 4.49112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block88" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.36329, 0.488235, 4.61449 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block89" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.27367, 0.488235, 4.58958 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block90" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00429225, 0, 0.0979167, 0, 0.0686684, 0, -0.0979167, 0, -0.00429225, 6.38778, 0.472929, 2.62502 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block91" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 2.59529, 0.488235, 2.68293 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block92" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 4.50568, 0.488235, 2.65802 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block93" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00429225, 0.0579962, 0.0977515, 0, 0.0685525, -0.000390703, -0.0979167, -0.0025423, -0.00428501, 3.53279, 0.490479, 0.846197 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block94" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 5.3181, 0.488235, 0.969562 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block95" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00432248, 0, 0.0986064, 0, 0.0686684, 0, -0.0986064, 0, -0.00432248, 7.22849, 0.488235, 0.944652 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block96" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0234403, 0, 0.0951664, 0, 0.0686684, 0, -0.0951664, 0, -0.0234403, 6.25559, 0.488235, -0.867173 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block97" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.650199, 0.488236, 4.872 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block98" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, 0.713907, 0.488236, 2.96251 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block99" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0969815, 0.000661505, 0.0141662, 4.55468e-06, 0.0686683, 3.79005e-07, -0.0141662, 0.000153531, -0.0969815, -1.14109, 0.488235, 3.85033 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block100" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.935059, 0.488236, 2.07267 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block101" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -0.87135, 0.488236, 0.163178 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block102" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0980104, 0, 0.000253179, 0, 0.0686684, 0, -0.000253179, 0, -0.0980104, -2.87487, 0.472929, 0.95701 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block103" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.9929, 0.488236, 4.74811 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block104" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -2.92919, 0.488236, 2.83862 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block105" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0980104, 0.000149958, 0.000252752, 0, 0.0685525, -0.000390703, -0.000253179, -0.0580517, -0.0978451, -4.78418, 0.49048, 3.72644 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block106" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.57816, 0.488236, 1.94878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block107" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0987007, 0, 0.000254962, 0, 0.0686684, 0, -0.000254962, 0, -0.0987007, -4.51445, 0.488236, 0.0392878 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block108" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.0961511, 0, -0.0190018, 0, 0.0686684, 0, 0.0190018, 0, -0.0961511, -6.36944, 0.488235, 0.927112 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block109" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.80964, 0.488235, -6.89401 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block110" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.7178, 0.488235, -6.79854 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block111" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00604399, 9.79321e-05, -0.0978242, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0978241, -0.00067199, -0.006044, -2.67864, 0.488235, -5.02389 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block112" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.46729, 0.488235, -5.08123 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block113" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.37545, 0.488235, -4.98576 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block114" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00790639, 0, -0.0976913, 0, 0.0686684, 0, 0.0976913, 0, 0.00790639, -5.4176, 0.472929, -3.05528 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block115" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -1.62984, 0.488235, -3.25324 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block116" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -3.538, 0.488235, -3.15778 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block117" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00790639, -0.0578627, -0.0975265, 0, 0.0685525, -0.000390703, 0.0976913, 0.00468297, 0.00789306, -2.49884, 0.490479, -1.38313 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block118" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -4.28749, 0.488235, -1.44046 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block119" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00796208, 0, -0.0983794, 0, 0.0686684, 0, 0.0983794, 0, 0.00796208, -6.19565, 0.488235, -1.34499 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block120" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0269398, 0, -0.0942356, 0, 0.0686684, 0, 0.0942356, 0, 0.0269398, -5.15649, 0.488235, 0.429654 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block121" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.04922, 0.488235, -6.75565 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block122" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.13927, 0.488235, -6.70784 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block123" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( -0.00848338, 0.000114672, -0.0976429, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0976428, -0.000669336, -0.00848338, 3.13382, 0.488235, -4.90781 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block124" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.34716, 0.488235, -5.00976 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block125" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.562793, 0.488235, -4.96194 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block126" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00546598, 0, -0.0978582, 0, 0.0686684, 0, 0.0978582, 0, 0.00546598, 0.34659, 0.472929, -3.00815 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block127" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 4.13811, 0.488235, -3.11153 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block128" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 2.22816, 0.488235, -3.06372 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block129" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00546598, -0.0579616, -0.0976931, 0, 0.0685525, -0.000390703, 0.0978582, 0.00323751, 0.00545676, 3.22271, 0.490479, -1.26369 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block130" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, 1.43605, 0.488235, -1.36564 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block131" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.00550448, 0, -0.0985475, 0, 0.0686684, 0, 0.0985475, 0, 0.00550448, -0.473904, 0.488235, -1.31782 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block132" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0245797, 0, -0.0948785, 0, 0.0686684, 0, 0.0948785, 0, 0.0245797, 0.520644, 0.488235, 0.482206 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block133" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.05682, 0.488236, -5.32376 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block134" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 6.01601, 0.488236, -3.41365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block135" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0971444, -0.000663299, -0.0130024, 4.55468e-06, 0.0686683, 3.79005e-07, 0.0130024, -0.000145588, 0.0971444, 7.86023, 0.488235, -4.32365 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block136" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.67553, 0.488236, -2.54364 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block137" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 7.63472, 0.488236, -0.633523 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block138" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0980064, 0, 0.000922001, 0, 0.0686684, 0, -0.000922001, 0, 0.0980064, 9.62858, 0.472929, -1.45132 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block139" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.70114, 0.488236, -5.24356 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block140" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 9.66033, 0.488236, -3.33345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block141" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0980064, 0.000546102, 0.000920446, 0, 0.0685525, -0.000390703, -0.000922001, 0.0580493, 0.0978411, 11.5045, 0.49048, -4.24345 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block142" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.3199, 0.488236, -2.46344 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block143" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0986967, 0, 0.000928495, 0, 0.0686684, 0, -0.000928495, 0, 0.0986967, 11.279, 0.488236, -0.553323 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Block144" type="MeshInstance" parent="Env/GroundArea4"]
 transform = Transform( 0.0959163, 0, 0.0201533, 0, 0.0686684, 0, -0.0201533, 0, 0.0959163, 13.1233, 0.488235, -1.46333 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null

@@ -1,6 +1,6 @@
 class_name Challenges
 extends VBoxContainer
-enum LEVEL {NONE, CORRIDOR, CITY}
+enum LEVEL {NONE, CORRIDOR, CITY, FOREST}
 export(LEVEL) onready var level
 var destroy_on_release = false
 var challenges = [] 
@@ -96,8 +96,25 @@ func update_level_challenges(set = level):
 			else:
 				load_challenges(ld_challenges)
 				update_challenge_labels()
+		LEVEL.FOREST:
+			var ld_challenges = GameData.get_level_challenges("Forest")
+			
+			if ld_challenges == null:
+				challenge_add_highscore(1000)
+				challenge_add_highscore(1500)
+				challenge_add_highscore(2000)
+				challenge_add_kills(10)
+				challenge_add("Shoot all 4 targets", 4, "method_targets", "challenge_targets")
+				challenge_add("Find the secret room", 1, "method_secret_area")
+				
+			else:
+				load_challenges(ld_challenges)
+				update_challenge_labels()
 		_:
 			level_not_set = true
+			
+			
+			
 
 func update_challenge_labels():
 	remove_labels()
