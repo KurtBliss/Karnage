@@ -192,13 +192,18 @@ disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
+[node name="Skeleton" parent="Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
+transform = Transform( -0.069992, -0.0111058, 0.997485, 0.982302, 0.173384, 0.0708566, -0.173734, 0.984791, -0.00122547, -0.265647, 0.977828, 0.295244 )
 bone_name = "mixamorig_RightHand"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
 transform = Transform( -0.013351, 0.693868, -0.0914798, -0.105055, 0.0884729, 0.686393, 0.691943, 0.0268206, 0.102447, -0.0222889, 0.272644, 0.0968093 )
 script = ExtResource( 9 )
+holder_path = NodePath("../../../..")
+raycast_path = NodePath("../../../../RayCast")
 
 [node name="Particles" type="CPUParticles" parent="."]
 emitting = false

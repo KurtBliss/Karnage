@@ -11,6 +11,7 @@ var bodies = ["wait"]
 var set_fire_delay = 1.5
 var cur_fire_delay = set_fire_delay
 var vec_look_at = Vector3.ZERO
+var pickup
 
 var stick_to_path = false
 enum {ZIG, ZAG}
@@ -38,6 +39,7 @@ func state_idle(_delta):
 	if get_player_spotted():
 		set_physics_state("state_chase")
 	process_path()
+	#start_grab_weapon()
 
 func state_dumb(_delta):
 	pass
@@ -147,6 +149,37 @@ func state_chase_path(_delta):
 	if not process:
 		set_path_to_player()
 
+func state_grab_weapon(_delta):
+	
+	if not is_instance_valid(pickup):
+		set_physics_state(previous_physics_state)
+	
+	var process = process_path()
+	if not process:
+		set_path_to_node(pickup)
+	
+
+func start_grab_weapon(within_range = 300):
+	var wpn = get_closest_pickup_weapon(within_range)
+	if wpn != null:
+		pickup = wpn
+		set_path_to_node(pickup)
+		set_physics_state("state_grab_weapon")
+
+func get_closest_pickup_weapon(within_range = 300):
+	var weapons = get_tree().get_nodes_in_group("weapon_pickup")
+	var dist
+	var closest
+	var closest_dist
+	for wpn in weapons:
+		dist = (global_transform.origin - wpn.global_transform.origin)
+		dist = dist.length()
+		if closest == null or dist < closest_dist:
+			closest = wpn
+			closest_dist = dist 
+	if closest_dist > within_range:
+		return null
+	return closest
 
 func state_dead(_delta):
 	pass

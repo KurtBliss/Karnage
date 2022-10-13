@@ -112,6 +112,13 @@ func fire_raycast():
 				"knock": knock_back * 10
 			})
 			hit = true
+		elif collider is RigidBody:
+			var rb : RigidBody = collider
+			var pos = raycast.get_collision_point()
+			var dir = (raycast.global_transform.origin - pos).normalized()
+			var force = -dir * 1
+			#rb.add_force(force, pos)
+			rb.apply_impulse(pos - dir * -10, force)
 		else:
 			var aa = collider is GridMap 
 			var bb = collider.is_in_group("door")

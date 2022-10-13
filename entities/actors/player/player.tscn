@@ -354,9 +354,6 @@ modulate = Color( 1, 1, 1, 0.823529 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Health" type="Label" parent="Hud"]
 margin_right = 124.0
@@ -492,9 +489,6 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 np_button_container = NodePath("VBoxContainer")
 
 [node name="Polygon2D" type="Polygon2D" parent="Pause"]

@@ -9,8 +9,8 @@ func _ready():
 func _process(_delta):
 	if not curbody:
 		return
-		
-	if not Input.is_action_just_pressed("interact"):
+	
+	if not Input.is_action_just_pressed("interact") and curbody is Player:
 		return
 
 	var weapons = curbody.weapon
@@ -19,7 +19,7 @@ func _process(_delta):
 			parrent.queue_free()
 
 func _on_PistolPickup_body_entered(body):
-	if body == ref.player:
+	if body == ref.player or body is Enemy:
 		curbody = body
 
 func _on_Area_body_exited(body):

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 5.29
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.09
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0, 0, 0, 0.290196 )
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+radial_segments = 6
+rings = 3
+
+[node name="Particles" type="Particles"]
+amount = 32
+lifetime = 68.54
+preprocess = 600.0
+randomness = 0.26
+visibility_aabb = AABB( -4.04736, -4, -4, 8, 8, 8 )
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )

@@ -15,13 +15,16 @@ var dead = false
 export var respawn = true
 
 func set_path_to(target_pos):
-	path = nav.get_simple_path(global_transform.origin, target_pos)
+	path = ref.level.get_simple_path(global_transform.origin, target_pos)
 	path_ind = 0
 
 func set_path_to_player():
 	if get_player():	
-		path =nav.get_simple_path(global_transform.origin, ref.player.global_transform.origin)
-		path_ind = 0
+		set_path_to_node(ref.player)
+
+func set_path_to_node(nd):
+	path = ref.level.get_simple_path(global_transform.origin, nd.global_transform.origin)
+	path_ind = 0
 
 func get_player():
 	var p = ref.player

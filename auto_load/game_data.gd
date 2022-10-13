@@ -11,7 +11,8 @@ var game_data_defaults = {
 	"game-data-ver": 0,
 	"levels": {
 		"Corridor": get_default_level_data(),
-		"City": get_default_level_data()
+		"City": get_default_level_data(),
+		"Forest": get_default_level_data()
 	}
 }
 var settings = settings_defaults
@@ -30,6 +31,8 @@ func get_level_data(level):
 
 func get_level_highscore(level):
 	var ld = get_level_data(level)
+	if ld == null:
+		return 0
 	return ld["highscore"]
 
 func get_level_challenges(level):
