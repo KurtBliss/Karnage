@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://entities/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=2]
@@ -13,7 +13,28 @@
 [ext_resource path="res://entities/particles/Dust.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=12]
 [ext_resource path="res://entities/pickups/ShotgunPickup.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/mixamo/mannequin/textures/Ch36_1001_Specular.png" type="Texture" id=14]
 [ext_resource path="res://entities/pickups/M16Pickup.tscn" type="PackedScene" id=15]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 4
+octaves = 9
+period = 165.1
+persistence = 0.815
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+resource_name = "Ch36_Body"
+params_cull_mode = 2
+albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
+albedo_texture = SubResource( 2 )
+metallic_specular = 1.0
+metallic_texture = ExtResource( 14 )
+roughness = 0.0372549
 
 [node name="Forest" type="Navigation"]
 script = ExtResource( 1 )
@@ -415,7 +436,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1365, 0.362599, -4.56048 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.99, 1.95426, -60.9685 )
 
 [node name="Skeleton" parent="Goomba/Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
+bones/18/bound_children = [  ]
+
+[node name="Ch36" parent="Goomba/Mannequin/Skeleton" index="0"]
+material/0 = SubResource( 3 )
 
 [node name="BoneAttachment" parent="Goomba/Mannequin/Skeleton" index="1"]
 transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )

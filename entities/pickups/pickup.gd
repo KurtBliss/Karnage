@@ -19,7 +19,7 @@ func _process(_delta):
 			parrent.queue_free()
 
 func _on_PistolPickup_body_entered(body):
-	if body == ref.player or body is Enemy:
+	if body == ref.player: #or body is Goomba:
 		curbody = body
 
 func _on_Area_body_exited(body):

@@ -21,16 +21,16 @@ onready var mixamo = $Mannequin/Anime
 onready var ch36 = $Mannequin/Skeleton/Ch36
 onready var raycast = $RayCast
 onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
-onready var label : Label3d = $Label3d
+onready var label : Label3D = $Label3D
 
 func _ready():
 	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
-	
+	$Hit.play("default")
 
 
 func _process(delta : float) -> void:
-	label.label_text = stun
+	label.text = str(stun)
 
 func state_idle(_delta):
 	mixamo.play("Idle")
@@ -96,11 +96,14 @@ func state_chase(_delta):
 	if process_chase_step():
 		return
 	mixamo.play("Walk")
+	if !$Footsteps.playing:
+		$Footsteps.play()
 	if get_player_visibility():
 		if get_player_distance() < 20:
 			if weapon != null and is_instance_valid(weapon) and weapon.get_children().size() > 0:
 				cur_fire_delay = set_fire_delay
 				do_aim()
+				$Footsteps.stop()
 				return
 		do_chase_player()
 		if get_player_distance() > zigzag_dist_start:
@@ -116,12 +119,17 @@ func switch_zig_zag():
 	offdirzig  = wrap(get_player_direction()-100, 0, 359)
 	offdirzag = wrap(get_player_direction()+100, 0, 359)
 	timer_zig_zag()
+	if !$Footsteps.playing:
+		$Footsteps.play()
 
 func state_chase_zig_zag(_delta):
 	if process_chase_step():
 		return
 	
 	mixamo.play("Walk")
+	
+	if !$Footsteps.playing:
+		$Footsteps.play()
 	
 	if not get_player_visibility():
 		set_path_to_player()
@@ -140,6 +148,8 @@ func state_chase_zig_zag(_delta):
 func state_chase_path(_delta):
 	mixamo.play("Walk")
 	
+	if !$Footsteps.playing:
+		$Footsteps.play()
 	
 	if get_player_visibility() and not stick_to_path:
 		set_physics_state("state_chase")
@@ -160,6 +170,13 @@ func state_grab_weapon(_delta):
 	
 
 func start_grab_weapon(within_range = 300):
+	
+	if !$Footsteps.playing:
+		$Footsteps.play()
+		
+	mixamo.play("Walk")
+	
+	
 	var wpn = get_closest_pickup_weapon(within_range)
 	if wpn != null:
 		pickup = wpn
@@ -182,6 +199,7 @@ func get_closest_pickup_weapon(within_range = 300):
 	return closest
 
 func state_dead(_delta):
+	$Footsteps.stop()
 	pass
 
 func update_step_check():

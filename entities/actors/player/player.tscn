@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://entities/actors/player/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/opengameart/ExileGL/ExileGL__blood.png" type="Texture" id=7]
 [ext_resource path="res://entities/screens/tiledscreen/fade.gd" type="Script" id=8]
-[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/weapons/M16.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/actors/player/Pause.gd" type="Script" id=10]
 [ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
 [ext_resource path="res://assets/freesounds/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/freesounds/396806__scorpion67890__cyborg-death-1.wav" type="AudioStream" id=20]
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
 [ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
+[ext_resource path="res://assets/freesounds/107624__stintx__running-02.wav" type="AudioStream" id=23]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -90,7 +91,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1.31951, 1, 1.56917 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( -180, 0, 0 ), Vector3( -360, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( -45, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("Roll")
@@ -118,7 +119,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -360, 0, 0 ), Vector3( -180, 0, 0 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 45, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("Roll")
@@ -146,7 +147,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, -360 ), Vector3( 0, 0, -180 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 45 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("Roll")
@@ -174,7 +175,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -180 ), Vector3( 0, 0, -360 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -45 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("Roll")
@@ -302,11 +303,10 @@ far = 400.0
 transform = Transform( -1, -1.55741e-08, 1.50915e-07, -1.06385e-08, 0.999467, 0.0326493, -1.51343e-07, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )
 script = ExtResource( 11 )
 holder_path = NodePath("../../..")
+raycast_path = NodePath("../RayLong")
 
-[node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
-layers = 2
-use_in_baked_light = true
-target_group = "Enemy"
+[node name="M16" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
+equiped = true
 raycast_path = NodePath("../../RayLong")
 holder_path = NodePath("../../../..")
 
@@ -575,6 +575,10 @@ cast_to = Vector3( 0, -0.4, 0 )
 
 [node name="Roll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -20.717
 
 [connection signal="ammo_changed" from="." to="Hud" method="_on_Player_ammo_changed"]
 [connection signal="clip_changed" from="." to="Hud" method="_on_Player_clip_changed"]

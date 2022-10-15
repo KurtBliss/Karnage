@@ -116,6 +116,12 @@ func _physics_process(delta):
 	direction += head_basis.z * move_z
 	direction += head_basis.x * move_x
 	
+	if move_x!=0 or move_z!=0:
+		if $Footsteps.playing == false:
+			$Footsteps.play()
+	else:
+		$Footsteps.stop()
+	
 	if Input.is_action_just_pressed("roll") and can_input:
 		if Anime.roll_animation(head.rotation_degrees, move_z, move_x) != 0:
 			roll_basis = head_basis

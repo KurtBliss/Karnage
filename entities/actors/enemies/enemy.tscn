@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
-[ext_resource path="res://entities/label3d/Label3d.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/mixamo/mannequin/Ch36_Body.material" type="Material" id=2]
+[ext_resource path="res://assets/freesounds/107624__stintx__running-02.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Smoke30Frames_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Nolkaloid_Tutorial/Fire.tres" type="Gradient" id=5]
 [ext_resource path="res://maps/temp_debug.gd" type="Script" id=6]
@@ -119,6 +120,33 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.67451, 0.67451, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Mannequin/Skeleton/Ch36:material/0:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.67451, 0.67451, 1 ) ]
+}
+
 [sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mannequin/Skeleton/Ch36:material/0:albedo_color")
@@ -157,10 +185,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 1 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 0.784314, 0.67451, 0.67451, 1 ) ]
+"values": [ Color( 1, 0.0470588, 0.0470588, 1 ), Color( 0.784314, 0.67451, 0.67451, 1 ) ]
 }
 
 [node name="Goomba" type="KinematicBody"]
@@ -171,7 +199,7 @@ script = ExtResource( 1 )
 acceleration = 2
 speed = 11
 injured_delay = 20
-health = 29
+health = 36
 actor_name = "Mannequin"
 stun_limit = 18
 wandering_radius = 20.098
@@ -195,8 +223,11 @@ disabled = true
 [node name="Skeleton" parent="Mannequin" index="0"]
 bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
+[node name="Ch36" parent="Mannequin/Skeleton" index="0"]
+material/0 = ExtResource( 2 )
+
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( -0.069992, -0.0111058, 0.997485, 0.982302, 0.173384, 0.0708566, -0.173734, 0.984791, -0.00122547, -0.265647, 0.977828, 0.295244 )
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 bone_name = "mixamorig_RightHand"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
@@ -274,20 +305,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2.06861 )
 visible = false
 mesh = SubResource( 11 )
 
-[node name="Label3d" parent="." instance=ExtResource( 3 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5, 0 )
-visible = false
-label_text = "Enemy"
-
 [node name="Stunned" type="AnimationPlayer" parent="."]
 anims/Stunned = SubResource( 12 )
 
 [node name="Hit" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 16 )
 anims/dead = SubResource( 13 )
 anims/default = SubResource( 14 )
 anims/hit = SubResource( 15 )
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0864, 0 )
+visible = false
+pixel_size = 0.2
+billboard = 1
+text = "text"
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.95426, 0 )
+stream = ExtResource( 3 )
+unit_db = 23.06
+
 [connection signal="died" from="." to="." method="_on_Goomba_died"]
+[connection signal="injured" from="." to="." method="_on_Goomba_injured"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 [connection signal="body_entered" from="StepCheck" to="." method="_on_StepCheck_body_entered"]
 [connection signal="body_exited" from="StepCheck" to="." method="_on_StepCheck_body_exited"]
