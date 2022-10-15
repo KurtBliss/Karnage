@@ -72,7 +72,7 @@ margin_right = 784.0
 margin_bottom = 142.0
 custom_styles/focus = SubResource( 1 )
 scene = "res://maps/Tutorial.tscn"
-label_text = "Controls"
+label_text = "Tutorial"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 visible = false

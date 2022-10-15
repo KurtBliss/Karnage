@@ -163,11 +163,13 @@ func state_grab_weapon(_delta):
 	
 	if not is_instance_valid(pickup):
 		set_physics_state(previous_physics_state)
+		return
 	
 	var process = process_path()
 	if not process:
 		set_path_to_node(pickup)
 	
+	print(get_distance_to_node(pickup))
 
 func start_grab_weapon(within_range = 300):
 	

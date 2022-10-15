@@ -220,9 +220,6 @@ disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
-[node name="Skeleton" parent="Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
-
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
 material/0 = ExtResource( 2 )
 

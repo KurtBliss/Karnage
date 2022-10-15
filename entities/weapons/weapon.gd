@@ -224,8 +224,9 @@ func _on_Pistol_tree_entered():
 	if par:
 		if par.is_in_group("hand"):
 			par.current_weapon = self
-			holder.do_emit_clip(clip)
-			holder.do_emit_ammo(holder.ammo[ammo_type])			
+			if holder.has_method("do_emit_clip"):
+				holder.do_emit_clip(clip)
+				holder.do_emit_ammo(holder.ammo[ammo_type])			
 
 
 func set_equiped(e):

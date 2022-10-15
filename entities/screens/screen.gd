@@ -13,7 +13,8 @@ func _ready():
 			has_focus = true
 			button.grab_focus()
 			
-		var result = button.connect("pressed", self, "_on_Button_pressed", [button])
+		var _result = button.connect("pressed", self, "_on_Button_pressed", [button])
+		_result = button.connect("mouse_entered", self, "_on_mouse_entered", [button])
 		
 #	FadeIn.connect("fade_finished", self, "_on_FadeIn_fade_finished")
 	
@@ -28,6 +29,8 @@ func _on_Button_pressed(button):
 	else:
 		call(method, button)
 
+func _on_mouse_entered(button):
+	button.grab_focus()
 
 func _on_FadeIn_fade_finished():
 	var _status = get_tree().change_scene(scene_path_to_load)

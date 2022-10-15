@@ -5,12 +5,14 @@ export(NodePath) onready var holder_path
 onready var holder = get_node(holder_path)
 
 export(NodePath) onready var raycast_path
+onready var raycast = get_node(raycast_path)
+
 
 var current = -1
 var weapons = []
 var current_weapon : Weapon
 var throw_timer = 60*2
-onready var raycast = $"../RayLong"
+#onready var raycast = $"../RayLong"
 onready var raycast_hit = $"../RayShort"
 
 func _ready():
@@ -79,7 +81,7 @@ func throw_weapon():
 	weapons.remove(current)
 	current = -1
 
-func add_weapon(weapon : Weapon):
+func add_weapon(weapon : Weapon, target_group = "Enemy"):
 	if has_weapon(weapon.name):
 		return false
 	
@@ -97,13 +99,14 @@ func add_weapon(weapon : Weapon):
 	weapons.append(weapon)
 	current = weapons.size() - 1
 	weapon.equiped = true
-	weapon.target_group = "Enemy"
+	weapon.target_group = target_group
 	weapon.raycast_path = String(raycast.get_path())+String(raycast.name)
 	weapon.holder_path = String(holder.get_path())+String(holder.name)
 	weapon.raycast = raycast
 	weapon.holder = holder
 	weapon.set("layers", 2)
-	holder.do_emit_clip(weapon.clip)
+	if holder.has_method("do_emit_clip"):
+		holder.do_emit_clip(weapon.clip)
 	Master.reparent(weapon, self)
 	return true
 

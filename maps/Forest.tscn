@@ -1801,6 +1801,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1365, 0.362599, -4.56048 )
 [node name="Goomba" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.99, 1.95426, -60.9685 )
 
+[node name="Skeleton" parent="Goomba/Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="Ch36" parent="Goomba/Mannequin/Skeleton" index="0"]
 material/0 = SubResource( 3 )
 
@@ -1844,7 +1847,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7909, 0, -63.923 )
 transform = Transform( 8.9407e-08, 0, 1, 0, 1, 0, -1, 0, 8.9407e-08, 12.7091, 0, -3.27577 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+transform = Transform( 0.540261, -0.645164, 0.540261, 0.751708, 0.65858, 0.0347491, -0.378223, 0.387345, 0.84078, 0, 0, 0 )
 light_color = Color( 0.768627, 0.901961, 0.901961, 1 )
 light_energy = 0.25
 

@@ -50,6 +50,11 @@ func get_player_distance(offset = Vector3.ZERO):
 		_len = (ref.player.get_translation() - get_translation()).length()
 	return _len
 
+func get_distance_to_node(nd : Spatial):
+	var diff = nd.global_transform.origin - global_transform.origin
+	return diff.length()
+	pass
+
 func get_player_visibility():
 	# doesn't work with gridmaps
 	if get_player():

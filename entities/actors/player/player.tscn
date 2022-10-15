@@ -8,7 +8,7 @@
 [ext_resource path="res://entities/actors/player/player_collision.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/opengameart/ExileGL/ExileGL__blood.png" type="Texture" id=7]
 [ext_resource path="res://entities/screens/tiledscreen/fade.gd" type="Script" id=8]
-[ext_resource path="res://entities/weapons/M16.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/weapons/Pistol.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/actors/player/Pause.gd" type="Script" id=10]
 [ext_resource path="res://entities/actors/player/weapons.gd" type="Script" id=11]
 [ext_resource path="res://assets/freesounds/325270__deleted-user-2104797__body-fall-1.wav" type="AudioStream" id=12]
@@ -305,8 +305,8 @@ script = ExtResource( 11 )
 holder_path = NodePath("../../..")
 raycast_path = NodePath("../RayLong")
 
-[node name="M16" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
-equiped = true
+[node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
+target_group = "Enemy"
 raycast_path = NodePath("../../RayLong")
 holder_path = NodePath("../../../..")
 
