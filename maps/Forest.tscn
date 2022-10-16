@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://entities/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=2]
@@ -13,11 +13,12 @@
 [ext_resource path="res://entities/particles/Dust.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/zylann.scatter/scatter3d.gd" type="Script" id=12]
 [ext_resource path="res://entities/pickups/ShotgunPickup.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/mixamo/mannequin/textures/Ch36_1001_Specular.png" type="Texture" id=14]
+[ext_resource path="res://entities/disable/Disabled.tscn" type="PackedScene" id=14]
 [ext_resource path="res://entities/pickups/M16Pickup.tscn" type="PackedScene" id=15]
 [ext_resource path="res://entities/vines/Vines.tscn" type="PackedScene" id=16]
 [ext_resource path="res://entities/virgin+wilflur/virgin_wilflur.tscn" type="PackedScene" id=17]
 [ext_resource path="res://entities/fire_flies/fire_flies.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/freesounds/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=19]
 
 [sub_resource type="ProceduralSky" id=4]
 
@@ -29,29 +30,10 @@ ambient_light_color = Color( 0.313726, 0.258824, 0.258824, 1 )
 ambient_light_energy = 0.2
 ambient_light_sky_contribution = 0.01
 
-[sub_resource type="OpenSimplexNoise" id=1]
-seed = 4
-octaves = 9
-period = 165.1
-persistence = 0.815
-
-[sub_resource type="NoiseTexture" id=2]
-seamless = true
-noise = SubResource( 1 )
-
-[sub_resource type="SpatialMaterial" id=3]
-resource_local_to_scene = true
-resource_name = "Ch36_Body"
-params_cull_mode = 2
-albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
-albedo_texture = SubResource( 2 )
-metallic_specular = 1.0
-metallic_texture = ExtResource( 14 )
-roughness = 0.0372549
-
 [node name="Forest" type="Navigation"]
 script = ExtResource( 1 )
 level = "Forest"
+challenges_id = 3
 
 [node name="Manager" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.99969, -0.0249033, 1.67155e-09, 0.024881, 0.998793, 0.0423465, -0.00105457, -0.0423333, 0.999103, 0, 6.82457, 0 )
@@ -1805,9 +1787,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1365, 0.362599, -4.56048 )
 [node name="Goomba" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.99, 1.95426, -60.9685 )
 
-[node name="Ch36" parent="Goomba/Mannequin/Skeleton" index="0"]
-material/0 = SubResource( 3 )
-
 [node name="ShotgunPickup" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87023, 1.95426, -74.0628 )
 
@@ -1849,6 +1828,26 @@ transform = Transform( 0.540261, -0.645164, 0.540261, 0.751708, 0.65858, 0.03474
 light_color = Color( 0.768627, 0.901961, 0.901961, 1 )
 light_energy = 0.25
 
+[node name="Disabled" parent="." instance=ExtResource( 14 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Disabled"]
+stream = ExtResource( 19 )
+volume_db = 10.847
+autoplay = true
+
+[node name="Goomba2" parent="Disabled" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809299, 1.95426, -63.0122 )
+
+[node name="Goomba3" parent="Disabled" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6253, 1.95426, -98.7091 )
+
+[node name="Goomba4" parent="Disabled" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7988, 1.95426, -137.889 )
+
+[node name="Goomba5" parent="Disabled" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5654, 1.95426, 28.0495 )
+
+[node name="Goomba6" parent="Disabled" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5624, 1.95426, -2.5977 )
+
 [editable path="NavMesh"]
-[editable path="Goomba"]
-[editable path="Goomba/Mannequin"]

@@ -66,10 +66,10 @@ func state_aim(delta):
 	
 	var p : Player = get_player()
 	if p:
-		var wandering_position = p.global_transform.origin
+		var player_pos = p.global_transform.origin
 		
 		var previous_rot = rotation
-		look_at(wandering_position,Vector3.UP)
+		look_at(player_pos,Vector3.UP)
 		var rotation_y = wrapf(rotation.y,-PI,PI)
 		rotation = previous_rot
 		rotation.y = wrapf(rotation.y,-PI,PI)
@@ -129,7 +129,6 @@ func state_chase_zig_zag(_delta):
 	
 	if process_chase_step():
 		return
-	
 	mixamo.play("Walk")
 	
 	if !$Footsteps.playing:
@@ -246,14 +245,15 @@ func timer_zig_zag():
 	timer.start()
 
 func _timeout_zig_zag():
-	if zigzag == ZIG: 
-		zigzag = ZAG
-		switch_zig_zag()
-		timer_zig_zag()
-	else:
-		zigzag = ZIG
-		switch_zig_zag()
-		timer_zig_zag()
+	if health > 0:
+		if zigzag == ZIG: 
+			zigzag = ZAG
+			switch_zig_zag()
+			timer_zig_zag()
+		else:
+			zigzag = ZIG
+			switch_zig_zag()
+			timer_zig_zag()
 
 #func _on_fired():
 #	if get_physics_state() == "state_idle":
@@ -273,9 +273,6 @@ func _on_Enemy_died():
 	$Hit.play("dead")
 	if not died:
 		died = true
-		
-		
-		
 		if respawn == true:
 			var ld = load("res://entities/actors/enemies/EnemySpawn.tscn")
 			var inst = ld.instance()
@@ -331,10 +328,12 @@ func _on_Goomba_stuned():
 			stun = 0
 
 func _on_Goomba_injured(dmg, how):
-	$Hit.play("hit")
-	$Hit.seek(0, true)
-	if get_physics_state() == "state_stunned": # and how == "Hit"
-		weapon.throw_weapon()
+	if get_health() > 0:
+	
+		$Hit.play("hit")
+		$Hit.seek(0, true)
+		if get_physics_state() == "state_stunned": # and how == "Hit"
+			weapon.throw_weapon()
 
 
 func _on_Goomba_died():

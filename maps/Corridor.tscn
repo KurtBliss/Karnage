@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://entities/navigation/blocks_fixed.tres" type="MeshLibrary" id=2]
@@ -157,6 +157,26 @@ surfaces/0 = {
 "vertex_count": 456
 }
 
+[sub_resource type="OpenSimplexNoise" id=23]
+seed = 4
+octaves = 9
+period = 165.1
+persistence = 0.815
+
+[sub_resource type="NoiseTexture" id=24]
+seamless = true
+noise = SubResource( 23 )
+
+[sub_resource type="SpatialMaterial" id=25]
+resource_local_to_scene = true
+resource_name = "Ch36_Body"
+params_cull_mode = 2
+albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
+albedo_texture = SubResource( 24 )
+metallic_specular = 1.0
+metallic_texture = ExtResource( 22 )
+roughness = 0.0372549
+
 [sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 0, 0, 0, 1 )
 
@@ -225,9 +245,6 @@ gravity = 0.0
 
 [node name="Mannequin" parent="Princess" instance=ExtResource( 23 )]
 transform = Transform( -3, 0, -2.09815e-07, 0, 3, 0, 2.62268e-07, 0, -2.4, 7.62939e-06, 0, -4.76837e-07 )
-
-[node name="Skeleton" parent="Princess/Mannequin" index="0"]
-bones/5/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Princess/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 6 )
@@ -498,6 +515,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.02, 1.89689, -35.7698 )
 
 [node name="Ch36" parent="Goomba3/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 22 )
+material/0 = SubResource( 25 )
 
 [node name="BoneAttachment" parent="Goomba3/Mannequin/Skeleton" index="1"]
 transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )

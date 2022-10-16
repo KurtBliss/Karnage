@@ -31,7 +31,7 @@ func _process(_delta):
 			if raycast_hit.is_colliding():
 				var collider = raycast_hit.get_collider()
 				if collider.is_in_group("Enemy"):
-					collider.do_damage(5, holder, "Hit")
+					collider.do_damage(5, holder, "Hit", {"stun": 100})
 					hit = true
 			holder.do_emit_hit(hit, current_weapon.name, -1, true)
 		

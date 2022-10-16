@@ -227,7 +227,6 @@ func _on_Timer_timeout():
 		ref.manager.go_to_post(health, score)
 
 func _on_Player_injured(dmg, how):#should change to red flash
-	print("_on_Player_injured")
 	InjuredSprite._on_player_hurt(health)
 	score_meter_set(score_meter * 0.7)
 #	Hud.get_node("Injured/Sprite/InjuredSound").play()
