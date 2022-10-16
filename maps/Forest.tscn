@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://entities/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://entities/virgin+wilflur/virgin_wilflur.tscn" type="PackedScene" id=17]
 [ext_resource path="res://entities/fire_flies/fire_flies.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/freesounds/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=19]
+[ext_resource path="res://entities/target/Target.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ProceduralSky" id=4]
 
@@ -1849,5 +1850,20 @@ light_energy = 0.25
 stream = ExtResource( 19 )
 volume_db = 10.847
 autoplay = true
+
+[node name="Target" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6054, 6.4241, -6.0973 )
+
+[node name="Target2" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7169, 5.0639, -63.4528 )
+text = "I"
+
+[node name="Target3" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9038, 9.9959, -122.854 )
+text = "L"
+
+[node name="Target4" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8411, 7.6074, 2.1948 )
+text = "L"
 
 [editable path="NavMesh"]

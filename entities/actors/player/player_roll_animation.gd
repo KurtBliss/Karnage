@@ -48,7 +48,7 @@ func roll_animation(rot: Vector3, z_dir, x_dir):
 			return 1
 	return 0
 
-func lean_animation(rot:Vector3, pos:Vector3,  left:bool, backwards:bool):
+func lean_animation(rot:Vector3, pos:Vector3,  left:bool, backwards:bool, player : Player = ref.player):
 	var anime : Animation
 	
 	if left: 
@@ -64,18 +64,22 @@ func lean_animation(rot:Vector3, pos:Vector3,  left:bool, backwards:bool):
 	var key1_x = anime.track_find_key(1, 0, true)
 	var key2_x = anime.track_find_key(1, 1, true)
 	
-	var vect = Vector3(xx, yy, 0)	
+	var vect := Vector3(xx, yy, 0)	
 	vect.z =anime.track_get_key_value(0, key1).z
 	anime.track_set_key_value(0, key1, vect)
 	vect.z =anime.track_get_key_value(0, key2).z
 	anime.track_set_key_value(0, key2, vect)
 	
-	var vect_x = Vector3(0, pos.y, pos.z)
-	vect_x.x =anime.track_get_key_value(1, key1_x).x
-	anime.track_set_key_value(1, key1_x, vect_x)
-	vect_x.x =anime.track_get_key_value(1, key2_x).x
-	anime.track_set_key_value(1, key2_x, vect_x)
-	
+#	vect = anime.track_get_key_value(1, key2_x)
+#	vect = vect.rotated(Vector3.UP, player.head.rotation.y)
+#	anime.track_set_key_value(1, key2_x, vect)
+#
+#	var vect_x = Vector3(0, pos.y, pos.z)
+#	vect_x.x =anime.track_get_key_value(1, key1_x).x
+#	anime.track_set_key_value(1, key1_x, vect_x)
+#	vect_x.x =anime.track_get_key_value(1, key2_x).x
+#	anime.track_set_key_value(1, key2_x, vect_x)
+#
 	if left:
 		play("leanleft", -1, 2)
 	else:

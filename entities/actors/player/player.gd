@@ -101,20 +101,6 @@ func _physics_process(delta):
 #		move_camera(mot, delta)
 
 	
-	
-	if Input.is_action_just_pressed("lean_left"):
-		Anime.lean_animation(head.rotation_degrees, head.transform.origin, true, false)
-	
-	if Input.is_action_just_released("lean_left"):
-		Anime.lean_animation(head.rotation_degrees, head.transform.origin, true, true)
-	
-	if Input.is_action_just_pressed("lean_right"):
-		Anime.lean_animation(head.rotation_degrees, head.transform.origin, false, false)
-	
-	if Input.is_action_just_released("lean_right"):
-		Anime.lean_animation(head.rotation_degrees, head.transform.origin, false, true)
-
-	
 	"""
 		Handle motion input
 	"""
