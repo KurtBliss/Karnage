@@ -13,15 +13,15 @@ var wait_for_level = true
 var levels = [
 	"res://maps/Tutorial.tscn",
 	"res://maps/Corridor.tscn",
-	"res://maps/City.tscn",
 	"res://maps/Forest.tscn",
+	"res://maps/City.tscn",
 	"res://maps/Alpha.tscn"
 ]
 var levelsNames = [
 	"Tutorial",
 	"Corridor",
-	"City", 
 	"Forest",
+	"City", 
 	"Alpha"
 ]
 var level_index = -2

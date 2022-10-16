@@ -1787,6 +1787,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1365, 0.362599, -4.56048 )
 [node name="Goomba" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.99, 1.95426, -60.9685 )
 
+[node name="Goomba2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809299, 1.95426, -63.0122 )
+
+[node name="Goomba3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6253, 1.95426, -98.7091 )
+
+[node name="Goomba4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7988, 1.95426, -137.889 )
+
+[node name="Goomba5" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5654, 1.95426, 28.0495 )
+
+[node name="Goomba6" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5624, 1.95426, -2.5977 )
+
 [node name="ShotgunPickup" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87023, 1.95426, -74.0628 )
 
@@ -1834,20 +1849,5 @@ light_energy = 0.25
 stream = ExtResource( 19 )
 volume_db = 10.847
 autoplay = true
-
-[node name="Goomba2" parent="Disabled" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809299, 1.95426, -63.0122 )
-
-[node name="Goomba3" parent="Disabled" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6253, 1.95426, -98.7091 )
-
-[node name="Goomba4" parent="Disabled" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7988, 1.95426, -137.889 )
-
-[node name="Goomba5" parent="Disabled" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5654, 1.95426, 28.0495 )
-
-[node name="Goomba6" parent="Disabled" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5624, 1.95426, -2.5977 )
 
 [editable path="NavMesh"]

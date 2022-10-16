@@ -4,3 +4,5 @@
 
 [node name="NewGame" instance=ExtResource( 1 )]
 scene = "res://maps/Nav.tscn"
+
+[connection signal="mouse_entered" from="." to="." method="_on_NewGame_mouse_entered"]

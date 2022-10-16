@@ -32,3 +32,8 @@ func show_check_box() -> void:
 
 func set_check_box(check : bool):
 	checkbox.pressed = check
+
+
+func _on_NewGame_mouse_entered():
+	grab_focus()
+	pass # Replace with function body.
