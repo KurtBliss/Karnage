@@ -64,6 +64,9 @@ func do_aim():
 func state_aim(delta):
 	cur_fire_delay -= delta 
 	
+	if !get_player_visibility():
+		set_physics_state("state_chase")
+	
 	var p : Player = get_player()
 	if p:
 		var player_pos = p.global_transform.origin
