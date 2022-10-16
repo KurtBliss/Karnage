@@ -60,18 +60,35 @@ func get_player_visibility():
 	if get_player():
 		return raycast(get_player())
 
+func get_node_visibility(nd):
+	# doesn't work with gridmaps?
+	return raycast(nd)
+
+
 func get_player_fov():
 	if get_player():
 		return detect_facing_self(get_player())
+
+func get_node_fov(nd):
+	return detect_facing_self(nd)
+
 
 func get_player_range():
 	if get_player():
 		if get_player_distance() < detect_range:
 			return true
 	return false
-	
+
+func get_node_range(nd):
+	if get_distance_to_node(nd) < detect_range:
+		return true
+	return false	
+
 func get_player_spotted():
 	return get_player_fov() and get_player_range() and get_player_visibility()
+
+func get_node_spotted(nd):
+	return get_node_fov(nd) and get_node_range(nd) and get_node_visibility(nd)
 
 func get_player_position():
 	if get_player():
@@ -122,7 +139,7 @@ func get_player_direction():
 	if get_player():
 		return get_direction_to(get_player())
 
-func get_direction_to(body: Actor):
+func get_direction_to(body: Spatial):
 	var vec_self = global_transform.origin
 	var vec_other = body.global_transform.origin
 	
@@ -133,7 +150,7 @@ func get_direction_to(body: Actor):
 
 
 
-func detect_facing_self(body: Actor, fov = detect_fov ):
+func detect_facing_self(body: Spatial, fov = detect_fov ):
 	var dir_to = abs(get_direction_to(body))
 	var dir_dif = abs(angle_difference(dir_to, get_direction()))
 	var result = dir_dif < (fov / 2)

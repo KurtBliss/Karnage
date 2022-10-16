@@ -11,13 +11,13 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("interact") and curbody is Player:
-		var weapons = curbody.weapon
+		var weapons : WeaponContainer = curbody.weapon
 		if true:#not weapons.has_weapon():
 			if weapons.add_weapon(parrent.weapon):
+				
 				parrent.queue_free()
 	
 	elif curbody is Goomba:
-		print("CURBODY IS GOOMBA")
 		var weapons = curbody.weapon
 		if weapons.add_weapon(parrent.weapon, "Player"):
 			parrent.queue_free()

@@ -4,6 +4,7 @@
 [ext_resource path="res://entities/pickups/pickupbody.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 3, 3, 3 )
 
 [node name="PistolPickup" type="KinematicBody" groups=["weapon_pickup"]]
 collision_layer = 2
@@ -23,6 +24,7 @@ shape = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65192, 0 )
+omni_range = 1.57478
 
 [connection signal="body_entered" from="Area" to="Area" method="_on_PistolPickup_body_entered"]
 [connection signal="body_exited" from="Area" to="Area" method="_on_Area_body_exited"]

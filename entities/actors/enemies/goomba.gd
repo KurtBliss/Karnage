@@ -86,7 +86,6 @@ func state_aim(delta):
 		yield(enemy_tween,"tween_completed")
 	
 	if cur_fire_delay <= 0:
-		print_debug("Fire")
 		if weapon.current_weapon:
 			weapon.current_weapon.do_fire()
 		cur_fire_delay = set_fire_delay
@@ -96,6 +95,8 @@ func state_chase(_delta):
 	if process_chase_step():
 		return
 	mixamo.play("Walk")
+	start_grab_weapon()	
+	
 	if !$Footsteps.playing:
 		$Footsteps.play()
 	if get_player_visibility():
@@ -119,10 +120,13 @@ func switch_zig_zag():
 	offdirzig  = wrap(get_player_direction()-100, 0, 359)
 	offdirzag = wrap(get_player_direction()+100, 0, 359)
 	timer_zig_zag()
+	start_grab_weapon()	
 	if !$Footsteps.playing:
 		$Footsteps.play()
 
 func state_chase_zig_zag(_delta):
+	start_grab_weapon()	
+	
 	if process_chase_step():
 		return
 	
@@ -146,6 +150,8 @@ func state_chase_zig_zag(_delta):
 	do_chase_player(null, zigzag_offset)
 
 func state_chase_path(_delta):
+	start_grab_weapon()	
+	
 	mixamo.play("Walk")
 	
 	if !$Footsteps.playing:
@@ -169,9 +175,10 @@ func state_grab_weapon(_delta):
 	if not process:
 		set_path_to_node(pickup)
 	
-	print(get_distance_to_node(pickup))
 
-func start_grab_weapon(within_range = 300):
+func start_grab_weapon(within_range = 150):
+	if weapon.get_child_count() > 0:
+		return
 	
 	if !$Footsteps.playing:
 		$Footsteps.play()
@@ -182,9 +189,10 @@ func start_grab_weapon(within_range = 300):
 	
 	var wpn = get_closest_pickup_weapon(within_range)
 	if wpn != null:
-		pickup = wpn
-		set_path_to_node(pickup)
-		set_physics_state("state_grab_weapon")
+		if get_node_spotted(wpn):
+			pickup = wpn
+			set_path_to_node(pickup)
+			set_physics_state("state_grab_weapon")
 
 func get_closest_pickup_weapon(within_range = 300):
 	var weapons = get_tree().get_nodes_in_group("weapon_pickup")

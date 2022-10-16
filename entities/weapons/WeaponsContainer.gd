@@ -96,6 +96,7 @@ func add_weapon(weapon : Weapon, target_group = "Enemy"):
 		current_weapon.visible = false
 
 	current_weapon = weapon	
+	weapon.rotation.y = 0
 	weapons.append(weapon)
 	current = weapons.size() - 1
 	weapon.equiped = true
