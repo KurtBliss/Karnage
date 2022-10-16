@@ -105,7 +105,8 @@ func add_weapon(weapon : Weapon, target_group = "Enemy"):
 	weapon.holder_path = String(holder.get_path())+String(holder.name)
 	weapon.raycast = raycast
 	weapon.holder = holder
-	weapon.set("layers", 2)
+	if holder is Player:
+		weapon.set("layers", 2)
 	if holder.has_method("do_emit_clip"):
 		holder.do_emit_clip(weapon.clip)
 	Master.reparent(weapon, self)

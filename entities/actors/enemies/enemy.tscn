@@ -193,8 +193,6 @@ tracks/0/keys = {
 
 [node name="Goomba" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
-collision_layer = 2048
-collision_mask = 2048
 script = ExtResource( 1 )
 acceleration = 2
 speed = 11
@@ -224,7 +222,7 @@ disabled = true
 material/0 = ExtResource( 2 )
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
-transform = Transform( -0.205835, 0.0290124, 0.978154, 0.974411, 0.0983163, 0.202133, -0.0903053, 0.99473, -0.0485075, -0.240856, 1.29308, 0.158361 )
+transform = Transform( 0.134684, -0.986841, 0.0894787, 0.105624, -0.0754883, -0.991537, 0.985243, 0.142995, 0.0940669, -0.689167, 1.42279, -0.0315865 )
 bone_name = "mixamorig_RightHand"
 
 [node name="Weapon" type="Position3D" parent="Mannequin/Skeleton/BoneAttachment"]
