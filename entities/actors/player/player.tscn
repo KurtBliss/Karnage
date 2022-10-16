@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -26,6 +26,33 @@
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.4, 0 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 5.0
@@ -78,6 +105,48 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "leanleft"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 45 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "leanright"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -45 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.4, 0 ), Vector3( 1.169, 2.4, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -316,7 +385,6 @@ anchor_bottom = 1.0
 margin_left = -1.0
 margin_right = -1.0
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": "You can solve the environment problem two ways:
 -  Modify the default environment, because that's what a camera grabs when it does not have an environment set
 -  You can save the environment resource, and then drag it into the environment slot in the GunCam"
@@ -341,7 +409,10 @@ enabled = true
 cast_to = Vector3( 0, 0, -5 )
 
 [node name="Anime" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 14 )
 anims/death = SubResource( 2 )
+anims/leanleft = SubResource( 15 )
+anims/leanright = SubResource( 16 )
 anims/roll = SubResource( 3 )
 "anims/roll back" = SubResource( 4 )
 "anims/roll left" = SubResource( 5 )
@@ -587,6 +658,7 @@ volume_db = -20.717
 [connection signal="injured" from="." to="." method="_on_Player_injured"]
 [connection signal="score_changed" from="." to="Hud" method="_on_Player_score_changed"]
 [connection signal="score_meter_changed" from="." to="Hud" method="_on_Player_score_meter_changed"]
+[connection signal="stuned" from="." to="." method="_on_Player_stuned"]
 [connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]
 [connection signal="animation_finished" from="Hud/Injured/Sprite/InjuredPlayer" to="Hud/Injured/Sprite" method="_on_InjuredPlayer_animation_finished"]
 [connection signal="timeout" from="Injured" to="." method="_on_Injured_timeout"]

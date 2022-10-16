@@ -56,6 +56,7 @@ func _process(delta):
 		emit_signal("stuned");
 		if has_method("on_stuned"):
 			call("on_stunned");
+		stun = 0
 
 func _physics_process(delta):
 	if physics_state != "" and has_method(physics_state):

@@ -101,6 +101,20 @@ func _physics_process(delta):
 #		move_camera(mot, delta)
 
 	
+	
+	if Input.is_action_just_pressed("lean_left"):
+		Anime.lean_animation(head.rotation_degrees, head.transform.origin, true, false)
+	
+	if Input.is_action_just_released("lean_left"):
+		Anime.lean_animation(head.rotation_degrees, head.transform.origin, true, true)
+	
+	if Input.is_action_just_pressed("lean_right"):
+		Anime.lean_animation(head.rotation_degrees, head.transform.origin, false, false)
+	
+	if Input.is_action_just_released("lean_right"):
+		Anime.lean_animation(head.rotation_degrees, head.transform.origin, false, true)
+
+	
 	"""
 		Handle motion input
 	"""
@@ -244,4 +258,9 @@ func _on_points_gained(points):
 func _on_Injured_timeout():
 	print("_on_Injured_timeout")
 	
+	pass # Replace with function body.
+
+
+func _on_Player_stuned():
+	weapon.throw_weapon()
 	pass # Replace with function body.
