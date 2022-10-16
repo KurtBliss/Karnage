@@ -27,3 +27,5 @@ func _physics_process(_delta):
 			velocity.y -= 0.98
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+	weapon.rotation.y += 0.1

@@ -39,7 +39,7 @@ func state_idle(_delta):
 	if get_player_spotted():
 		set_physics_state("state_chase")
 	process_path()
-	#start_grab_weapon()
+	start_grab_weapon()
 
 func state_dumb(_delta):
 	pass
@@ -175,8 +175,9 @@ func start_grab_weapon(within_range = 300):
 	
 	if !$Footsteps.playing:
 		$Footsteps.play()
-		
-	mixamo.play("Walk")
+	
+	if !mixamo.is_playing() and !mixamo.current_animation == "Walk":
+		mixamo.play("Walk")
 	
 	
 	var wpn = get_closest_pickup_weapon(within_range)
