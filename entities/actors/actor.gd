@@ -13,7 +13,7 @@ signal unstuned()
 
 export (int) var acceleration = 5
 export (int) var speed = 10
-export (float) var gravity = 0.98
+export (float) var gravity = 10
 export (int) var jump_power = 30
 export (int) var injured_delay = 30 # Not in use?
 export (int) var health = 100 setget set_health
@@ -97,7 +97,7 @@ func process_velocity(_delta):
 		if blood_delay <= 0:
 			blood.emitting = false
 	
-	velocity.y -= 10
+	velocity.y -= gravity
 	velocity = move_and_slide(velocity, Vector3.UP)
 	velocity = velocity.linear_interpolate(Vector3.ZERO, 1.0)
 	

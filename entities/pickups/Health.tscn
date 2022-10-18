@@ -24,18 +24,15 @@ extents = Vector3( 1, 3, 3 )
 [node name="Health" type="MeshInstance"]
 transform = Transform( 0.0174524, -0.989849, 0, 0.999848, 0.0172779, 0, 0, 0, 0.99, 0, 0, 0 )
 mesh = SubResource( 2 )
-material/0 = null
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.33, 0, 0, 0, 1.05, 0, 0, 0, 0.2255, 0, 0, 0 )
 mesh = SubResource( 4 )
-material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 0.33, 1.66533e-16, 0, -9.31323e-10, -4.41485e-08, 0.2255, 6.10641e-17, -1.01, -9.85692e-09, 0, 0, 0 )
 mesh = SubResource( 4 )
-material/0 = null
 
 [node name="Area" type="Area" parent="."]
 

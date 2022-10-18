@@ -67,6 +67,7 @@ func throw_weapon():
 	
 	var ld = load(cur.pickup_file)
 	var inst: PickupBody = ld.instance()
+	inst.respawn = false
 	inst.pass_clip = cur.clip
 	inst.rotation_degrees.y = get_parent().get_parent().rotation_degrees.y + 180
 	inst.transform.origin = ref.player.transform.origin

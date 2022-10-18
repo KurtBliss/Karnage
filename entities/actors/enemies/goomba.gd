@@ -207,7 +207,8 @@ func get_closest_pickup_weapon(within_range = 300):
 		if closest == null or dist < closest_dist:
 			closest = wpn
 			closest_dist = dist 
-	if closest_dist > within_range:
+	if  weapons.size() > 0\
+	and closest_dist > within_range:
 		return null
 	return closest
 

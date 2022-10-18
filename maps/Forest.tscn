@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/level/Level.gd" type="Script" id=1]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://entities/fire_flies/fire_flies.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/freesounds/388340__phlair__dungeon-ambiance.wav" type="AudioStream" id=19]
 [ext_resource path="res://entities/target/Target.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/actors/enemies/SentryGun.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ProceduralSky" id=4]
 
@@ -1865,5 +1866,8 @@ text = "L"
 [node name="Target4" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8411, 7.6074, 2.1948 )
 text = "L"
+
+[node name="SentryGun" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.469, 0 )
 
 [editable path="NavMesh"]
