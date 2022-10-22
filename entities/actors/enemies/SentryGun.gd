@@ -34,6 +34,7 @@ func do_fire():
 		return
 #	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
 #	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
+	$FireAnimationPlayer.play("Fire")
 	var inst = bullet.instance()
 #	inst.set_as_toplevel(true)
 	ref.level.add_child(inst)
@@ -49,3 +50,11 @@ func _on_Fire_timeout():
 	print("FIRE")
 	do_fire()
 	pass # Replace with function body.
+	
+
+func _on_SentryGun_injured():
+	$HitAnimationPlayer.play("Hit")
+
+	
+	
+

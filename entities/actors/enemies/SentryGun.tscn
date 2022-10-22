@@ -1,14 +1,80 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/actors/enemies/SentryGun.gd" type="Script" id=1]
 
+[sub_resource type="SpatialMaterial" id=4]
+
 [sub_resource type="CylinderMesh" id=1]
+material = SubResource( 4 )
 top_radius = 0.3
 height = 5.382
 
 [sub_resource type="BoxShape" id=2]
 
+[sub_resource type="SpatialMaterial" id=5]
+
 [sub_resource type="CubeMesh" id=3]
+material = SubResource( 5 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MeshInstance2:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MeshInstance2:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="SentryGun" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -27,6 +93,7 @@ mesh = SubResource( 3 )
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.29833, 0 )
+visible = false
 pixel_size = 0.0799
 billboard = 2
 text = "Text"
@@ -38,5 +105,15 @@ autostart = true
 [node name="Muzzle" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.7523 )
 
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../FireAnimationPlayer")
+anims/Hit = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+
+[node name="FireAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/fire = SubResource( 9 )
+
 [connection signal="died" from="." to="." method="_on_SentryGun_died"]
+[connection signal="injured" from="." to="." method="_on_SentryGun_injured"]
 [connection signal="timeout" from="Fire" to="." method="_on_Fire_timeout"]
