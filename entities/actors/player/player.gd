@@ -58,6 +58,8 @@ func _ready():
 	
 
 func _process(delta):
+	step_up()
+	
 	score_meter_set(score_meter - delta * 1)
 	gun_cam.global_transform = camera.global_transform
 	if Input.is_action_just_pressed("show_challenges"):
@@ -66,6 +68,8 @@ func _process(delta):
 		add_child(c)
 
 func _physics_process(delta):
+	
+	
 	var can_input = Master.input_enabled()
 	if death:
 		can_input = false
@@ -195,6 +199,11 @@ func gain_ammo(type, amount):
 		ammo[type] += amount
 	else:
 		ammo[type] = amount
+
+func step_up():
+	if $RayCastStepUp.get_collider():
+		global_transform.origin.y += 0.1
+		
 
 ###################-VIRTUAL FUNCS-####################
 

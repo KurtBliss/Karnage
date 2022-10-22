@@ -18,6 +18,7 @@ export (int) var jump_power = 30
 export (int) var injured_delay = 30 # Not in use?
 export (int) var health = 100 setget set_health
 export (float) var direction_offset = 90
+var knockable = true
 
 export onready var blood_decal = preload("res://entities/decals/BloodDecal.tscn")
 onready var blood_effect = preload("res://entities/decals/blood.tscn")
@@ -117,7 +118,7 @@ func do_damage(dmg : float, from : Actor, how = "", etc = {}):
 		stun += etc["stun"]
 	else:
 		stun += dmg
-	if etc.has("knock"):
+	if etc.has("knock") and knockable:
 		move_and_slide(etc["knock"].normalized() * 100, Vector3.UP)
 		prints("Knock=", etc["knock"])
 	var method = "_on_attacked"

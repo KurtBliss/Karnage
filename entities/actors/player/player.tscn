@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
 [ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
 [ext_resource path="res://assets/freesounds/107624__stintx__running-02.wav" type="AudioStream" id=23]
+[ext_resource path="res://entities/actors/player/place_meating.gd" type="Script" id=24]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -372,6 +373,11 @@ gravity = 1.2
 jump_power = 36
 actor_name = "Player"
 
+[node name="RayCastStepUp" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.666667, 0, 0, 0, 1, 0, -0.297354, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1 )
+
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
 
@@ -663,6 +669,12 @@ stream = ExtResource( 20 )
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
 volume_db = -20.717
+
+[node name="place_meating" type="Area" parent="."]
+script = ExtResource( 24 )
+
+[node name="CollisionShape" parent="place_meating" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 
 [connection signal="ammo_changed" from="." to="Hud" method="_on_Player_ammo_changed"]
 [connection signal="clip_changed" from="." to="Hud" method="_on_Player_clip_changed"]

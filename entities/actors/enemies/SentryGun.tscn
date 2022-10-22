@@ -25,4 +25,18 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
 mesh = SubResource( 3 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.29833, 0 )
+pixel_size = 0.0799
+billboard = 2
+text = "Text"
+
+[node name="Fire" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Muzzle" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.7523 )
+
+[connection signal="died" from="." to="." method="_on_SentryGun_died"]
+[connection signal="timeout" from="Fire" to="." method="_on_Fire_timeout"]

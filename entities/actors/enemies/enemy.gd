@@ -60,7 +60,7 @@ func _physics_process(delta):
 ###################-FUNCS-####################
 
 func do_altert(): 
-	if get_physics_state() == "state_idle":
+	if get_physics_state() == "state_idle" and has_method("state_chase"):
 		set_physics_state("state_chase")
 
 func set_drain_on_proximity(bol):
@@ -72,9 +72,12 @@ func do_drain_player_health(p):
 		p.do_damage(7,self)
 		enemy_atk_delay = enemy_atk_delay_set
 
-func create_respawn():
+func create_respawn(time = 3):
 	var ld = preload("res://entities/actors/enemies/EnemySpawn.tscn")
 	var inst = ld.instance()
+	
+	inst.set_timer(time)
+	
 	inst.transform.origin = starting_origin
 	
 	inst.spawn_scene_location = filename
@@ -88,7 +91,8 @@ func _on_fired(): # Hears gunshot
 	if health > 0:
 		if get_player():
 			if get_player_distance() < 35 or get_player_visibility():
-				set_physics_state("state_chase")
+				do_altert()
+				#set_physics_state("state_chase")
 
 func _on_attacked(_dmg):
 	var b = blood_decal.instance()

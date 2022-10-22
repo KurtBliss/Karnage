@@ -30,7 +30,8 @@ func _ready():
 
 
 func _process(delta : float) -> void:
-	label.text = str(stun)
+	label.text = str(get_physics_state())
+	._process(delta)
 
 func state_idle(_delta):
 	mixamo.play("Idle")

@@ -2,6 +2,9 @@ extends Spatial
 var spawn_scene_location
 onready var Spawn = $Spawn
 
+func set_timer(time):
+	$Spawn.start(time)
+
 func _on_Spawn_timeout():
 	if is_instance_valid(ref.player):
 		var dist = (ref.player.transform.origin - transform.origin).length()
