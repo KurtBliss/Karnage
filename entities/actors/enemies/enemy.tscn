@@ -242,6 +242,7 @@ holder_path = NodePath("../../../..")
 raycast_path = NodePath("../../../../RayCast")
 
 [node name="Particles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.03763, 0 )
 emitting = false
 amount = 200
 lifetime = 0.5
