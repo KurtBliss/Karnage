@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://entities/actors/enemies/goomba.gd" type="Script" id=1]
 [ext_resource path="res://assets/mixamo/mannequin/Ch36_Body.material" type="Material" id=2]
@@ -9,12 +9,18 @@
 [ext_resource path="res://assets/freesounds/511194__pablobd__headshot.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/mixamo/mannequin/MannequinLowPolly.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/actors/enemies/EnemyWeapon.gd" type="Script" id=9]
+[ext_resource path="res://Shaders/outline.shader" type="Shader" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 2.25719
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.955069, 0.203253, 1.506 )
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 10 )
+shader_param/outline_thickness = 0.01
+shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 flags_transparent = true
@@ -218,7 +224,11 @@ disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
 
+[node name="Skeleton" parent="Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
+material_overlay = SubResource( 17 )
 material/0 = ExtResource( 2 )
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Mannequin/Skeleton" index="1"]
