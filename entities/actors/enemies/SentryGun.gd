@@ -23,6 +23,7 @@ func state_idle(_delta):
 	physics_idle(_delta)
 
 func _on_attacked(_dmg):
+	$HitAnimationPlayer.seek(0)
 	$HitAnimationPlayer.play("Hit")
 	print_debug("ON_ATTACKED")
 	pass
