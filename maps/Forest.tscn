@@ -1,6 +1,6 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://entities/level/Level.gd" type="Script" id=1]
+[ext_resource path="res://maps/Forest.gd" type="Script" id=1]
 [ext_resource path="res://entities/navigation/NavMesh.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/manager/GameTimer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/manager/manager.tscn" type="PackedScene" id=4]
@@ -22,6 +22,8 @@
 [ext_resource path="res://entities/target/Target.tscn" type="PackedScene" id=20]
 [ext_resource path="res://entities/actors/enemies/SentryGun.tscn" type="PackedScene" id=21]
 [ext_resource path="res://entities/actors/enemies/marksmen.tscn" type="PackedScene" id=22]
+[ext_resource path="res://entities/pickups/AmmoPistolSix.tscn" type="PackedScene" id=23]
+[ext_resource path="res://entities/pickups/AmmoM16.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ProceduralSky" id=4]
 
@@ -64,6 +66,7 @@ extents = Vector3( 3.6095, 1, 8.5777 )
 script = ExtResource( 1 )
 level = "Forest"
 challenges_id = 3
+unlock_at = 3
 
 [node name="Manager" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.99969, -0.0249033, 1.67155e-09, 0.024881, 0.998793, 0.0423465, -0.00105457, -0.0423333, 0.999103, 0, 6.82457, 0 )
@@ -1804,7 +1807,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.99, 1.95426, -60.9685 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0247, 1.95426, -48.9661 )
 
 [node name="SentryGun" parent="." instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.469, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65961, 14.469, -28.2284 )
+
+[node name="SentryGun2" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3623, 14.469, -102.602 )
+
+[node name="SentryGun3" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3097, 14.469, -1.20972 )
 
 [node name="Goomba2" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809299, 1.95426, -63.0122 )
@@ -1884,7 +1893,22 @@ text = "L"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8411, 7.6074, 2.1948 )
 text = "L"
 
+[node name="AmmoPistolSix" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14336, 1.02702, -7.18693 )
+skeleton = NodePath("../AmmoM16")
+
+[node name="AmmoPistolSix2" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90352, 1.02702, -12.2439 )
+skeleton = NodePath("../AmmoM16")
+
+[node name="AmmoM16" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2642, 0.513512, 21.0382 )
+
+[node name="AmmoM17" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.631, 11.7204, -7.76868 )
+
 [connection signal="body_entered" from="NavMesh/Ramp/Area" to="NavMesh/Ramp" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="NavMesh/Ramp/Area" to="NavMesh/Ramp" method="_on_Area_body_exited"]
+[connection signal="tree_exited" from="AmmoM17" to="." method="_on_AmmoM17_tree_exited"]
 
 [editable path="NavMesh"]

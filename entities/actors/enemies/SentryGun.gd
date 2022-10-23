@@ -23,10 +23,12 @@ func state_idle(_delta):
 	physics_idle(_delta)
 
 func _on_attacked(_dmg):
+	$HitAnimationPlayer.play("Hit")
+	print_debug("ON_ATTACKED")
 	pass
 
 func _on_SentryGun_died():
-	create_respawn(30)
+	create_respawn(60)
 	queue_free()
 
 func do_fire():
@@ -34,7 +36,7 @@ func do_fire():
 		return
 #	machinegun.look_at(get_player_position()+Vector3(0,2.5,0),Vector3.UP)
 #	machinegun.rotate_object_local(Vector3.UP,deg2rad(180))
-	$FireAnimationPlayer.play("Fire")
+	$FireAnimationPlayer.play("fire")
 	var inst = bullet.instance()
 #	inst.set_as_toplevel(true)
 	ref.level.add_child(inst)
@@ -47,13 +49,14 @@ func do_fire():
 
 
 func _on_Fire_timeout():
-	print("FIRE")
+	print_debug("FIRE")
 	do_fire()
 	pass # Replace with function body.
 	
 
 func _on_SentryGun_injured():
-	$HitAnimationPlayer.play("Hit")
+	print_debug("INJURED")
+	
 
 	
 	

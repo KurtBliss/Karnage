@@ -80,7 +80,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.000977472, 1, 0, -1, 0.000977472, 0, 0, -2.14886 )
+transform = Transform( 0.999994, -3.37789e-06, -0.00345574, 0.00345574, 0.000977466, 0.999994, 0, -1, 0.000977472, 0, 0, -2.14886 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../CollisionShape")
 

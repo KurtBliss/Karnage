@@ -36,6 +36,7 @@ var blood : CPUParticles
 var blood_delay = 0
 var ammo = Master.ammo_container
 var stun = 0
+var has_died = false
 export var stun_limit = 40
 
 func _ready():
@@ -68,7 +69,9 @@ func set_health(value):
 	previous_health = health
 	health = value
 	if (health < 0):
-		emit_signal("died")
+		if !has_died:
+			emit_signal("died")
+			has_died = true
 
 func get_health(): 
 	return health

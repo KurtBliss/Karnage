@@ -121,3 +121,4 @@ func _on_player_weapon_hit(hit, _weapon_name, _weapon_clip, is_melee):
 	
 func _on_player_died():
 	deaths_gain()
+

@@ -106,6 +106,7 @@ func update_level_challenges(set = level):
 				challenge_add_kills(10)
 				challenge_add("Shoot all 4 targets", 4, "method_targets", "challenge_targets")
 				challenge_add("Find the secret room", 1, "method_secret_area")
+				challenge_add("Destroy all sentry guns", 3, "method_sentry_guns")
 				
 			else:
 				load_challenges(ld_challenges)
@@ -186,5 +187,13 @@ func method_secret_area(challenge):
 func method_princess(_challenge):
 	if is_instance_valid(ref.level):
 		if ref.level.princess_saved:
+			return true
+	return false
+
+func method_sentry_guns(challenge):
+	if is_instance_valid(ref.level):
+		var sentry_guns_killed = ref.level.SentryGunsKilled
+		var points = challenge["points"]
+		if sentry_guns_killed >= points:
 			return true
 	return false
