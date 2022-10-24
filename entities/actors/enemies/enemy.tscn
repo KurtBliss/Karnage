@@ -199,6 +199,8 @@ tracks/0/keys = {
 
 [node name="Goomba" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95426, 0 )
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 1 )
 acceleration = 2
 speed = 11
@@ -223,9 +225,6 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
-
-[node name="Skeleton" parent="Mannequin" index="0"]
-bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
 material_overlay = SubResource( 17 )
@@ -331,6 +330,11 @@ text = "text"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.95426, 0 )
 stream = ExtResource( 3 )
 unit_db = 23.06
+
+[node name="Feet" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.72346, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.2 )
 
 [connection signal="died" from="." to="." method="_on_Goomba_died"]
 [connection signal="injured" from="." to="." method="_on_Goomba_injured"]

@@ -13,6 +13,7 @@ var bot_cast
 var delay_in_progress = false
 var dead = false
 export var respawn = true
+var ramps = []
 
 func set_path_to(target_pos):
 	path = ref.level.get_simple_path(global_transform.origin, target_pos)
@@ -23,8 +24,9 @@ func set_path_to_player():
 		set_path_to_node(ref.player)
 
 func set_path_to_node(nd):
-	path = ref.level.get_simple_path(global_transform.origin, nd.global_transform.origin)
-	path_ind = 0
+	set_path_to(nd.global_transform.origin)
+#	path = ref.level.get_simple_path(global_transform.origin, nd.global_transform.origin)
+#	path_ind = 0
 
 func get_player():
 	var p = ref.player

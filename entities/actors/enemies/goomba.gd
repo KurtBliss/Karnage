@@ -23,6 +23,38 @@ onready var raycast = $RayCast
 onready var weapon : WeaponContainer = $Mannequin/Skeleton/BoneAttachment/Weapon
 onready var label : Label3D = $Label3D
 
+
+var point_ld = preload("res://entities/unit/Point.tscn")
+var points = []
+
+func set_path_to(target_pos):
+	.set_path_to(target_pos)
+	
+	for point in points:
+		if is_instance_valid(point):
+			point.queue_free()
+	
+	for point in path:
+		var inst = point_ld.instance()
+		get_parent().add_child(inst)
+		inst.global_transform.origin = point
+		points.append(inst)
+
+func process_path():
+	if path_ind < path.size():
+		var pathpoint : Vector3 = path[path_ind]
+		var curpos = $Feet.global_transform.origin 
+		var move_vec = (pathpoint - curpos + Vector3(0, y_offset, 0))
+		if move_vec.length() < 1:
+			path_ind += 1
+		else:
+			var dir = move_vec.normalized() * speed
+			look_at(Vector3(pathpoint.x, global_transform.origin.y, pathpoint.z), Vector3.UP)
+			velocity = dir
+		return true
+	return false
+	
+
 func _ready():
 	$SwitchMask.play("normal")
 	set_physics_state("state_idle")
@@ -31,6 +63,8 @@ func _ready():
 
 func _process(delta : float) -> void:
 	label.text = str(get_physics_state())
+	if $Feet.get_collider():
+		global_transform.origin.y += 0.2
 	._process(delta)
 
 func state_idle(_delta):
@@ -272,6 +306,11 @@ func on_stunned():
 	pass
 
 func _on_Enemy_died():
+	
+	for point in points:
+		if is_instance_valid(point):
+			point.queue_free()
+	
 	var hp_ld = preload("res://entities/pickups/Health.tscn")
 	add_child(hp_ld.instance())
 	

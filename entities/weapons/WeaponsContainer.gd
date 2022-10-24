@@ -70,7 +70,7 @@ func throw_weapon():
 	inst.respawn = false
 	inst.pass_clip = cur.clip
 	inst.rotation_degrees.y = get_parent().get_parent().rotation_degrees.y + 180
-	inst.transform.origin = ref.player.transform.origin
+	inst.transform.origin = transform.origin#ref.player.transform.origin
 	if holder is Player:
 		holder.do_emit_clip(-1)
 		inst.velocity =  (ref.player.dir) * 10

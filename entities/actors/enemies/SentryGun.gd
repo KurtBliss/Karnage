@@ -25,7 +25,6 @@ func state_idle(_delta):
 func _on_attacked(_dmg):
 	$HitAnimationPlayer.seek(0)
 	$HitAnimationPlayer.play("Hit")
-	print_debug("ON_ATTACKED")
 	pass
 
 func _on_SentryGun_died():
@@ -50,13 +49,12 @@ func do_fire():
 
 
 func _on_Fire_timeout():
-	print_debug("FIRE")
 	do_fire()
 	pass # Replace with function body.
 	
 
 func _on_SentryGun_injured():
-	print_debug("INJURED")
+	pass
 	
 
 	

@@ -13,8 +13,8 @@ signal unstuned()
 
 export (int) var acceleration = 5
 export (int) var speed = 10
-export (float) var gravity = 10
-export (int) var jump_power = 30
+export (float) var gravity = 1.8
+export (int) var jump_power = 40
 export (int) var injured_delay = 30 # Not in use?
 export (int) var health = 100 setget set_health
 export (float) var direction_offset = 90

@@ -369,8 +369,6 @@ collision_layer = 17
 collision_mask = 17
 script = ExtResource( 1 )
 speed = 13
-gravity = 1.2
-jump_power = 36
 actor_name = "Player"
 
 [node name="RayCastStepUp" type="RayCast" parent="."]
