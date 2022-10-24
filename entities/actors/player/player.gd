@@ -160,12 +160,20 @@ func _physics_process(delta):
 	else:
 		if Input.is_action_just_pressed("jump") and can_input and can_double:
 			can_double = false
-			velocity.y += (jump_power - 6) + (10 * (score_meter / 100))
+			velocity.y += (jump_power - 2) + (10 * (score_meter / 100))
 		else:
 			velocity.y -= gravity
 	
 	# Collision
-	velocity = move_and_slide(velocity, Vector3.UP)
+	var snap 
+	if Input.is_action_pressed("jump"):
+		snap = Vector3.ZERO
+	else:
+		snap = Vector3.DOWN * 20
+
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, deg2rad(46))
+	
+#	velocity = move_and_slide(velocity, Vector3.UP, false, 4, deg2rad(180))
 	
 
 

@@ -30,3 +30,14 @@ func opt_keep_get() -> bool:
 
 func opt_keep_apply() -> void:
 	pass
+
+# Last level
+func opt_last_level_toggle() -> void:
+	GameData.settings["last_level"] = !GameData.settings["last_level"]
+	opt_keep_apply()
+
+func opt_last_level_get() -> bool:
+	return GameData.settings["last_level"]
+
+func opt_last_level_apply() -> void:
+	pass

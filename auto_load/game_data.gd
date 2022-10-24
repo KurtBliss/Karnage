@@ -5,7 +5,8 @@ const FILE_GAME_DATA = "user://game-data.json"
 var settings_defaults = {
 	"settings-ver": 0,
 	"fullscreen": false,
-	"keep": true
+	"keep": true,
+	"last_level": ""
 }
 var game_data_defaults = {
 	"game-data-ver": 0,

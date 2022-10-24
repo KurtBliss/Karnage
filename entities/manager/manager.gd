@@ -35,6 +35,7 @@ func _ready():
 	ref.manager = self
 	change_mode(MODE.PRE_GAME)
 	$AnimationPlayer.play("fastSpin")
+	GameData.settings["last_level"] = get_parent().filename
 
 
 
