@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/project_map/pm_common_node.gd"
 }, {
+"base": "Node",
+"class": "DisabledContainer",
+"language": "GDScript",
+"path": "res://entities/disable/Disabled.gd"
+}, {
 "base": "Position3D",
 "class": "Door",
 "language": "GDScript",
@@ -225,6 +230,7 @@ _global_script_class_icons={
 "CloudDome": "",
 "CmdHelp": "",
 "CommonNode": "",
+"DisabledContainer": "",
 "Door": "",
 "Enemy": "",
 "FadeIn": "",

@@ -1,6 +1,8 @@
 """Autoload/game_settings.gd"""
 extends Node
 
+var draging = false
+
 func _ready():
 	var apply_methods = get_method_list()
 	for method in apply_methods:
@@ -34,10 +36,34 @@ func opt_keep_apply() -> void:
 # Last level
 func opt_last_level_toggle() -> void:
 	GameData.settings["last_level"] = !GameData.settings["last_level"]
-	opt_keep_apply()
+	opt_last_level_apply()
 
 func opt_last_level_get() -> bool:
 	return GameData.settings["last_level"]
 
 func opt_last_level_apply() -> void:
 	pass
+
+# Mute
+func opt_mute_toggle() -> void:
+	GameData.settings["mute"] = !GameData.settings["mute"]
+	opt_mute_apply()
+
+func opt_mute_get() -> bool:
+	return GameData.settings["mute"]
+
+func opt_mute_apply() -> void:
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(bus_index, GameData.settings["mute"])
+
+# Volume
+func opt_volume_set(set) -> void:
+	GameData.settings["volume"] = set
+	opt_volume_apply()
+
+func opt_volume_get() -> float:
+	return GameData.settings["volume"]
+
+func opt_volume_apply() -> void:
+	var bus_index = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, GameData.settings["volume"])

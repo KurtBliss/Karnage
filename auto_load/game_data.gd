@@ -6,7 +6,9 @@ var settings_defaults = {
 	"settings-ver": 0,
 	"fullscreen": false,
 	"keep": true,
-	"last_level": ""
+	"last_level": "",
+	"mute": false,
+	"volume": 0.0
 }
 var game_data_defaults = {
 	"game-data-ver": 0,

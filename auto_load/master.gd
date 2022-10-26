@@ -30,9 +30,7 @@ func _process(_delta):
 	OS.set_window_title("Karnage " + str(Engine.get_frames_per_second()))
 	
 	if Input.is_action_just_pressed("mute"):
-		mute = !mute
-		var bus_index = AudioServer.get_bus_index("Master")
-		AudioServer.set_bus_mute(bus_index, mute)
+		GameSettings.opt_mute_toggle()
 
 func input_disabled():
 	if Console.visible:

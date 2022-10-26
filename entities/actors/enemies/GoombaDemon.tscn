@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/mixamo/mannequin/textures/Ch36_1001_Specular.png" type="Texture" id=1]
+[ext_resource path="res://assets/demon_wings_by_base_o_holic.png" type="Texture" id=2]
+[ext_resource path="res://entities/actors/enemies/enemy.tscn" type="PackedScene" id=3]
+
+[sub_resource type="OpenSimplexNoise" id=23]
+seed = 4
+octaves = 9
+period = 165.1
+persistence = 0.815
+
+[sub_resource type="NoiseTexture" id=24]
+seamless = true
+noise = SubResource( 23 )
+
+[sub_resource type="SpatialMaterial" id=25]
+resource_local_to_scene = true
+resource_name = "Ch36_Body"
+params_cull_mode = 2
+albedo_color = Color( 0.784314, 0.67451, 0.67451, 1 )
+albedo_texture = SubResource( 24 )
+metallic_specular = 1.0
+metallic_texture = ExtResource( 1 )
+roughness = 0.0372549
+
+[node name="GoombaDemon" instance=ExtResource( 3 )]
+
+[node name="Ch36" parent="Mannequin/Skeleton" index="0"]
+material/0 = SubResource( 25 )
+
+[node name="BoneAttachment2" type="BoneAttachment" parent="Mannequin/Skeleton" index="2"]
+transform = Transform( 1, 0, 0, 0, 0.993936, 0.109966, 0, -0.109966, 0.993936, 1e-08, 1.07744, 0.0155614 )
+bone_name = "mixamorig_Spine"
+
+[node name="Sprite3D" type="Sprite3D" parent="Mannequin/Skeleton/BoneAttachment2" index="0"]
+transform = Transform( -0.333333, 2.63164e-16, 2.91409e-08, 3.20451e-09, 0.331312, 0.0366553, -2.89641e-08, 0.0366553, -0.331312, -2.02473e-09, 0.307517, -0.0734167 )
+shaded = true
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 29.3043, 408.138, 739.39, 257.041 )
+
+[editable path="Mannequin"]
