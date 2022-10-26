@@ -204,6 +204,7 @@ collision_mask = 0
 script = ExtResource( 1 )
 acceleration = 2
 speed = 11
+gravity = 4.0
 injured_delay = 20
 health = 36
 actor_name = "Mannequin"

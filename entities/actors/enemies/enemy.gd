@@ -4,11 +4,12 @@ extends Bot
 onready var snd_impact_ld = preload("res://assets/freesounds/511194__pablobd__headshot.tscn")
 
 enum ENEMY {
-	MANNEQUIN, MARKSMEN
+	MANNEQUIN, MARKSMEN, EYE
 }
 var EnemyNames = {
 	ENEMY.MANNEQUIN: "Mannequin",
-	ENEMY.MARKSMEN: "Marksmen"
+	ENEMY.MARKSMEN: "Marksmen",
+	ENEMY.EYE: "Eye"
 }
 
 export(ENEMY) var enemy

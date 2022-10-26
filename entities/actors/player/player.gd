@@ -56,6 +56,9 @@ func _ready():
 	ammo[Master.AMMO.M16] += 32
 	ammo[Master.AMMO.SHOTGUN] += 24
 	
+	Mouse.caller = self
+	Mouse.callback = "move_camera"
+	
 
 func _process(delta):
 	step_up()
@@ -93,9 +96,10 @@ func _physics_process(delta):
 		Handle camera input
 	"""
 	
-	var mot = Mouse.get_motion()
-	if mot.x<0 or mot.y<0 or mot.x>0 or mot.y>0:
-		move_camera(mot * 3, delta)
+#	var mot = Mouse.get_motion()
+#	if mot.x<0 or mot.y<0 or mot.x>0 or mot.y>0:
+#		move_camera(mot * 3, delta)
+
 #	else:
 #		mot = Vector2.ZERO
 #		mot.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left") 

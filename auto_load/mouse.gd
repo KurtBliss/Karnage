@@ -5,9 +5,11 @@ mouse.gd
 extends Node
 var toggle = true setget set_toggle
 var capture = false setget set_capture
-var sensitivity = 0.3
+var sensitivity = 0.3 * 5
 var motion = Vector2.ZERO
 var motion_previous = Vector2.ZERO
+var caller
+var callback
 
 func _process(_delta):
 	if Input.is_action_just_pressed("toggle_mouse"):
@@ -15,6 +17,8 @@ func _process(_delta):
 	if motion == motion_previous: 
 		motion = Vector2.ZERO
 	motion_previous = motion
+	if is_instance_valid(caller):
+		caller.call(callback, motion, _delta)
 
 func _input(event):
 	if event is InputEventMouseButton:
