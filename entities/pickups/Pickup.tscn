@@ -4,7 +4,6 @@
 [ext_resource path="res://entities/pickups/pickupbody.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 3, 3, 3 )
 
 [node name="PistolPickup" type="KinematicBody" groups=["weapon_pickup"]]
 collision_layer = 2

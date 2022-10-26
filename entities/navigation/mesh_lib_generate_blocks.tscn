@@ -1,22 +1,91 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://assets/opengameart/Tiziana(bart)/HandPaintedGrassTexture.png" type="Texture" id=1]
+[ext_resource path="res://assets/opengameart/musdasch/MedivelStoneFloor/basecolor.png" type="Texture" id=1]
 [ext_resource path="res://assets/wallcoveringsmart/wallpaper.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/opengameart/The Chayed/HandPaintedGrassTexture.png" type="Texture" id=3]
+[ext_resource path="res://assets/fabric_6315_9064_Small.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/Karnage/untitled.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/opengameart/Tiziana(bart)/04pavinform256.png" type="Texture" id=6]
+[ext_resource path="res://assets/shandor/vanilla_wall_exterior_cropped_ver_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/nublet/brains.png" type="Texture" id=8]
+[ext_resource path="res://assets/opengameart/musdasch/MedivelStoneFloor/normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/ambientcg/Ground037_1K-JPG/Ground037_1K_Color.jpg" type="Texture" id=10]
+[ext_resource path="res://assets/ambientcg/Rocks006_1K-JPG/Rocks006_1K_Color.jpg" type="Texture" id=11]
+[ext_resource path="res://assets/ambientcg/Rock028_1K-JPG/Rock028_1K_Color.jpg" type="Texture" id=12]
+[ext_resource path="res://assets/opengameart/musdasch/MedivelStoneFloor/ambiente.png" type="Texture" id=13]
+[ext_resource path="res://assets/ambientcg/Rocks007_1K-JPG/Rocks007_1K_Color.jpg" type="Texture" id=14]
+[ext_resource path="res://assets/gamedevmarket/TILEABLE FLOOR TEXTURE.png" type="Texture" id=15]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 1 )
-uv1_scale = Vector3( 3, 3, 3 )
+[sub_resource type="SpatialMaterial" id=43]
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 2, 2, 2 )
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="CubeMesh" id=44]
+material = SubResource( 43 )
 size = Vector3( 8, 8, 8 )
 
 [sub_resource type="BoxShape" id=13]
 extents = Vector3( 4, 4, 4 )
 
+[sub_resource type="SpatialMaterial" id=45]
+albedo_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 13 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=46]
+material = SubResource( 45 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=47]
+albedo_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 13 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=48]
+material = SubResource( 47 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=49]
+albedo_texture = ExtResource( 8 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 9 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 13 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 3, 3, 3 )
+
+[sub_resource type="CubeMesh" id=50]
+material = SubResource( 49 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=51]
+albedo_texture = ExtResource( 15 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 51 )
+size = Vector3( 8, 8, 8 )
+
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 2, 2, 2 )
 
 [sub_resource type="CubeMesh" id=5]
 material = SubResource( 4 )
@@ -24,19 +93,99 @@ size = Vector3( 8, 8, 8 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 2, 2, 2 )
 
 [sub_resource type="CubeMesh" id=7]
 material = SubResource( 6 )
 size = Vector3( 8, 8, 8 )
 
+[sub_resource type="SpatialMaterial" id=52]
+albedo_texture = ExtResource( 10 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=53]
+material = SubResource( 52 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=54]
+albedo_texture = ExtResource( 12 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=55]
+material = SubResource( 54 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=56]
+albedo_texture = ExtResource( 11 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=57]
+material = SubResource( 56 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=58]
+albedo_texture = ExtResource( 14 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=59]
+material = SubResource( 58 )
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=38]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ConcavePolygonShape" id=42]
+data = PoolVector3Array( -4, 4, 4, -4, -4, 4, -4, 4, -4, -4, 4, -4, -4, -4, 4, -4, -4, -4, 4, -3.5048, 4, 4, -4, 4, 3.531, -3.5048, 4, 3.531, -3.5048, 4, 4, -4, 4, 3.531, -3.0357, 4, 3.531, -3.0357, 4, 4, -4, 4, 3.0619, -3.0357, 4, 3.0619, -3.0357, 4, 4, -4, 4, 3.0619, -2.5667, 4, 3.0619, -2.5667, 4, 4, -4, 4, 2.5929, -2.5667, 4, 2.5929, -2.5667, 4, 4, -4, 4, 2.5929, -2.0976, 4, 2.5929, -2.0976, 4, 4, -4, 4, 2.1238, -2.0976, 4, 2.1238, -2.0976, 4, 4, -4, 4, 2.1238, -1.6286, 4, 2.1238, -1.6286, 4, 4, -4, 4, 1.6548, -1.6286, 4, 1.6548, -1.6286, 4, 4, -4, 4, 1.6548, -1.1595, 4, 1.6548, -1.1595, 4, 4, -4, 4, 1.1857, -1.1595, 4, 1.1857, -1.1595, 4, 4, -4, 4, 1.1857, -0.6905, 4, 1.1857, -0.6905, 4, 4, -4, 4, 0.7167, -0.6905, 4, 0.7167, -0.6905, 4, 4, -4, 4, 0.7167, -0.2214, 4, 0.7167, -0.2214, 4, 4, -4, 4, 0.2476, -0.2214, 4, 0.2476, -0.2214, 4, 4, -4, 4, 0.2476, 0.2476, 4, 0.2476, 0.2476, 4, 4, -4, 4, -0.2214, 0.2476, 4, -0.2214, 0.2476, 4, 4, -4, 4, -0.2214, 0.7167, 4, -0.2214, 0.7167, 4, 4, -4, 4, -0.6905, 0.7167, 4, -0.6905, 0.7167, 4, 4, -4, 4, -0.6905, 1.1857, 4, -0.6905, 1.1857, 4, 4, -4, 4, -1.1595, 1.1857, 4, -1.1595, 1.1857, 4, 4, -4, 4, -1.1595, 1.6548, 4, -1.1595, 1.6548, 4, 4, -4, 4, -1.6286, 1.6548, 4, -1.6286, 1.6548, 4, 4, -4, 4, -1.6286, 2.1238, 4, -1.6286, 2.1238, 4, 4, -4, 4, -2.0976, 2.1238, 4, -2.0976, 2.1238, 4, 4, -4, 4, -2.0976, 2.5929, 4, -2.0976, 2.5929, 4, 4, -4, 4, -2.5667, 2.5929, 4, -2.5667, 2.5929, 4, 4, -4, 4, -2.5667, 3.0619, 4, -2.5667, 3.0619, 4, 4, -4, 4, -3.0357, 3.0619, 4, -3.0357, 3.0619, 4, 4, -4, 4, -3.0357, 3.531, 4, -3.0357, 3.531, 4, 4, -4, 4, -3.5048, 3.531, 4, -3.5048, 3.531, 4, 4, -4, 4, -3.5048, 4, 4, -3.5048, 4, 4, 4, -4, 4, -4, 4, 4, -4, 4, 4, 4, -4, 4, -4, -4, 4, -4, 4, -4, -4, -4, -4, -3.5048, 4, -4, -3.5048, 4, -4, -4, -4, -4, -3.5048, 3.531, -4, -3.5048, 3.531, -4, -4, -4, -4, -3.0357, 3.531, -4, -3.0357, 3.531, -4, -4, -4, -4, -3.0357, 3.0619, -4, -3.0357, 3.0619, -4, -4, -4, -4, -2.5667, 3.0619, -4, -2.5667, 3.0619, -4, -4, -4, -4, -2.5667, 2.5929, -4, -2.5667, 2.5929, -4, -4, -4, -4, -2.0976, 2.5929, -4, -2.0976, 2.5929, -4, -4, -4, -4, -2.0976, 2.1238, -4, -2.0976, 2.1238, -4, -4, -4, -4, -1.6286, 2.1238, -4, -1.6286, 2.1238, -4, -4, -4, -4, -1.6286, 1.6548, -4, -1.6286, 1.6548, -4, -4, -4, -4, -1.1595, 1.6548, -4, -1.1595, 1.6548, -4, -4, -4, -4, -1.1595, 1.1857, -4, -1.1595, 1.1857, -4, -4, -4, -4, -0.6905, 1.1857, -4, -0.6905, 1.1857, -4, -4, -4, -4, -0.6905, 0.7167, -4, -0.6905, 0.7167, -4, -4, -4, -4, -0.2214, 0.7167, -4, -0.2214, 0.7167, -4, -4, -4, -4, -0.2214, 0.2476, -4, -0.2214, 0.2476, -4, -4, -4, -4, 0.2476, 0.2476, -4, 0.2476, 0.2476, -4, -4, -4, -4, 0.2476, -0.2214, -4, 0.2476, -0.2214, -4, -4, -4, -4, 0.7167, -0.2214, -4, 0.7167, -0.2214, -4, -4, -4, -4, 0.7167, -0.6905, -4, 0.7167, -0.6905, -4, -4, -4, -4, 1.1857, -0.6905, -4, 1.1857, -0.6905, -4, -4, -4, -4, 1.1857, -1.1595, -4, 1.1857, -1.1595, -4, -4, -4, -4, 1.6548, -1.1595, -4, 1.6548, -1.1595, -4, -4, -4, -4, 1.6548, -1.6286, -4, 1.6548, -1.6286, -4, -4, -4, -4, 2.1238, -1.6286, -4, 2.1238, -1.6286, -4, -4, -4, -4, 2.1238, -2.0976, -4, 2.1238, -2.0976, -4, -4, -4, -4, 2.5929, -2.0976, -4, 2.5929, -2.0976, -4, -4, -4, -4, 2.5929, -2.5667, -4, 2.5929, -2.5667, -4, -4, -4, -4, 3.0619, -2.5667, -4, 3.0619, -2.5667, -4, -4, -4, -4, 3.0619, -3.0357, -4, 3.0619, -3.0357, -4, -4, -4, -4, 3.531, -3.0357, -4, 3.531, -3.0357, -4, -4, -4, -4, 3.531, -3.5048, -4, 3.531, -3.5048, -4, -4, -4, -4, 4, -3.5048, -4, 4, -3.5048, -4, -4, -4, -4, 4, -4, -4, 4, -4, -4, -4, -4, -4, 4, -4, 4, 4, -4, 4, -4, -4, -4, -4, -4, 4, 4, -3.5048, -4, 4, -4, -4, 4, -3.5048, 4, 4, -3.5048, 4, 4, -4, -4, 4, -4, 4, -3.5048, 4, 4, -3.5048, 4, -4, -3.5048, 3.531, 4, -3.5048, 3.531, 4, -3.5048, 4, -4, -3.5048, 3.531, -4, -3.5048, 3.531, 4, -3.5048, 3.531, -4, -3.0357, 3.531, 4, -3.0357, 3.531, 4, -3.5048, 3.531, -4, -3.0357, 3.531, -4, -3.0357, 3.531, 4, -3.0357, 3.531, -4, -3.0357, 3.0619, 4, -3.0357, 3.0619, 4, -3.0357, 3.531, -4, -3.0357, 3.0619, -4, -3.0357, 3.0619, 4, -3.0357, 3.0619, -4, -2.5667, 3.0619, 4, -2.5667, 3.0619, 4, -3.0357, 3.0619, -4, -2.5667, 3.0619, -4, -2.5667, 3.0619, 4, -2.5667, 3.0619, -4, -2.5667, 2.5929, 4, -2.5667, 2.5929, 4, -2.5667, 3.0619, -4, -2.5667, 2.5929, -4, -2.5667, 2.5929, 4, -2.5667, 2.5929, -4, -2.0976, 2.5929, 4, -2.0976, 2.5929, 4, -2.5667, 2.5929, -4, -2.0976, 2.5929, -4, -2.0976, 2.5929, 4, -2.0976, 2.5929, -4, -2.0976, 2.1238, 4, -2.0976, 2.1238, 4, -2.0976, 2.5929, -4, -2.0976, 2.1238, -4, -2.0976, 2.1238, 4, -2.0976, 2.1238, -4, -1.6286, 2.1238, 4, -1.6286, 2.1238, 4, -2.0976, 2.1238, -4, -1.6286, 2.1238, -4, -1.6286, 2.1238, 4, -1.6286, 2.1238, -4, -1.6286, 1.6548, 4, -1.6286, 1.6548, 4, -1.6286, 2.1238, -4, -1.6286, 1.6548, -4, -1.6286, 1.6548, 4, -1.6286, 1.6548, -4, -1.1595, 1.6548, 4, -1.1595, 1.6548, 4, -1.6286, 1.6548, -4, -1.1595, 1.6548, -4, -1.1595, 1.6548, 4, -1.1595, 1.6548, -4, -1.1595, 1.1857, 4, -1.1595, 1.1857, 4, -1.1595, 1.6548, -4, -1.1595, 1.1857, -4, -1.1595, 1.1857, 4, -1.1595, 1.1857, -4, -0.6905, 1.1857, 4, -0.6905, 1.1857, 4, -1.1595, 1.1857, -4, -0.6905, 1.1857, -4, -0.6905, 1.1857, 4, -0.6905, 1.1857, -4, -0.6905, 0.7167, 4, -0.6905, 0.7167, 4, -0.6905, 1.1857, -4, -0.6905, 0.7167, -4, -0.6905, 0.7167, 4, -0.6905, 0.7167, -4, -0.2214, 0.7167, 4, -0.2214, 0.7167, 4, -0.6905, 0.7167, -4, -0.2214, 0.7167, -4, -0.2214, 0.7167, 4, -0.2214, 0.7167, -4, -0.2214, 0.2476, 4, -0.2214, 0.2476, 4, -0.2214, 0.7167, -4, -0.2214, 0.2476, -4, -0.2214, 0.2476, 4, -0.2214, 0.2476, -4, 0.2476, 0.2476, 4, 0.2476, 0.2476, 4, -0.2214, 0.2476, -4, 0.2476, 0.2476, -4, 0.2476, 0.2476, 4, 0.2476, 0.2476, -4, 0.2476, -0.2214, 4, 0.2476, -0.2214, 4, 0.2476, 0.2476, -4, 0.2476, -0.2214, -4, 0.2476, -0.2214, 4, 0.2476, -0.2214, -4, 0.7167, -0.2214, 4, 0.7167, -0.2214, 4, 0.2476, -0.2214, -4, 0.7167, -0.2214, -4, 0.7167, -0.2214, 4, 0.7167, -0.2214, -4, 0.7167, -0.6905, 4, 0.7167, -0.6905, 4, 0.7167, -0.2214, -4, 0.7167, -0.6905, -4, 0.7167, -0.6905, 4, 0.7167, -0.6905, -4, 1.1857, -0.6905, 4, 1.1857, -0.6905, 4, 0.7167, -0.6905, -4, 1.1857, -0.6905, -4, 1.1857, -0.6905, 4, 1.1857, -0.6905, -4, 1.1857, -1.1595, 4, 1.1857, -1.1595, 4, 1.1857, -0.6905, -4, 1.1857, -1.1595, -4, 1.1857, -1.1595, 4, 1.1857, -1.1595, -4, 1.6548, -1.1595, 4, 1.6548, -1.1595, 4, 1.1857, -1.1595, -4, 1.6548, -1.1595, -4, 1.6548, -1.1595, 4, 1.6548, -1.1595, -4, 1.6548, -1.6286, 4, 1.6548, -1.6286, 4, 1.6548, -1.1595, -4, 1.6548, -1.6286, -4, 1.6548, -1.6286, 4, 1.6548, -1.6286, -4, 2.1238, -1.6286, 4, 2.1238, -1.6286, 4, 1.6548, -1.6286, -4, 2.1238, -1.6286, -4, 2.1238, -1.6286, 4, 2.1238, -1.6286, -4, 2.1238, -2.0976, 4, 2.1238, -2.0976, 4, 2.1238, -1.6286, -4, 2.1238, -2.0976, -4, 2.1238, -2.0976, 4, 2.1238, -2.0976, -4, 2.5929, -2.0976, 4, 2.5929, -2.0976, 4, 2.1238, -2.0976, -4, 2.5929, -2.0976, -4, 2.5929, -2.0976, 4, 2.5929, -2.0976, -4, 2.5929, -2.5667, 4, 2.5929, -2.5667, 4, 2.5929, -2.0976, -4, 2.5929, -2.5667, -4, 2.5929, -2.5667, 4, 2.5929, -2.5667, -4, 3.0619, -2.5667, 4, 3.0619, -2.5667, 4, 2.5929, -2.5667, -4, 3.0619, -2.5667, -4, 3.0619, -2.5667, 4, 3.0619, -2.5667, -4, 3.0619, -3.0357, 4, 3.0619, -3.0357, 4, 3.0619, -2.5667, -4, 3.0619, -3.0357, -4, 3.0619, -3.0357, 4, 3.0619, -3.0357, -4, 3.531, -3.0357, 4, 3.531, -3.0357, 4, 3.0619, -3.0357, -4, 3.531, -3.0357, -4, 3.531, -3.0357, 4, 3.531, -3.0357, -4, 3.531, -3.5048, 4, 3.531, -3.5048, 4, 3.531, -3.0357, -4, 3.531, -3.5048, -4, 3.531, -3.5048, 4, 3.531, -3.5048, -4, 4, -3.5048, 4, 4, -3.5048, 4, 3.531, -3.5048, -4, 4, -3.5048, -4, -4, 4, -4, -3.5048, 4, -4, -4, 4, 4, -4, 4, 4, -3.5048, 4, -4, -3.5048, 4, 4 )
+
 [node name="Spatial" type="Spatial"]
 
+[node name="ShanBrick" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.60579 )
+mesh = SubResource( 44 )
+skeleton = NodePath(".")
+
+[node name="StaticBody" type="StaticBody" parent="ShanBrick"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ShanBrick/StaticBody"]
+shape = SubResource( 13 )
+
 [node name="Brick" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 4.60579 )
+mesh = SubResource( 46 )
+skeleton = NodePath(".")
 
 [node name="StaticBody" type="StaticBody" parent="Brick"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Brick/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Brick2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6648, 0, 17.0317 )
+mesh = SubResource( 48 )
+skeleton = NodePath(".")
+
+[node name="StaticBody" type="StaticBody" parent="Brick2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Brick2/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Brains" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4666, -9.53674e-07, 11.5754 )
+mesh = SubResource( 50 )
+skeleton = NodePath(".")
+
+[node name="StaticBody" type="StaticBody" parent="Brains"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Brains/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Tile" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55487, -0.081255, -1.6997 )
+mesh = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Tile"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tile/StaticBody"]
 shape = SubResource( 13 )
 
 [node name="Wallpaper" type="MeshInstance" parent="."]
@@ -49,10 +198,56 @@ mesh = SubResource( 5 )
 shape = SubResource( 13 )
 
 [node name="Grass" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8385, 0, -0.167864 )
 mesh = SubResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="Grass"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/StaticBody"]
 shape = SubResource( 13 )
+
+[node name="Grass2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1013, 0, -17.8863 )
+mesh = SubResource( 53 )
+
+[node name="StaticBody" type="StaticBody" parent="Grass2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Grass2/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Rock28" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.358941, 0, -16.6589 )
+mesh = SubResource( 55 )
+
+[node name="StaticBody" type="StaticBody" parent="Rock28"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock28/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Rock6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7544, 0, -14.7191 )
+mesh = SubResource( 57 )
+
+[node name="StaticBody" type="StaticBody" parent="Rock6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock6/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Rock7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2745, 0, -9.76733 )
+mesh = SubResource( 59 )
+
+[node name="StaticBody" type="StaticBody" parent="Rock7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock7/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="Steps" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1987, 0.147777, 0.44207 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 38 )
+
+[node name="StaticBody" type="StaticBody" parent="Steps"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Steps/StaticBody"]
+shape = SubResource( 42 )

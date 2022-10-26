@@ -171,7 +171,9 @@ func _physics_process(delta):
 	else:
 		snap = Vector3.DOWN * 20
 
-	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, deg2rad(46))
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, deg2rad(65))
+	
+	
 	
 #	velocity = move_and_slide(velocity, Vector3.UP, false, 4, deg2rad(180))
 	
@@ -209,9 +211,19 @@ func gain_ammo(type, amount):
 		ammo[type] = amount
 
 func step_up():
-	if $RayCastStepUp.get_collider():
-		global_transform.origin.y += 0.1
+	
+	if Input.is_action_pressed("move_backward") \
+	or Input.is_action_pressed("move_forward") \
+	or Input.is_action_pressed("move_left") \
+	or Input.is_action_pressed("move_right"):
 		
+		var vel_2d = Vector3(velocity.x, 0, velocity.z)
+		
+		$RayCastStepUp.cast_to = vel_2d.normalized() * 2
+		
+		if $RayCastStepUp.get_collider():
+			global_transform.origin.y += 0.2
+			
 
 ###################-VIRTUAL FUNCS-####################
 

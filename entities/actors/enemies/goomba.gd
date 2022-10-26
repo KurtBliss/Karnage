@@ -12,6 +12,7 @@ var set_fire_delay = 1.5
 var cur_fire_delay = set_fire_delay
 var vec_look_at = Vector3.ZERO
 var pickup
+var do_pickup = 0
 
 var stick_to_path = false
 enum {ZIG, ZAG}
@@ -65,6 +66,8 @@ func _process(delta : float) -> void:
 	label.text = str(get_physics_state())
 	if $Feet.get_collider():
 		global_transform.origin.y += 0.2
+	if do_pickup > 0:
+		do_pickup -= 1
 	._process(delta)
 
 func state_idle(_delta):
@@ -211,22 +214,19 @@ func state_grab_weapon(_delta):
 	var process = process_path()
 	if not process:
 		set_path_to_node(pickup)
+		
+	if path_ind == path.size() \
+	and $PickupTimer.is_stopped():
+		$PickupTimer.start()
 	
 
-func start_grab_weapon(within_range = 150):
+func start_grab_weapon(within_range = 15):
 	if weapon.get_child_count() > 0:
 		return
 	
-	if !$Footsteps.playing:
-		$Footsteps.play()
-	
-	if !mixamo.is_playing() and !mixamo.current_animation == "Walk":
-		mixamo.play("Walk")
-	
-	
 	var wpn = get_closest_pickup_weapon(within_range)
 	if wpn != null:
-		if get_node_spotted(wpn):
+#		if get_node_spotted(wpn):
 			pickup = wpn
 			set_path_to_node(pickup)
 			set_physics_state("state_grab_weapon")
@@ -370,6 +370,7 @@ func _on_Goomba_stuned():
 		if get_physics_state() != "state_stunned":
 			start_stun()
 			stun = 0
+			weapon.throw_weapon()
 
 func _on_Goomba_injured(dmg, how):
 	if get_health() > 0:
@@ -382,3 +383,8 @@ func _on_Goomba_injured(dmg, how):
 
 func _on_Goomba_died():
 	_on_Enemy_died()
+
+
+func _on_PickupTimer_timeout():
+	do_pickup = 3
+	pass # Replace with function body.

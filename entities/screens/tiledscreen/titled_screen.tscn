@@ -92,7 +92,7 @@ margin_bottom = 220.0
 scene = "res://entities/screens/options/options_screen.tscn"
 label_text = "Options"
 
-[node name="Button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
+[node name="Exit" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
 margin_left = 0.0
 margin_top = 240.0
 margin_right = 784.0

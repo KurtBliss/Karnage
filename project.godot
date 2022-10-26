@@ -139,6 +139,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/actors/player/hud.gd"
 }, {
+"base": "Button",
+"class": "PluginButton",
+"language": "GDScript",
+"path": "res://addons/csgtomeshinstance/plugin_button.gd"
+}, {
 "base": "Position3D",
 "class": "Projectile",
 "language": "GDScript",
@@ -236,6 +241,7 @@ _global_script_class_icons={
 "PickupBody": "",
 "Player": "",
 "Player_Hud": "",
+"PluginButton": "",
 "Projectile": "",
 "RefClass": "",
 "Screen": "",
@@ -286,7 +292,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/CSGStairs/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/Mirror/plugin.cfg", "res://addons/QuickPluginManager/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/cloud/plugin.cfg", "res://addons/notes_tab/plugin.cfg", "res://addons/project-statistics/plugin.cfg", "res://addons/project_map/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg", "res://addons/zylann.scatter/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CSGStairs/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/Mirror/plugin.cfg", "res://addons/QuickPluginManager/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/cloud/plugin.cfg", "res://addons/csgtomeshinstance/plugin.cfg", "res://addons/notes_tab/plugin.cfg", "res://addons/project-statistics/plugin.cfg", "res://addons/project_map/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg", "res://addons/zylann.scatter/plugin.cfg" )
 
 [input]
 
@@ -386,7 +392,7 @@ test={
 }
 interact={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }

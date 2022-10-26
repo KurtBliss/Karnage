@@ -15,6 +15,7 @@ var levels = [
 	"res://maps/Corridor.tscn",
 	"res://maps/Forest.tscn",
 	"res://maps/City.tscn",
+	"res://maps/Hell.tscn"
 #	"res://maps/Alpha.tscn"
 ]
 var levelsNames = [
@@ -22,6 +23,7 @@ var levelsNames = [
 	"Corridor",
 	"Forest",
 	"City", 
+	"Hell"
 #	"Alpha"
 ]
 var level_index = -2
@@ -122,6 +124,7 @@ func change_mode(set_mode):
 				var inst : Player = ld.instance()
 				
 				inst.set_translation( get_parent().get_node("PlayerSpawn").get_translation())
+				inst.translation.y += 1
 				get_parent().add_child(inst)
 				
 

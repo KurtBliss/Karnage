@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Rocks006_1K_Color.jpg-1d7a22c2a7882eeb87f09b0a712ca0ee.s3tc.stex"
-path.etc2="res://.import/Rocks006_1K_Color.jpg-1d7a22c2a7882eeb87f09b0a712ca0ee.etc2.stex"
+path.s3tc="res://.import/brains.png-00b400cf011e4e1b3fa6134ed3567f76.s3tc.stex"
+path.etc2="res://.import/brains.png-00b400cf011e4e1b3fa6134ed3567f76.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/ambientcg/Rocks006_1K-JPG/Rocks006_1K_Color.jpg"
-dest_files=[ "res://.import/Rocks006_1K_Color.jpg-1d7a22c2a7882eeb87f09b0a712ca0ee.s3tc.stex", "res://.import/Rocks006_1K_Color.jpg-1d7a22c2a7882eeb87f09b0a712ca0ee.etc2.stex" ]
+source_file="res://assets/nublet/brains.png"
+dest_files=[ "res://.import/brains.png-00b400cf011e4e1b3fa6134ed3567f76.s3tc.stex", "res://.import/brains.png-00b400cf011e4e1b3fa6134ed3567f76.etc2.stex" ]
 
 [params]
 

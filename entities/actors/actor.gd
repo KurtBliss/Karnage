@@ -37,7 +37,7 @@ var blood_delay = 0
 var ammo = Master.ammo_container
 var stun = 0
 var has_died = false
-export var stun_limit = 40
+export var stun_limit = 80
 
 func _ready():
 	add_to_group("actor")
@@ -136,6 +136,7 @@ func do_damage(dmg : float, from : Actor, how = "", etc = {}):
 		if has_method(method):
 			call(method, dmg, how)
 			
+
 
 func state_reset(set_state, set_physics_state):
 	set_state(set_state)

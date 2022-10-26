@@ -4,6 +4,7 @@
 [ext_resource path="res://entities/weapons/Shotgun.tscn" type="PackedScene" id=2]
 
 [node name="ShotgunPickup" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.44563, 0 )
 weapon_path = NodePath("Area/Shotgun")
 
 [node name="Shotgun" parent="Area" index="0" instance=ExtResource( 2 )]

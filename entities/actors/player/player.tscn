@@ -382,7 +382,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 cull_mask = 1048573
 current = true
-far = 400.0
+far = 8192.0
 
 [node name="Weapon" type="Position3D" parent="Head/Camera"]
 transform = Transform( -1, -1.55741e-08, 1.50915e-07, -1.06385e-08, 0.999467, 0.0326493, -1.51343e-07, 0.0326493, -0.999467, 0.605, -0.527, -0.949 )

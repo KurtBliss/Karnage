@@ -13,7 +13,8 @@ var game_data_defaults = {
 	"levels": {
 		"Corridor": get_default_level_data(),
 		"City": get_default_level_data(),
-		"Forest": get_default_level_data()
+		"Forest": get_default_level_data(),
+		"Hell": get_default_level_data()
 	}
 }
 var settings = settings_defaults

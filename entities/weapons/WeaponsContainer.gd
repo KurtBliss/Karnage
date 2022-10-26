@@ -70,10 +70,13 @@ func throw_weapon():
 	inst.respawn = false
 	inst.pass_clip = cur.clip
 	inst.rotation_degrees.y = get_parent().get_parent().rotation_degrees.y + 180
-	inst.transform.origin = transform.origin#ref.player.transform.origin
+	inst.global_transform.origin = holder.global_transform.origin#ref.player.transform.origin
+	#inst.global_transform.origin.y -= 0.5
 	if holder is Player:
 		holder.do_emit_clip(-1)
 		inst.velocity =  (ref.player.dir) * 10
+	else:
+		inst.velocity = -inst.transform.basis.z * 5
 	cur.queue_free()
 	ref.level.add_child(inst)
 	current_weapon = null
