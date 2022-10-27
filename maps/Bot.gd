@@ -31,3 +31,4 @@ func _on_PrincessDoorArea_body_entered(body):
 		set_path_to(runto.global_transform.origin)
 		set_physics_state("state_saved")
 		emit_signal("saved")
+		$Label3D.text = "Thanks, let me give you a kiss <3"

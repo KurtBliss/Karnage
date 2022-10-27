@@ -243,6 +243,9 @@ gravity = 0.0
 [node name="Mannequin" parent="Princess" instance=ExtResource( 23 )]
 transform = Transform( -2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 7.62939e-06, 0, -4.76837e-07 )
 
+[node name="Skeleton" parent="Princess/Mannequin" index="0"]
+bones/5/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="Ch36" parent="Princess/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 6 )
 
@@ -256,6 +259,11 @@ transform = Transform( 0.0999997, -1.62981e-09, -3.72529e-09, -1.86265e-09, 0.09
 [node name="CollisionShape" type="CollisionShape" parent="Princess"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67061, 0 )
 shape = SubResource( 7 )
+
+[node name="Label3D" type="Label3D" parent="Princess"]
+transform = Transform( 1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 3.94445, 0 )
+billboard = 1
+text = "Help me!!"
 
 [node name="Cage" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 124.591, 0, 3.25132 )
@@ -401,7 +409,7 @@ transform = Transform( -0.0551904, -0.026327, -0.998128, -0.056801, 0.998116, -0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.512, 2.66576, -10.4523 )
 
 [node name="Skeleton" parent="Enemy/Mannequin" index="0"]
-bones/18/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Enemy/Mannequin/Skeleton" index="0"]
 transform = Transform( 1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
@@ -508,7 +516,7 @@ text = "L"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.02, 1.89689, -35.7698 )
 
 [node name="Skeleton" parent="Goomba3/Mannequin" index="0"]
-bones/18/bound_children = [  ]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Goomba3/Mannequin/Skeleton" index="0"]
 mesh = SubResource( 22 )

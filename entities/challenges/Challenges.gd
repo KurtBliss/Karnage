@@ -124,7 +124,6 @@ func update_level_challenges(set = level):
 				challenge_add_highscore(2000)
 				challenge_add_kills(10)
 				challenge_add("Shoot all 4 targets", 4, "method_targets", "challenge_targets")
-				challenge_add("Find the secret room", 1, "method_secret_area")
 				
 			else:
 				load_challenges(ld_challenges)

@@ -88,6 +88,11 @@ func save_file(fn, data):
 	file.store_string(to_json(data))
 	file.close()
 
+func clear_files():
+	settings = settings_defaults
+	game_data = game_data_defaults
+	save()
+
 func load_file(fn, deffault_data):
 	var file = File.new()
 	if file.file_exists(fn):

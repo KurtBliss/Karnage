@@ -41,3 +41,11 @@ func _on_HSlider_drag_ended(value_changed):
 
 func _on_HSlider_value_changed(value):
 	GameSettings.opt_volume_set($VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/HSlider.value)
+
+
+func clear_game_data(_button):
+	$ClearGameData.popup_centered()
+
+
+func _on_ClearGameData_confirmed():
+	GameData.clear_files()

@@ -19,7 +19,6 @@ margin_top = 80.0
 margin_right = 904.0
 margin_bottom = 520.0
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -40,8 +39,6 @@ margin_right = 784.0
 margin_bottom = 373.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 20
-alignment = 1
 __meta__ = {
 "_editor_description_": ""
 }
@@ -55,17 +52,17 @@ show_check = true
 
 [node name="Keep" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 80.0
+margin_top = 64.0
 margin_right = 784.0
-margin_bottom = 140.0
+margin_bottom = 124.0
 method = "keep_pressed"
 label_text = "Keep all blood and bodies"
 show_check = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 160.0
+margin_top = 128.0
 margin_right = 784.0
-margin_bottom = 213.0
+margin_bottom = 181.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 161.0
@@ -96,12 +93,21 @@ margin_bottom = 53.0
 
 [node name="Mute" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 233.0
+margin_top = 185.0
 margin_right = 784.0
-margin_bottom = 293.0
+margin_bottom = 245.0
 method = "mute_pressed"
 label_text = "Mute"
 show_check = true
+
+[node name="ClearGameData" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 249.0
+margin_right = 784.0
+margin_bottom = 309.0
+scene = "res://entities/screens/tiledscreen/titled_screen.tscn"
+method = "clear_game_data"
+label_text = "Clear Game Data"
 
 [node name="Back" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
@@ -118,6 +124,12 @@ visible = false
 stream = ExtResource( 5 )
 autoplay = true
 
+[node name="ClearGameData" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+dialog_text = "Clear game data?"
+
 [connection signal="drag_ended" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_drag_ended"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="confirmed" from="ClearGameData" to="." method="_on_ClearGameData_confirmed"]

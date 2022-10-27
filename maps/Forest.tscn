@@ -2012,7 +2012,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6054, 6.4241, -6.0973 )
 
 [node name="Target2" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7169, 5.0639, -63.4528 )
-text = "I"
 
 [node name="Target3" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9038, 9.9959, -122.854 )
@@ -2049,6 +2048,9 @@ shade_color = Color( 0.223529, 0.286275, 0.372549, 1 )
 [connection signal="body_exited" from="NavMesh/Ramp/Area" to="NavMesh/Ramp" method="_on_Area_body_exited"]
 [connection signal="body_entered" from="NavMesh/Ramp2/Area" to="NavMesh/Ramp2" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="NavMesh/Ramp2/Area" to="NavMesh/Ramp2" method="_on_Area_body_exited"]
+[connection signal="died" from="SentryGun" to="." method="_on_SentryGun_died"]
+[connection signal="died" from="SentryGun2" to="." method="_on_SentryGun2_died"]
+[connection signal="died" from="SentryGun3" to="." method="_on_SentryGun3_died"]
 [connection signal="tree_exited" from="AmmoM17" to="." method="_on_AmmoM17_tree_exited"]
 
 [editable path="NavMesh"]
