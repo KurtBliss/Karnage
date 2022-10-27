@@ -74,12 +74,13 @@ func _process(delta : float) -> void:
 	._process(delta)
 
 func state_idle(_delta):
-	mixamo.play("Idle")
-	if not get_player():
-		return
-	if get_player_spotted():
+	if not get_player() and get_player_spotted():
 		set_physics_state("state_chase")
-	process_path()
+	if process_path():
+		mixamo.play("Walk")
+	else:
+		mixamo.play("Idle")
+		
 	start_grab_weapon()
 
 func state_dumb(_delta):
@@ -195,11 +196,6 @@ func state_chase_zig_zag(_delta):
 func state_chase_path(_delta):
 	start_grab_weapon()	
 	
-	mixamo.play("Walk")
-	
-	if !$Footsteps.playing:
-		$Footsteps.play()
-	
 	if get_player_visibility() and not stick_to_path:
 		set_physics_state("state_chase")
 		return
@@ -207,6 +203,11 @@ func state_chase_path(_delta):
 	var process = process_path()
 	if not process:
 		set_path_to_player()
+	else:
+		mixamo.play("Walk")
+		
+		if !$Footsteps.playing:
+			$Footsteps.play()
 
 func state_grab_weapon(_delta):
 	
@@ -217,6 +218,10 @@ func state_grab_weapon(_delta):
 	var process = process_path()
 	if not process:
 		set_path_to_node(pickup)
+	else:
+		mixamo.play("Walk")
+		if !$Footsteps.playing:
+			$Footsteps.play()
 		
 	if path_ind == path.size() \
 	and $PickupTimer.is_stopped():
@@ -232,7 +237,9 @@ func start_grab_weapon(within_range = 15):
 #		if get_node_spotted(wpn):
 			pickup = wpn
 			set_path_to_node(pickup)
-			set_physics_state("state_grab_weapon")
+			
+			if get_physics_state() != "state_grab_weapon":
+				set_physics_state("state_grab_weapon")
 
 func get_closest_pickup_weapon(within_range = 300):
 	var weapons = get_tree().get_nodes_in_group("weapon_pickup")
