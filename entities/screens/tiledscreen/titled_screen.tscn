@@ -43,13 +43,10 @@ position = Vector2( 808.517, 317.797 )
 texture = ExtResource( 2 )
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 904.0
-margin_bottom = 520.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 124.0
+margin_top = 52.0
+margin_right = 908.0
+margin_bottom = 527.0
 
 [node name="Title" parent="Menu" instance=ExtResource( 7 )]
 margin_bottom = 110.0
@@ -106,7 +103,7 @@ margin_right = 784.0
 margin_bottom = 475.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
-text = "Version 5
+text = "Version 6
 Devloped by KurtBlissZ"
 
 [node name="FadeIn" parent="." instance=ExtResource( 8 )]

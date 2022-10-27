@@ -79,64 +79,16 @@ margin_left = 165.0
 margin_right = 169.0
 margin_bottom = 53.0
 
-[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 173.0
-margin_right = 177.0
-margin_bottom = 53.0
-
-[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 181.0
-margin_right = 185.0
-margin_bottom = 53.0
-
-[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 189.0
-margin_right = 193.0
-margin_bottom = 53.0
-
-[node name="VSeparator5" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 197.0
-margin_right = 201.0
-margin_bottom = 53.0
-
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 205.0
-margin_right = 752.0
+margin_left = 173.0
+margin_right = 776.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = -30.0
 max_value = 0.0
 
-[node name="VSeparator6" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 756.0
-margin_right = 760.0
-margin_bottom = 53.0
-
-[node name="VSeparator7" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 764.0
-margin_right = 768.0
-margin_bottom = 53.0
-
-[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VSeparator7"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 165.0
-margin_right = 169.0
-margin_bottom = 53.0
-
-[node name="VSeparator8" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 772.0
-margin_right = 776.0
-margin_bottom = 53.0
-
-[node name="VSeparator9" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 780.0
 margin_right = 784.0

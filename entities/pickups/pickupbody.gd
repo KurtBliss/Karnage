@@ -6,6 +6,7 @@ var velocity = Vector3.ZERO
 var moving = false
 var respawn = true
 export var pass_clip = -1
+onready var area = $Area
 
 func _ready() -> void:
 	if pass_clip > -1:

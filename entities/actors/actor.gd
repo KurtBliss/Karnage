@@ -120,7 +120,7 @@ func do_damage(dmg : float, from : Actor, how = "", etc = {}):
 	if etc.has("stun"):
 		stun += etc["stun"]
 	else:
-		stun += dmg
+		stun += dmg / 3
 	if etc.has("knock") and knockable:
 		move_and_slide(etc["knock"].normalized() * 100, Vector3.UP)
 		prints("Knock=", etc["knock"])

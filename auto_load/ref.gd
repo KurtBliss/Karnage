@@ -9,6 +9,7 @@ var challenges : Challenges
 var level_timer : LevelTimer # Init on GameTimer _ready()
 var tutorial : Tutorial
 var challenge_anime_container : ChallengeAnimeContainer
+var hud : Player_Hud
 
 func is_valid(a):
 	if a != null and is_instance_valid(a):

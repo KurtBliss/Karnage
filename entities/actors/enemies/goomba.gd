@@ -68,6 +68,9 @@ func _process(delta : float) -> void:
 		global_transform.origin.y += 0.2
 	if do_pickup > 0:
 		do_pickup -= 1
+		if is_instance_valid(pickup):
+			pickup.area.process_body(self)
+			
 	._process(delta)
 
 func state_idle(_delta):

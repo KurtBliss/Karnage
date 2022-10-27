@@ -120,10 +120,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.3, 1.6, 2, 2.3, 2.6, 3, 3.3, 3.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 2.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true, false, true, false, true, false, true, false, true, false, true ]
+"values": [ false, true, false, true, false, true, false, true ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -226,6 +226,9 @@ shape = SubResource( 2 )
 disabled = true
 
 [node name="Mannequin" parent="." instance=ExtResource( 8 )]
+
+[node name="Skeleton" parent="Mannequin" index="0"]
+bones/18/bound_children = [ NodePath("BoneAttachment") ]
 
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
 material_overlay = SubResource( 17 )

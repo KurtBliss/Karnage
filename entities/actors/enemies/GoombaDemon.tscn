@@ -25,6 +25,8 @@ metallic_texture = ExtResource( 1 )
 roughness = 0.0372549
 
 [node name="GoombaDemon" instance=ExtResource( 3 )]
+speed = 13
+health = 50
 
 [node name="Ch36" parent="Mannequin/Skeleton" index="0"]
 material/0 = SubResource( 25 )

@@ -7,11 +7,22 @@ onready var Score = $Score
 onready var Clip = $Clip
 onready var Ammo = $Ammo
 onready var ScoreMeter = $ScoreMeter
+onready var Pickup = $Pickup
 
 var debug_lines : Array = []
 
 var gui_clip = 0
 var gui_ammo = 0
+
+var hide_pick_delay = 0
+
+func _ready():
+	ref.hud = self
+	Pickup.text = Pickup.text.format(Controls.fm)
+
+func _process(_delta):
+	Pickup.visible = hide_pick_delay > 0
+	hide_pick_delay = max(0, hide_pick_delay - 1)
 
 func _on_Player_health_changed(health):
 	if Health:
@@ -32,6 +43,7 @@ func _on_Player_clip_changed(clip):
 	if Clip:
 		gui_clip = clip
 		Clip.set_text(str(gui_clip) + " / " + str(gui_ammo))
+		Clip.visible = gui_clip > -1
 
 
 func _on_Player_ammo_changed(ammo):

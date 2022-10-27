@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -290,6 +290,10 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 2.4, 0 ), Vector3( 0, 1.8, 0 ), Vector3( 0, 2.4, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=17]
+size = 30
+font_data = ExtResource( 16 )
+
 [sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "audio"
@@ -392,7 +396,6 @@ holder_path = NodePath("../../..")
 raycast_path = NodePath("../RayLong")
 
 [node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
-transform = Transform( 14.9801, -2.37487e-07, -0.771713, -0.0251956, 14.992, -0.489096, 0.771295, 0.48974, 14.9722, 0, 0, 0 )
 layers = 2
 target_group = "Enemy"
 raycast_path = NodePath("../../RayLong")
@@ -476,6 +479,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Pickup" type="Label" parent="Hud"]
+anchor_right = 1.0
+margin_bottom = 336.0
+custom_colors/font_color = Color( 1, 1, 1, 0.580392 )
+custom_fonts/font = SubResource( 17 )
+text = "Press {PICKUP} to pickup!"
+align = 1
+valign = 1
+
 [node name="Score" type="Label" parent="Hud"]
 modulate = Color( 1, 1, 1, 0.537255 )
 anchor_left = 1.0
@@ -533,6 +545,7 @@ modulate = Color( 1, 1, 1, 0.309804 )
 texture = ExtResource( 3 )
 
 [node name="Injured" type="Control" parent="Hud"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -580,6 +593,7 @@ polygon = PoolVector2Array( 0, 0, 288, 0, 288, 24, 0, 24 )
 
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 10 )

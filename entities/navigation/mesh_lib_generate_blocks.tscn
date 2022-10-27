@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/opengameart/musdasch/MedivelStoneFloor/basecolor.png" type="Texture" id=1]
 [ext_resource path="res://assets/wallcoveringsmart/wallpaper.jpg" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/gamedevmarket/TILEABLE FLOOR TEXTURE.png" type="Texture" id=15]
 [ext_resource path="res://assets/Karnage/slope.obj" type="ArrayMesh" id=16]
 [ext_resource path="res://assets/Karnage/corner_steps.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://addons/3D Outline/Outline.shader" type="Shader" id=18]
 
 [sub_resource type="SpatialMaterial" id=43]
 albedo_texture = ExtResource( 7 )
@@ -61,7 +62,14 @@ uv1_scale = Vector3( 2, 2, 2 )
 material = SubResource( 47 )
 size = Vector3( 8, 8, 8 )
 
+[sub_resource type="ShaderMaterial" id=63]
+shader = ExtResource( 18 )
+shader_param/enable = true
+shader_param/outline_thickness = 0.1
+shader_param/color = Color( 0, 0, 0, 0 )
+
 [sub_resource type="SpatialMaterial" id=49]
+next_pass = SubResource( 63 )
 albedo_texture = ExtResource( 8 )
 normal_enabled = true
 normal_scale = 1.0
