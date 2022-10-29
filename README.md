@@ -15,7 +15,7 @@ First person shooter currently in devlopment where you have 2 minutes to rack up
 
 WASD - Move
 
-E - Pickup weapon
+F - Pickup weapon
 
 Left mouse button - Shoot
 
