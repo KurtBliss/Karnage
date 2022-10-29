@@ -156,24 +156,23 @@ func _physics_process(delta):
 	velocity = velocity.linear_interpolate(vector, rate)
 	
 	# Jump
+	var snap 
+
 	if JumpCast.is_colliding() or is_on_floor():
-		velocity.y = 0
 		if Input.is_action_just_pressed("jump") and can_input:
 			can_double = true
-			velocity.y += (jump_power - 6) + (10 * (score_meter / 100))
+			velocity.y = (jump_power - 6) + (10 * (score_meter / 100))
+			snap = Vector3.ZERO
+		else:
+			velocity.y = 0
+			snap = get_floor_normal()
 	else:
 		if Input.is_action_just_pressed("jump") and can_input and can_double:
 			can_double = false
-			velocity.y += (jump_power - 2) + (10 * (score_meter / 100))
+			velocity.y = (jump_power - 2) + (10 * (score_meter / 100))
 		else:
 			velocity.y -= gravity
-	
-	# Collision
-	var snap 
-	if Input.is_action_pressed("jump"):
-		snap = Vector3.ZERO
-	else:
-		snap = Vector3.DOWN * 20
+		snap = Vector3.DOWN
 
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, deg2rad(65))
 	

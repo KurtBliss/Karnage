@@ -74,6 +74,9 @@ func _process(_delta):
 #				_on_Restart_pressed()
 		MODE.PRE_GAME:
 			
+			if Input.is_action_just_pressed("test"):
+				_on_Start_pressed()
+			
 			$PreGame/UnlockAt.text = "Unlock at " + str(ref.level.unlock_at)
 			
 			if ref.level.unlock_at == 0:

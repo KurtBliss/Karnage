@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://entities/actors/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/googlefonts/Turret_Road/hud.tres" type="DynamicFont" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://entities/actors/player/Sprite2.gd" type="Script" id=21]
 [ext_resource path="res://entities/actors/player/ScoreMeter.gd" type="Script" id=22]
 [ext_resource path="res://assets/freesounds/107624__stintx__running-02.wav" type="AudioStream" id=23]
-[ext_resource path="res://entities/actors/player/place_meating.gd" type="Script" id=24]
 [ext_resource path="res://assets/freesounds/394413__inspectorj__bamboo-swing-a11.wav" type="AudioStream" id=25]
 
 [sub_resource type="Environment" id=1]
@@ -506,8 +505,10 @@ __meta__ = {
 [node name="Clip" type="Label" parent="Hud"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -72.0
-margin_right = 124.0
+margin_left = 24.0
+margin_top = -64.0
+margin_right = 148.0
+margin_bottom = 8.0
 custom_colors/font_color = Color( 0.0588235, 0, 0.670588, 0.521569 )
 custom_fonts/font = ExtResource( 2 )
 text = "0 / 0"
@@ -686,12 +687,6 @@ stream = ExtResource( 20 )
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
 volume_db = -20.717
-
-[node name="place_meating" type="Area" parent="."]
-script = ExtResource( 24 )
-
-[node name="CollisionShape" parent="place_meating" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 1.2, 0 )
 
 [connection signal="ammo_changed" from="." to="Hud" method="_on_Player_ammo_changed"]
 [connection signal="clip_changed" from="." to="Hud" method="_on_Player_clip_changed"]
