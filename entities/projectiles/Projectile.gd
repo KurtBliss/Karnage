@@ -11,14 +11,10 @@ var other_shots = []
 var type = ""
 
 func _ready():
-#	face = -ref.player.camera.global_transform.basis.z.normalized()
-#	look_at(ref.player.camera.get_node("Tar").global_transform.origin, Vector3.UP)
-	
 	if target_group == "Enemy":
 		ignore.append(Player)
 	elif target_group == "Player":
 		ignore.append(Enemy)
-	pass
 
 func _physics_process(_delta : float) -> void:
 	last_position = global_transform.origin
