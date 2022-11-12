@@ -396,6 +396,7 @@ raycast_path = NodePath("../RayLong")
 
 [node name="Pistol" parent="Head/Camera/Weapon" instance=ExtResource( 9 )]
 layers = 2
+target_group = "Enemy"
 
 [node name="Swing" type="AudioStreamPlayer" parent="Head/Camera"]
 stream = ExtResource( 25 )
