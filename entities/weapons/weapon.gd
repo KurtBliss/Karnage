@@ -78,6 +78,11 @@ func _process(_delta):
 	elif is_instance_valid(holder) and do_reload_bullet:
 		do_reload_bullet = false
 		do_reload_bullet()
+	
+#	var has_holder = is_instance_valid(holder) 
+#	set_as_toplevel(has_holder)
+#	if has_holder:
+#
 
 func do_fire():
 	if not is_instance_valid(holder):

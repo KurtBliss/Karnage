@@ -304,7 +304,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/CSGStairs/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/Mirror/plugin.cfg", "res://addons/QuickPluginManager/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/cloud/plugin.cfg", "res://addons/csgtomeshinstance/plugin.cfg", "res://addons/notes_tab/plugin.cfg", "res://addons/project-statistics/plugin.cfg", "res://addons/project_map/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg", "res://addons/zylann.scatter/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/CSGStairs/plugin.cfg", "res://addons/CodeSnippetPopup/plugin.cfg", "res://addons/Mirror/plugin.cfg", "res://addons/QuickPluginManager/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/cloud/plugin.cfg", "res://addons/notes_tab/plugin.cfg", "res://addons/project-statistics/plugin.cfg", "res://addons/project_map/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg", "res://addons/zylann.scatter/plugin.cfg" )
 
 [input]
 
