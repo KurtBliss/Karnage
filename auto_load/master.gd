@@ -5,13 +5,14 @@ var mute = false
 onready var CmdManager = load("res://auto_load/Console/CmdManager.gd")
 var quit_timer = 0
 
-enum AMMO {PISTOL, M16, SHOTGUN, SNIPER}
+enum AMMO {PISTOL, M16, SHOTGUN, SNIPER, INFINITE}
 
 var ammo_container = {
 	AMMO.PISTOL: 0,
 	AMMO.M16: 0,
 	AMMO.SHOTGUN: 0,
-	AMMO.SNIPER: 0
+	AMMO.SNIPER: 0,
+	AMMO.INFINITE: -1
 }
 
 func _ready() -> void:

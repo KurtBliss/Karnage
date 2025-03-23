@@ -5,7 +5,7 @@ mouse.gd
 extends Node
 var toggle = true setget set_toggle
 var capture = false setget set_capture
-var sensitivity = 0.3 * 5
+var sensitivity = 1.5
 var motion = Vector2.ZERO
 var motion_previous = Vector2.ZERO
 var caller
@@ -28,7 +28,7 @@ func _input(event):
 	elif capture and toggle:
 		if event is InputEventMouseMotion:
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-				motion = event.relative * sensitivity
+				motion = event.relative * sensitivity / 5
 
 func set_toggle(tog):
 	toggle = tog

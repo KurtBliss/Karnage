@@ -20,7 +20,7 @@ var score = ref.level.points if is_instance_valid(ref.level) else 0 setget score
 var can_double = true
 var dir
 var rstick_controls = ["look_left", "look_right", "look_up", "look_down"]
-var rstick = Stick.new(rstick_controls, 10, self, "move_camera")
+var rstick = Stick.new(rstick_controls, Mouse.sensitivity * 7, self, "move_camera")
 
 var challenges_ld = preload("res://entities/challenges/Challenges.tscn")
 var start_with_pistol = true

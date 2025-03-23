@@ -1,28 +1,20 @@
 class_name Weapon
 extends MeshInstance
-export var equiped : bool = true 
-
 enum CAN_SHOOT {ANIME_END, FIRE_RATE} 
-export(CAN_SHOOT) var can_shoot_mode
-
 enum FIRE_TYPE {RAYCAST, PROJECTILE} 
+export var equiped : bool = true 
+export(CAN_SHOOT) var can_shoot_mode
 export(FIRE_TYPE) var fire_type
-
 export(bool) var automatic = false
-
 export(Master.AMMO) var ammo_type
-
 export(int) var clip_size = 6
 export(int) var clip  = clip_size
-
-var b_decal = preload("res://entities/decals/BulletDecal.tscn")
-
 export var anime_fire = "Fire"
 export var anime_reload = "Reload"
-
-var wait_for_parrent_holder = false
 export var do_reload_bullet = false
-
+var b_decal = preload("res://entities/decals/BulletDecal.tscn")
+var wait_for_parrent_holder = false
+var can_fire = true
 
 # Stats
 export var damage : int = 0
@@ -45,9 +37,6 @@ onready var holder : Actor
 onready var anime : AnimationPlayer = get_node(animation_player)
 onready var timer : Timer = $Rate 
 onready var cock = get_node(cock_path) 
-
-var can_fire = true
-
 
 func _ready():
 	do_reload_bullet = false 
@@ -171,7 +160,8 @@ func create_projectile(projectile_ld):
 	pass
 
 func start_reload():
-	if can_fire and holder.ammo[ammo_type] > 0 and clip < clip_size:
+	var enough_ammo = holder.ammo[ammo_type] > 0 || holder.ammo[ammo_type] == -1
+	if can_fire and enough_ammo and clip < clip_size:
 		if name == "Shotgun": 
 			can_fire = true
 		else:
@@ -180,19 +170,23 @@ func start_reload():
 		if holder == ref.player:
 			boast = (ref.player.score_meter / 100) * 0.5
 		anime.play(anime_reload, -1, reload_anime_speed + boast)
+	
 
 func do_reload():
 	while clip < clip_size:
 		if holder.ammo[ammo_type] == null:
 			return
-		if holder.ammo[ammo_type] > 0:
+		if holder.ammo[ammo_type] > 0 || holder.ammo[ammo_type] == -1:
 			do_reload_bullet()
 		else:
 			return
 
 func do_reload_bullet():
-	if clip < clip_size and holder.ammo[ammo_type] > 0:
-		holder.ammo[ammo_type] -= 1
+	var inf_ammo = holder.ammo[ammo_type] == -1
+	var enough_ammo = holder.ammo[ammo_type] > 0 || inf_ammo
+	if clip < clip_size and enough_ammo:
+		if !inf_ammo:
+			holder.ammo[ammo_type] -= 1
 		clip += 1
 		if holder is Player:
 			holder.do_emit_clip(clip)

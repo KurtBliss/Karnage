@@ -192,6 +192,7 @@ material_overlay = SubResource( 6 )
 mesh = ExtResource( 3 )
 skin = SubResource( 1 )
 script = ExtResource( 5 )
+ammo_type = 4
 clip = 6
 damage = 15
 ray_cast_range = 500

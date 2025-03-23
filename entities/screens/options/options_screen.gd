@@ -49,3 +49,8 @@ func clear_game_data(_button):
 
 func _on_ClearGameData_confirmed():
 	GameData.clear_files()
+
+
+func _on_Mouse_HSlider_value_changed(value):
+	GameSettings.opt_mousesens_set(value)
+	pass # Replace with function body.

@@ -8,7 +8,8 @@ var settings_defaults = {
 	"keep": true,
 	"last_level": "",
 	"mute": false,
-	"volume": 0.0
+	"volume": 0.0, 
+	"mouse_sens": 1.5
 }
 var game_data_defaults = {
 	"game-data-ver": 0,

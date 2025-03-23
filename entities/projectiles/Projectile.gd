@@ -1,6 +1,7 @@
 class_name Projectile
 extends Position3D
 var last_position = global_transform.origin
+var start_position = global_transform.origin
 export(String, "None", "Enemy", "Player") var target_group
 export(float) onready var speed = 5
 export(int) onready var damage = 7
@@ -17,6 +18,9 @@ func _ready():
 		ignore.append(Enemy)
 
 func _physics_process(_delta : float) -> void:
+	if (start_position - global_position).length()>0.2:
+		visible = true
+	
 	last_position = global_transform.origin
 	
 	face = -global_transform.basis.z.normalized()
@@ -31,6 +35,8 @@ func _physics_process(_delta : float) -> void:
 		if hit.collider.is_in_group(target_group):
 			hit.collider.do_damage(damage, holder, type)
 	
+		if !is_instance_valid(holder):
+			return
 		if holder.is_in_group("player") \
 		and hit.collider.is_in_group("challenge_targets"):
 			hit.collider._on_shot()

@@ -22,6 +22,17 @@ func opt_fullscreen_apply() -> void:
 	OS.window_fullscreen = bool(GameData.settings["fullscreen"])
 
  
+# mouse_sens
+func opt_mousesens_set(val) -> void:
+	GameData.settings["mouse_sens"] = val
+	opt_mousesens_apply()
+
+func opt_mousesens_get() -> bool:
+	return GameData.settings["mouse_sens"]
+
+func opt_mousesens_apply() -> void:
+	Mouse.sensitivity = (GameData.settings["mouse_sens"])
+
 # Keep (all blood and bodies)
 func opt_keep_toggle() -> void:
 	GameData.settings["keep"] = !GameData.settings["keep"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/actors/enemies/marksmen.gd" type="Script" id=1]
 [ext_resource path="res://assets/kenney/weaponpack_assets/models/machinegun.obj" type="ArrayMesh" id=2]
@@ -118,6 +118,37 @@ tracks/3/keys = {
 "times": PoolRealArray(  )
 }
 
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "hit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [node name="Marksmen" type="KinematicBody" groups=["Enemy"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27348, 0 )
 script = ExtResource( 1 )
@@ -174,6 +205,10 @@ shape = SubResource( 3 )
 [node name="Death" type="AnimationPlayer" parent="."]
 anims/death = SubResource( 4 )
 anims/idle = SubResource( 5 )
+
+[node name="Hit" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/hit = SubResource( 8 )
 
 [connection signal="died" from="." to="." method="_on_Marksmen_died"]
 [connection signal="injured" from="." to="." method="_on_Marksmen_injured"]

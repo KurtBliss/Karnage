@@ -21,15 +21,14 @@ bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
 
 [node name="ProjectMap" type="GraphEdit"]
 visible = false
-margin_right = 1019.0
-margin_bottom = 677.0
+margin_right = 1571.0
+margin_bottom = 889.0
 rect_min_size = Vector2( 500, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 1 )
-scroll_offset = Vector2( -952, -667 )
+scroll_offset = Vector2( -2409.39, -1385.06 )
 snap_distance = 32
-zoom = 0.9
 minimap_size = Vector2( 196, 174 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -38,12 +37,11 @@ __meta__ = {
 }
 
 [node name="CommentNode2" type="GraphNode" parent="." instance=ExtResource( 1 )]
-margin_left = -261.2
-margin_top = -574.1
-margin_right = 106.801
-margin_bottom = -422.1
+margin_left = 1061.39
+margin_top = 6.05542
+margin_right = 1429.39
+margin_bottom = 158.055
 rect_min_size = Vector2( 368.001, 152 )
-rect_scale = Vector2( 0.9, 0.9 )
 mouse_filter = 1
 custom_styles/commentfocus = SubResource( 2 )
 custom_styles/comment = SubResource( 3 )
@@ -63,12 +61,11 @@ comment_text = "KARNAGE"
 comment_rect = Vector2( 368.001, 152 )
 
 [node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 9 )]
-margin_left = -56.0
-margin_top = -456.2
-margin_right = 1000.01
-margin_bottom = 55.8005
+margin_left = 1289.39
+margin_top = 137.055
+margin_right = 2345.4
+margin_bottom = 649.056
 rect_min_size = Vector2( 1056, 512 )
-rect_scale = Vector2( 0.9, 0.9 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 11 )
 custom_styles/comment = ExtResource( 10 )
@@ -88,12 +85,11 @@ __meta__ = {
 group_name = "Actors"
 
 [node name="GroupNode2" type="GraphNode" parent="." instance=ExtResource( 9 )]
-margin_left = -891.2
-margin_top = -427.4
-margin_right = -91.1989
-margin_bottom = 212.603
+margin_left = 361.389
+margin_top = 169.055
+margin_right = 1161.39
+margin_bottom = 809.058
 rect_min_size = Vector2( 800, 640 )
-rect_scale = Vector2( 0.9, 0.9 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 11 )
 custom_styles/comment = ExtResource( 10 )
@@ -113,12 +109,11 @@ __meta__ = {
 group_name = "Maps"
 
 [node name="GroupNode3" type="GraphNode" parent="." instance=ExtResource( 9 )]
-margin_left = -171.2
-margin_top = 350.2
-margin_right = 84.8
-margin_bottom = 510.2
+margin_left = 1161.39
+margin_top = 1033.06
+margin_right = 1417.39
+margin_bottom = 1193.06
 rect_min_size = Vector2( 256, 160 )
-rect_scale = Vector2( 0.9, 0.9 )
 mouse_filter = 1
 custom_styles/commentfocus = ExtResource( 11 )
 custom_styles/comment = ExtResource( 10 )
@@ -138,11 +133,10 @@ __meta__ = {
 group_name = ""
 
 [node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 433.6
-margin_top = -139.4
-margin_right = 709.6
-margin_bottom = -23.4
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1833.39
+margin_top = 489.055
+margin_right = 2109.39
+margin_bottom = 605.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -165,11 +159,10 @@ script_path = "res://entities/actors/enemies/marksmen.gd"
 script_name = "marksmen.gd"
 
 [node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 1.60004
-margin_top = -369.8
-margin_right = 218.6
-margin_bottom = -253.8
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1353.39
+margin_top = 233.055
+margin_right = 1570.39
+margin_bottom = 349.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -192,11 +185,10 @@ script_path = "res://entities/actors/player/player.gd"
 script_name = "player.gd"
 
 [node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 260.8
-margin_top = -398.6
-margin_right = 443.8
-margin_bottom = -341.596
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1641.39
+margin_top = 201.055
+margin_right = 1824.39
+margin_bottom = 258.059
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -217,11 +209,10 @@ resource_type = 2
 icon_class = "Script"
 
 [node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 462.4
-margin_top = -427.4
-margin_right = 622.4
-margin_bottom = -370.402
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1865.39
+margin_top = 169.055
+margin_right = 2025.39
+margin_bottom = 226.053
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -242,11 +233,10 @@ resource_type = 2
 icon_class = "Script"
 
 [node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -862.4
-margin_top = -81.8
-margin_right = -616.4
-margin_bottom = 34.201
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 393.389
+margin_top = 553.055
+margin_right = 639.389
+margin_bottom = 669.056
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -269,11 +259,10 @@ script_path = "res://maps/Tutorial.tscn::1"
 script_name = "built-in script"
 
 [node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 59.2
-margin_top = -197.0
-margin_right = 285.2
-margin_bottom = -81.0
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1417.39
+margin_top = 425.055
+margin_right = 1643.39
+margin_bottom = 541.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -296,11 +285,10 @@ script_path = "res://entities/actors/enemies/goomba.gd"
 script_name = "goomba.gd"
 
 [node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = 462.4
-margin_top = -312.2
-margin_right = 667.4
-margin_bottom = -255.2
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 1865.39
+margin_top = 297.055
+margin_right = 2070.39
+margin_bottom = 354.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -321,11 +309,10 @@ resource_type = 2
 icon_class = "Script"
 
 [node name="FileNode8" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -862.4
-margin_top = -225.8
-margin_right = -616.4
-margin_bottom = -109.8
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 393.389
+margin_top = 393.055
+margin_right = 639.389
+margin_bottom = 509.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -348,11 +335,10 @@ script_path = "res://maps/City.tscn::1"
 script_name = "built-in script"
 
 [node name="FileNode7" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -862.4
-margin_top = -369.8
-margin_right = -616.4
-margin_bottom = -253.799
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 393.389
+margin_top = 233.055
+margin_right = 639.389
+margin_bottom = 349.056
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -375,11 +361,10 @@ script_path = "res://maps/Corridor.gd"
 script_name = "Corridor.gd"
 
 [node name="FileNode10" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -516.8
-margin_top = -312.2
-margin_right = -290.799
-margin_bottom = -196.2
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 777.389
+margin_top = 297.055
+margin_right = 1003.39
+margin_bottom = 413.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )
@@ -402,11 +387,10 @@ script_path = "res://maps/Corridor.gd"
 script_name = "Corridor.gd"
 
 [node name="FileNode11" type="GraphNode" parent="." instance=ExtResource( 5 )]
-margin_left = -516.8
-margin_top = -139.4
-margin_right = -401.8
-margin_bottom = -77.4
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 777.389
+margin_top = 489.055
+margin_right = 892.389
+margin_bottom = 551.055
 mouse_filter = 1
 custom_constants/port_offset = 0
 custom_styles/frame = ExtResource( 6 )

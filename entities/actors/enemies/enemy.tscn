@@ -341,9 +341,6 @@ cast_to = Vector3( 0, 0, -1.2 )
 wait_time = 0.2
 one_shot = true
 
-[connection signal="died" from="." to="." method="_on_Goomba_died"]
-[connection signal="injured" from="." to="." method="_on_Goomba_injured"]
-[connection signal="stuned" from="." to="." method="_on_Goomba_stuned"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 [connection signal="body_entered" from="StepCheck" to="." method="_on_StepCheck_body_entered"]
 [connection signal="body_exited" from="StepCheck" to="." method="_on_StepCheck_body_exited"]

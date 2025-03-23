@@ -472,9 +472,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "2:00"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Pickup" type="Label" parent="Hud"]
 anchor_right = 1.0

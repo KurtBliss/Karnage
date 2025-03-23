@@ -1926,6 +1926,10 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.7339
 collision_layer = 0
 collision_mask = 0
 
+[node name="DirectionalLight" type="DirectionalLight" parent="NavMesh"]
+transform = Transform( 1, 0, 0, 0, 0.716996, 0.697078, 0, -0.697078, 0.716996, 0, 21.5775, 0 )
+light_energy = 0.341
+
 [node name="ShotgunPickup" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87023, -0.670765, -74.0628 )
 
